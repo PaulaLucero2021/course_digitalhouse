@@ -1,3 +1,480 @@
+# Introduccion
+
+## C2 - Introducción a las bases de Datos
+
+### ¿Qué es una base de datos?
+
+Bases de datos por aquí, bases de datos por allá, pero ¿qué es una base de datos? Podemos decir que es un conjunto de datos pertenecientes a un mismo contexto organizados para un propósito específico. Una base de datos nos permite:
+
+- Almacenar (agregar, modificar y eliminar) datos.
+- Acceder a los datos.
+- Manipularlos y combinarlos.
+- Analizar datos.
+- Entre otras cosas más.
+
+Bases de datos las hay de dos tipos: relacionales y no relacionales. En lo particular, nosotros aprenderemos acerca de una base de datos relacional, ya que la misma nos permite comprender a profundidad cómo funcionan las bases de datos.
+
+A su vez, dentro del mundo de las bases de datos relacionales existen varias opciones por las cuales nos podemos decantar. Puntualmente, nosotros veremos MySQL porque es una de las bases de datos más populares a nivel mundial y también es sencilla en su uso. Vayamos a ver qué puede hacer esta base de datos por nosotros. 
+
+> Ver video: que es una base de datos
+
+
+### Bases de datos versus Archivos planos
+
+Muchas veces la simplicidad de tener un archivo al alcance de la mano nos lleva a elegirlo para guardar los datos.
+Cuando hablamos de archivos hablamos de, por ejemplo, un Excel, un archivo de texto “txt o csv”, Google Sheets, Ms Access, entre otros.
+Pero realmente ¿Es la mejor opción para el almacenamiento? Veamos qué características son las que definen esta elección:
+
+![BBDD_archivos_planos.jpg](./img/BBDD_archivos_planos.jpg)
+
+### Motores de bases de datos
+
+Vimos que las bases de datos realizan chequeos de:
+
+- Integridad.
+- Coherencia de los datos.
+- Redundancia.
+
+Además de otras funciones. Pero, ¿cómo realizan estas tareas? ¿Quién es el encargado de realizarlas? Busquemos estas respuestas en el siguiente video: 
+
+> Ver video: Motores de bases de datos.
+
+- Motor de base de datos = sistema de gestion de base de datos
+
+![capacidades_motores](./img/motores.png)
+
+> sql es el lenguaje estandar de las bases de datos
+
+
+### Modelos de bases de datos
+
+¿Cómo se comienza a desarrollar una base de datos? Normalmente se inicia con un requerimiento o necesidad de una aplicación o sistema.
+
+Lo importante es tener en claro qué es lo que se tiene que almacenar, y es por ello que este requerimiento tiene que estar lo más detallado posible.
+
+Una vez que tenemos el requerimiento, se inicia la etapa de modelado. Este documento nos permite validar que entendimos el requerimiento y empezar a pensar cómo lo vamos a implementar.
+
+Una vez implementada la base de datos, este documento ¡no se elimina! Sino que sirve de documentación para volver a consultar y entender el porqué se implementó la base de datos de una determinada forma.
+
+En la siguiente presentación tenemos el resumen sobre este documento tan importante:
+
+> ver ppt: modelo de bases de datos
+
+#### Modelado de datos
+
+Un modelo es un conjunto de herramientas conceptuales para describir datos, sus relaciones, su significado y sus restricciones de consistencia.El modelado de datos es una manera de estructurar y organizar los datos para que se puedan utilizar fácilmente por las bases de datos.
+
+**Beneficios**
+- Registrar los requerimientos de datos de un proceso de negocio.
+- Se puede descomponer un proceso complejo en partes.
+- Permite observar patrones.
+- Sirve de plano para construir la base de datos física.
+- El modelo de datos ayuda a las empresas a comunicarse dentro y entre las organizaciones.
+- Proporciona soporte ante los cambios de requerimientos del negocio o aplicaciones.
+
+#### **Tipos de modelos**
+
+Existen 3 tipos de modelos que podrían implementarse:
+
+![tipos_modelos](./img/tipos_modelos.png)
+
+### **Modelo lógico**
+
+Un modelo de datos lógico describe los datos con el mayor detalle posible, independientemente de cómo se implementarán físicamente en la base de datos.Describe los elementos importantes del negocio, qué significa cada objeto, su nivel de detalle, cómo se relacionan entre sí y sus restricciones.
+
+Las características de un modelo de datos lógicos incluyen:
+
+- Se definen cuáles son los conceptos importantes sobre los que hay que almacenar información. Estos elementos se denominan entidades.
+- Se especifican todos los atributos para cada una de las entidades.●Se conectan las entidades mediante relaciones.
+- Se especifica la clave principal para cada entidad.●Se especifican las claves externas (claves que identifican la relación entre diferentes entidades).
+- La normalización ocurre en este nivel.
+
+### **Modelo físico**
+
+El modelo de datos físicos representa cómo se construirá el modelo en la base de datos.Un modelo de base de datos física muestra todas las estructuras de tablas, incluidos el nombre de columna, el tipo de datos de columna, las restricciones de columna, la clave principal, la clave externa y las relaciones entre las tablas.
+
+Las características de un modelo de datos físicos incluyen:
+
+- Especificación de todas las tablas y columnas.
+- Las claves externas se usan para identificar relaciones entre tablas.
+- La desnormalización puede ocurrir según los requisitos del usuario.
+
+Las consideraciones físicas pueden hacer que el modelo de datos físicos sea bastante diferente del modelo de datos lógicos.
+
+El modelo físico puede diferir de un motor de bases de datos a otro —no es lo mismo implementar en Ms. SQL Server que en MySQL—.
+
+Los pasos para el diseño del modelo de datos físicos son los siguientes:
+- Convertir entidades en tablas.
+- Convertir relaciones en claves externas.
+- Convertir atributos en columnas.
+- Modificar el modelo de datos físicos en función de las restricciones / requisitos físicos.
+
+![logivo_vs_fisico](./img/logivo_vs_fisico.png)
+
+### Cliente/Servidor
+
+Las bases de datos se implementan bajo una arquitectura `Cliente - Servidor`.
+
+Esta arquitectura tiene dos partes claramente diferenciadas, por un lado, la parte del servidor y, por otro, la parte de cliente o grupo de clientes.
+
+![arq_cliente_servidor](./img/arq_cliente_servidor.png)
+
+Esto se realiza así porque:
+
+- El **servidor**, normalmente, es una “máquina” bastante potente con un hardware y software específico que actúa de depósito de datos y funciona como un sistema gestor de base de datos o aplicaciones.
+
+- Los **clientes** suelen ser estaciones de trabajo que solicitan varios servicios al servidor. Son los que necesitan los servicios del servidor. Físicamente se pueden ver como distintas computadoras, celulares y dispositivos que se conectan con el servidor.
+
+Es importante entender la arquitectura:
+
+- Porque el servidor, va a ser el motor de bases de datos. En nuestro caso, MySQL Server.
+- Nuestro cliente van a ser las aplicaciones que consulten o almacenen los datos. Por ejemplo, MySQL Workbench o, en el futuro, la aplicación que desarrollemos que va a interactuar con la base de datos.
+
+**Quizz**
+
+- ¿Qué es una base de datos?
+
+Es un “almacén” que nos permite guardar grandes cantidades de información de forma organizada.
+
+- ¿Cuál de las siguientes opciones es un ejemplo de base de datos?
+
+La historia clínica de un paciente.
+
+-  Las ventajas de usar una base de datos frente a archivos planos son 
+
+ Integridad de datos, consistencia y redundancia de datos.
+
+- ¿Qué se entiende por integridad de datos?
+
+Se refiere a la corrección y exactitud de los datos en una base de datos.
+
+- ¿Cuál de los siguientes ejemplos explica un problema de redundancia en un formulario de inscripción?
+
+Que permita registrarse más de una vez.
+
+- Cuando modelamos una base de datos, ¿qué modelado se realiza primero?
+
+Modelado lógico
+
+- Un modelo lógico está compuesto por
+
+Entidades, atributos y relaciones.
+
+> hacer actividad: Eventos.
+
+> Practica: modelados.
+
+# Modelado de Bases de datos
+
+## C4 - Modelado de bases de datos
+
+En este módulo vamos a trabajar en el modelado de datos.
+
+Cómo vimos es el primer paso dentro de una implementación de una base de datos. Es importante porque no solo vamos a plasmar los requerimientos de aplicaciones sino que también vamos a traducir las reglas o restricciones que deben cumplir los datos.
+
+¿Cómo lo vamos a realizar?
+
+- Primero vamos a entender que implica un modelo.
+- Vamos a trabajar entendiendo que datos tenemos que guardar.
+- ¿Con qué nivel de detalle vamos a registrar datos?
+- ¿Cómo se relacionan los datos?
+- ¿Cómo llevar al motor de bases de datos estos modelos?
+
+Se vienen clases muy interesantes y creativas donde tu participación es clave. 
+
+> Ver ppt: Modelado de datos
+
+ **Objetivos**
+
+El objetivo de cualquier sistema de información es representar mediante abstracciones del mundo real toda la información necesaria para el cumplimiento de los fines. Para describir la estructura de una base de datos es necesario definir el concepto de modelo de datos, una colección de herramientas conceptuales para describir datos, relaciones entre ellos, semántica asociada a los datos y restricciones de consistencia.
+
+
+**Tipos**
+
+1. **Modelo conceptual basado en objetos**: Fue definido por Peter Chen en 1976. Se utiliza para la representación de la realidad No comprometida con ningún entorno informático: Sería el Modelo Entidad-Relación propiamente dicho.
+
+2. **Modelo lógico basado en objetos**: determinan algunos criterios de almacenamiento y de operaciones de manipulación de los datos dentro de un entorno informático.
+
+### Modelo de datos entidad-relación
+
+El modelo de datos entidad-relación se basa en una percepción del mundo real, que consiste en un conjunto de objetos básicos llamados entidades y de relaciones entre ellos. Se emplea para interpretar, especificar y documentar los requerimientos para los sistemas de bases de datos.
+
+**Modelo entidad-relación**: Por lo tanto un modelo entidad-relación es un método de representación abstracta del mundo real centrado en las restricciones o propiedades lógicas de una bases de datos
+
+### Entidad
+
+Una entidad es un objeto, real o abstracto, acerca del cual se recoge información de interés para la base de datos.
+
+Dentro de nuestro sistema tendremos entidades y para integrarlos en nuestro diagrama los representaremos usando un rectángulo.Estas entidades son todos los objetivos sobre los cuales tenemos un interés de almacenar información.
+
+![entidad](./img/entidad.png)
+
+**Tipos**
+
+- **Entidades fuertes**: Tienen existencia por sí mismas. (alumnos, empleados, departamento.)
+- **Entidades débiles**: Dependen de otra entidad para su existencia (hijos de empleados)
+
+Se define como ocurrencia de entidad al conjunto de datos para una entidad en particular. Por ejemplo:125, Juan Pérez, casado, 23 años.Cada entidad tiene propiedades particulares llamadas atributos
+
+### Atributos
+
+Los atributos describen las características de una entidad. 
+Por ejemplo: 
+Entidad: clientes 
+Atributos: legajo, nombre, domicilio, etc.
+
+Son las características que van a definir a cada entidad. Por ejemplo, la entidad Películas podría tener estos atributos.
+
+![atributo](./img/atributo.png)
+
+
+**Tipos**
+
+1. Atributo con simple valor
+
+Cuando un atributo tiene un simple valor para una identidad particular. Por ejemplo: Una persona que tiene un valor por su fecha de nacimiento y la fecha de nacimiento es un simple valor de la persona.
+
+2. Atributo multivalor
+
+Cuando un atributo tiene una serie de valores para identificarse.Por ejemplo: El atributo teléfonos de un cliente que puede contener uno o más números de teléfono.
+
+3. Atributos derivados
+
+Atributos derivados: Cuando los valores de un atributo son afines y el valor para este tipo de atributo se puede derivar de los valores de otros atributos. Por ejemplo: La edad y fecha de nacimiento de una persona; si conocemos la fecha de nacimiento, podemos calcular su edad, en este caso se dice que la edad es un atributo derivado del atributo fecha de nacimiento.
+
+4. Atributo clave
+
+Las entidades pueden contener un atributo que identifica cada una de las ocurrencias de la entidad. Es decir, usualmente contienen un atributo que diferencia los ítems entre sí.
+Por ejemplo: En la entidad clientes el atributo documento puede ser un atributo clave. No necesariamente el atributo clave debe ser un solo atributo, hay casos en que varios atributos forman una llave. Por ejemplo: tipo más número de factura.
+
+5. Atributos nulos: 
+
+Se usa cuando una entidad no tiene valor para un atributo o que el valor es desconocido.
+
+### Claves
+
+1. Clave candidata
+
+Se compone por uno o más atributos cuyos valores identifican unívocamente a cada ocurrencia de la entidad, sin que ningún subconjunto de ellos pueda realizar esta misma función. Una clave candidata es una posible clave primaria. Pueden definirse varias claves candidatas para luego seleccionar la más adecuada
+
+2. Clave primaria
+
+Está compuesta por uno o más atributos cuyos valores identifican unívocamentea cada ocurrencia de la entidad. No pueden contener valores nulos ni repetidos. Esta clave es una de aquellas que anteriormente se seleccionaron como candidata.
+
+Una Clave Primaria o Primary Key es un campo que identifica a cada fila de una tabla de forma única. Es decir que No puede haber dos filas en una tabla que tengan la misma PK
+
+Para identificar la clave primaria en una entidad, podemos escribir el atributo en negrita seguido de las iniciales PK entre paréntesis.
+
+![pk](./img/pk.png)
+
+3. Superclave
+
+es el conjunto de uno o más atributos que, tomados colectivamente, permiten identificar de forma unívoca a la ocurrencia de una entidad. Se utiliza generalmente en las tablas de relación, este concepto se desarrollará en las próximas clases.
+
+4. Claves Foraneas
+
+Claves que apuntas a una clave primaria de otra tabla, llamadas FK
+
+## Datos
+
+Los datos son los posibles valores que pueden tener los atributos. Nos permiten entender si son datos numéricos, textos, fechas, si tienen un formato en particular, si son obligatorios u opcionales. No se modelan, pero nos permite entender mejor las entidades.
+
+
+## Convención de nombres
+
+En  los  nombres  de entidades y atributos  siempre  se  debe  utilizar sustantivos en singular o plural. No se puede utilizar eñes, espacios ni acentos.  Si  el  nombre  se  compone  por  más  de  una  palabra,  se  deben reemplazar los espacios con guiones bajos “_” o eliminar dicho espacio y colocar una mayúscula en la inicial de cada palabra (CamelCase).
+
+Ej. Así podríamos asignar un nombre para la siguiente frase:
+- “costos anuales” →costo_anual → CostoAnual
+- “costos anuales” →costos_anuales → CostosAnuales
+
+Cabe aclarar que, debido a que MySQL utiliza directorios y archivos para almacenar  bases  de  datos  y  tablas,  los  nombres  se  distinguen  entre mayúsculas y minúsculas solo si el sistema operativo posee un sistema de archivo sensible al tipo.
+
+- Windows: No distingue entre mayúsculas y minúsculas.
+- Algunas versiones de Unix y Linux: Si distinguen entre mayúsculas y minúsculas. (Case Sensitive)
+
+> Ver actividad caso UBER y actividad Playground
+> ver actividad Playground 2
+
+## C5 - Datos
+
+Los datos o atributos de cada registro de una tabla tienen que ser de un tipode dato concreto.Cuando diseñamos una base de datos tenemos que pensar qué tipo de datosrequerimos para nuestro modelo.Cada  tipo  de  dato  tiene  un  tamaño  determinado  y  cuanta  más  precisiónapliquemos  en  su  definición,  más rápido  y performante  va  a  funcionarMySQL
+
+![t-dato](./img/t-dato.png)
+
+** Tipos de datos**
+
+### Datos de tipo texto
+
+Almacenan datos alfanuméricos y símbolos.
+
+`CHAR(n)`
+
+n→ 1 a 255 caracteres.
+
+Se recomienda utilizar en cadenas de texto de longitud poco variable.
+
+Ej.: La longitud de la palabra “HOLA” es 4 y se define:Char(4).
+
+`VARCHAR(n`) 
+
+n→ 1 a 21.845 caracteres.
+
+Se recomienda utilizar en cadenas de texto de longitud muy variable.
+
+Ej.: La longitud de la palabra “HASTA LUEGO” es 11 y se define: Varchar(11).
+
+> Nota: La letra n indica la longitud máxima de caracteres a utilizar.
+
+`TINYTEXT`
+
+0 a 255 caracteres.
+
+`MEDIUMTEXT` 
+
+0 a 16.777.215 caracteres.
+
+`TEXT`
+
+0 a 4.294.967.295 caracteres.
+
+`LONGTEXT`
+
+0 a 18.446.744.073.709.551.615 caracteres.
+La longitud máxima permitida depende de la configuración del protocolo cliente-servidor y la memoria disponible.
+
+### Datos de tipo numérico entero
+
+`TINYINT`
+
+-128 a 128 (sin signo de 0 a 255 dígitos)
+
+`SMALLINT`
+
+-32.768 a 32.767 (sin signo de 0 a 65.535 dígitos)
+
+`MEDIUMINT`
+
+-8.388.608 a 8.388.607 (sin signo de 0 a 16.777.215 dígitos)
+
+`INT`
+
+-2.147.483.648 a 2.147.483.647 (sin signo de 0 a 4.294.967.295 dígitos)
+
+`BIGINT`
+
+-9.223.372.036.854.775.808 a 9.223.372.036.854.775.807(sin signo de 0 a 18.446.744.073.709.551.615 dígitos)
+
+### Datos de tipo numérico decimal
+
+`FLOAT(n,d)`
+
+Almacenan números de coma flotante pequeño.
+Tienen precisión simple para la parte decimal (máx. 7 dígitos).
+n→ 1 a 24 dígitos (incluyendo la parte decimal).
+d→ 0 a 7 dígitos dependiendo de cuánto se asigne en n.
+
+`DOUBLE(n,d)`
+
+Almacenan números de coma flotante grande.
+Tienen precisión doble para la parte decimal (máx. 15 dígitos).
+n→ 25 a 53 dígitos (incluyendo la parte decimal).
+d→ 0 a 15 dígitos dependiendo de cuánto se asigne en n.
+
+>Nota: Las letras n y d indican la longitud máxima de dígitos a utilizar.
+
+![num-decimal](./img/num-decimal.png)
+
+### Datos de tipofecha
+
+A la hora de almacenar fechas, hay que tener en cuenta que MySQL nocomprueba de una manera estricta si una fecha es válida o no.
+
+`DATE`
+
+Almacena solamente la fecha en formato YYYY-MM-DD.
+Valores permitidos: '0001-01-01' a '9999-12-31'.
+La fecha se debe colocar entre comillas simples o dobles y se separa porguiones. Ejemplo: '2021-05-15'.
+
+`TIME`
+
+Almacena solamente la hora en formato HH:MM:SS.
+Valores permitidos: '00:00:00' a '23:59:59'.
+La hora se debe colocar entre comillas simples o dobles y se separa por dos puntos. 
+Ejemplo: '11:50:55'.
+
+`DATETIME`
+
+Almacena la fecha y hora en formato YYYY-MM-DD HH:MM:SS.
+Valores permitidos:  '0001-01-01 00:00:00' a '23:59:59 9999-12-31'.
+La fecha se debe colocar entre comillas simples o dobles, un espacio y la hora que se debe separar por dos puntos. 
+Ejemplo: '2021-05-15 11:50:55'.
+
+### Datos de tipo boolean
+
+`BOOLEAN`
+
+MySQL guarda los booleanos como un cero o como un uno. Por cuestiones de performance, este tipo de dato viene desactivado y no se recomienda su uso.
+
+En el caso de querer guardar valores "verdaderos" y "falsos", se recomienda utilizar el tipo de dato tinyint(1), donde:
+- 0 para representar el false.
+- 1 para representar el true.
+
+[Glosario: Tipo de datos](https://view.genial.ly/6050a721efec6a0d15177bbe)
+
+> ver actividad - tipo de datos.
+
+# C7 - Relaciones
+
+Cuando estamos modelando y detectamos las entidades o tablas, es normal que se relacionen entre sí.
+Por ejemplo, podríamos tener una tabla que almacene los datos de los Alumnos y otra tabla que almacene las Asistencias a cada una de las clases que cursa.
+¿Vamos a repetir TODOS los datos del alumno asistencia por asistencia? ¿O nos conviene simplemente tener el identificador de Alumno por Asistencia a clase?
+Si elegiste este último escenario, ¡Estás en lo cierto!
+Y podemos notar que estas dos tablas están relacionadas entre sí. Pues si queremos saber el nivel de asistencia de un alumno debemos conectarlas.
+A esto lo llamamos RELACIONES y vale aclarar que hay de varios tipos. Vayamos entonces a conocer un poco más acerca de estas.
+
+> ver video relaciones
+
+Las relaciones indican cómo se van a relacionar dos tablas. 
+Dentro de una base de datos existen 3 tipos de relaciones:
+- Uno a uno.●Uno a muchos.
+- Muchos a muchos.¿Cómo podemos saber cómo se relaciona una entidad con otra?Planteando un ejemplo concreto que nos ayude a definir cómo interactúan esas dos entidades entre sí.
+
+**Cardinalidad**
+
+Es la forma en que se relacionan las entidades
+
+![cardi](./img/cardi.png)
+
+> Muchas veces vemos las notaciones como 1 a N o 1 a M. Son iguales, la letra se utiliza para representar “Muchos”.
+
+## Uno a uno (1:1)
+
+Un usuario tiene solo una dirección. Una dirección pertenece solo a un usuario.Para establecer la relación colocamos la clave primaria de la dirección en la tabla de usuarios, indicando que esa dirección está asociada a ese usuario (Clave foránea)
+
+![1-1](./img/1-1.png)
+
+## Uno a muchos (1:N)
+
+Un cliente puede tener muchas tarjetas. Una tarjeta pertenece solo a un cliente.Para establecer la relación colocamos la clave primaria del cliente en la tabla de tarjetas, indicando que esas tarjetas están asociadas a un usuario en particular.
+
+![1-n](./img/1-n.png)
+
+## Muchos a muchos (N:M)
+
+Un cliente puede comprar muchos productos. Un producto puede ser comprado por muchos clientes.En las relaciones N:M, en la base de datos, la relación en sí pasa a ser una tabla. Esta tabla intermedia —también conocida como tabla pivot— puede tener 3 datos: una clave primaria (PK) y dos claves foráneas (FK), cada una haciendo referencia a cada tabla de la relación.
+
+![n-m](./img/n-m.png)
+
+En este ejemplo, cliente_producto sería nuestra tabla intermedia. Cada fila de esta tabla representa un cruce entre cliente y producto. Podría ser, en este caso, una compra:●La fila 1 indica que el cliente 1 (Juan) compró el producto 1 (Pelota).●La fila 2 indica que Juan también compró el producto 2 (Laptop).●La fila 3 indica que una Laptop también fue comprada por el cliente 3 (Marta).
+
+![n-m-ej](./img/n-m-ej.png)
+
+![tipos](./img/tipos.jpg)
+
+> ver actividad de playground DER
+> ver actividad salud DH
+> Ver actividad universo lector
+
 # SQL
 
 Bienvenidos a un nuevo módulo de Base de Datos.
