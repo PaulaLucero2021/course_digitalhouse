@@ -1,3 +1,4 @@
+
 # C1 - Introduccion a la informatica
 
 **¿Qué es una computadora?**
@@ -2048,7 +2049,7 @@ Falso.
 JavaScript es un lenguaje de programación de bajo nivel. 
 Falso
 
-# Paradigmas de programación
+## Paradigmas de programación
 
 Un paradigma es una forma de pensar bajo un modelo preestablecido. Pero… ¿qué es un paradigma de programación?
 
@@ -2113,11 +2114,13 @@ decada 60:
 
 ![p-multi](./img/p-multi.png)
 
-# Del código al ejecutable
+## Del código al ejecutable
 
 Cuando escribimos un código, podemos hacerlo en un lenguaje similar al nuestro, pero… ¿cómo hace la computadora para entender este código?
 
 A continuación, veremos cómo trabaja el compilador, esta increíble herramienta que convertirá nuestro código en instrucciones que la computadora pueda entender y ejecutar: el código máquina.
+
+> Ver video: Del codigo al ejecutable.mp4
 
 **Como interpreta la maquina**
 
@@ -2168,6 +2171,8 @@ Tenemos lenguajes de programacion:
     Permiten escribir codigos que van a funcionar independiente de en donde corran
 
 La diferencia radica en la performace y el rendimiento
+
+> Ver ppt. Frameworks, IDEs...
 
 ## frameworks
 
@@ -2233,7 +2238,27 @@ Las características que más resaltan de un IDE son:
 - Visualiza gráficamente casi cualquier cosa, desde XML,JSON, UML, bases de datos, interfaces gráficas, etc.
 - Ayuda en tiempo real.
 
-# Escritorios remotos
+**Quizz**
+
+El objetivo de una librería no es otro que hacer más fácil y rápido el desarrollo. ¿Cuáles de las siguientes son librerías conocidas?
+Redux.
+Axios.
+Grunt.
+JUnit 5.
+
+Son herramientas mucho más simples y compactas que proporcionan un entorno de desarrollo simple. 
+Editores de textos
+
+Tienen como principal característica emplear el concepto de proyectos.
+IDEs
+
+Los frameworks no están ligados necesariamente a un lenguaje concreto.
+Verdadero.
+
+
+## Escritorios remotos
+
+> Ver video: Escritorios remotos
 
 - programas que nos permiten acceder e interactuar con una pc  distancia a travess de una conexion a internet desde donde lo necesitemos
 - no requieren conexion de red fisica ni un hardware adicional para vincular las computadoras
@@ -2259,7 +2284,7 @@ Desventajas
 - si el programa no posee es posible objeto de ciberataques
 - rendimiento depende de la calidad de conexion a internet
 
-# Máquinas virtuales
+## Máquinas virtuales
 
 Los servidores generalmente solo utilizaban un 30% del total de su capacidad, por lo que el otro 70% estaba constantemente desperdiciado. 
 Para solucionar estos problemas de mal aprovechamiento de recursos, se creó la virtualización, lo que nos permite en un mismo equipo poder estar corriendo diversos sistemas operativos que simulan ser computadoras reales. A continuación veremos más sobre este tema.
@@ -2275,6 +2300,8 @@ El formato más conocido o utilizado del segundo tipo de imágenes es el `.iso`,
 De esta manera, la imagen de un programa o sistema operativo puede ser trasladada e instalada en cualquier computadora.
 
 - capaz de contener en su interior un sistema operativo, haciendole creer que e suna computadora de verdad
+
+> Ver video: Maquinas virtuales
 
 hay 2 tipos de MV
 
@@ -2325,113 +2352,288 @@ cuando hay varias maquinas se puede afectar el rendimiento
 
 [ver beneficios de la virtualizacion](https://view.genial.ly/60a98f355e2a3d0d271c121c)
 
-# Redes
+# C16 - Redes
+
+Dispositivos conectados entre si, que envian y reciben datos para compartir informacion y recursos
+
+La finalidad de su creacion fue:
+
+- Acortar las distancias
+- Asegurar la confiabilidad y disponibilidad de la informacion
+- Aumentar la velocidad y la transmision de los datos
+- Reducir los costos
 
 > ver video: Redes y clasificacion en clase 16
 
+
 [Clasificacion de Redes](https://view.genial.ly/6071ae84bb4aff0d42db659c)
 
-# Medios de transmision
+![redes](./img/redes.png)
+
+1. ## Redes por alcance
+
+- PAN:
+
+![pan](./img/pan.png)
+
+- LAN
+
+![lan](./img/lan.png)
+
+- MAN
+
+![man](./img/man.png)
+
+- WAN
+
+![wan](./img/wan.png)
+
+2. ## Redes por grado de autenticacion
+
+- Red privada
+- Red publica
+
+3. ## Redes por tipo de conexion
+
+- Par trenzado
+
+![par-trenzado](./img/par-trenzado.png)
+
+- Cable coaxial
+
+![c-coaxial](./img/c-coaxial.png)
+
+- Fibra optica
+
+![f-optica](./img/f-optica.png)
+
+- Redes inalambricas
+
+![r-inal](./img/r-inal.png)
+
+- infrarrojo
+- Bluetooth
+- wifi
+
+**Quizz**
+
+¿Qué es una red?
+Conjunto de dispositivos independientes que se comunican y comparten recursos.
+
+Cuando hablamos de una Red MAN nos referimos a:
+Una red con un alcance de hasta 60 km.
+Red de área metropolitana.
+
+¿Cuáles son redes que enlazan los dispositivos mediante sistemas físicos o medios guiados?
+Coaxial.
+Fibra óptica.
+
+La extranet es una red que puede ser usada por todas las personas.
+Falso.
+
+------------------
+
+## Medios de transmision
 
 El medio de transmisión constituye el soporte físico a través del cual el emisor y receptor pueden comunicarse en un sistema de transmisión de datos.
 
 [medios guiados y no guiados](https://view.genial.ly/60744a7d653d280d8693dea3)
 
-## Medios guiados
+## **Medios de transmision guiados**
+
+![m-guiados.png](./img/m-guiados.png)
+![m-guiados-2.png](./img/m-guiados-2.png)
+
+|Nombre|Descripcion|
+|------|-----------|
+|**Cable coaxial**|10 Mbps, 750 MHz por defecto. Desde 500 hasta 800 m sin perdida.|
+|**UTP 5 y 5e**|Entre 100 Mbps y 1 Gbps, 100 MHz para cables UTP/FTP. Hasta 100 m sin pérdida.|
+|**UTP 6 y 6e**|Hasta 10 Gbps, entre 250 y 500  MHz para cables  FTP/SFTP. Hasta 100 m sin pérdida.|
+|**UTP 7 y 7a**| 10 Gbps, 600 y 1000 MHz para cables SFTP. Hasta 100 m sin perdida.|
+|**UTP 8**| 40 Gbps, 1200 MHz para cables SFTP. Hasta 30 m sin perdida.|
+|**Fibra óptica**|Desde 10 hasta 200 Gbps, hasta 4700 MHz. 80 Km sin pérdida.|
 
 **Pares trenzados**
 
 Conjunto de pares de hilos de cobre conductores, cruzados entre sí. La forma trenzada del cable se utiliza para reducir la interferencia eléctrica con respecto a los pares cercanos que se encuentran a su alrededor. La velocidad máxima de transmisión es de 1 Gbps y la distancia entre repetidores es de 2 a 10 km.
 
-**Cable coaxial**
+Se utiliza con frecuencia para las comunicaciones telefónicas o las redes Ethernet. Dos cables conductores de un mismo circuito se retuercen entre sí. Los cables están conformados por pares de cables trenzados, de esa forma obtienen protección de interferencias externas. Existen varios tipos, como UTP, STP, SFTP, entre otros. Dependiendo la categoría alcanzan diferentes distancias que pueden alcanzar los 100 m.
+
+**Cable coaxil**
 
 Tiene un alambre de cobre duro en su parte central. La velocidad máxima de transmisión es de 2 Gbps y la distancia entre repetidores es de 10 a 100 km.
+
+Está diseñado para transmitir señales de alta frecuencia.Compuesto por un cable de cobre, tres protecciones aislantes y blindaje que previenen de la interferencia de señales electromagnéticas externas. Con su blindaje el cable coaxial puede soportar grandes longitudes de distancias. 
 
 **Fibra óptica**
 
 Es un enlace hecho con un hilo muy fino de material transparente y recubierto de un material opaco que evita que la luz se disipe. Por el núcleo, es una hebra fina hecha de vidrio o plásticos, se envían pulsos de luz, no eléctricos. La velocidad máxima de transmisión es mayor a 10 Gbps y la distancia entre repetidores es mayor a 100 km.
 
-![c-guiados](./img/c-guiados.png)
+Es un tipo de cable que está compuesto por varias hebras de vidrio, los cuales transmiten datos en forma de haz de luz. Existen dos tipos: monomodo y multimodo. La diferencia radica en que el último posee un núcleo más grande que le permite transmitir datos en sentidos opuestos al mismo tiempo.
 
-## Medios no guiados
+## **Medios de transmision no guiados**
 
 Los medios no guiados transmiten toda su información utilizando el aire como medio de transmisión. Grandes ejemplos en la actualidad de estos medios son el wifi, bluetooth o la comunicación satelital.
 
-**Señales de bluetooth**
+|Nombre|Descripcion|
+|------|-----------|
+|**Wifi / bluetooth**|Se transmiten los datos en forma de onda a través del aire. Pueden estar direccionadas o ser omnidireccionales. Las primeras tienen más distancia de cobertura, pero en una sola dirección. En cambio, las segundas pueden ir en todas las direcciones, pero tienen menor distancia de propagación. **Señales de bluetooth** Hacen posible la transmisión de los datos mediante un enlace por radiofrecuencia. **Señales de wifi** Permiten la interconexión inalámbrica de dispositivos electrónicos.|
+|**Microondas**|Transmiten en forma muy direccional, pero con grandes volúmenes de transmisión, llegando a los 10 Mbps.|
+|**Infrarrojo**|Poseen las mismas técnicas que las empleadas por la fibra óptica, pero son por el aire. Son una excelente opción para las distancias cortas, hasta los 2 Km. Son ondas direccionales incapaces de atravesar objetos sólidos.|
 
-Hacen posible la transmisión de los datos mediante un enlace por radiofrecuencia.
-
-**Señales de infrarrojo**
-
-Son ondas direccionales incapaces de atravesar objetos sólidos.
-
-**Señales de wifi**
-
-Permiten la interconexión inalámbrica de dispositivos electrónicos.
-
-![m-noguiados](./img/m-noguiados.png)
-
-## Lo que se viene
+[**Lo que se viene**](./img/new.png)
 
 A futuro existen diferentes proyectos que mejorarían notablemente las comunicaciones, aunque algunos son teóricos aún, se esperan grandes resultados de estas tecnologías.
 
-![new](./img/new.png)
+|Nombre|Descripcion|
+|---|---|
+|Li-fi|Se trata de un nuevo tipo de conexión inalámbrica que utiliza fuentes de luz en lugar de microondas para transmitir datos, de ahí su nombre: Light Fidelity (fidelidad de la luz).|
+|6G|Es una tecnología que revolucionará toda la red. Sería 50 veces más rápida que el 5G y alcanzará una velocidad de descarga de hasta 1 TB por segundo.|
 
-# Velocidades de internet
+
+**Quizz**
+
+¿Qué tipos de medios de transmisión de datos vimos?
+Medios guiados.
+Medios no guiados.
+
+Este medio de transmisión guiado lleva en el centro un alambre de cobre duro y se encuentra recubierto por un material aislante.
+Cable coaxial.
+
+En el medio de transmisión por fibra óptica, la velocidad de transmisión es de hasta:
+10 gbps.
+
+¿Las señales por wifi y Bluetooth forman parte de los medios no guiados? 
+Verdadero.
+
+Las señales por bluetooth tienen el mismo alcance que una señal wifi solo que cambia el protocolo.
+Falso.
+
+
+----------------
+
+## Velocidades de internet
 
 Internet es una red global donde es posible acceder a casi cualquier tipo de información, mediante la comunicación con cualquier persona o dispositivo en el mundo. Posee las mismas características que las otras redes de comunicaciones de datos. 
 
-![c-red-datos](./img/c-red-datos.png)
+**Caracteristicas de una red de datos**
 
-# Bajada de datos
+|Nombre|Descripcion|
+|---|---|
+|Velocidad|Es el tiempo en el que se transmiten los datos, la rapidez de subida y bajada depende del medio y estándares que utilicemos para comunicarnos, se mide generalmente en megabits por segundo.|
+|Seguridad|Su objetivo está en evitar que intrusos accedan a la información transmitida.|
+|Confiabilidad|Mide la relación de fallos en la transmisión: menos fallos, más confiable.|
+|Escalabilidad|Evita que el servicio no decaiga si el número de usuarios aumenta.|
+|Disponibilidad|Es la capacidad de la red para estar siempre funcionando.|
+
+**Bajada de datos**
 
 Es la capacidad que tiene Internet para navegar entre la red, es decir, la velocidad con la cual podemos descargar elementos —por ejemplo, páginas web—.
 
-# Subida de datos
+**Subida de datos**
 
 Es la capacidad de cargar datos en la Web, por ejemplo, podríamos verlo en el tiempo que demora en subir un video a YouTube.
 
-# Paquetes
+**Paquetes**
 
 Son los bloques en lo que se divide la información al viajar por la red. El pinges el tiempo exacto que demora un paquete de datos en ser enviado de un dispositivo a otro, se mide en milisegundos. 
 
-## Test develocidad
+## [Test de velocidad](https://www.speedtest.net/es)
 
 Un test de velocidad, o speedtest, es una herramienta utilizada para evaluar la perfomance de nuestra de red datos o de Internet. En ella podemos ver nuestra velocidad de subida, bajada y ping.Desde aquí podemos ingresar a un test sencillo, que evaluará estos aspectos. Luego de ingresar, hacemos clic en “Inicio”, se realiza el test y, a continuación, nos mostrará una pantalla como la siguiente. 
 
-[Test_velocidad](https://www.speedtest.net/es)
+**Quizz**
+
+Internet es la mayor red de datos del mundo
+Verdadero.
+
+¿En qué unidad se mide el ping?. 
+milisegundos (ms).
+
+¿Qué es un bloque de datos?: 
+Las partes en las que se divide un paquete.
+Las partes en las que se divide la información.
+
+¿Cuáles de las siguientes palabras no es una característica de una red?
+Trazabilidad
+
+La velocidad de bajada es más importante que la de subida.
+Falso.
+
+-------------------
+
+## Componentes red
+
+|Nombre|Descripcion|
+|---|---|
+|Hub|El Hub es un dispositivo simple con una única misión, la de interconectar losordenadores de una red local. Su funcionamiento es sencillo, cuando undispositivo de la red local que están conectados a él le envía datos, el Hub losreplica y transmite instantáneamente al resto de ordenadores de esta red local.|
+|Switch|Los Switch son los hermanos listos de los Hub, y también se utiliza para la creación de redes locales. La principal diferencia es que a través del Switch la información enviada por el ordenador de origen va directamente al ordenador de destino sin replicarse en el resto de equipos que estén conectados.|
+|Modem|Un módem es un dispositivo que se encuentra entre el router y la línea denuestra operadora. Cuando establecemos la conexión con el operador, a nivelde red, el módem obtiene tiene una dirección IP pública que, lógicamente, es única. Solamente puede haber una dirección IP pública en Internet, y queidentificará nuestra conexión.|
+|Router|El router es el aparato que todos tenemos en nuestro hogar para conectarnos a la red. Básicamente su función es conectarse al módem y también a los diferentes equipos que tengamos. De esta forma puede recibir la información y expandirla a otros dispositivos ya sea por cable o mediante Wi-Fi.Un router asigna una dirección IP local a cada dispositivo, a diferencia del módem que tiene una IP pública única. En este caso, el router lleva Internet a nuestros dispositivos y es capaz de crear una red LAN.|
 
 > Ver video: Red en casa
 
-# Componentes red
-
-![Componentes](./img/c-b-in1.png)
-
-![Componentes](./img/c-b-in2.png)
-
-> Ver mas en ppt: Componentes de red
+> Ver mas en ppt: Componentes de red, plc, repetidor wifi.
 
 [Problemas de red: Pasos](https://view.genial.ly/60a86042be5e480d57b1c459)
 
-# Modelo OSI
+-----------
+
+# C17 - Modelo OSI
 
 Es un modelo conceptual de interconexión que permite que diversos sistemas se comuniquen mediante un estándar. Se puede entender como un lenguaje universal de comunicación entre redes, computadoras, servidores, etc., que se basa en la idea de dividir un sistema de comunicación en siete capas y cada una de ellas trabaja sobre la precedente.
 
+podemos decir que cada capa contiene unidades de datos que se van convirtiendo en las de la capa superior. A continuación, podemos ver el diagrama que relaciona la capa del modelo con los datos de la misma.
+
 [Datos_segun_capas_modelo_OSI](https://view.genial.ly/60b299dcfafa9d0d8314a932)
+
+1. La capa física
+Capa de dispositivos físicos que participan en la transferencia de datos y se convierten en una secuencia de bits, que es una serie de unos y ceros. Electricidad a bits
+
+2. La capa de enlace de datos
+Es muy similar a la capa de red, pero lo que hace es facilitar la transferencia de datos entre dos dispositivos ubicados en una misma red. Toma los paquetes de la capa de red y los rompe en trozos más pequeños denominados tramas.
+Al igual que la capa de red, esta capa es la responsable del control de flujo y de errores respecto de esa comunicación dentro de la red. Contiene la subcapa “MAC address” que ayuda a controlar el flujo de paquetes de datos hacia y desde una tarjeta de interfaz de red a otra a través de un canal compartido en una red
+
+3. La capa de red
+Es la responsable de posibilitar las transferencias de datos entre dos redes diferentes —concepto de ruteo—. Su objetivo es fragmentar, en el dispositivo emisor, los datos de la capa de transporte en unidades más pequeñas llamadas paquetes y rearmarse después en el dispositivo receptor. La capa de red también busca el mejor camino físico para que los datos lleguen a su destino, esto se conoce como enrutar. Algunos la denominan capa de Internet
+
+4. La capa de transporte
+Esta capa es responsable de coordinar la transferencia de datos a través de las conexiones de red. Ayuda a regular varios elementos involucrados en la transmisión de datos entre sistemas finales y hosts. Dichos factores incluyen el tamaño, la secuencia, la velocidad y el destino del paquete de datos.
+Una vez que la capa de transporte ha administrado y verificado de manera efectiva los paquetes de datos, estos pasan hacia o desde la capa de red. Algunos de los ejemplos más conocidos de la capa de transporte incluyen el protocolo de control de transmisión (TCP) y el protocolo de datagramas de usuario (UDP).
+
+5. Capa de sesion
+Es la responsable de la apertura y cierre de comunicaciones entre dos dispositivos y su función es crear una sesión o conexión que permite que dos dispositivos se comuniquen entre sí. Una vez que se ha formado la sesión, los datos se pasan a la capa de transporte.
+Además de configurar una sesión, la conexión resultante entre las máquinas también se administra y finaliza una vez que la sesión termina en esta capa. La capa de sesión también es responsable de la autenticación y reconexión en caso de que ocurra una interrupción de la red.
+
+6. Capa de presentacion
+La función principal de esta capa es definir el formato y el cifrado de los datos, gestionar la seguridad y confidencialidad de la red, compresión y empaquetado de texto. Codifica los mensajes desde el formato dependiente del usuario al formato común y viceversa, para la comunicación entre sistemas diferentes.
+
+7. Capa de aplicacion
+Es la capa que interactúa con los datos del usuario. Las aplicaciones de software, como navegadores web y clientes de correo electrónico, dependen de la capa de aplicación para iniciar comunicaciones
+
+![datos-osi](./img/datos-osi.png)
+
+**Flujo de datos**
 
 Cuando los datos se envían de un dispositivo a otro, deben viajar hacia abajo a través de cada capa en el dispositivo de envío y luego hacia arriba a través de las capas en el extremo receptor. El diagrama del Modelo OSI ilustra esto mismo:
 
 ![modelo_osi](./img/modelo_osi.png)
 
-Al comienzo del proceso, los datos se entregan a la capa de aplicación, esta realiza cualquier función que necesite en los datos, luego entrega los datos a la capa de presentación, que los pasa a la siguiente capa y así sucesivamente hasta la capa física.
+- Al comienzo del proceso, los datos se entregan a la capa de aplicación, esta realiza cualquier función que necesite en los datos, 
+- luego entrega los datos a la capa de presentación, que los pasa a la siguiente capa y así sucesivamente hasta la capa física.
+- Al llegar a la capa física, los datos se transmiten por el medio al dispositivo receptor.
+- En el extremo receptor, los datos son recogidos del medio por la capa física, que luego los entrega a la capa superior. 
+- Los datos viajan hacia arriba a través de todas las capas hasta llegar a la capa de aplicación. 
+- Luego, la capa de aplicación entrega los datos a la aplicación adecuada.
 
-Al llegar a la capa física, los datos se transmiten por el medio al dispositivo receptor.
+Ahora, a medida que los datos pasan de una capa a otra, los datos se manipulan de diferentes formas. 
 
-En el extremo receptor, los datos son recogidos del medio por la capa física, que luego los entrega a la capa superior. Los datos viajan hacia arriba a través de todas las capas hasta llegar a la capa de aplicación. Luego, la capa de aplicación entrega los datos a la aplicación adecuada.
-
-Ahora, a medida que los datos pasan de una capa a otra, los datos se manipulan de diferentes formas. Por ejemplo, la capa de transporte segmenta los datos y agrega un encabezado al frente de cada segmento. La capa de transporte siempre hace esto con los datos que recibe de las capas superiores; de hecho, está aplicando un protocolo a los datos, un conjunto de reglas que pertenecen a la capa.Las tres capas inferiores del modelo OSI, transporte, red y enlace de datos agrupan los datos de alguna manera y agregan encabezados y, a veces, avances a los datos. Un encabezado contiene información que se adjunta al frente de los datos, mientras que un tráiler es información adjunta al final.
-
-La capa de transporte agrupa los datos en segmentos. Entonces, decimos que la PDU (unidad de datos primaria) de la capa de transporte es el segmento. Agrega un encabezado a cada segmento y entrega cada segmento a la capa de red.
+**Por ejemplo**, 
+- la capa de transporte segmenta los datos y agrega un encabezado al frente de cada segmento. 
+- La capa de transporte siempre hace esto con los datos que recibe de las capas superiores; de hecho, está aplicando un protocolo a los datos, un conjunto de reglas que pertenecen a la capa. 
+- Las tres capas inferiores del modelo OSI, transporte, red y enlace de datos agrupan los datos de alguna manera y agregan encabezados y, a veces, avances a los datos. 
+- Un encabezado contiene información que se adjunta al frente de los datos, mientras que un tráiler es información adjunta al final.
+- La capa de transporte agrupa los datos en segmentos. Entonces, decimos que la PDU (unidad de datos primaria) de la capa de transporte es el segmento. Agrega un encabezado a cada segmento y entrega cada segmento a la capa de red.
 
 ![transporte](./img/f1.png)
 
@@ -2445,7 +2647,10 @@ La capa de enlace de datos convierte cada paquete en una trama adjuntando otro e
 
 ![transmision](./img/f4.png)
 
-En el extremo receptor, los datos se deben desempaquetar. La capa de enlace de datos elimina el primer encabezado y el final de la trama y pasa el paquete adjunto a la capa de red. Esta capa quita el encabezado del paquete y pasa el segmento adjunto a la capa de transporte. La capa de transporte espera a que lleguen suficientes segmentos y luego ensambla los segmentos para crear el flujo de datos original y lo pasa a los niveles superiores.
+En el extremo receptor, los datos se deben desempaquetar.
+- La capa de enlace de datos elimina el primer encabezado y el final de la trama y pasa el paquete adjunto a la capa de red. 
+- Esta capa quita el encabezado del paquete y pasa el segmento adjunto a la capa de transporte. 
+- La capa de transporte espera a que lleguen suficientes segmentos y luego ensambla los segmentos para crear el flujo de datos original y lo pasa a los niveles superiores.
 
 ![osi](./img/osi.png)
 
@@ -2455,83 +2660,109 @@ Mediante estos conceptos ahora podemos entender cómo es el flujo de datos entre
 
 # Protocolo de Internet
 
-El protocolo de Internet, conocido por sus siglas en inglés IP —Internet Protocol—, es el protocolo principal de la familia de protocolos de Internet y su importancia es fundamental para el intercambio de mensajes en redes informáticas. Es decir, son normas que nos van a regir el intercambio de información a través de una red de computadoras o dispositivos.
+El protocolo de Internet, conocido por sus siglas en inglés **IP** —Internet Protocol—, es el protocolo principal de la familia de protocolos de Internet y su importancia es fundamental para el intercambio de mensajes en redes informáticas. Es decir, **son normas que nos van a regir el intercambio de información a través de una red de computadoras o dispositivos.**
 
-El protocolo IP junto al protocolo de control de transmisiones —TCP o Transmission Control Protocol— sientan las bases de Internet. Para que el remitente pueda enviar un paquete de datos al destinatario, el protocolo IP define una estructura de paquetes que agrupa los datos que se tienen que enviar. Así, el protocolo IP establece cómo se describe la información sobre el origen y el destino de los datos y los separa de los datos útiles en la cabecera de cada paquete de información enviado.
+<p style="font-weight:700; font-size:17px; color:cyan">El protocolo IP junto al protocolo de control de transmisiones —TCP o Transmission Control Protocol— sientan las bases de Internet. </p>
 
-El protocolo IP identifica cada dispositivo que se encuentre conectado a la red mediante su correspondiente dirección IP. La dirección IP se utiliza para identificar de manera unívoca tanto al dispositivo como a la red a la que pertenece, dividiéndose así en dos partes:
+**Para que el remitente pueda enviar un paquete de datos al destinatario,** 
+- El protocolo IP define una estructura de paquetes que agrupa los datos que se tienen que enviar. Así, el protocolo IP establece cómo se describe la información sobre el origen y el destino de los datos y los separa de los datos útiles en la cabecera de cada paquete de información enviado.
 
-- Una dirección que identifica la red.
-- Una dirección que identifica al dispositivo dentro de esa red.
+El protocolo IP identifica cada dispositivo que se encuentre conectado a la red mediante su correspondiente dirección IP. 
+- La dirección IP se utiliza para identificar de manera unívoca tanto al dispositivo como a la red a la que pertenece, dividiéndose así en dos partes:
 
-No puede haber en una misma red y, por lo tanto, tampoco en Internet, dos dispositivos conectados con una misma dirección IP. La dirección IP es única y exclusiva para cada equipo conectado a Internet.
+    - Una dirección que identifica la red.
+    - Una dirección que identifica al dispositivo dentro de esa red.
+
+No puede haber en una misma red y, por lo tanto, tampoco en Internet, dos dispositivos conectados con una misma dirección IP. 
+- La dirección IP es única y exclusiva para cada equipo conectado a Internet.
 
 Pero, normalmente, no solemos memorizar las direcciones IP, sería casi imposible memorizar las IP de las webs a las que queremos acceder. Con este objetivo, se crearon los nombres de dominio. Entonces cada vez que queremos acceder a una página web utilizamos su nombre de dominio, como, por ejemplo, google.com en vez de utilizar su dirección de IP 78.45.789.03
 
-Quien se encarga de estas traducciones entre nombres de dominio y direcciones IP será el protocolo de sistema de nombres de dominio —Domain Name System o DNS— que tenga configurado nuestro dispositivo.
+<p style="font-weight:700; font-size:17px; color:cyan">Quien se encarga de estas traducciones entre nombres de dominio y direcciones IP será el protocolo de sistema de nombres de dominio —Domain Name System o DNS— que tenga configurado nuestro dispositivo. </p>
 
 > Ver video: Protocolos - clase 17
 
 [Protocolos de internet](https://view.genial.ly/607c2b39cd833f0cf3c240e8)
 
-## Protocolo de Internet IP
+***
 
-IP —Internet Protocol, en inglés— es un protocolo de comunicación de datos digitales clasificado funcionalmente en la capa de red —que es la que nos proporciona conectividad y la selección de ruta entre dos sistemas hosts—. La función principal es conseguir que los datos lleguen desde origen al destino, aunque no tenga una conexión directa. Estos datos se transfieren mediante paquetes conmutados —método de agrupar los datos transmitidos a través de una red digital en paquetes, estos están compuestos por los datos en sí y la información de control que nos indicará cual es la ruta que debe tomar para que los datos lleguen a destino—.
+## **Protocolo de Internet IP**
 
-Este protocolo se encargará de buscar el mejor método de enrutamiento, sin garantías de alcanzar el destino final, pero aun así trata de buscar la mejor ruta entre las conocidas por la máquina que esté usando IP. 
+IP —Internet Protocol, en inglés— 
+- es un protocolo de comunicación de datos digitales.
+- clasificado funcionalmente en la **capa de red** —que es la que nos proporciona conectividad y la selección de ruta entre dos sistemas hosts—. 
+- La función principal es conseguir que los datos lleguen desde origen al destino, aunque no tenga una conexión directa. 
+- Estos datos se transfieren mediante paquetes conmutados —método de agrupar los datos transmitidos a través de una red digital en paquetes, estos están compuestos por los datos en sí y la información de control que nos indicará cual es la ruta que debe tomar para que los datos lleguen a destino—.
 
-## TCP
+Este protocolo se encargará de buscar el mejor método de enrutamiento, **sin garantías de alcanzar el destino final**, pero aun así trata de buscar la mejor ruta entre las conocidas por la máquina que esté usando IP. 
 
-El TCP —Transmission Control Protocol, en inglés— garantiza que los datos sean entregados al lugar de destino, sin ningún error y en el mismo orden que se transmitieron. Se encuentra en una capa intermedia entre el protocolo IP y la aplicación y, esta ubicación se debe a que la aplicación necesita que la comunicación de la red sea confiable. El protocolo TCP
-da soporte a muchas de las aplicaciones más populares de Internet
-—navegadores, intercambio de ficheros, etcétera— y protocolos de aplicación HTTP, SSH, FTP, entre otros.
+## **TCP**
 
-## DNS
+El TCP —Transmission Control Protocol, en inglés— 
+- garantiza que los datos sean entregados al lugar de destino, sin ningún error y en el mismo orden que se transmitieron. 
+- Se encuentra en una **capa intermedia** entre el protocolo IP y la aplicación y, esta ubicación se debe a que la aplicación necesita que la comunicación de la red sea confiable. 
+- El protocolo TCP da soporte a muchas de las aplicaciones más populares de Internet —navegadores, intercambio de ficheros, etcétera— y protocolos de aplicación HTTP, SSH, FTP, entre otros.
 
-El sistema de nombres de dominio —DNS, en inglés Domain Name System—, es un sistema de nomenclatura jerárquico descentralizado para dispositivos conectados tanto a Internet como a redes privadas, que asocia información con el nombre del dominio. Su función principal es “traducir” los nombres de los dominios que estamos acostumbrados, como youtube.com, en identificadores binarios asociados con los equipos conectados a la red o direcciones IP, como 84.78.754.20.
+## **DNS**
 
-Para acceder a Internet los usuarios utilizan el nombre de dominio, en lugar de los complejos números de IP, pero ¿de dónde obtiene Internet las direcciones IP correspondientes a los nombres de dominio solicitados? Para ello, Internet utiliza su “agenda grande ” llamada DNS. El servidor DNS proporciona este servicio a Internet.
+El sistema de nombres de dominio —DNS, en inglés Domain Name System—, 
+- es un sistema de nomenclatura jerárquico descentralizado para dispositivos conectados tanto a Internet como a redes privadas, que asocia información con el nombre del dominio. 
+- **Su función principal es “traducir”** los nombres de los dominios que estamos acostumbrados, como youtube.com, en identificadores binarios asociados con los equipos conectados a la red o direcciones IP, como 84.78.754.20.
+- Para acceder a Internet los usuarios utilizan el nombre de dominio, en lugar de los complejos números de IP, pero ¿de dónde obtiene Internet las direcciones IP correspondientes a los nombres de dominio solicitados? Para ello, Internet utiliza su “agenda grande ” llamada DNS. 
+- El servidor DNS proporciona este servicio a Internet.
 
-## TCP/IP
+## **TCP/IP**
 
-El TCP/IP —protocolo de control de transmisión/protocolo de Internet— consiste en una combinación de los protocolos previamente mencionados y son la piedra angular de las redes informáticas modernas.
-
-## UDP
-
-El protocolo de datagramas de usuario —UDP, en inglés User Datagram Protocol— es un protocolo del nivel de transporte basado en el intercambio
-de datagramas —un datagrama es un paquete de datos y un paquete de datos es cada uno de los bloques en que se divide la información para enviar—.
-Su función es permitir el envío de datagramas a través de la red sin que se haya establecido previamente una conexión ya que el propio datagrama incorpora suficiente información de direccionamiento en su cabecera.
-
-El protocolo UDP es más ligero ya que no utiliza tantas capas como el protocolo TCP/IP porque no existe un control sobre el envío de los paquetes.
-Al ser orientada a la no conexión lo único que le interesa a este protocolo es enviar los datagramas lo más rápido posible, sin tener en cuenta si el paquete llegó completo o no. Se utiliza comúnmente para la transmisión de datos de alta velocidad, por ejemplo para streaming, juegos online, entre otros. 
-
-## HTTP
-
-El protocolo de transferencia de hipertexto —HTTP, en inglés Hypertext Transfer Protocol— es un protocolo orientado a transacciones y sigue el esquema petición-respuesta entre un cliente y un servidor. El cliente
-—normalmente un navegador web— realiza una petición enviando un mensaje, con cierto formato al servidor. El servidor —se le suele llamar un servidor web— le envía un mensaje de respuesta, permitiendo la comunicación entre ambos. Tiene como desventaja que no está protegida y podríamos pensar que toda la información está en texto puro. Si alguien intercepta una comunicación, podría ver nuestros datos.
-
-## HTTPS
-
-El protocolo seguro de transferencia de hipertexto —en inglés, Hypertext Transfer Protocol Secure o HTTPS— está destinado a la transferencia segura de datos de hipertexto. Lo que hace es encriptar los datos que son enviados entre clientes y servidores utilizando algoritmos de encriptación, de este modo toda la información sensible, como números de tarjetas, números de teléfono, claves de acceso, entre otros, pueden ser enviados de manera segura. Si alguien intercepta una comunicación, no podría ver nuestros datos sensibles, solamente obtendría un mensaje encriptado y este va a ser muy difícil de desencriptar.
+El TCP/IP —protocolo de control de transmisión/protocolo de Internet— 
+- Consiste en un par de protocolos que permiten la comunicación entre los dispositivos o computadoras pertenecientes a una red sin importar si el software o el hardware de cada uno es diferente. 
+- Este protocolo funciona de la siguiente forma: cuando se transfiere información de un dispositivo a otro —por ejemplo, mensajes de correo electrónico o cualquier otro tipo de datos— esta información no es transmitida de una sola vez, sino que se divide en pequeñas partes. 
+- El modelo TCP/IP es usado para comunicaciones en redes y, como todo protocolo, describe un conjunto de guías generales de operación para permitir que un equipo pueda comunicarse en una red. 
+- TCP/IP provee conectividad de extremo a extremo especificando cómo los datos deberían ser formateados, direccionados, transmitidos, enrutados y recibidos por el destinatario.
 
 
-# Protocolo de internet
+## **UDP**
 
-El protocolo de control de transmisión/protocolo de Internet —TCP/IP— consiste en un par de protocolos que permiten la comunicación entre los dispositivos o computadoras pertenecientes a una red sin importar si el software o el hardware de cada uno es diferente. Este protocolo funciona de la siguiente forma: cuando se transfiere información de un dispositivo a otro —por ejemplo, mensajes de correo electrónico o cualquier otro tipo de datos— esta información no es transmitida de una sola vez, sino que se divide en pequeñas partes. El modelo TCP/IP es usado para comunicaciones en redes y, como todo protocolo, describe un conjunto de guías generales de operación para permitir que un equipo pueda comunicarse en una red. TCP/IP provee conectividad de extremo a extremo especificando cómo los datos deberían ser formateados, direccionados, transmitidos, enrutados y recibidos por el destinatario.
+El protocolo de datagramas de usuario —UDP, en inglés User Datagram Protocol— 
+- es un protocolo del nivel de transporte basado en el intercambio de datagramas —un datagrama es un paquete de datos y un paquete de datos es cada uno de los bloques en que se divide la información para enviar—.
+- Su función es permitir el envío de datagramas a través de la red sin que se haya establecido previamente una conexión ya que el propio datagrama incorpora suficiente información de direccionamiento en su cabecera.
+- El protocolo UDP es más ligero ya que no utiliza tantas capas como el protocolo TCP/IP porque no existe un control sobre el envío de los paquetes.
+- Al ser orientada a la no conexión **lo único que le interesa a este protocolo es enviar los datagramas lo más rápido posible**, sin tener en cuenta si el paquete llegó completo o no. 
+- Se utiliza comúnmente para la transmisión de datos de alta velocidad, por ejemplo para streaming, juegos online, entre otros. 
 
-# Refrescando nuestros conocimientos de redes
+## **HTTP**
+
+El protocolo de transferencia de hipertexto —HTTP, en inglés Hypertext Transfer Protocol— 
+- es un protocolo orientado a transacciones y sigue el esquema petición-respuesta entre un cliente y un servidor. 
+- El cliente —normalmente un navegador web— realiza una petición enviando un mensaje, con cierto formato al servidor. 
+- El servidor —se le suele llamar un servidor web— le envía un mensaje de respuesta, permitiendo la comunicación entre ambos. 
+- Tiene como desventaja que no está protegida y podríamos pensar que toda la información está en texto puro. Si alguien intercepta una comunicación, podría ver nuestros datos.
+
+## **HTTPS**
+
+El protocolo seguro de transferencia de hipertexto —en inglés, Hypertext Transfer Protocol Secure o HTTPS— 
+- Está destinado a la transferencia segura de datos de hipertexto. 
+- Lo que hace es encriptar los datos que son enviados entre clientes y servidores utilizando algoritmos de encriptación, de este modo toda la información sensible, como números de tarjetas, números de teléfono, claves de acceso, entre otros, pueden ser enviados de manera segura. 
+- Si alguien intercepta una comunicación, no podría ver nuestros datos sensibles, solamente obtendría un mensaje encriptado y este va a ser muy difícil de desencriptar.
+
+***
+
+**Refrescando nuestros conocimientos de redes**
 
 ¿Recuerdan el armado de la red hogareña en donde contábamos con algunos dispositivos como notebooks, tablets y teléfonos, y mediante un router conectado a Internet repartiamos direccionamiento IP y teníamos una red privada con conexión a Internet? ¿Pero qué pasa a bajo nivel de nuestras redes? ¿Cómo es la comunicación?
 
-Para repasar el contenido establecemos en 2 protocolos básicos los tipos de comunicación de los dispositivos que se comunican mediante el protocolo IP.
+Para repasar el contenido establecemos en 2 protocolos básicos **los tipos de comunicación de los dispositivos que se comunican mediante el protocolo IP**.
 
 Estos son TCP y UDP. 
 
 ![tcp-udp](./img/tcp-udp.png)
 
-El protocolo TCP (protocolo de control de transmisión) establece una conexión antes de enviar el tráfico, luego envía los paquetes de datos y confirma la recepción.
+**El protocolo TCP** (protocolo de control de transmisión) 
+- establece una conexión antes de enviar el tráfico, 
+- luego envía los paquetes de datos y confirma la recepción.
 
-El protocolo UDP (protocolo de datagrama de usuario) no establece una conexión directa, es decir, el protocolo envía los datos a quien los reciba. Se utiliza para enviar información de manera rápida y sin esperar la confirmación de recepción de los paquetes enviados.
+**El protocolo UDP** (protocolo de datagrama de usuario) 
+- no establece una conexión directa, es decir, el protocolo envía los datos a quien los reciba. 
+- Se utiliza para enviar información de manera rápida y sin esperar la confirmación de recepción de los paquetes enviados.
 
 # C19 - Direcciones
 
@@ -2543,6 +2774,360 @@ De la misma manera que las casas de las personas son identificadas y ubicadas a 
 > Ver video - Clase 19: Direcciones IP
 > Ver .ppt - Clase 19: Direcciones
 
-# Direccionamiento
+### **Direcciones IP**
+
+Una dirección IP es un número único que representa la ubicación de un dispositivo dentro de Internet o de una red. 
+IP significa “protocolo de Internet” y son una cadena de números separados por puntos. 
+Esta dirección puede ser IPv4 e IPv6.
+
+Las direcciones IPv4 se expresan como un conjunto de cuatro números, un ejemplo podría ser la dirección 192.158.1.38.
+
+Cada número del conjunto puede oscilar entre 0 y 255. Por lo tanto, el rango   de   direccionamiento IP completo va desde `0.0.0.0` a `255.255.255.255`
+
+Internet se basa en la suite de protocolos de red TCP/IP. 
+- A cada computadora en Internet se le asigna una dirección de Protocolo de Internet (IP) única, que en la actualidad es un número de 32 bits representado por cuatro cadenas de números, los cuales varían de 0 a 255 y se separan por puntos.
+- Cuando un usuario envía un mensaje a otro en Internet, primero se descompone en paquetes mediante el protocolo TCP. 
+- Cada paquete contiene su dirección de destino.
+- Después los paquetes se envían del cliente al servidor de red, y de ahí a tantos servidores como sea necesario para que lleguen a una computadora específica con una dirección conocida. 
+- En la dirección de destino, los paquetes se vuelven a ensamblar para formar el mensaje original.
+
+Existen dos tipos de direcciones IP públicas y privadas.
+
+**Las públicas** 
+
+Son todas aquellas que sirven para identificarnos en Internet, es decir, para identificar dispositivos en la gran red.
+
+![r-clases](./img/r-clases.png)
+
+**Las IP privadas** 
+
+Son el número asignado a un dispositivo dentro de una red privada. Es decir, para identificar, por ejemplo, nuestro celular, notebook, tablet, entre otros dispositivos, dentro de una misma red wifi en nuestro hogar. Se reservan para ello determinados rangos de direcciones:
+
+![r-clases-priv](./img/r-clases-priv.png)
+
+**Dirección IP estática o dinámica** 
+
+La dirección IP será estática o dinámica en función de si es siempre la misma o va cambiando. Dependiendo del caso, será asignada por el proveedor de acceso a Internet, un router o el administrador de la red privada a la que esté conectado el equipo.
+
+|Nombre|Descripción|
+|---|---|
+|Estáticas|Un número IP asignado de manera fija. Aunque el dispositivo con la IP asignada esté apagado, este continuará manteniendo la misma dirección.|
+|Dinámicas|Se asignan cuando el dispositivo está funcionando, dependiendo de las IP que están libres. A diferencia de las estáticas, si el dispositivo se apaga, cuando vuelva a encenderse podría llegar a tener otra IP diferente.|
+
+
+### **Direcciones MAC**
+
+Todos los dispositivos tienen una dirección MAC, la cual es la asignada por el fabricante a la hora de la creación del dispositivo de conexión. 
+
+Está compuesta por 48 bits, los cuales son alfanuméricos,que a su vez están divididos en dos segmentos donde uno identifica al fabricante y el otro al dispositivo. 
+
+![mac](./img/mac.png)
+
+Por sus siglas en inglés significa Media Access Control. 
+- Es un identificador único que cada fabricante le asigna a la tarjeta de red de sus dispositivos conectados, desde un ordenador o móvil hasta routers, impresoras u otros dispositivos. 
+- Cada dirección MAC es única a nivel mundial y, en teoría, son fijas para cada dispositivo.
+- Cada dirección MAC incluye seis parejas de números. 
+- Los primeros tres pares sirven para identificar al fabricante y los tres siguientes al modelo concreto. - Es importante tener en cuenta que un equipo puede contar con hardware variado para conectarse a las redes. 
+- De esta forma, es común tener una dirección MAC para Ethernet, otra para wifi y otra para bluetooth.
+
+Si queremos verificar la dirección MAC en Windows,debemos:
+- Pulsar las teclas `Windows+R` para abrir Ejecutar.- Escribir `cmd` y presiona `Enter` para ir al Símbolo desistema.
+- Escribir: `ipconfig /all` 
+
+Si queremos verificar la dirección MAC en MacOS, debemos:
+- Acceder a las Preferencias del Sistema y luego hacerclic en Red.
+- Hacer clic sobre Avanzado, que se encuentra en la parte inferior de la ventana.
+- En la pestaña Hardware se encuentra la información sobre la dirección MAC.
+
+Si queremos verificar la dirección MAC en distribuciones GNU/Linux, debemos:
+- Acceder a la consola y escribir `ifconfig`
+- La dirección MAC es la dirección que aparece en elcampo HWaddr.
+
+Esta información resulta muy útil para los administradores de sistemas que tienen que
+dirigir redes con cientos o miles de dispositivos conectados.
+
+### **Mascara de subred**
+
+Una subred es una combinación de números que sirve para delimitar el ámbito de una red de computadoras. 
+**El protocolo TCP/IP usa la máscara de subred para determinar si un host está en la subred local o en una red remota.**
+Su función es indicar a los dispositivos qué parte de la dirección IP es el número de la red, incluyendo la subred y qué parte es la correspondiente al host.
+
+Los números IP, como vimos anteriormente, poseen una parte que corresponde a la red y otra que corresponde al host:
+
+![m-subred-1](./img/m-subred-1.png)
+
+¿Cómo distingue el sistema qué parte es la red y qué parte es el host?A través de una máscara de subred:
+
+![m-subred-2.png](./img/m-subred-2.png)
+
+**¿Para qué sirve una máscara de subred?**
+
+Veamos un ejemplo. 
+
+Supongamos que en nuestra casa tenemos tres dispositivos conectados. 
+La IP del primero es 
+`192.168.1.2`, la del segundo, 
+`192.168.1.3` y la del tercero, 
+`192.168.1.4`. 
+Podemos ver que los tres primeros números son iguales mientras que el último cambia.
+
+**Lo que hace la máscara de subred es identificar esa parte fija de la IP de la parte variable.**
+
+La máscara le asignará el 225 a la posición de nuestra IP que no varía y le pone un 0 a la variable.
+
+![ej-mascara](./img/ej-mascara.png)
+
+Se pueden separar la dirección IP y la máscara de subred, la red y las partes de host de la dirección. Podemos verlo transformando las direcciones a binario:
+
+Dirección IP:
+`192.168.1.2 = 11000000.10101000.00000001.00000010`
+
+Máscara de subred:
+`255.255.255.0 = 11111111.11111111.11111111.00000000`
+
+Los primeros 24 bits se identifican como la dirección de red. 
+Los últimos 8 bits se identifican como la dirección de host. 
+
+Esto nos proporciona los siguientes números:
+
+![sub-r-h](./img/sub-r-h.png)
+
+Si el router tiene la dirección IP 192.168.1.1 y máscara 255.255.255.0, todo lo que se envía a una dirección IP con formato 192.168.1.X se manda hacia la red local; mientras que direcciones con distinto formato de dirección IP serán enviadas hacia otra red, como Internet. 
+
+### **Direcciones IP importantes** 
+
+Existen algunas IP dentro de las redes que solo un dispositivo puede tener y por lo que si otro dispositivo se asigna una de estas direcciones, la red podría no funcionar correctamente.
+
+|Nombre|Descripción|
+|---|---|
+|Router|La primera dirección disponible (por ejemplo 192.168.1.1) corresponde al router, el dispositivo que hace enlace con las otras redes, como Internet. De este modo, todos los dispositivos que quieran consultar algo en Internet lo primero que deben hacer es enviar la petición a la dirección del router, el cual se encargará de redirigir la petición.|
+|Broadcast|Es la dirección más alta de la red a la que pertenezca el dispositivo, y es utilizada por el router para enviar un mensaje de difusión a todos los dispositivos que tengan una IP asignada dentro de la red, en redes hogareñas generalmente es 192.168.1.255.|
+
+### **IPv6**
+
+IPv6 es la versión 6 del protocolo de Internet. 
+Está destinada a sustituir al estándar IPv4, ya que la anterior versión cuenta con un límite de direcciones de red que impide el crecimiento de la misma.
+
+**Ventajas de IPv6**
+|Nombre|Descripción|
+|---|---|
+|Número casi ilimitado de IPs únicas|Este nuevo protocolo permite que cada dispositivo conectado a Internet tenga su propia dirección IP. Una ventaja que poco a poco se va convirtiendo en un requisito con el continuo avance del Internet de las cosas.|
+|Autoconfiguración|El nuevo protocolo consta de mejores métodos para realizar la configuración automática, lo que supone una mejora significativa respecto al clásico DHCP utilizado en IPv4.|
+|Más seguridad|El protocolo IPv6 puede ser mejorado con IPsec (en inglés: Internet Protocol Security) para gestionar la encriptación y autenticación entre hosts. Proporciona un sólido marco de seguridad de punto a punto en la transferencia de datos.|
+|Más eficiencia|La gestión de paquetes es mucho más eficiente en IPv6.|
+
+**Quizz**
+
+Las redes públicas pueden tener IP dinámicas o fijas, a diferencia de las redes privadas.
+Falso
+
+La última dirección IP es una IP reservada.
+Verdadero.
+
+Una subred es una forma de facilitar el uso de redes grandes.
+Verdadero
+
+Cuál de las siguientes afirmaciones es correcta.
+La dirección MAC es asignada por el fabricante
+
+***
+
+## Direccionamiento
 
 > Ver video: Clase 19 - Direccionamiento
+
+
+![puertos](./img/puertos.png)
+
+**¿Cuál es la función de un routeren la red?**
+
+El router realiza las siguientes acciones:
+
+1. Recibe el paquete de datos.
+2. Busca cuál es la dirección de destino.
+3. Verifica la tabla de enrutamiento que tiene configurada.
+4. Procede a enviar el paquete a destino por la mejor ruta posible.
+
+**¿Cómo hace un router para enviar y recibir información?**
+
+Un router, para recibir o enviar información, utiliza tablas de enrutamiento, que son un conjunto de reglas que sirven para determinar qué camino deben seguir los paquetes de datos.
+
+Las tablas de enrutamiento contienen toda la información necesaria para hacer que uno o varios paquetes de datos puedan viajar a través de la red utilizando el mejor camino.
+
+**Componentes de una tabla de enrutamiento**
+
+Algunos componentes importantes de una tabla de enrutamiento son:
+
+- **Red de destino**: corresponde a la red de destino donde deberá ir el paquete de datos.
+- **Siguiente salto**: es la dirección IP de la interfaz de red por donde viajará el paquete de datos para seguir con su camino hasta el final.
+- **Interfaz de salida**: es la interfaz de red por donde deben salir los paquetes para llegar posteriormente a destino.
+
+## **Tipos de enrutamiento**
+
+### **Enrutamiento estático**
+
+Las tablas se crean de forma manual. El administrador de red las configura con la información de cómo alcanzar las diferentes redes remotas. 
+Este es responsable de que las redes sean accesibles y estén libres de bugs e inconsistencias.
+
+- Consume menos ancho de banda.
+- Consume menos memoria.
+- Se utiliza para redes pequeñas.
+- No es escalable.
+
+**Ventajas y desventajas del enrutamiento estático**
+
+- **Ventajas**: aunque el mantenimiento es complicado, no se consume ancho de banda de red para enviar mensajes entre routers.
+- **Desventajas**: cualquier cambio en la red requiere que el administrador agregue o elimine las rutas afectadas por dichos cambios.
+
+### **Enrutamiento dinámico**
+
+La información necesaria para crear y mantener actualizadas las tablas se obtienen de los demás routers de la red. 
+Estos utilizan protocolos de enrutamiento para intercambiar información con sus routers vecinos.
+
+- Alto consumo de ancho de banda.
+- Alto consumo de memoria.
+- Se utiliza para redes grandes.
+- Es automático.
+
+**Ventajas y desventajas del enrutamiento dinámico**
+
+- **Ventajas**: el administrador solo pone en marcha el enrutamiento dinámico, luego las tablas de enrutamiento se ajustan automáticamente ante cambios en la red.
+- **Desventajas**: consume mucho ancho de banda debido a los mensajes que intercambian los routers para configurarse automáticamente.
+
+## **Puertos**
+
+Cuando necesitamos acceder a un servicio desde Internet, es totalmente necesario abrir un puerto en nuestro router. 
+
+Actualmente disponemos de dos protocolos en **la capa de transporte**: `TCP` y `UDP`. 
+Por lo tanto, dependiendo del tipo de servicio que queramos utilizar, tendremos que abrir el puerto TCP o UDP, aunque también podría haber servicios que necesiten abrir un puerto TCP y UDP simultáneamente.
+
+Dentro de la comunicación por Internet, los protocolos TCP y UDP se encargan de:
+- establecer la conexión, 
+- ensamblar los paquetes de datos tras la transmisión 
+- y —a continuación— enviarlos a los programas a los que se dirigían en el receptor. 
+
+Para que esta transferencia pueda tener lugar, el sistema operativo debe generar y abrir entradas. 
+A cada entrada se le asigna un número de identificación específico. 
+Tras la transmisión, el sistema receptor sabe a dónde hay que suministrar los datos gracias al número de puerto. 
+
+En el paquete de datos siempre se incluyen dos números de puerto: el del emisor y el del receptor.
+
+Los puertos están numerados de manera consecutiva de 0 a 65535. 
+
+Algunos de estos números están estandarizados y se asignan a determinadas aplicaciones. 
+El responsable del registro es la *Internet Assigned Numbers Authority (IANA)*. 
+Junto a estos, también hay un amplio rango de números de puerto que se asignan de forma dinámica. 
+Un navegador usa un puerto de este tipo durante una visita a una página web. Una vez el usuario abandona la página, el número vuelve a quedar libre.
+
+El protocolo TCP es un protocolo conectivo, fiable y orientado a conexión. Esto significa que es capaz de retransmitir los segmentos de paquetes en caso de que haya alguna pérdida desde el origen al destino. 
+Si estamos utilizando algún protocolo en la capa de aplicación —como HTTP, FTP o SSH, donde todos ellos utilizan el protocolo TCP—, en la primera comunicación se realizará este intercambio de mensajes. 
+
+A continuación, listamos **algunos de los principales puertos TCP que usan muchos protocolos de la capa de aplicación** y también aplicaciones:
+
+|Puerto|Descripcion|
+|---|----|
+|Puerto 21| El puerto 21 por norma general se usa para las conexiones a servidores FTP en su canal de control, siempre que no hayamos cambiado el puerto de escucha de nuestro servidor FTP o FTPES.|
+|Puerto 22| por norma general este puerto se usa para conexiones seguras SSH y SFTP, siempre que no hayamos cambiado el puerto de escucha de nuestro servidor SSH.|
+|Puerto 25| el puerto 25 es usado por el protocolo SMTP para el envío de correos electrónicos. Este protocolo también puede usar los puertos 26 y 2525.|
+|Puerto 53| es usado por el servicio de DNS (Domain Name System).|
+|Puerto 80| este puerto es el que se usa para la navegación web de forma no segura (HTTP).|
+|Puerto 443| este puerto es también para la navegación web, pero en este caso usa el protocolo HTTPS, que es seguro y utiliza el protocolo TLS por debajo.|
+|Puerto 3306| puerto usado por las bases de datos MySQL.|
+|Puerto 8080| es el puerto alternativo al puerto 80 TCP para servidores web. Normalmente se utiliza este puerto en pruebas|
+|Puerto 53| es utilizado para servicios DNS. Este protocolo permite utilizar tanto TCP como UDP para la comunicación con los servidores DNS.|
+
+
+**Los puertos son puntos de conexión para el intercambio de información y la transmisión de datos.**
+
+Cuando enviamos datos desde nuestra red local a la externa el router utiliza una serie de canales o puertas en las que se organiza el contenido que enviamos. Estos son los puertos. 
+
+Funcionan como puertas que se abren y cierran y permiten el paso de la información que enviamos o recibimos en la red.
+
+**Todos los routers tienen un total de `65536` puertos** que van desde el 0 al 65535. La IANA, entidad que supervisa la asignación global de direcciones IP y otros recursos relativos a los protocolos de internet tiene establecido un estándar de asignación de puertos.
+
+Existen 3 grupos de puertos que tienen una función específica:
+
+- **Puertos del 0 al 1023**: Son los que están reservados para el sistema operativo de la computadora y los protocolos más importantes para su funcionamiento.
+
+- **Puertos del 1024 al 49151**: Son los puertos registrados, los que se utilizan por las aplicaciones y los juegos que instales en la computadora.
+
+- **Puertos del 49152 al 65535**: Puertos dinámicos o privados, corresponden a las aplicaciones que necesitan conectarse a un servidor.
+
+***
+
+# C20 - Intranet y transmisión de paquetes
+
+Una intranet es una red informática interna —normalmente de una empresa u organismo— basada en los estándares de Internet, en la que las computadoras están conectadas a uno o varios servidores web.
+
+Los datos que viajan a través de las redes se encapsulan en “tramas”. En caso de que la longitud de la trama sea mayor a la que se puede transmitir por un canal, esta se divide en pequeños fragmentos capaces de ser transmitidos y son reensamblados al llegar al destinatario.
+
+## **Intranet, extranet e internet**
+
+¿Escucharon hablar de estos conceptos alguna vez? Veamos de qué se trata.
+
+- **Intranet**: es una red informática que utiliza los protocolos de Internet para compartir información, sistemas operativos o servicios de computación dentro de una organización. Es interna, por lo que solo los miembros de esa organización tienen acceso a ella.
+
+- **Extranet**: es parte de la Intranet de una organización que se extiende a usuarios fuera de ella.
+
+- **Internet**: se define como una red de redes, ya que hace referencia a un entorno digital que conecta computadoras de todo el mundo y que permite el intercambio de información de forma pública.
+
+***
+
+**Cómo se transmite la información a través de Internet?**
+
+Para transmitir o recibir información más allá de nuestra red local, necesitamos la ayuda de nuestro proveedor de servicios de internet (ISP), quien nos da acceso a la misma conectándonos con otras redes.
+
+El ISP tiene reglas sobre qué información puede ser transmitida o no, de acuerdo a distintas legislaciones de cada territorio, por lo que existen soluciones alternativas para obtener conexiones más directas.
+
+> Ver video: Redes de direccionamiento externo
+
+## **VPN**
+
+Una red privada virtual, o por sus siglas en inglés también llamada VPN, es una tecnología que protege nuestra privacidad cuando utilizamos Internet dirigiendo nuestra conexión a través de un servidor que oculta la dirección IP y encripta la comunicación online.Cuando se utiliza una VPN, la información enviada desde la computadora pasa a través de uno de los servidores del proveedor de VPN antes de llegar a su destino. 
+
+**Ventajas**
+- Son fáciles de instalar y utilizar.
+- Velocidad No se ve afectada por el software de cifrado y los servidores.
+- Compatibilidad con la mayoría de los dispositivos. 
+
+**Desventajas**
+- Encriptación débil
+- Fallos del software: Esto puede ocasionar que los mensajes viajen sin cifrar y fuera de la red VPN.
+- Políticas de registro variadas
+
+## **TOR**
+
+A primera vista, la red Tor es similar a una VPN. Los mensajes hacia y desde sucomputadora pasan a travésde la red Tor en lugar deconectarse directamente a los recursos de Internet. Pero donde las VPN brindan privacidad, Tor brinda anonimato.
+
+**Ventajas**
+
+- Difíciles de apagar: La red está distribuida por lo que no hay un lugar central para hacerlo.
+- Anonimato casi completo.
+
+**Desventajas**
+- Lentitud: Los mensajes pasan por tres o más servidores y se cifran y descifran al menos 3 veces.
+- Dirigida por voluntarios: Por lo tanto, no hay ingresos para actualizaciones y mantenimiento.
+- Baja compatibilidad con dispositivos
+
+![vpn-tor](./img/vpn-tor.jpg)
+
+**Quiz**
+
+El enrutamiento o routing es:
+Elegir la mejor ruta para enviar datos desde una red a otra.
+
+La conexión entre dos computadoras depende de múltiples factores, por lo tanto, nunca se conectan a través de las misma direcciones IP.
+Falso La respuesta no es correcta. La conexión entre dos computadoras se establece siempre a través de las direcciones IP.
+
+¿Qué utiliza nuestra computadora para diferenciar solicitudes a diferentes aplicaciones que se encuentran en un mismo servidor?
+Puertos
+
+¿Qué es el ISP?
+El proveedor de servicios de Internet.
+Se encarga de recibir y enviar datos pudiendo aplicar filtros de normativas.
+
+Las tablas de enrutamiento nos sirven para determinar qué camino deben seguir los datos.
+Verdadero
+
+El Proxy y las VPN son __________ que se utilizan para _________.
+Protocolos/ el direccionamiento
