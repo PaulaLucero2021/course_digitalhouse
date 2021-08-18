@@ -3131,3 +3131,5 @@ Verdadero
 
 El Proxy y las VPN son __________ que se utilizan para _________.
 Protocolos/ el direccionamiento
+
+ejemplo parcial
