@@ -29,11 +29,11 @@ background-color: #90e0ef;
 }
 </style>
 
-<t>Programacion rientada a objetos</t>
+<t>Programacion orientada a objetos</t>
 
 ---
 
-## Índice
+## Índice <a id='up'></a>
 
 1. Introducción a la programación orientada a objetos
 - [C1- Que es Java](#c1)
@@ -42,11 +42,24 @@ background-color: #90e0ef;
     - [Primer programa](#c1c)
     - [Tipos de datos](#c1d)
     - [¿Qué es un tipo de dato?](#c1z)
-    - [Actividad PG](#c1pg)
+    - [Actividad PG](#c1pg) 
     - [Sintaxis Java](#c1y)
     - [Estructura de control if, for, while, switch](#c1e)
-    - [clase en vivo](#c1s)
-
+    - [Clase en vivo](#c1s) 🎥
+- [C2 - Introduccion a Java](#c2)
+    - [String, Integer, Float](#c2a)
+        - [.equals()](#c2a1)
+        - [.comparteTo()](#c2a2)
+        - [Paquetes](#c2a3)
+        - [String](#c2a4)
+        - [String vacía y String nula](#c2a5)
+        - [Integer](#c2a6)
+        - [Float](#c2a7)
+        - [Date](#c2a8)
+    - [Ingreso de datos, Scanner](#c2b)
+    - [Funciones](#c2c)
+        - [Actividad PG](#c2c1)
+    - [Array](#c2d)
 2. Programacion orientada a objetos en Java
 3. Patrones de disenio
 
@@ -184,6 +197,7 @@ public class Main {
     }
 }
 ```
+[🔺](#up)
 
 ## Sintaxis Java <a id='c1y'></a>
 
@@ -228,6 +242,7 @@ string | Cadena de caracteres
 char | Un carácter (Ej: ‘a’) Unicode
 boolean | Verdadero o falso (true /false)
 
+[🔺](#up)
 
 ## Estructura de control en Java <a id='c1e'></a>
 
@@ -266,6 +281,7 @@ default:
 //código que se ejecuta si la variable tiene algún valor no enumerado
 }
 ```
+[🔺](#up)
 
 ### Estructuras de repetición:
 
@@ -290,6 +306,7 @@ while(condición){
 > Ver video: Ciclo for
 >
 > Ver PDF: Ejercitacion estructuras.pdf 
+[🔺](#up)
 
 ### Ejercitacion estructuras <a id='c1act'></a>
 
@@ -319,9 +336,514 @@ public class C1ejercitacionEstructuras {
 
 // Muestra en consola: El numero 10 es divisible por 5
 ```
+[🔺](#up)
 
 > Ver PDF: Definiendo mascotas / Ejercitacion tipo variables.pdf <a id='c1s'></a>
 
+<!-- inicio actividad -->
+### Solucion actividad sincronica
+
+```java
+public class c1_actividad_mascotas {
+    public static void main(String[] args) {
+        // Manchita
+        String nombrePerro = "Manchitas";
+        Integer edadPerro = 2;
+        Double comidaPerro = 1.5;
+        String sonidoPerro = "Guau guau guau";
+        System.out.println("El perro se llama "+nombrePerro+" tiene "+edadPerro+" años, come "+comidaPerro+" kilos de comida. Y me dice "+sonidoPerro);
+
+        //Nemo
+        String nombrePez = "Nemo";
+        Integer edadPez = 1;
+        Double comidaPez = 0.3;
+        String sonidoPez = "Glup glup";
+        System.out.println("El pez se llama "+nombrePez+" tiene "+edadPez+" años, come "+comidaPez+" kilos de comida. Y me dice "+sonidoPez);
+
+    }
+}
+```
+<!-- fin actividad sincronica -->
+
+# C2 - Introduccion a Java <a id='c2'></a>
+
+## String, Integer, Float <a id='c2a'></a>
+
+
+> Ver PDF: Clases String, Integer, Float.pdf
+
+<!-- inicio resumen pdf -->
+
+## **El lenguaje Java**
+
+El núcleo de Java son las clases, más adelante veremos que son y cómo construirlas.
+Pero para comenzar a trabajar debemos comenzar a utilizar las clases propias de Java.
+
+## Variables
+
+En Java encontramos como herramienta para el desarrollo <r>los tipos primitivos, llamamos así a los tipos de datos que solo nos permiten almacenar un valor.</r>
+**Por ejemplo:** `int`, `float`, `double` y `char`. 
+Cuando definimos una variable con estos tipos primitivos, solo podemos almacenar valores.
+
+## Clases
+
+En este caso tendremos <r>un elemento que, además de almacenar un valor, nos permite realizar ciertas operaciones que ya vienen programadas, a estas operaciones las llamamos métodos.</r>
+**Por ejemplo:** `String` es una clase, por eso, se la inicializa en mayúscula. 
+**Todas las clases las nombramos con la inicial en mayúscula**, si definimos:
+
+```java
+String nombre
+```
+Al utilizar nombre, veremos que nos ofrece los métodos disponibles
+
+![c2](./img/c2.png)
+
+Estas son funciones que ya vienen resueltas y solo podemos utilizarlas con la clase a la cual le pertenece, es decir, cada clase en Java tiene sus propios métodos.
+
+Para comenzar a conocer cómo funcionan las clases propias del lenguaje, vamos a nombrar 3 clases que nos resultan útiles —y de hecho String ya la utilizamos en nuestra primera clase—: 
+String, Integer, Float, notemos que todas comienzan con la
+inicial en mayúscula.
+
+**Las clases `Integer` y `Float` son equivalentes a los tipos de datos primitivos, es decir, me permiten almacenar valores de los tipos indicados, pero además me dan ciertas funcionalidades.** 
+
+> Se suele decir que envuelven los tipos primitivos.
+
+## `.equals()` <a id='c2a1'></a>
+
+Algo a tener en cuenta cuando usamos estas clases es que no podemos usar operadores como `“==”`, para efectuar una comparación por igual usamos `.equals()`, 
+por ejemplo:
+
+```java
+nombre.equals(“Juan”) 
+```
+Esto nos devuelve `true` en el caso que en nombre se guarde la cadena “Juan” y falso en caso contrario.
+
+El **`equals()`** se utiliza para comparar por igual, siempre que estemos trabajando con clases.
+
+## `.compareTo()` <a id='c2a2'></a>
+
+Si queremos comparar si un valor es mayor o menor que otro debemos usar `.compareTo()`
+
+Otra cosa a destacar es que una `String` a la cual no le asignamos nada tiene el valor `null`. 
+**Esto sucede con todas las clases, si definimos un elemento (objeto) de una clase inicialmente tendrá el valor null.**
+
+[🔺](#up)
+
+## Paquetes <a id='c2a3'></a>
+
+Para organizar las clases, existen los paquetes, estos son contenedores donde se pueden agrupar las clases. Más adelante los utilizaremos para nuestras clases, pero por ahora debemos saber que también las clases de Java se encuentran agrupadas en paquetes, o como su nombre en inglés: package.
+
+> Ver pdf: String, Integer, Float
+
+<!-- inicio resumen PDF -->
+
+## String <a id='c2a4'></a>
+
+Para utilizar datos de tipo texto, vamos a declararlos como String. Las Strings nos permiten utilizar funciones ya programadas, que le pertenecen. Las llamamos métodos.
+
+```java
+public static voidmain(String[] args){
+    String nombre;
+}
+```
+A partir de esta variable vamos a ver cómo utilizar algunos de estos métodos de uso frecuente.
+
+**Codigo ejemplo**
+
+Métodos usados: 
+
+```java
+.length() //calcula longitud del string
+.toUpperCase() //convierte a mayuscula
+.equals() //comprueba
+.toChar() //obtiene caracteres en el () indicamos la ubicacion 
+```
+
+```java
+String nombre= "Juan";
+int cantidad;
+char inicial;
+
+cantidad = nombre.length(); 
+
+nombre.toUpperCase(); 
+
+if(nombre.equals("JUAN")){    
+    System.out.println("Se pasó a mayúscula");
+}
+inicial = nombre.charAt();
+
+```
+
+## String vacía 
+
+Si aún no hemos asignado nada a las String, entonces, contiene un valor `null`, **en ese caso no se pueden usar los métodos.**
+
+```java
+String nombre;
+
+if(nombre==null){ //Comprueba si aun no se ha inicializado
+    System.out.println("Cadena con valor nulo");
+}
+```
+
+## String vacía y String nula <a id='c2a5'></a>
+
+En una String podemos tener las dos situaciones: 
+Puede tener un valor nulo o estar vacía.
+
+| |  |
+|------- | ------- |
+`String nombre;`| Cadena que aún no se ha inicializado, esta en null. Aun no puedo utilizar métodos propios.
+`nombre = "";`| Cadena vacía.
+`nombre = "Juan";` | Cadena inicializada con el valor "Juan".
+
+## Integer <a id='c2a6'></a>
+
+Integer como clase y no como tipo primitivo se utiliza de una forma distinta.
+Para comenzar a utilizar un Integer tenemos dos posibilidades: 
+
+```java
+Integer valor = 0;
+```
+En este caso definimos y creamos un Integer, dándole un valor inicial 0
+
+```java
+Integer num = new Integer(1);
+```
+En la segunda forma hacemos algo similar, pero la parte de la izquierda es la definición y la parte de la derecha la creación con un valor inicial 1.
+
+>Cuando solo definimos algo de tipo Integer, su valor inicial es null, es necesario darle un valor inicial.
+
+**Codigo ejemplo**
+
+Comprobamos la relación entre dos números enteros, utilizando clasesMétodos usados: 
+`.equal()`, `.compareTo()`
+
+```java
+Integer valor1 = 10;
+Integer valor2 = 30;
+int comparar;
+
+if (valor1.equals(valor2)){ //comprobamos si son iguales
+    System.out.println("Son iguales"); 
+}
+else {
+    comparar = valor1.compareTo(valor2); //Compara la relacion entre dos valores, si valor 1 es mayor, dara 1, si valor2 es mayor, dara -1
+    if (comparar>0){
+        System.out.println("valor1 es mayor que valor2");
+    }
+    else {
+        System.out.println("valor2 es mayor que valor1");
+    }
+}
+```
+
+## Float <a id='c2a7'></a>
+
+Integer como clase y no como tipo primitivo se utiliza de una forma distinta.
+Para comenzar a utilizar un Integer tenemos dos posibilidades: 
+
+```java
+Float coeficiente=2.5f;
+```
+En este caso definimos y creamos un Integer, dándole un valor inicial `2.5f`, la f quiere decir `float`, si no lo ponemos se asume que es algo de tipo `Double`.
+
+```java
+Float num = new Float(0.5);
+```
+
+En la segunda forma hacemos algo similar, pero la parte de la izquierda es la definición y la parte de la derecha la creación con un valor inicial 0.5. 
+Al igual que `Integer`, si no tiene un valor inicial, está en `null`
+
+> Cuando solo definimos algo de tipo `Float`, su valor inicial es `null`, siempre es necesario darle un valor inicial.
+
+## Date <a id='c2a8'></a>
+
+La clase **Date** permite trabajar con fechas. A diferencia de las clases que vimos hasta ahora, si definimos un objeto de tipo **Date**, no es posible hacerlo vacío. Un objeto Date se crea con un valor inicial que el la fecha actual.
+
+```java
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        Date fecha = new Date();
+        System.out.println(fecha.toString()); //Muestra la fecha actual
+    }
+}
+```
+> Para usar Date es necesario agregar `import java.util.Date;`
+
+Para crear un Date con otro valor, lo hacemos de la siguiente manera:
+
+```java
+public static void main(String[] args) {
+    Date fecha = new Date(120,11,5);
+    System.out.println(fecha.toString());
+    //Muestra 5/12/2020
+}
+```
+Los parámetros que usamos son año, mes, día, teniendo en cuenta:
+al valor que colocamos para año le suma 1900:  
+```
+1900 + 120 = 2020 
+```
+los meses los enumera desde cero o sea 11 es en realidad 12 (diciembre)De esta forma obtenemos la fecha que necesitamos
+
+> Ver pdf: Ejercitacion - Integer,String.pdf
+
+<!-- HACER ejercitacion-->
+
+<!--FIN hacer ejercitacion -->
+
+## Ingreso de datos, Scanner <a id='c2b'></a>
+
+Muchos elementos de Java son clases, vimos anteriormente String, Integer y Float. 
+Para realizar la entrada y salida de datos también utilizamos clases propias de Java. 
+
+Una clase muy importante es `System`, en ella encontramos `System.in` y `System.out`, que nos permitirán <r>interactuar con las entradas y salidas del programa. </r>
+
+Ya vimos que `Sistem.out.println` nos permite mostrar un dato o mensaje. 
+Para ingresar valores vamos a utilizar `System.in`. 
+Las entradas se realizan mediante esta clase, es decir, **la información ingresa a través de System.in, pero para gestionarla y asignarla a las variables utilizaremos los métodos que nos provee `Scanner`**. 
+
+Veamos de qué se trata. 
+
+[Link: Ingreso de datos con Scanner](https://view.genial.ly/60abec1fea8a290d34b9fe66)
+
+### Que es Scanner
+
+Es una clase propia de Java, que nos permite ingresar valores. Tiene métodos, funciones ya programadas, que nos permiten ingresar distintos tipos de datos.
+
+### ¿Cómo lo creamos?
+
+Cuando definimos nuestro elemento de tipo Scanner, nos aparece esta indicación. Esto significa que para poder utilizarlo debemos agregar la clase correspondiente, que se encuentra en `java.util`
+
+```java
+public static void Main(String[] args) {
+    //write your code here
+    Scanner
+}
+```
+**Definición**
+
+Cuando aceptamos la sugerencia que se vio en la pantalla anterior, nos agrega el import, finalizamos la definición dándole un nombre como lo haríamos con cualquier variable.
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        //Write your code
+        Scanner lector;
+    }
+}
+```
+**Creación del objeto Scanner**
+
+Luego de definirlo, es necesario crear el objeto u instanciarlo.
+
+```java
+Scanner lector; //Definicion del objeto lector
+lector = new Scanner(System.in); //Creacion o instanciacion del objeto
+```
+Lo creamos asociado a System.in, es decir, todo ingreso de datos será interceptado por el Scanner.
+
+### Que metodos tiene?
+
+```java
+.nextByte() //para leer un dato de tipo byte.
+.nextShort() //para leer un dato de tipo short.
+.nextInt() //para leer un dato de tipo int.
+.nextLong() //para leer un dato de tipo long.
+.nextFloat() //para leer un dato de tipo float.
+.nextDouble() //para leer un dato de tipo double.
+.nextBoolean() //para leer un dato de tipo boolean.
+.nextLine() //para leer un string hasta encontrar un salto de línea.
+.next() //para leer un string hasta el primer delimitador, generalmente hasta un espacio en blanco o hasta un salto de línea. 
+```
+> Ver PDF: Ejemplos Scanner.pdf
+
+<!-- HACER resumen pdf -->
+
+<!-- FIN resumen pdf -->
+
+> Ver video: Scanner
+>
+> Ver PDF: Ejercictacion - Scanner.pdf
+
+<!-- HACER pdf -->
+
+<!-- FIN pdf -->
+
+## Funciones <a id='c2c'></a>
+
+> Ver PDF: Funciones
+
+<!-- inicio resumen pdf -->
+
+Las funciones en Java son similares a las vistas en JavaScript, pero hay algunas cosas a tener en cuenta por ser un lenguaje tipado, vamos a tener que definir más cosas.
+
+**¿Cómo definimos una función?**
+
+Para definirla vamos a considerar 3 cosas:
+
+- Qué devuelve la función
+- Qué nombre tiene
+- Los parámetros que necesitamos
+
+Cuando decimos qué devuelve nos referimos al tipo de dato que devuelve la función.
+Entonces la definición sería en forma general algo de este estilo.
+
+```
+Tipo devuelto nombre (parametros)
+```
+### Nombre
+
+El nombre debe ser lo más descriptivo posible, no importa si necesitamos unir dos o más palabras, por ejemplo para nombres descriptivos pueden ser:
+calcularTotal, asignarTurno, buscarNumeroMasRepetido, suma
+
+### Parámetros
+
+No hay muchas diferencias en cuanto a los parámetros, solo que es necesario indicar el tipo de cada uno, entonces para que una función reciba valores lo indicaremos de la siguiente manera.
+```
+(int num1, int num2)
+```
+```
+(double importe, String descripcion)
+```
+```
+(int cantidad, int posicion, String nombre)
+```
+
+## Tipo devuelto
+
+Hasta ahora, las diferencias no fueron tantas, tal vez, esta es la mayor diferencia con la forma en la que aprendimos en JavaScript.
+Las funciones pueden devolver un valor de retorno de algún tipo determinado, por ejemplo int, double, Integer, String, etc. En realidad pueden devolver cualquier cosa no solo valores, también estructuras enteras, lo veremos más adelante, pero hay que indicar que tipo tiene lo que devolvemos. 
+
+Veamos algunos ejemplos
+```java
+int suma(int num1, int num2)
+```
+```java
+double calcularTotal(double importe, int cantidad)
+```
+De esta forma tendremos definida una función con un valor de retorno.
+
+Pero hay otro tipo de funciones, las que no devuelven nada en ese caso en donde
+indicamos el tipo devuelto colocaremos la palabra reservada `void`. 
+
+Veamos un ejemplo.
+
+```java
+void mostrarMensaje(String mensaje)
+```
+Usamos las funciones de tipo void, cuando queremos que nuestra función sólo realice una serie de pasos o acciones y no nos devuelva nada.
+
+## Desarrollo de la función
+
+Hasta ahora vimos cómo definir una función, ahora veamos que varía en la
+implementación, vamos a tener dos situaciones. 
+1. Que la función tenga valor de retorno o 
+2. que no devuelve nada.
+
+En el primer caso, debemos incluir un `return` con el valor devuelto, el tipo de este valor tiene que coincidir con el tipo de dato indicado como tipo devuelto.
+
+```java
+int suma(int num1, num2)
+{
+return num1,num2;
+}
+```
+**¡El valor retornado tiene que ser del tipo indicado!**
+
+En caso de tener una función no tenga tipo de retorno, nos quedaría así:
+
+```java
+void mostrarMensaje(String mensaje)
+{
+System.out.println(mensaje);
+}
+```
+
+<!-- fin resumen pdf -->
+
+> Ver PDF: Ejercitacion - funciones.pdf
+
+<!-- HACER -->
+<!-- FIN -->
+
+## Ejercicios PG <a id='c2c1'></a>
+
+### Ejercicio Calculadora
+
+Vamos a crear nuestras primeras funciones
+Tenemos la clase Calculadora que por ahora solo va trabajar con nuestro tipo primitivo int
+Tenemos que crearle cuatro funciones a nuestra calculadora sumar, restar, dividir y multiplicar
+
+**Solucion:**
+
+```java
+public class c2_calculadora_pg {
+    public int sumar(int a, int b) {
+        int num1 = a;
+        int num2 = b;
+        return num1 + num2;
+    }
+    public int restar(int a, int b) {
+        int num1 = a;
+        int num2 = b;
+        return num1 - num2;
+    }
+    public int multiplicar(int a, int b) {
+        int num1 = a;
+        int num2 = b;
+        return num1 * num2;
+    }
+    public int dividir(int a, int b) {
+        int num1 = a;
+        int num2 = b;
+        return num1 / num2;
+    }
+}
+```
+
+### Ejercicio: Es Divisible
+
+Hacer una función que reciba como parámetro dos valores y devuelva un boolean. La función debe comprobar si el primer número es divisible por el segundo.
+NOTA: Que sea divisible quiere decir que al dividir da un valor exacto, es decir, sin decimales.
+
+**Solucion:**
+
+```java
+public class c2_esDivisible {
+    public boolean esDivisible(int numero1,int numero2) {
+        int num1 = numero1;
+        int num2 = numero2;
+
+        if (num1 % num2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+```
+
+## Array <a id='c2d'></a>
+
+> Ver PDF: Array, diferencia con colecciones.pdf
+
+<!-- Inicio resumen pdf -->
+
+>Los arrays son estructuras estáticas para almacenar objetos.
+
+Los arrays son estructuras de datos estáticas que permiten guardar elementos del mismo tipo en forma contigua.
+
+<!-- fin resumen pdf -->
 
 
 
+<!-- subir al inicio -->
+
+[🔺](#up)

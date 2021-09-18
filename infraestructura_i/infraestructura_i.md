@@ -31,7 +31,7 @@ background-color: #90e0ef;
 
 <t>Infraestructura I</t>
 
-## Índice
+## Índice <a id='up'></a>
 
 1. Inmersion
 - [C1 - Introducción a la materia & the big picture](#c1)
@@ -43,7 +43,18 @@ background-color: #90e0ef;
 2. Automatizacion
 - [C2 - Automatizacion](#c2)
     - [Automatizacion de la intraestructura](#c2a)
+        - [5 Tareas mas comunes de automatizar](#c2a1)
+        - [Configuracion y mantenimiento del sistema](#c2a2)
+        - [Infraestructura y servicios](#c2a3)
+        - [Manejo del codigo](#c2a4)
+        - [Contenedores](#c2a5)
+        - [Ambientes de trabajo](#c2a6)
+        - [Monitores de red](#c2a7)
+        - [Lenguajes de scripting](#c2a8)
     - [Virtualizacion](#c2b)
+        - [Historia virtualizacion](#c2b1)
+        - [Componentes virtualizacion](#c2b2)
+
 3. Containers
 4. Cloud computing
 5. Cierre
@@ -232,4 +243,214 @@ Del otro lado somos un equipo que armamos con mucha pasión todo el contenido de
 
 ***
 
+![Actividad grupo 7](./img/actividad-grupo-7.png)
+
 # C2 - Automatizacion <a id='c2'></a>
+
+## Automatizacion de la infraestructura <a id='c2a'></a>
+
+Habitualmente resulta cansador realizar las mismas tareas rutinarias en el área de sistemas. ¿Por qué mejor no automatizamos la infraestructura? Es decir, que esa tarea la realice un sistema sin errores y más eficientemente. En esta clase vas a conocer cómo implementar la automatización en infraestructura. 
+
+> Ver PDF: Automatización de la infraestructura..pdf
+
+<!-- inicio resumen pdf -->
+
+**Automatización de la infraestructura**
+
+Como vimos anteriormente, <r>la Infraestructura IT es el conjunto de dispositivos y aplicaciones de software necesarios para que cualquier empresa opere.</r>  Esta se compone de elementos como: 
+- software, 
+- hardware, 
+- redes, 
+- instalaciones 
+- y todo lo que se requiera para desarrollar, controlar, monitorear y dar soporte a los servicios que ofrece el departamento de IT.
+Por otro lado, <r>la automatización consiste en usar la tecnología para realizar tareas casi sin necesidad de las personas.</r> Se puede implementar en cualquier sector en el que se lleven a cabo tareas repetitivas.
+
+La automatización de la IT —también denominada automatización de la infraestructura— <r>**consiste en el uso de sistemas de software para crear instrucciones y procesos repetibles a fin de reemplazar o reducir la interacción humana con los sistemas de IT.**</r>
+
+## ¿Por qué automatizar?
+
+Automatizar tareas permite ganar tiempo y maximizar la productividad de nuestra infraestructura IT. En tiempos de **cloud computing**, este es el mensaje que se repite una y otra vez: <r>cómo hacer más con menos</r>, cómo conseguir que los profesionales IT de nuestra empresa dediquen más tiempo a generar valor para la compañía y menos a tareas repetitivas que se podrían realizar de forma automática.
+
+## Beneficios de automatizar
+
+- Elevar la productividad empresarial.
+- Reducir costos operativos.
+- Tener una mejor capacidad de respuesta.
+- Facilidad de adaptación.
+- Disminuir los riesgos de fallas.
+- Elevar la seguridad de la información.
+- Alojar una mayor cantidad de datos.
+- Elevar la competitividad del negocio.
+
+<!-- fin resumen pdf -->
+
+![5 tareas mas comunes en TI para automatizar](./img/c2.jpg) <a id='c2a1'></a>
+
+> Ver PDF: Configuración y Mantenimiento del sistema.pdf
+
+<!-- inicio resumen -->
+
+## Configuración y mantenimiento del sistema <a id='c2a2'></a>
+
+Retomando el concepto que vimos:
+
+>“La automatización de la infraestructura consiste en el uso de sistemas de software para crear instrucciones y procesos repetibles a fin de reemplazar o reducir la interacción humana con los sistemas de TI”.
+
+Este plantea una visión muy amplia, ya que tiene que abarcar los diversos rubros de las empresas que poseen su área de sistema. Según el tipo de organización en la que trabajamos, es el grado de automatización con el que nos vamos a encontrar en la infraestructura de TI.
+Uno de los roles del equipo de trabajo del área de sistemas es el **DevOps** engineer, encargado de **automatizar** los procesos del área de **Development** y **Operations**. Su función es hacer más amigable y eficiente la relación entre estos dos equipos de trabajo.
+
+![Servicios](./img/c2a.png)
+
+## Infraestructura y servicios <a id='c2a3'></a>
+
+Primeramente tenemos que analizar los dispositivos que tenemos en nuestra red de IT. Si contamos con servidores **`legacy`** o servicios contratados por un **`cloud providers`**. 
+De las dos opciones anteriores, lo que tenemos que tener en cuenta es el sistema operativo con el que trabajan (MAC, Linux, Windows).
+
+De los cloud providers más conocidos contamos con:
+
+- AWS
+- Google Cloud
+- Microsoft Azure
+
+![c2a1](./img/c2a1.png)
+
+Para la elección se evalúan los costos y la oferta de **servicios que disponen**. Esta última es cada vez más robusta y completa (load balancing, backup, clustering, security, etc.).
+
+## Manejo del código <a id='c2a4'></a>
+
+Partimos desde donde alojamos nuestro código de trabajo si somos programadores. 
+Por excelencia el gestor de versionado e integrador de código más utilizado es **Git**. 
+Los alojamientos de estos repositorios más conocidos en la nube son GitLab, GitHub, Bitbucket, Gitea, entre otros. 
+En estos se almacena nuestro código de las aplicaciones que
+pueden estar en lenguajes de programación diversos según lo que necesitemos —por ejemplo: Python, JavaScript, Java, .NET, etc.—.
+También podemos automatizar el deploy de nuestro código con CI/CD (refiere a las prácticas combinadas de integración continua y entrega continua). 
+
+Algunas herramientas para hacerlo son:
+- Jenkins
+- GitActions
+- JetBrains
+
+## Contenedores <a id='c2a5'></a>
+
+Los contenedores se están convirtiendo en el modelo de empaquetado de software del producto que desarrollamos. <r>Permiten la virtualización de ambientes de trabajo compatibles transportables, totalmente configurados para que nuestro código funcione en todos los equipos.</r> El más popular es **Docker**.
+
+Cuando manejamos muchos contenedores, tenemos que migrar a un clúster de
+contenedores, dirigidos por los orquestadores de contenedores. Por ejemplo:
+Kubernetes o Docker Swarm.
+
+## Ambientes de trabajo <a id='c2a6'></a>
+
+Luego, hay que tener en cuenta en qué ambiente está nuestro clúster.
+
+En cada ambiente se trabaja con distintas tecnologías, según el grado de exposición del producto. Automatizando estos procesos vamos a tener más eficiencia, transparencia, facilidad de replicación y recuperación. 
+
+Los ambientes más populares son:
+
+- Ansible
+- Chef
+- Puppet
+- Terraform
+
+## Monitores de red <a id='c2a7'></a>
+
+Es muy importante tener la supervisión de los dispositivos que hay en nuestra red y de los servicios, y programar alertas en caso de que suceda algún cambio. 
+
+Para esto podemos utilizar: 
+- Nagios, 
+- Prometheus, 
+- Icinga2 o 
+- DataDog.
+
+## Lenguajes de scripting <a id='c2a8'></a>
+
+Necesitamos trabajar en estrecha colaboración con los desarrolladores y el administrador del sistema para automatizar tareas de los operadores y desarrolladores (como pueden ser
+backups, cron jobs, system monitoring).
+
+Según el sistema operativo, podemos usar: 
+- Bash o 
+- PowerShell.
+
+Pero también existen lenguajes de scripting independientes del SO, como:
+- Python, 
+- Ruby o
+- Go. 
+El más popular es `Python`, ya que posee muchas librerías y es de fácil lectura y aprendizaje.
+
+**Conclusión**
+
+Estas tecnologías expuestas para automatizar la infraestructura TI no son todas las que están en el mercado, sino una visión general de las que hoy son las más populares. Hay que tener en cuenta que cada día se están desarrollando nuevas herramientas y metodologías de trabajo para cada empresa, como también empresas que brindan el servicio de automatización outsourcing de la organización. 
+<r>Siempre hay que tomar la decisión basándose en la necesidad, recursos disponibles y experiencia que cuenta la empresa.</r>
+
+<!-- fin resumen pdf -->
+
+## Virtualizacion <a id='c2b'></a>
+
+¿Cómo viene todo hasta acá? Ahora vamos a refrescar algunos conocimientos que ya vimos en Introducción a la Informática, principalmente la virtualización, dado que es una de las formas de automatización más utilizadas en la infraestructura IT.
+
+## Introducción a la virtualización
+
+La **virtualización** permite mejorar la agilidad, la flexibilidad y la escalabilidad de la infraestructura de IT, al mismo tiempo que proporciona un importante ahorro de costos.
+
+Algunas **ventajas** de la virtualización son:
+
+- Mayor movilidad de las cargas de trabajo.
+- Aumento del rendimiento.
+- Menos esfuerzo en los upgrades/updates del sistema.
+- Mejor disponibilidad de los recursos o la automatización de las operaciones:
+- Simplifican la gestión de la infraestructura de IT.
+- Permiten reducir los costos de propiedad y operativos.
+
+A continuación, encontrarás la historia de la virtualización y sus componentes. 
+
+## Historia de la virtualizacion <a id='c2b1'></a>
+
+![cronologia](./img/c2b.jpg)
+
+## Componentes de la virtualizacion <a id='c2b2'></a>
+
+[Componentes](https://view.genial.ly/60a95ee45e2a3d0d271c0bbd)
+
+![c2b2](./img/c2b2.png)
+
+**Maquinas virtuales**
+
+En la actualidad se pueden crear sistemas operativos guest del tipo Microsoft y Linux en casi todas sus versiones, se deben tener en cuenta las versiones de cada sistema operativo y la compatibilidad con el sistema host.
+
+**Administrador de maquinas virtuales**
+
+Desde la herramienta de management se administran todos los recursos físicos y virtuales de los guest que son las instancias virtuales que se crean para usos específicos. Desde el mismo management podremos establecer clustering con otros virtual machines manager para tener alta disponibilidad y tolerancia a fallos. Además, administra todos los recursos virtuales de nuestras virtual machines.
+
+**Sistema operativo base**
+
+Es el sistema operativo encargado de administrar los dispositivos físicos (hardware) y proveer una capa de abstracción a los entornos virtuales. 
+
+**Hardware (Servidores fisicos)**
+
+Los microprocesadores, tanto los de Intel como los de AMD, tienen una característica llamada virtualización de CPU. Se aplica a servidores o máquinas de escritorio. 
+
+> Ver pdf: Instalacion virtual box y vagrant
+>
+> Ver actividad: crear mv
+
+<!-- actividad sincronica -->
+### actividad sincronica
+para pasar a root
+```bash
+su -
+```
+
+- **APT** es un proyecto gigante y su plan original incluia una interfaz gráfica. Está basado en una biblioteca que contiene la aplicación central y apt-get fue la primera interfaz — basada en la línea de órdenes — desarrollada dentro del proyecto. apt es un segundo frontend de linea de comandos proporcionado por APT el cual soluciona algunos errores de diseño de la orden apt-get.
+
+- **Su** El programa su permite usar el intérprete de comandos de otro usuario sin necesidad de cerrar la sesión actual. Comúnmente se usa para obtener permisos de root para operaciones administrativas sin tener que salir y reentrar al sistema.
+
+- El servidor HTTP Apache es un servidor web que ofrece muchas y potentes funciones. Entre ellas se incluyen módulos que cargan de forma dinámica, soporte de medios robusto y una amplia integración con otro software popular.
+
+- Me resolto familiar, como un escritorio remoto
+
+<!-- fin actividad sincronica -->
+
+
+
+
+<!-- subir al inicio -->
+[subir al indice](#up)

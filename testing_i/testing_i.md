@@ -44,6 +44,17 @@ background-color: #90e0ef;
     - [El rol del Tester](#c1c)
     - [Ventajas y desventajas prueba independiente](#c1x)
     - [Equipo - Mesa 3 patas](#c1w)
+- [C2 - Gestion de defectos](#c2)
+    - [Defectos](#c2a)
+        - [ciclo de vida de un defecto](#c2a1)
+    - [Gestion de defectos](#c2b)
+        - [Proceso de gestión de defectos](#c2b1)
+        - [Objetivos](#c2b2)
+        - [¿Cómo escribir un buen informe?](#c2b3)
+        - [¿Qué condiciones debemos tener en cuenta?](#c2b4)
+        - [¿Cuáles son los problemas más comunes con los informes de defectos?](#c2b5)
+        - [Partes de un informe de defectos](#c2b6)
+    - [Actividad](#c3c)
 
 2. Gestion de defectos
 3. Disenio de pruebas
@@ -223,3 +234,155 @@ La principal función es probar los sistemas informáticos para que funcionen co
 <!-- fin resumen link -->
 
 > Ver actividad: 1
+
+## C2 - Gestion de defectos <a id='c2'></a>
+
+**Grandes empresas - Grandes defectos**
+
+A lo largo de la historia, se registraron grandes errores producidos en grandes empresas. ¿Se acuerdan del famoso error de Samsung en donde los teléfonos Galaxy Note 7 explotaban? La empresa luego de reconocer el error, publicó un informe con los motivos:
+
+_El informe explica que en las primeras baterías se produjo un error en el diseño en la esquina superior derecha, que provocó deformaciones en el electrodo negativo, generando un cortocircuito en algunas de las celdas y un sobrecalentamiento que hacía que el dispositivo se incendiara._
+
+Otra gran empresa que cometió un error que hizo dudar de su fiabilidad a sus clientes —y que produjo una pérdida muy grande de dinero— fue Tesla. Se produjo un error en el sistema de control de crucero de sus vehículos y este se activaba accidentalmente. ¿Qué salió a decir la empresa?
+
+_La empresa explica que se produjo un error dentro de su software que producía que se active el control de crucero aleatoriamente en sus vehículos. La solución fue una nueva actualización del software, pero esto generó la desconfianza de sus clientes._
+
+Otro suceso importante le pasó a la famosa plataforma YouTube, el video musical de Gangnam Style rompió la plataforma. ¿Qué pasó aquí?
+
+_El contador de YouTube antes usaba un número entero de 32 bits, que es una unidad que se usa para representar datos en la arquitectura de la computadora. Este entero de 32 bits determina que el número máximo de vistas posibles que podía contar era 2,147,483,647. El famoso video excedió este valor máximo y rompió la plataforma. Hoy en día, YouTube usa un número entero de 64 bits para su contador de videos._
+
+
+Todos estos sucesos (y muchísimos más registrados a lo largo de la historia) podrían haber sido evitados con un buen plan de testing, de manera de encontrarlos rápidamente y que no lleguen a la sociedad. Es por ello que a lo largo de la materia veremos cómo crear un plan de testing, cómo registrar estos defectos y, por ende, evitar grandes defectos en grandes empresas.
+
+Para comenzar, en este módulo veremos todo acerca de ¡defectos!
+
+> Ver video: Que es un defecto
+
+<!-- resumen video -->
+
+<r> **Error** Es la equivocacion de una persona, esto produce un fallo y produce un error cuando la prueba se ejecuta
+Esto se convierte en un **defecto** y al ejecutarse provoca un mal funcionamiento; un **fallo**.</r>
+
+<!-- fin resumen video -->
+
+## ciclo de vida de un defecto <a id='c2a1'></a>
+
+El proceso que gestiona un defecto desde su descubrimiento hasta su solución se denomina ciclo de vida de un defecto. 
+En cada estado solo existe un responsable del defecto, excepto en estados terminales —cerrado, duplicado—, debido
+a que no se van a realizar
+más acciones.
+
+[Detalle del ciclo](https://view.genial.ly/609948c81ba6380d85590b90)
+
+![ciclo de vida de un defecto](./img/c2.png)
+
+## Gestion de defectos <a id='c2b'></a>
+
+> ver PDF: Gestión de defectos.pdf
+
+<!-- inicio resumen pdf -->
+
+## Proceso de gestión de defectos <a id='c2b1'></a>
+
+![c2a2](./img/c2a2.png)
+
+1. Detectar
+2. Registrar
+3. Investigacion y seguimiento
+4. Clasificacion/Resolucion
+
+## Objetivos <a id='c2b2'></a>
+
+- Brindar información sobre cualquier evento adverso que haya ocurrido, para poder identificar efectos específicos, aislar el problema con una prueba de reproducción mínima y corregir los defectos potenciales.
+
+- Proporcionar a los jefes de prueba un medio para hacer un seguimiento de la calidad del producto de trabajo y del impacto en la prueba.
+
+- Dar ideas para la mejora de los procesos de desarrollo y prueba.
+
+## ¿Cómo escribir un buen informe? <a id='c2b3'></a>
+
+Si el defecto se reporta eficientemente, las probabilidades de que sea solucionado rápidamente es mayor. Entonces, la solución de un defecto dependerá de la eficiencia con que se reporte. 
+
+## ¿Qué condiciones debemos tener en cuenta? <a id='c2b4'></a>
+
+**Los bugs deben tener identificadores únicos.**
+Si bien muchas herramientas de bug tracking asignan automáticamente un ID único a los bugs, muchas veces se reportan fallas por medio de e-mails, saltando la registración en la herramienta.
+
+**Una falla debe ser reproducible para reportarla.**
+Si el defecto no es reproducible, no es un defecto. Para defectos que ocurren en forma aislada, podemos realizarnos una nota personal para investigar luego y determinar qué condiciones deben ser dadas para que el mismo se produzca.
+
+## ¿Cuáles son los problemas más comunes con los informes de defectos? <a id='c2b5'></a>
+
+- Redactar un defecto de manera excesivamente coloquial y ambigua.- Dar solo una captura del defecto sin indicar qué se estaba haciendo cuando sucedió. 
+- No incluir en la descripción del defecto cuál era el resultado esperado para los pasos realizados.
+- No determinar un patrón con el cual el defecto ocurre antes de reportar el mismo —es importante para ser directos en cuál es el problema—.
+- No leer el defecto reportado siguiendo los pasos uno mismo para ver que la descripción es clara.
+- No incluir información que dada las características del defecto, la misma es de relevancia.
+
+<!-- fin resumen pdf -->
+
+
+### Defectos
+
+Cuando se detecta un defecto —como parte de las pruebas estáticas—, o se observa un fallo —como parte de las pruebas dinámicas—, la persona implicada debería recopilar los datos e incluirlos en el informe de defectos. Esta información debería ser suficiente para tres fines:
+
+- Gestión del informe durante el ciclo de vida de los defectos.
+- Evaluación del estado del proyecto, especialmente en términos de calidad del producto y progreso de las pruebas.
+- Evaluación de la capacidad del proceso.
+
+Los datos necesarios para la gestión de los informes de defectos y el estado del proyecto pueden variar en función de cuándo se detecta el defecto en el ciclo de vida, siendo la información requerida menor en etapas anteriores —por ejemplo, revisiones de requisitos y pruebas unitarias—. No obstante, la información básica recopilada debería ser coherente durante todo el ciclo de vida e, idealmente, en todos los proyectos para permitir una comparación significativa de los datos de defectos del proceso durante el proyecto y en todos los proyectos.
+
+> Ver PDF: Partes de un informe de defectos.pdf
+
+<!-- inicio resumen pdf -->
+
+## Partes de un informe de defectos <a id='c2b6'></a>
+
+|Atributo|Descripcion|Ejemplo|
+|--|-----------|-------|
+|**ID**|Abreviatura de identificador, un código único e irrepetible que puede ser número o letras|001 - Test01|
+|**Título**|El título debe ser corto y específico, que se entienda en este lo que queremos reportar. Cuando el desarrollador o el equipo vean el título pueden interpretar rápidamente qué es, dónde está y cuán importante es ese defecto.|Login - Ingresa con campos en blanco|
+|**Descripción**|Describir un poco más sobre el error, es decir, desarrollar lo que dejamos afuera en el título lo podríamos explicar acá|En la pantalla login si dejo vacío los campos nombre y password y apretó ingresar, me lleva a la página principal.|
+|**Fecha del informe del defecto**|La fecha que detectó el defecto para saber posteriormente el tiempo en que se resolvió.|23/04/21|
+|**Autor**|El nombre del tester que descubrió el defecto, por si el desarrollador tiene una duda, sabe a quién consultar|Pepito Román|
+|**Identificación del elemento de prueba**|Nombre de la aplicación  o componente que estamos probando|Carrito compras|
+|**Versión**|Es un número que nos indica en qué versión está la aplicación|1.0.0|
+|**Entorno**|El entorno en el que probamos (desarrollo, QA, producción).|Desarrollo|
+|**Pasos a reproducir**|Los pasos a seguir para llegar al defecto encontrado|1) Ingresar a la aplicación.2) Dejar en blanco el campo nombre.3) Dejar en blanco el campo password.4) Hacer click en el botón “Ingresar”.|
+|**Resultado esperado**|Es lo que esperamos que suceda o muestre la aplicación muchas veces según los requerimientos de la misma.|No debe ingresar a la aplicación sin un usuario y una contraseña válidos.|
+|**Resultado obtenido o actual**|Es lo que sucedió realmente o lo que nos mostró la aplicación. Puede coincidir o no con el resultado esperado, si no coincide, hemos detectado un error o bug|Ingresa a la aplicación sin usuario y sin contraseña.|
+|**Severidad**|Cuán grave es el defecto que hemos encontrado, puede ser: bloqueado, crítico, alto, medio, bajo o trivial|Crítico|
+|**Prioridad**|Con esto decimos qué tan rápido se debe solucionar el defecto, puede ser: alta, media, baja|Alta|
+|**Estado del defecto**|Los estados pueden ser: nuevo, diferido, duplicado, rechazado, asignado, en progreso, corregido, en espera de verificación, en verificación, verificado, reabierto y cerrado.|Nuevo|
+|**Referencias**|Link al caso de prueba con el cual encontramos el error.|https://repositorio.-com.ar/TC-001-User-Login|
+|**Imagen**|Se puede adjuntar una captura de pantalla del error, esto nos permite demostrar que el error sucedió y al desarrollador lo ayuda a ubicar el error|![error](./img/c2.6.png "[x]Error!")|
+
+<!-- fin resumen pdf -->
+
+<!-- inicio quizz -->
+
+**Quizz**
+
+Como programador cometo una equivocación en el código de mi aplicación, ¿cómo se llama esta equivocación?   
+Error
+
+Como testers, buscamos:
+Encontrar la mayor cantidad de defectos antes de que la aplicación salga al público y brindar calidad del sistema. 
+
+¿En qué etapas del ciclo de vida de un defecto, este se encuentra en desarrollo?
+En la etapa en progreso y corregido.
+
+Un defecto puede ser devuelto o rechazado.
+Verdadero
+
+Como tester, puedo reportar un defecto sin indicar cómo reproducirlo nuevamente ni evidenciar con pruebas.
+Falso
+<!-- fin quizz -->
+
+
+
+
+
+
+<!-- subir al inicio -->
+[subir al indice](#up)
