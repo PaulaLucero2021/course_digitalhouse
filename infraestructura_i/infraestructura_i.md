@@ -31,7 +31,7 @@ background-color: #90e0ef;
 
 <t>Infraestructura I</t>
 
-## Índice
+## Índice <a id='up'></a>
 
 1. Inmersion
 - [C1 - Introducción a la materia & the big picture](#c1)
@@ -43,7 +43,42 @@ background-color: #90e0ef;
 2. Automatizacion
 - [C2 - Automatizacion](#c2)
     - [Automatizacion de la intraestructura](#c2a)
+      - [5 Tareas mas comunes de automatizar](#c2a1)
+      - [Configuracion y mantenimiento del sistema](#c2a2)
+      - [Infraestructura y servicios](#c2a3)
+      - [Manejo del codigo](#c2a4)
+      - [Contenedores](#c2a5)
+      - [Ambientes de trabajo](#c2a6)
+      - [Monitores de red](#c2a7)
+      - [Lenguajes de scripting](#c2a8)
     - [Virtualizacion](#c2b)
+      - [Historia virtualizacion](#c2b1)
+      - [Componentes virtualizacion](#c2b2)
+      - [Instalacion VM Debian, Apache2, OpenSSH, puTTy](#c2s1)
+- [C3 - Repaso](#c3s1)
+    - [Vagrant: box Debian](#c3s1)
+    - [Automatizar: modificando file de vagrant](#c3s2)
+    - [Cambiar HTML base modificando file vagrant](#c3s3)
+- [C4 - Shell Scripting - Parte I](#c4)
+    - [Introducción a la terminal de Linux](#c4a)
+      - [La consola de Linux](#c4a1)
+      - [Tipos de shell](#c4a2)
+        - [Bourne Shell](#c4a2a)
+        - [C/TC Shell](#c4a2b)
+        - [Korn Shell](#c4a2c)
+        - [Bourne-Again Shell (BASH)](#c4a2d)
+      - [Ejecucion de la consola](#c4a3)
+      - [Elevacion de privilegios](#c4a4)
+    - [Comandos más utilizados en la terminal de Linux](#c4b)
+      - [Consolidando nuestro ambiente](#c4b1)
+      - [Verificando nuestro ambiente](#c4b2)
+      - [Comandos para el manejo de archivos](#c4b3)
+      - [Comandos para leer archivos de texto](#c4b4)
+      - [Obtener datos desde un web service](#c4b5)
+      - [Comando cURL](#c4b6)
+      - [Comando jq](#c4b7)
+      - [Combinación de uso de ambos comandos](#c5b8)
+
 3. Containers
 4. Cloud computing
 5. Cierre
@@ -232,4 +267,979 @@ Del otro lado somos un equipo que armamos con mucha pasión todo el contenido de
 
 ***
 
+![Actividad grupo 7](./img/actividad-grupo-7.png)
+
 # C2 - Automatizacion <a id='c2'></a>
+
+## Automatizacion de la infraestructura <a id='c2a'></a>
+
+Habitualmente resulta cansador realizar las mismas tareas rutinarias en el área de sistemas. ¿Por qué mejor no automatizamos la infraestructura? Es decir, que esa tarea la realice un sistema sin errores y más eficientemente. En esta clase vas a conocer cómo implementar la automatización en infraestructura. 
+
+> Ver PDF: Automatización de la infraestructura..pdf
+
+<!-- inicio resumen pdf -->
+
+**Automatización de la infraestructura**
+
+Como vimos anteriormente, <r>la Infraestructura IT es el conjunto de dispositivos y aplicaciones de software necesarios para que cualquier empresa opere.</r>  Esta se compone de elementos como: 
+- software, 
+- hardware, 
+- redes, 
+- instalaciones 
+- y todo lo que se requiera para desarrollar, controlar, monitorear y dar soporte a los servicios que ofrece el departamento de IT.
+Por otro lado, <r>la automatización consiste en usar la tecnología para realizar tareas casi sin necesidad de las personas.</r> Se puede implementar en cualquier sector en el que se lleven a cabo tareas repetitivas.
+
+La automatización de la IT —también denominada automatización de la infraestructura— <r>**consiste en el uso de sistemas de software para crear instrucciones y procesos repetibles a fin de reemplazar o reducir la interacción humana con los sistemas de IT.**</r>
+
+## ¿Por qué automatizar?
+
+Automatizar tareas permite ganar tiempo y maximizar la productividad de nuestra infraestructura IT. En tiempos de **cloud computing**, este es el mensaje que se repite una y otra vez: <r>cómo hacer más con menos</r>, cómo conseguir que los profesionales IT de nuestra empresa dediquen más tiempo a generar valor para la compañía y menos a tareas repetitivas que se podrían realizar de forma automática.
+
+## Beneficios de automatizar
+
+- Elevar la productividad empresarial.
+- Reducir costos operativos.
+- Tener una mejor capacidad de respuesta.
+- Facilidad de adaptación.
+- Disminuir los riesgos de fallas.
+- Elevar la seguridad de la información.
+- Alojar una mayor cantidad de datos.
+- Elevar la competitividad del negocio.
+
+<!-- fin resumen pdf -->
+
+![5 tareas mas comunes en TI para automatizar](./img/c2.jpg) <a id='c2a1'></a>
+
+> Ver PDF: Configuración y Mantenimiento del sistema.pdf
+
+<!-- inicio resumen -->
+
+## Configuración y mantenimiento del sistema <a id='c2a2'></a>
+
+Retomando el concepto que vimos:
+
+>“La automatización de la infraestructura consiste en el uso de sistemas de software para crear instrucciones y procesos repetibles a fin de reemplazar o reducir la interacción humana con los sistemas de TI”.
+
+Este plantea una visión muy amplia, ya que tiene que abarcar los diversos rubros de las empresas que poseen su área de sistema. Según el tipo de organización en la que trabajamos, es el grado de automatización con el que nos vamos a encontrar en la infraestructura de TI.
+Uno de los roles del equipo de trabajo del área de sistemas es el **DevOps** engineer, encargado de **automatizar** los procesos del área de **Development** y **Operations**. Su función es hacer más amigable y eficiente la relación entre estos dos equipos de trabajo.
+
+![Servicios](./img/c2a.png)
+
+## Infraestructura y servicios <a id='c2a3'></a>
+
+Primeramente tenemos que analizar los dispositivos que tenemos en nuestra red de IT. Si contamos con servidores **`legacy`** o servicios contratados por un **`cloud providers`**. 
+De las dos opciones anteriores, lo que tenemos que tener en cuenta es el sistema operativo con el que trabajan (MAC, Linux, Windows).
+
+De los cloud providers más conocidos contamos con:
+
+- AWS
+- Google Cloud
+- Microsoft Azure
+
+![c2a1](./img/c2a1.png)
+
+Para la elección se evalúan los costos y la oferta de **servicios que disponen**. Esta última es cada vez más robusta y completa (load balancing, backup, clustering, security, etc.).
+
+## Manejo del código <a id='c2a4'></a>
+
+Partimos desde donde alojamos nuestro código de trabajo si somos programadores. 
+Por excelencia el gestor de versionado e integrador de código más utilizado es **Git**. 
+Los alojamientos de estos repositorios más conocidos en la nube son GitLab, GitHub, Bitbucket, Gitea, entre otros. 
+En estos se almacena nuestro código de las aplicaciones que
+pueden estar en lenguajes de programación diversos según lo que necesitemos —por ejemplo: Python, JavaScript, Java, .NET, etc.—.
+También podemos automatizar el deploy de nuestro código con CI/CD (refiere a las prácticas combinadas de integración continua y entrega continua). 
+
+Algunas herramientas para hacerlo son:
+- Jenkins
+- GitActions
+- JetBrains
+
+## Contenedores <a id='c2a5'></a>
+
+Los contenedores se están convirtiendo en el modelo de empaquetado de software del producto que desarrollamos. <r>Permiten la virtualización de ambientes de trabajo compatibles transportables, totalmente configurados para que nuestro código funcione en todos los equipos.</r> El más popular es **Docker**.
+
+Cuando manejamos muchos contenedores, tenemos que migrar a un clúster de
+contenedores, dirigidos por los orquestadores de contenedores. Por ejemplo:
+Kubernetes o Docker Swarm.
+
+## Ambientes de trabajo <a id='c2a6'></a>
+
+Luego, hay que tener en cuenta en qué ambiente está nuestro clúster.
+
+En cada ambiente se trabaja con distintas tecnologías, según el grado de exposición del producto. Automatizando estos procesos vamos a tener más eficiencia, transparencia, facilidad de replicación y recuperación. 
+
+Los ambientes más populares son:
+
+- Ansible
+- Chef
+- Puppet
+- Terraform
+
+## Monitores de red <a id='c2a7'></a>
+
+Es muy importante tener la supervisión de los dispositivos que hay en nuestra red y de los servicios, y programar alertas en caso de que suceda algún cambio. 
+
+Para esto podemos utilizar: 
+- Nagios, 
+- Prometheus, 
+- Icinga2 o 
+- DataDog.
+
+## Lenguajes de scripting <a id='c2a8'></a>
+
+Necesitamos trabajar en estrecha colaboración con los desarrolladores y el administrador del sistema para automatizar tareas de los operadores y desarrolladores (como pueden ser
+backups, cron jobs, system monitoring).
+
+Según el sistema operativo, podemos usar: 
+- Bash o 
+- PowerShell.
+
+Pero también existen lenguajes de scripting independientes del SO, como:
+- Python, 
+- Ruby o
+- Go. 
+El más popular es `Python`, ya que posee muchas librerías y es de fácil lectura y aprendizaje.
+
+**Conclusión**
+
+Estas tecnologías expuestas para automatizar la infraestructura TI no son todas las que están en el mercado, sino una visión general de las que hoy son las más populares. Hay que tener en cuenta que cada día se están desarrollando nuevas herramientas y metodologías de trabajo para cada empresa, como también empresas que brindan el servicio de automatización outsourcing de la organización. 
+<r>Siempre hay que tomar la decisión basándose en la necesidad, recursos disponibles y experiencia que cuenta la empresa.</r>
+
+<!-- fin resumen pdf -->
+
+## Virtualizacion <a id='c2b'></a>
+
+¿Cómo viene todo hasta acá? Ahora vamos a refrescar algunos conocimientos que ya vimos en Introducción a la Informática, principalmente la virtualización, dado que es una de las formas de automatización más utilizadas en la infraestructura IT.
+
+## Introducción a la virtualización
+
+La **virtualización** permite mejorar la agilidad, la flexibilidad y la escalabilidad de la infraestructura de IT, al mismo tiempo que proporciona un importante ahorro de costos.
+
+Algunas **ventajas** de la virtualización son:
+
+- Mayor movilidad de las cargas de trabajo.
+- Aumento del rendimiento.
+- Menos esfuerzo en los upgrades/updates del sistema.
+- Mejor disponibilidad de los recursos o la automatización de las operaciones:
+- Simplifican la gestión de la infraestructura de IT.
+- Permiten reducir los costos de propiedad y operativos.
+
+A continuación, encontrarás la historia de la virtualización y sus componentes. 
+
+## Historia de la virtualizacion <a id='c2b1'></a>
+
+![cronologia](./img/c2b.jpg)
+
+## Componentes de la virtualizacion <a id='c2b2'></a>
+
+[Componentes](https://view.genial.ly/60a95ee45e2a3d0d271c0bbd)
+
+![c2b2](./img/c2b2.png)
+
+**Maquinas virtuales**
+
+En la actualidad se pueden crear sistemas operativos guest del tipo Microsoft y Linux en casi todas sus versiones, se deben tener en cuenta las versiones de cada sistema operativo y la compatibilidad con el sistema host.
+
+**Administrador de maquinas virtuales**
+
+Desde la herramienta de management se administran todos los recursos físicos y virtuales de los guest que son las instancias virtuales que se crean para usos específicos. Desde el mismo management podremos establecer clustering con otros virtual machines manager para tener alta disponibilidad y tolerancia a fallos. Además, administra todos los recursos virtuales de nuestras virtual machines.
+
+**Sistema operativo base**
+
+Es el sistema operativo encargado de administrar los dispositivos físicos (hardware) y proveer una capa de abstracción a los entornos virtuales. 
+
+**Hardware (Servidores fisicos)**
+
+Los microprocesadores, tanto los de Intel como los de AMD, tienen una característica llamada virtualización de CPU. Se aplica a servidores o máquinas de escritorio. 
+
+> Ver pdf: Instalacion virtual box y vagrant
+>
+> Ver actividad: crear mv
+
+<!-- actividad sincronica -->
+### actividad sincronica
+para pasar a root
+```bash
+su -
+```
+
+- **APT** es un proyecto gigante y su plan original incluia una interfaz gráfica. Está basado en una biblioteca que contiene la aplicación central y apt-get fue la primera interfaz — basada en la línea de órdenes — desarrollada dentro del proyecto. apt es un segundo frontend de linea de comandos proporcionado por APT el cual soluciona algunos errores de diseño de la orden apt-get.
+
+- **Su** El programa su permite usar el intérprete de comandos de otro usuario sin necesidad de cerrar la sesión actual. Comúnmente se usa para obtener permisos de root para operaciones administrativas sin tener que salir y reentrar al sistema.
+
+- El servidor HTTP Apache es un servidor web que ofrece muchas y potentes funciones. Entre ellas se incluyen módulos que cargan de forma dinámica, soporte de medios robusto y una amplia integración con otro software popular.
+
+- Me resolto familiar, como un escritorio remoto
+
+<!-- fin actividad sincronica -->
+
+***
+<!-- inicio notas clase 2 en vivo -->
+
+**Notas - Clase 2: Virtualizacion** 
+<!-- inicio notas sincronico 2 -->
+
+Uso de virtualizacion para testeo y aprovechar recursos de hardware.
+Saber el comportamiento de una aplicacion en un sistema operativo.
+Al hacer un servidor quiza sirva virtualizarlo, aprovechando los recursos de hardware de esa forma.
+
+recomendado estar con red cableada para la instalacion de `Debian` la version mas comun es AMD64
+
+servidores Legacy se refiere a los servidores fisicos.
+
+## Instalacion VM Debian, Apache2, OpenSSH, puTTy <a id='c2s1'></a>
+
+>ver instalacion vm Debian en min 09:00
+>
+>Ver PDF: Crear una VM
+>
+>Link video: habilitar virtualizacion [link](https://www.youtube.com/watch?v=oTMMc9KWtco)
+
+instalamos la vm en oracle vm, para administrar un servidor sin un entorno grafico
+
+GRUB es un gestor de arranque que se instala en el disco, antes de la particion donde teniendo ese GRUB podemos tener varias instalaciones en el mismo disco de distintos sistemas operativos
+
+vamos a instalar un servidor web y lo vamos a consultar desde nuestra maquina host. Vamos a ver la pagina web que esta alojada en este servidor que estamos haciendo
+
+Terminada la instalacion y configuracion de nuestra maquina cirtual Debian:
+```
+login: nombre
+clase: clave
+```
+Procedemos a instalar el servidor web apache, el mas conocido en linux, mas antiguo y open source
+
+cambiamos el login a root para realizar cambios de administrador
+
+```bash
+su root
+```
+instalamos apache2
+```
+apt-get install apache2
+```
+pide un S para continuar y bajara unos archivos e instalara el servidor web
+
+verificamos que el servidor este andando en la computadora con:
+
+```
+ip address
+```
+ip address muestra los dispositivos de red que tenemos en nuestra maquina virtual
+
+
+![lo](./img/c2s1.png)
+
+muestra 2 dispositivos, el primero es `lo` hace referencia al `local host` siempre es `127.0.0.1`, no la tenemos que usar ya que hace referencia a su misma placa de red.
+
+la que tenemos que ver es la 2 `enp0s3`: `192.168.1.25` que la direccion que tiene esta en el mismo rango que la direccion ip de la maquina host. 
+
+Verificamos esto fuera de nuestra maquina virtual, en nuestra maquina host
+
+![verificacion](./img/c2s2.png)
+
+Ahora instalaremos un servidor SSH, desde el root, este servidor nos da una puerta de entrada a nuestra maquina virtual desde afuera, desde este protocolo ssh. (Como un team viewer para terminales, con esto s ehace mantenimiento de servidores)
+
+```
+apt-get install openssh-server
+```
+cuando ponemos esto crea ciertas dependencias y se instala el servidor ssh, al mismo tiempo usaremos la app `puTTy` en nuestro host.
+
+en host name ponemos la ip que ip address 
+`192.168.1.25` nos sale un warning y le ponemos que si.
+
+y ya nos conecta, usamos el login del usuario normal no el root, ya que ssh no deja root.
+
+![putty](./img/c2s3.png)
+
+esto nos sirve para usar vagrant y nos acerca a la automatizacion.
+
+<!-- fin resumen clase sincronica 2 -->
+
+**Notas - Clase 3: Repaso**
+
+<!-- inicio notas clase 3 sincronica -->
+
+## Vagrant: Automatizacion box Debian <a id='c3s1'></a>
+
+Vamos a usar vagrant para automatizar la virtualizacion.
+Con un script con vagrant lo haremos mucho mas rapido
+
+paso a paso:
+
+- Creamos una carpeta llamada ejVagrant y accedemos desde PowerShell
+
+![carpeta vagrant](./img/c3s1.png)
+
+- con vagrant instalado, descargaremos la box de Debian, una box es una maquina virtual preconfigurada, vemos las diferentes boxes en la vagrant cloud:
+
+<app.vagrantup.com/boxes/search>
+
+nosotros usaremos:
+
+una box de Debian y usaremos virtualbox como hypervisor, se llama `debian/buster`
+
+ejecutamos el comando:
+
+```powershell
+vagrant box add debian/buster64
+```
+esto demora un poco, luego seleccionamos la opcion 2: virtualbox
+
+el **vagranfile** que tiene el siguiente codigo con extension `all types`, configura la maquina virtual y le pone nombre `network server` y que configure una `public network`
+
+```powershell
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+  config.vm.define "server" do |server|
+  config.vm.box = "debian/buster64"
+  server.vm.hostname = "server"
+  server.vm.network "public_network"
+  end  
+end
+```
+validamos el codigo:
+```powershell
+vagrant validate
+```
+si hacemos
+```powershell
+vagrant up
+``` 
+y hay un error, tambien lo va a validar
+con `vagrant up` corre la maquina virtual
+
+Todo el proceso de la clase 2 de instalar y configurar el sistema operativo vagrant lo va a automatizar; lo ahorramos con la box.
+
+Cuando termine de instalar con el comando verificamos que esta corriendo.
+```powershell
+vagrant status
+```
+
+Si dice running y abrimos el virtualbox vemos que esta corriendo
+
+![vagrant status](./img/c3s2.png)
+
+ahora vamos a instalar un servidor web, vamos a tener que loggearnos a esta maquina virtual
+
+Como vagrant ya estala un ssh usamos el siguiente codigo y esto evita el uso de puTTy
+
+```powershell
+vagrant ssh server
+```
+el comando anterior nos logea automaticamente a la maquina virtual
+
+ahora vamos a instalar un servidor web: apache, para eso necesitamos los permisos de root, vagrant es el password por defecto de root.
+
+```powershell
+su root
+Password: vagrant
+# Por defecto el password de root es vagrant
+```
+
+ahora que estamos como root instalaremos el servidor web apache2
+
+```powershell
+apt-get install apache2
+```
+pregunta, le decimos Y, lo va a bajar, configurar y lo va a instalar.
+
+para ver si esta funcionando nos fijamos la ip
+
+```powershell
+ip address
+```
+Verficamos que funcione en el navegador
+que corre nuestro servidor web
+
+![apache con vagrant](./img/c3s3.png)
+
+**Resumen**
+Esto automatiza la tarea de tener un servidor web usando los recursos de hardware de nuestra computadora, antes lo usamos de forma manual en la clase 2 y en la clase 3 se automatiza el proceso.
+
+Podemos cambiar las configuraciones cuando esta instalado en nuestra computadora, yendo a la documentacion de en este caso `Debian`
+
+> Las boxes se guardan en:
+```
+C:usuarios>user>.vagrant.d>boxes
+```
+
+Automatizaremos mas el proceso anterior, agregando por defecto al script un servidor web
+
+primero saldremos del root y de la maquina virtual.
+
+![exit](./img/c3s4.png)
+
+para parar nuestra maquina virtual:
+```powershell
+vagrant halt
+```
+Destruir la maquina de vagrant con:
+
+```powershell
+vagrant destroy -f
+```
+
+## Automatizar: modificando file de vagrant <a id='c3s2'></a>
+
+Agregamos las intrucciones al script para que se instale automaticamente el `Apache2`
+
+```powershell
+Vagrant.configure("2") do |config|
+  config.vm.define "server" do |server|
+  config.vm.box = "debian/buster64"
+  server.vm.hostname = "server"
+  server.vm.network "public_network"
+  #Esto es lo nuevo que se agrega al file
+  #Le dice al server que se aprovisione desde la linea de comandos
+  server.vm.provision "shell", inline: <<-SHELL
+  #Y ejecute estos comandos:
+    apt-get update
+    apt-get install -y apache2
+    #Dice que termine el shell
+    SHELL
+  end  
+end
+```
+Primero lo validamos:
+
+```powershell
+vagrant validate
+```
+si esta ok
+```powershell
+vagrant up
+```
+
+Nos logueamos para ver la ip, aunque tambien podemos configurarla
+```powershell
+vagrant ssh server
+```
+y luego, no es necesario entrar como root, pedimos el ip y lo verificamos
+```powershell
+ip address
+```
+![ip](./img/c3s5.png)
+
+Cerramos la vm
+```powershell
+#loguados en el servidor con vagrant ssh server
+exit
+```
+y eliminamos la VM con:
+```powershell
+vagrant destroy -f
+```
+
+## Cambiar html base en el script <a id='c3s3'></a>
+
+Copiar el `HTML`, ponerlo en la carpeta vagranfile para copiar esta pagina en donde iria la pagina por defecto de Apache.
+
+```powershell
+Vagrant.configure("2") do |config|
+    config.vm.define "server" do |server|
+    config.vm.box = "debian/buster64"
+    server.vm.hostname = "server"
+    server.vm.network "public_network"
+    server.vm.provision "shell", inline: <<-SHELL
+        apt-get update
+        apt-get install -y apache2
+        SHELL
+    #Esto es lo nuevo que se agrega al file
+    server.vm.provision "file", source: "index.html", destination: "index.html"
+    server.vm.provision "shell", inline: "mv index.html /var/www/html/index.html"
+    end  
+end
+```
+Esto movera el archivo HTML a ese lugar, tiene que existir ese HTML
+
+Creamos una pagina html en la carpeta del vagrant file
+
+```powershell
+#paso 1: Correr vagrant
+vagrant up
+#paso 2: Elegir la red
+1
+#paso 3: Nos logueamos en la maquina virtual
+vagrant ssh server
+#paso 4: Consulto ip
+ip address
+```
+![vagrant nuevo html](./img/c3s6.png)
+
+(Se ve en otra pc en mi misma red, no se si afuera)
+(NO MATE ESTA ULTIMA MAQUINA VIRTUAL)
+(UTIMO COMANDO FUE `vagrant halt`)
+
+PARA PRENDERLA `vagrant up`
+
+<!-- fin resumen clase 3 sincronica -->
+
+>PENDIENTE: ACTIVIDAD SCRIPT
+
+# C4 - Shell Scripting - Parte I <a id='c4'></a>
+
+## Introducción a la terminal de Linux <a id='c4a'></a>
+
+¿Cómo viene todo hasta acá? Ojalá hayas podido recuperar energías porque comienza el momento de trabajar sobre nuevas definiciones.
+
+En esta clase vamos a avanzar respondiendo algunas preguntas:
+
+- ¿Qué es una shell CLI o intérprete de comandos?
+- ¿Cuáles son los tipos de shell?
+- ¿Cómo iniciamos una consola en Linux?
+- ¿Cuáles son los privilegios del superusuario root?
+
+> ver PDF: Introduccion a la Terminal. Diferentes formas de ejecución.pdf
+
+<!-- inicio resumen pdf -->
+
+## La consola de Linux <a id='c4a1'></a>
+
+La interfaz de línea de comandos, o CLI —por sus siglas en inglés command-line interface—, es un método de comunicación entre usuario y máquina que acepta instrucciones del usuario a través de líneas de texto (siguiendo unas determinadas reglas de sintaxis que puedan ser interpretadas por el sistema operativo).La herramienta que posibilita la función de interfaz de usuario se la denomina shell. Aplicado en el ámbito de la interfaz de línea de comandos, estaríamos hablando de una shell CLI o intérprete de comandos.
+Diferentes
+
+## Tipos de shell <a id='c4a2'></a>
+
+En Linux tenemos una multitud de shells o intérpretes diferentes. El más conocido de todos probablemente es Bash, debido a que es el que suele venir por defecto en la gran mayoría de distribuciones GNU/Linux, pero también destacan otros como Bourne Shell (sh), Korn Shell (ksh) o C Shell (csh), los cuales vamos a conocer.
+
+### Bourne Shell <a id='c4a2a'></a>
+Lleva el nombre de su creador en los Laboratorios Bell, Steve Bourne. Fue la primera shell utilizada para el sistema operativo Unix y ha superado en gran parte la funcionalidad de muchas de las shells más recientes. Todas las versiones de Linux Unix permiten a los usuarios cambiar a la original Bourne Shell, conocida simplemente como "sh", si así lo desean. Sin embargo, hay que tener en cuenta que al hacerlo, se renuncia a funcionalidades como el completado de nombres de archivo y el historial de comandos que los depósitos posteriores han añadido.
+
+### C/TC Shell <a id='c4a2b'></a>
+El C Shell fue desarrollado posteriormente al Bourne Shell y está pensado en facilitar el control del sistema al programador en lenguaje C. La razón de esto es que su sintaxis, como vamos a apreciar, es muy similar a la de este lenguaje.Conocido popularmente también como csh, está presente en otros SO, por ejemplo, en Mac OS.  Posee una evolución, conocida como tcsh que incorpora funcionalidades avanzadas y mayores atajos de teclado
+
+### Korn Shell <a id='c4a2c'></a>
+Esta también fue escrita por un programador en los Laboratorios Bell, David Korn. Intenta combinar las características de la C Shell, TC Shell y Bourne Shell en un solo paquete. También incluye la capacidad para crear nuevos comandos de shell para los desarrolladores cuando surja la necesidad.
+
+> Posee funciones avanzadas para manejar archivos de comandos que la colocan a la par de lenguajes de programación especializados, como AWK y Perl.
+
+### Bourne-Again Shell (BASH) <a id='c4a2d'></a>
+
+La Bourne-Again Shell es una versión actualizada de la Bourne Shell original. Es una shell utilizada ampliamente en la comunidad de código abierto.Su sintaxis es similar a la utilizada por la Bourne Shell, incorporando funcionalidades más avanzadas que se encuentran en las shells C, TC y Korn.Entre las funcionalidades adicionales que carecía Bourne, está la capacidad para completar nombres de archivos pulsando la tecla TAB, la capacidad de recordar un historial de comandos recientes y la capacidad de ejecutar múltiples programas en segundo plano a la vez.
+
+## Ejecucion de la consola <a id='c4a3'></a>
+
+### Consola de Linux: Ejecución en inicio
+Si bien cada distribución de Linux tiene su manera particular de acceder a la consola, cuando el SO se inicia en los niveles 1, 2, 3 y 4 nos llevará por defecto a la consola.
+
+### Consola de Linux: Ejecución desde GUI
+
+Si en cambio nuestro SO inicia en nivel 5 (con GUI), para poder utilizar la terminal tenemos diferentes opciones. Estas varían de acuerdo a la distribución instalada. En el caso de Ubuntu, tenemos dos opciones: 
+
+- La primera de ellas es lanzando un TTY, o espacio de trabajo sin entorno gráfico. Podemos ejecutar 7 terminales al mismo tiempo de esta forma. De la 1 a la 6, ninguna tiene interfaz gráfica. Para cambiar de TTY en Linux debemos usar el atajo de teclado Control+Alt más la tecla —de F1 al F7— del TTY que queramos ejecutar.
+
+`ctrl + alt + f1`
+
+- La segunda opción es encontrar una app dedicada que se ejecuta en una ventana, dentro del panel de aplicaciones de nuestra distro. En el caso de Ubuntu, por ejemplo, podemos encontrar esta terminal dentro del cajón de programas del entorno gráfico GNOME.
+
+## Los privilegios del superusuario root <a id='c4a4'></a>
+
+Por lo general, los sistemas operativos contemplan el uso de solo un usuario, el cual tiene permisos de administrador. En Linux las cosas se manejan de una forma particular, se separa la cuenta de usuario común de la de superusuario y es eso lo que conocemos como root. Esta cuentaposee todos los privilegios y permisos para realizar acciones sobre el sistema.
+
+Para la ejecución de algunos comandos debemos ingresar dicho acceso (clave de root). Sin embargo, se debe tener un conocimiento sobre las acciones que se realizan, ya queuna acción realizada de manera errónea podría ocasionar daños importantes en el sistema. El uso de instrucciones con privilegios de superusuario pueden ser sumamente útiles, pero totalmente devastadoras si desconocemos las consecuencias de su uso en el sistema. Veamos el método para elevar nuestros privilegios.
+
+### Elevando privilegio
+
+Suponiendo que iniciamos sesión como un usuario “común”, denominado “edorio” y queremos reiniciar un servicio (cron), vamos a obtener lo siguiente:
+
+```bash
+edorio@DESKTOP-W10:~$ service cron start 
+* Starting periodic command scheduler cron 
+cron: can't open or create /var/run/crond.pid: Permission denied
+
+[fail]
+edorio@DESKTOP-W10:~$
+```
+Para evitar el error, debemos usar el comando sudo, previo al comando que queremos ejecutar. Nos pedirá la contraseña de root y se ejecutará como tal de manera satisfactoria
+
+```bash
+edorio@DESKTOP-W10:~$ sudo service cron start
+[sudo] password for edorio: 
+  * Starting periodic command scheduler cron 
+[ OK ]
+edorio@DESKTOP-W10:~
+```
+
+<!-- fin resumen pdf -->
+
+## Comandos más utilizados en la terminal de Linux <a id='c4b'></a>
+
+A continuación vas a encontrar respuestas a los siguientes interrogantes:
+
+- ¿Cómo navegar por el sistema de archivos mediante la consola?
+- ¿Cómo manejar los archivos desde la consola?
+- ¿Cómo obtener información desde un web service?
+
+> Ver PDF: Comandos Utiles - parte 1.pdf
+
+<!-- resumen inicio pdf -->
+
+## Consolidando nuestro ambiente <a id='c4b1'></a>
+
+Para poder seguir correctamente los ejemplos posteriores, es deseable que en tu ambiente (máquina virtual o WSL) tengas replicada la siguiente estructura de carpetas y archivos.
+
+Para ello debemos ejecutar los siguientes comandos, en el orden dado (solo el texto que está luego del prompt o sea, luego del “$”, en color blanco):
+
+```bash
+edorio@DESKTOP-W10:~$ mkdir dir1 dir2 dir3
+
+edorio@DESKTOP-W10:~$ touch dir1/archivo1.txt dir2/archivo2.txt dir3/archivo3.txt
+```
+
+![ambiente](./img/c4.png)
+
+## Verificando nuestro ambiente <a id='c4b2'></a>
+
+Listamos los directorios con la instrucción `ls -R`. Deberíamos obtener lo siguiente:
+
+```bash
+edorio@DESKTOP-W10:~$ ls -R
+.:
+dir1  dir2  dir3
+./dir1:
+archivo1.txt
+./dir2:
+archivo2.txt
+./dir3:
+archivo3.txt
+```
+## Comandospara el manejo de archivos <a id='c4b3'></a>
+
+### ls
+
+Con el comando ls podrás listar los diferentes archivos y directorios de la carpeta de trabajo en la que te encuentres. El comando acepta multitud de opciones, algunas de las cuales veremos a continuación.A continuación, podemos observar el uso más simple del comando ls. Si no le indicamos ninguna opción, enumerará todos los archivos y directorios que se encuentran en la carpeta de trabajo actual, sin tener en cuenta archivos ocultos.
+
+```bash
+edorio@DESKTOP-W10:~$ ls
+dir1  dir2  dir
+```
+
+### ls -a
+
+Con esta opción, el comando te mostrará —en forma de lista— todo el contenido que se encuentre dentro del directorio de trabajo, incluyendo archivos y carpetas ocultos. Dependiendo del shell, algunos tipos de archivos se mostrarán con colores diferentes
+
+```bash
+edorio@DESKTOP-W10:~$ ls -a
+.         .aws           .bash_logout  .config    .landscape 
+.profile                  .vagrant.d  dir3 ..        .azure 
+.bashrc       .docker    .local       .ssh    dir1  .ansible 
+.bash_history  .cache        .fastlane  .motd_shown 
+.sudo_as_admin_successful  dir2
+```
+
+### ls -l
+
+Esta opción es similar a la anterior, pero muestra el contenido en forma de lista e incluye información referente a cada elemento. Es de las más utilizadas, siendo especialmente útil a la hora de conocer el propietario y los permisos de cada fichero
+
+```bash
+edorio@DESKTOP-W10:~$ ls -l
+total 12
+drwxr-xr-x 2 edorio edorio 4096 May 21 01:59 dir1
+drwxr-xr-x 2 edorio edorio 4096 May 21 01:59 dir2
+drwxr-xr-x 2 edorio edorio 4096 May 21 01:59 dir3
+```
+
+### mkdir
+
+Te permitirá crear un directorio con el nombre y la ruta que especifiques. Si no le indicás ninguna ruta, por defecto, te creará la carpeta dentro del directorio de trabajo en el que te encuentres
+
+```bash
+edorio@DESKTOP-W10:~$ mkdir dir4
+```
+
+Caso contrario, le podés indicar que cree un directorio con un path definido dentro de dir1.
+
+```bash
+edorio@DESKTOP-W10:~$ mkdir dir1/subdir1
+```
+
+### rmdir
+
+Te permite eliminar el directorio que le especifiques. Un detalle importante es que para poder utilizar este comando, el directorio a borrar debe estar vacío
+
+```bash
+edorio@DESKTOP-W10:~$ rmdir dir4
+```
+El de arriba es el uso más simple del comando, sin indicar ruta.
+
+Podemos también borrar un directorio con un path definido.
+
+```bash
+edorio@DESKTOP-W10:~$ rmdir dir1/subdir1
+```
+
+### rm
+
+Este comando permite eliminar archivos sueltos y directorios que no se encuentren vacíos.
+
+```bash
+edorio@DESKTOP-W10:~$ rm dir1/archivo1.txt
+```
+El de arriba es el uso más simple del comando, sin indicar ruta.Eliminamos 1 archivo específico dentro de dir1
+
+```bash
+edorio@DESKTOP-W10:~$ rm -r dir2
+```
+
+Con el modificador -r eliminamos el directorio dir2 y, recursivamente, todo su contenido. Es un comando a utilizar con mucha precaución
+
+### cp
+
+Usando este comando serás capaz de copiar archivos y directorios. Así como ubicarlos en otras rutas, definiendo origen primero y luego destino.
+```bash
+edorio@DESKTOP-W10:~$ cp dir3/archivo3.txt dir1/archivo1.txt
+```
+
+El de arriba es el uso más simple del comando, sin indicar ruta. Copiamos en este caso el archivo3.txt, hacia dir1 y lo nombramos archivo1.txt.
+En este caso, con el modificador -r copiamos el directorio dir3 en uno llamado dir2, que el mismo comando creo.
+
+```bash
+edorio@DESKTOP-W10:~$ cp -r dir3 dir2
+```
+
+### mv
+
+Este comando te servirá para mover archivos desde la consola. La sintaxis es muy sencilla, solamente deberás especificar la ubicación de inicio —incluyendo el nombre del archivo— y la ubicación de destino.
+```bash
+edorio@DESKTOP-W10:~$ mv dir1/archivo1.txt dir3/archivo1.txt
+```
+
+Movimos un archivo de dir1 a dir3, conservando su nombre original.
+En el siguiente caso usamos el comando mv para renombrar un archivo, ya que las rutas definidas son las mismas.
+
+```bash
+edorio@DESKTOP-W10:~$ mv dir3/archivo1.txt dir3/archivo3bis.tx
+```
+
+## Comandos para leer archivos de texto <a id='c4b4'></a>
+
+### cat
+
+Este es uno de los comandos más utilizados cuando se trata de manejar archivos de texto (en formato .txt) desde la terminal. Entre sus múltiples opciones, está la posibilidad de crear un archivo e imprimir por pantalla su contenido.
+```bash
+edorio@DESKTOP-W10:~$ cat >dir1/archivo1.txt
+```
+
+Esto nos abrirá el archivo1.txt, permitiendo editarlo. Con la combinación CTRL+D terminaremos la edición y se guardará el contenido.
+```bash
+edorio@DESKTOP-W10:~$ cat dir1/archivo1.txt
+Hola Digital House, esto es CAT
+```
+
+Invocando el comando sin el símbolo “>”, nos mostrará por pantalla el contenido del mismo. Se puede usar con el modificador -n, para numerar las líneas y con el -b, con el propósito de no mostrar las líneas en blanco.
+
+### more
+
+Este es otro comando útil para imprimir por pantalla el contenido de un archivo de texto. Esencialmente es igual que el comando cat, con la diferencia que este comando pagina el contenido, por lo que es más adecuado para leer archivos largos.
+```bash
+edorio@DESKTOP-W10:~$ more /var/log/dpkg.log
+```
+Nos paginará el archivo en cuestión, de tal manera que en sus últimas líneas lo veremos así:
+
+![more](./img/c4a.png)
+
+### nano
+
+Nano es un editor de textos para la terminal, que más que para leer archivos sirve para modificarlos y editarlos. Aunque para esta guía también nos vale perfectamente para abrir el archivo y visualizar su contenido desde la línea de comandos.
+```bash
+edorio@DESKTOP-W10:~$ nano dir1/archivo1.txt
+```
+
+Nos mostrará:
+
+![img](./img/c4a1.png)
+
+Una vez abierto, en la parte inferior se visualizará las diferentes combinaciones de teclas que necesitarás a la hora de trabajar con archivos.
+
+En la parte inferior se muestran las diferentes combinaciones de teclas que se necesitarán a la hora de trabajar con archivos:
+- `CTRL+R`: combinación para indicarle un archivo de texto a Nano para que lo abra y muestre su contenido por la consola.
+- `CTRL+V:` estando dentro de Nano y con el archivo abierto en la consola, esta combinación sirve para avanzar a la página siguiente.
+- `CTRL+Y`: sirve para retroceder a la página anterior.
+- 0` CTRL+W`: sirve para introducir un carácter o grupo de caracteres y buscar en el texto cualquier letra o palabra que coincida con el parámetro de búsqueda.
+- `CTRL+X`: para cerrar el archivo una vez que lo hayas terminado de visualizar en la consola. Eso cerrará el editor de texto Nano y volverá a aparecer el prompt de Bash por consola.
+
+### grep
+
+Este comando, perteneciente a la familia Unix, es una de las herramientas más versátiles y útiles disponibles. Se encarga de buscar un patrón que definamos en un archivo de texto. Su primer parámetro es la cadena de texto a buscar, luego el o los archivos (acepta comodines como *, pudiendo con el modificador -r recorrer recursivamente) que vamos a buscar.
+
+```bash
+edorio@DESKTOP-W10:~$ grep "Digital House" * -r
+```
+
+En este caso, buscamos la cadena “Digital House” en todos los archivos, de manera recursiva, la ejecución nos devolvió lo siguiente:
+
+![grep](./img/c4a2.png)
+
+### tee
+
+Lee una entrada estándar y la escribe en la salida estándar y en uno o más archivos. De forma normal, en la redirección de salida, las líneas del comando se escriben en un archivo, pero si queremos ver dicha salida al mismo tiempo, no podemos. ¡Usando el comando tee sí es posible lograrlo! 
+```bash
+edorio@DESKTOP-W10:~$ ls -l | tee listado.txt
+```
+
+En este caso, además de mostrarnos el directorio, el mismo será guardado en un archivo
+```bash
+edorio@DESKTOP-W10:~$ ls -l | tee -a listado.txt
+```
+
+Utilizando el modificador -a, se agregará el contenido al archivo, sin pisar lo anterior.
+
+<!-- fin resumen pdf -->
+
+> Ver PDF: Comandos Utiles - parte 2.pdf
+
+<!-- inicio resumen pdf -->
+
+## Obtener datos desde un web service <a id='c4b5'></a>
+
+La terminal de Linux tiene tanta versatilidad y potencia que nos permite vincularla con un web service, obtener datos de allí y procesarlos con propósitos tales como agregarlo a archivos en nuestro servidor, modificarlos y republicarlos.Las opciones son muy variadas, por ejemplo obtener un JSON desde una URL externa, procesar su contenido, obtener el o los atributos que nos interesen y —en función de ello— crear nuevos archivos, insertarlos en una base de datos.
+
+![servidor - terminal](./img/c4b5.png)
+
+## Comando cURL <a id='c4b6'></a>
+
+### Aspectos técnicos
+
+Es un comando disponible en la mayoría de los sistemas basados en Unix. Es una abreviatura de “Client URL”. Los comandos de cURL están diseñados para funcionar como una forma de verificar la conectividad a las URL y como una gran herramienta para transferir datos.El comando tiene una amplia compatibilidad con los protocolos más usados
+
+![protocolos compatibles](./img/c4b5a.png)
+
+### Sintaxis básica
+
+El uso más simple de cURL es mostrar el contenido de una página. El siguiente ejemplo mostrará la página de inicio de digitalhouse.com:
+```bash
+edorio@DESKTOP-W10:~$ curl https://www.digitalhouse.com
+```
+
+Como vemos, no es muy útil esto, ya que es dif ícil llegar a información que nos pueda ser de utilidad visualizándola solamente en pantalla. Pero si usamos el modificador `-o`, podremos escribir ese contenido HTML de la página de inicio en un archivo en nuestro equipo:
+```bash
+edorio@DESKTOP-W10:~$ curl https://www.digitalhouse.com -o mipagina.html
+```
+
+Esto guardará todo el HTML en el archivo mipagina.html.
+
+### Descargas
+
+El uso de este modificador puede extenderse a procesar descargas:
+```bash
+edorio@DESKTOP-W10:~$ curl https://ubuntu.zero.com.ar/ubuntu-releases/20.04/ubuntu-20.04.2.0-desktop-amd64.iso -o ubuntu.iso
+```
+
+Descarga la ISO de la URL de referencia y la nombrará **ubuntu.iso**
+```bash
+edorio@DESKTOP-W10:~$  curl https://ubuntu.zero.com.ar/ubuntu-releases/20.04/ubuntu-20.04.2.0-desktop-amd64.iso -O -C 0
+```
+
+En este caso, no renombramos el archivo de destino (con el modificador -O). Además, permitimos la continuidad de la descarga con el modificador -C.
+
+### Encabezados y verificaciones
+
+El modificador -v nos permite verificar la conectividad hacia un sitio remoto
+```bash
+edorio@DESKTOP-W10:~$ curl https://www.digitalhouse.com -v
+```
+
+Esto nos brindará, además del contenido, datos como la IP de destino, protocolos de seguridad y certificados utilizados.
+```bash
+edorio@DESKTOP-W10:~$  curl https://www.digitalhouse.com -I
+```
+
+El modificador -I nos muestra todos los encabezados de la solicitud, tales como ruta por defecto, publicador web, entre otros.
+
+### Contenido JSON
+
+Viendo todas las opciones brindadas, nos podemos imaginar lo útil de este comando con el propósito de obtener el contenido en formato JSON desde un endpoint que lo entregue en dicho formato. Por ejemplo, la API de OpenStreetMap, la cual nos devuelve una dirección pasándole las coordenadas, con la siguiente URL:
+<https://nominatim.openstreetmap.org/reverse.php?lat=-34.60378&lon=-58.38161&zoom=18&format=jsonv2>
+```bash
+edorio@DESKTOP-W10:~$  curl "https://nominatim.openstreetmap.org/reverse.php?lat=-34.60378&lon=-58.38161&zoom=18&format=jsonv2" -o resultado.json
+```
+
+Allí estamos guardando en el archivo resultado.json lo obtenido en el web service. Notemos el detalle de colocar la URL entre comillas simples o dobles.
+
+## El comando jq <a id='c4b7'></a>
+
+### Aspectos técnicos `./jq`
+
+JSON es un formato de datos estructurados ampliamente utilizado que se utiliza normalmente en la mayoría de las API y servicios de datos modernos. Es particularmente popular en aplicaciones web debido a su naturaleza liviana y compatibilidad con JavaScript.
+
+Desafortunadamente, shells como Bash no pueden interpretar y trabajar con JSON directamente. Esto significa que trabajar con JSON a través de la línea de comando puede ser engorroso e implica la manipulación de texto utilizando una combinación de herramientas como sed y grep
+
+Allí es donde aparece jq, un potente procesador JSON para la consola.
+
+### Sintaxis básica
+
+`jq` se basa en el concepto de filtros que funcionan sobre un flujo de JSON. Cada filtro toma una entrada y emite JSON a la salida estándar. Tomando el archivo JSON obtenido con cURL, una ejecución sencilla de jq nos devuelve todo el contenido del JSON.
+```bash
+edorio@DESKTOP-W10:~$ jq '.' resultado.json
+```
+
+Como vemos, no vamos a acceder a ningún atributo en especial, ya que con el modificador ‘.’ no se lo indicamos
+
+### Accediendo a propiedades
+
+Para poder acceder a una propiedad específica es necesario indicarla luego del punto, con el nombre de la misma
+```bash
+edorio@DESKTOP-W10:~$ jq '.display_name' resultado.json
+```
+
+En este caso, accederemos a la propiedad display_name del JSON. Si queremos acceder a varias propiedades, las separamos por coma
+
+```bash
+edorio@DESKTOP-W10:~$ jq '.display_name,.type' resultado.json
+```
+
+De esta manera, accedemos a display_name y type
+
+> TIP: Si alguna propiedad tuviese un espacio en su nombre, debemos envolverla con comillas dobles
+
+## Combinación de uso de ambos comandos <a id='c4b8'></a>
+
+### Combinar comandos con pipelines
+
+Para poder combinar el poder de cURL con el recurso y la capacidad de proceso de jq debemos combinarlo usando pipelines. Para ello vamos a realizar una introducción a una de las características más interesantes que tiene la terminal.El pipeline o tubería es una función que permite utilizar la salida de un programa como entrada en otro.
+
+El pipeline en Linux se representa con la barra vertical (|), la cual dividirá los comandos. Por ejemplo, si nosotros queremos saber la IP de nuestro equipo, lo hacemos con la instrucción:
+
+```bash
+edorio@DESKTOP-W10:~$ ip address
+```
+
+Esta nos devolverá muchísimos datos (MAC, protocolos, direcciones IPv4 e IPv6, entre otros). Si quisiéramos filtrar dentro de ese texto por la cadena “192.168”, lo deberíamos llevar a un archivo y allí buscar con grep.
+
+```bash
+edorio@DESKTOP-W10:~$ grep “192.168” miarchivo.txt
+```
+Pero es aquí en donde aparece la magia del pipeline, ya que podemos combinar ambas sentencias en una.
+
+Para ello, primero colocamos nuestra sentencia inicial, sabiendo que tipo de salida puede tener, separamos con el pipeline y colocamos la segunda sentencia.
+
+```bash
+edorio@DESKTOP-W10:~$ ip address | grep "192.168"
+```
+
+Allí el grep nos indicará la línea coincidente con “192.168”. Nuestro pipeline podría seguir aplicándose sin límites más allá de aquellos que imponga el sistema operativo, por ejemplo cantidad de procesos en ejecución
+
+### Aplicar el pipeline con cURL y jq
+
+Conociendo el uso básico del pipeline, vamos a aplicarlo a la obtención de datos externos y el parseo de una propiedad específica, la cual la guardaremos en un archivo. Nuestro comando tendrá tres partes
+
+![partes](./img/c4b8.png)
+
+### Aplicar el pipeline con cURL y jq
+
+En este caso, vemos cómo la sentencia obtiene el JSON con cURL, lo procesa con jq para obtener el display_namey el type, y finalmente lo guarda en un archivo llamado consultapipe.txt
+
+```bash
+edorio@DESKTOP-W10:~$ curl "https://nominatim.openstreetmap.org/reverse.php?lat=-34.60378&lon=-58.38161&zoom=18&format=jsonv2" | jq ".display_name,.type" | tee consultapipe.txt
+```
+
+<!-- fin resumen pdf -->
+
+> Ver PDF: Ejercitación - Comandos basicos.pdf
+<!-- subir al inicio -->
+[🚩 subir al indice](#up)
