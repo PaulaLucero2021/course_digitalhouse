@@ -43,19 +43,6 @@ background-color: #90e0ef;
 2. Automatizacion
 - [C2 - Automatizacion](#c2)
     - [Automatizacion de la intraestructura](#c2a)
-<<<<<<< HEAD
-        - [5 Tareas mas comunes de automatizar](#c2a1)
-        - [Configuracion y mantenimiento del sistema](#c2a2)
-        - [Infraestructura y servicios](#c2a3)
-        - [Manejo del codigo](#c2a4)
-        - [Contenedores](#c2a5)
-        - [Ambientes de trabajo](#c2a6)
-        - [Monitores de red](#c2a7)
-        - [Lenguajes de scripting](#c2a8)
-    - [Virtualizacion](#c2b)
-        - [Historia virtualizacion](#c2b1)
-        - [Componentes virtualizacion](#c2b2)
-=======
       - [5 Tareas mas comunes de automatizar](#c2a1)
       - [Configuracion y mantenimiento del sistema](#c2a2)
       - [Infraestructura y servicios](#c2a3)
@@ -90,9 +77,19 @@ background-color: #90e0ef;
       - [Obtener datos desde un web service](#c4b5)
       - [Comando cURL](#c4b6)
       - [Comando jq](#c4b7)
-      - [Combinación de uso de ambos comandos](#c5b8)
->>>>>>> 4335172ff62ba23675c34ae127a4c786a1e6968c
-
+      - [Combinación de uso de ambos comandos](#c4b8)
+    - [Clase en vivo 4](#c4s)
+- [C5 - Shell Scripting - Parte II](#c5)
+    - [Scripting](#c5a)
+    - [Bash scripting](#c5b)
+        - [Estructuras de control](#c5b1)
+            - [Sentencia if-then](#c5b1a)
+            - [Sentencia if-else](#c5b1b)
+            - [Comparaciones numéricas](#c5b1c)
+            - [Comparaciones de cadenas](#c5b1d)
+            - [Cálculos matemáticos](#c5b1e)
+        - [Ejemplo en Bash](#c5b2)
+        
 3. Containers
 4. Cloud computing
 5. Cierre
@@ -487,13 +484,6 @@ su -
 
 <!-- fin actividad sincronica -->
 
-<<<<<<< HEAD
-
-
-
-<!-- subir al inicio -->
-[subir al indice](#up)
-=======
 ***
 <!-- inicio notas clase 2 en vivo -->
 
@@ -1258,10 +1248,395 @@ En este caso, vemos cómo la sentencia obtiene el JSON con cURL, lo procesa con 
 ```bash
 edorio@DESKTOP-W10:~$ curl "https://nominatim.openstreetmap.org/reverse.php?lat=-34.60378&lon=-58.38161&zoom=18&format=jsonv2" | jq ".display_name,.type" | tee consultapipe.txt
 ```
+> Ver PDF: comandos
+
+<!-- HACER -->
+<!-- fin resumen pdf -->
+
+> 
+> Ver PDF: Ejercitación - Comandos basicos.pdf
+>
+> Ver PDF: Ejercitacion
+
+**Notas: Clase 4** <a id='c4s'></a>
+
+<!-- resumen clase en vivo 4 -->
+
+Run time levels, capas de linux al arrancar
+Son estadios del kernel de Linux
+
+[Link: Run level](https://searchdatacenter.techtarget.com/definition/runlevel)
+
+En el run level 5 repasaremos comandos de Linux
+
+Para apagar la maquina desde la consola, hay que pasar por esos niveles.
+Primero hay que hacerlo desde el usuario `root`
+
+Apaga el sistema
+```bash
+/sbin/init 0
+```
+
+Reinicia el sistema
+```bash
+/sbin/init 6
+```
+
+Para saber en que level estamos
+```bash
+who -r
+```
+
+Donde estamos ubicados
+```bash
+pwd
+```
+
+### cat
+
+concatena informacion de archivos y crea uno nuevo
+
+  cat nombrearchivo1 nombrearchivo2 > nombrearchivo3
+
+tambien crea archivos
+```
+cat > lista_nombres
+```
+Se queda titilando esperando que in Lo guardo con `ctrol + D` y con `ctrol + x` salimos del archivo.
+
+![cat](./img/c4s1.png)
+
+Lo consultamos con 
+
+```
+nano lista_nombres
+```
+
+![nano](./img/c4s2.png)
+
+con `control + x` salimos del archivo
+
+con cat tambien podemos convertir un archivo a mayusculas o minusculas.
+
+## ;
+
+Ejecuta las cosas sencuencialmente, primero uno, luego otro...
+
+## &&
+
+Ejecuta si el segundo comando si el anterior fue exitoso, no usa la salida del comando anterior.
+
+## pipeline
+
+conecta un comando con otro, devuelve un resultado/salida del comando que esta anteriormente
+usa la salida de un comando para otro comando.
+El pipeline, agarra el resultado del primer comando lo guarda en memoria y lo usa para el proximo comando
+
+## grep
+
+Hace una busqueda y nos va a devolver lo que le pedimos que buscara, en este caso que traiga todas las ip que comiencen con: `192.168`
+
+```bash
+ip address | grep "192.168"
+```
+![grep](./img/c4s3.png)
+
+Busca dentro de un archivo, o dentro de un resultado y devuelve el resultado pedido
+
+![grep ej](./img/c4s4.png)
+
+## sudo eleva permisos del superusuario
+
+En debian no esta instalado por defecto, en ubuntu si
+con sudo en debian, no es necesario estar como root cuando tienes el sudo, ya que sudo eleva los permisos como superusuario; directamente se puede instalar:
+
+```bash
+sudo apt-get install curl
+```
+
+## curl
+
+Es una aplicacion consultar paginas web desde la terminal
+Consultar json, bajar un archivo.
+
+Pagina que sirve para consultar comandos `cheat.sh`
+
+![cheat.sh](./img/c4s5.png)
+
+En esta pagina `cheat.sh` podemos consultar para que sirven comandos 
+
+![curl cheat.sh comandos](./img/c4s6.png)
+
+## chmod 
+
+Cambia los permisos de lectura, escritura y ejecucion
+Una forma facil de usar chmod es con sus valores numeros
+
+usando la numeric representation: `rwx`
+**_Read Write Execute_**
+El primer digito habla sobre el duenio/usuario, el segundo es el grupo de usuarios(user group en linux: son los usuarios que estan dentro de un grupo de usuarios; los usuarios activos que estan dentro del servidor), y el tercero es el mundo; otros que no estan dentro del grupo.
+
+![numeric](./img/c4s7.png)
+
+Ej: Si le quiero dar permiso para todo:
+
+```bash
+chmod 777
+```
+
+Ej: Solo permiso de lectura
+
+```bash
+chmod 400
+```
+Ej: Archivo de lectura y ejecucion
+
+```bash
+chmod 505
+```
+
+## ping
+
+mide el tiempo de respuesta, se puede hacer con el tiempo de respuesta local o de otros servidores.
+Se usa para medir servidores de una aplicacion y queremos medir el tiempo de respuesta.
+
+```bash
+#Dice que mande solo 5 paquetes, que mida 5 veces el tiempo de rfespuesta
+ping -c 5 "192.168..."
+```
+
+## Abrir varias consolas a la misma vez
+
+`control alt f2` abre otra instancia
+`control alt f1` vuelve a la anterior
+
+No paran, siguen funcionando en segundo plano
+
+## Actividad en clase 
+
+### Listar servicios del sistema <a id='c4s1'></a>
+
+Listar todos los servicios que se estan ejecutando en el sistema 
+
+```bash
+systemctl list-unit-files --type service --all
+```
+![ej](./img/c4s8.png)
+
+Pararemos el apache2 que habiamos instalado
+```bash
+sudo systemctl stop apache2
+```
+![ej](./img/c4s9.png)
+
+Prendiendo de nuevo apache
+```bash
+sudo systemctl start apache2
+```
+
+Para sacar a apache del inicio, cuando se activa la vm
+```bash
+sudo systemctl disable apache2
+```
+Para activar el serivio de apache desde el inicio
+```bash
+sudo systemctl enable apache2
+```
+
+Para ver el status, si esta corriendo o no
+```bash
+sudo systemctl status apache2
+```
+
+## Analizando los datos que van y vienen <a id='c4s2'></a>
+
+Analizar los datos que van y vienen de nuestros servidores
+
+>`netstat` esta deprecado
+
+## ss -plnt
+
+`ss -plnt` muestra los puertos que estan abierto escuchando la maquina
+
+![ss](./img/c4s10.png)
+
+>Para borrar paquetes: `apt-get remove nombredeloquequieroborrar`
+
+## tcpdump
+
+Sirve para monitorear un puerto que este siendo utilizado por un servicio
+Se usa para analizar y monitorear paquetes de red
+Monitorea el trafico de red de un determinado puerto
+
+```bash
+tcpdump -i enp0s3 port 80
+```
+
+puede cambiar el nombre, lo verificamos con `ip address`
+![ej](./img/c4s11.png)
+
+<!-- fin resumen clase en vivo -->
+
+# C5 - Shell Scripting - Parte II <a id='c5'></a>
+
+## Scripting <a id='c5a'></a>
+
+**Automatizar procesos de tareas al sistema**
+
+En esta clase vamos a presentar la interfaz de Bash como un shell de Unix, donde el usuario puede programar que se ejecuten órdenes al sistema operativo. Bash nos sirve para comunicarnos con nuestro sistema. Un ejemplo claro es la forma de automatizar la orden de realizar un backup cada determinado tiempo de la base de datos.
+
+> Ver video: Introduccion a bash
+
+<!-- inicio resumen pdf -->
+
+## Interaccion con sistema operativo de una forma automatizable
+
+`bash` es una interfaz que interpreta las ordenes que el usuario le hace al sistema ejecutado en una consola de UNIX
+Tambien se pueden leer y ejecutar ordenes desde un archivo llamado script que nos permite hacer persistente una lista de tareas a realizar por el sistema operativo
+Tambien es un lenguaje de scripting, lo que lo hace una herramienta muy potente para la administracion de sistemas y automatizacion de tareas 
+
+Para ejecutar multiples comandos en un solo paso desde el shell, podemos escribirlos en una sola linea y separarlos en `;`
+
+Creamos un nuevo archivo
+```bash
+touch myscript
+nano myscript
+
+
+Shebang: #!
+```
+
+Define que shell usaremos, `bash` the shell en nuestro caso
+```bash
+#!/bin/bash
+```
+Los comandos de shell se escriben 1 por linea
 
 <!-- fin resumen pdf -->
 
-> Ver PDF: Ejercitación - Comandos basicos.pdf
+
+<!-- FIN resumen -->
+
+![Tipos de variables](./img/c5a1.jpg)
+
+## Bash scripting <a id='c5b'></a>
+
+¡Ahora sí! Manos a la obra. En este apartado vamos a tener nuestros primeros scripting realizados por nosotros. De a poco nos introduciremos en las estructuras de control de los algoritmos de programación.
+
+> Ver PDF: Estructuras de control
+
+<!-- inicio resumen pdf -->
+
+## Estructuras de control <a id='c5b1'></a>
+
+### Sentencia if-then <a id='c5b1a'></a>
+
+Los scripts de Bash necesitarán condicionales. Normalmente nos imaginamos un escenario tal como “Si el valor es menor que 10, hacé esto, si no hacé aquello”. Para ello utilizamos if-then. La estructura más básica de la sentencia `if-then`es así:
+
+if command; then
+hacer algo
+fi
+
+```bash
+#!/bin/bash
+if whoami; then
+  echo "It works"
+fi
+```
+
+### Sentencia if-else <a id='c5b1b'></a>
+
+La sentencia `if-then-else` toma la siguiente estructura:
+
+if comand; then
+hacer algo
+else
+hacer otra cosa
+fi
+
+Si el comando se ejecuta y retorna cero (lo cual significa éxito), no ejecuta los comandos después de la sentencia else. Por otro lado, si la sentencia if retorna un número distinto de cero (lo cual significa que la condición no se cumple), el shell ejecuta los comandos después de la sentencia else. En el ejemplo que sigue vemos cómo nos devuelve un mensaje de acuerdo si el comando ping fue satisfactorio.
+
+```bash
+#!/bin/bash
+ping -c 1 8.8.8.8
+if [ $? -ne 0 ]; then
+echo "No está en red"
+else
+echo "Sí está en red"
+fi
+```
+
+## Comparaciones numéricas <a id='c5b1c'></a>
+
+Podemos realizar una comparación numérica entre dos valores numéricos utilizando las sentencias de esta tabla
+
+| | |
+------------------- | -------
+number1 -eq number2 | Comprueba si number1 es igual a number2.
+number1 -ge number2 | Comprueba si number1 es más grande o igual number2.
+number1 -gt number2 | Comprueba si number1 es más grande que number2.
+number1 -le number2 | Comprueba si number1 es más pequeño o igual number2.
+number1 -lt number2 | Comprueba si number1 es más pequeño que number2.
+number1 -ne number2 | Comprueba si number1 no es igual a number2.
+
+Teniendo en cuenta que la sentencia de comparación se encuentra entre corchetes, ejemplificamos:
+
+```bash
+#!/bin/bash
+num = 11
+if [ $num -gt 10]; then
+  echo "$num is bigger than 10"
+else 
+  echo "$num is less than 10"
+fi
+```
+
+## Comparaciones de cadenas <a id='c5b1d'></a>
+
+Podemos realizar una comparación de cadena entre dos valores alfanuméricos utilizando las sentencias de esta tabla
+
+| | |
+------------------- | -------
+
+`string1 = string2`   Comprueba si string1 es idéntico a string2.
+`string1 != string2`  Comprueba si string1 no es idéntico a string2.
+`string1 < string2`    Comprueba si string1 es menor que string2.
+`string1 > string2`   Comprueba si string1 es mayor que string2.
+`-n string1`          Comprueba si string1 es mayor que cero. 
+`-z string1`          Comprueba si string1 tiene una longitud de cero.
+
+Podemos aplicar la comparación de cadenas en nuestro ejemplo. Si estamos logueados como root, va por el **if**, si no por el **then**
+
+```bash
+#!/bin/bash
+user="root"
+if [ $user = $USER ]; then
+echo "The user $user&nbsp; is the current logged in user"
+fi
+```
+## Cálculos matemáticos <a id='c5b1e'></a>
+
+Podemos realizar cálculos matemáticos básicos utilizando la sintaxis $ ((2 + 2)):
+
+```bash
+#!/bin/bash
+var1=$(( 5 + 5 ))
+echo $var1
+var2=$(( $var1 * 2 ))
+echo $var2
+```
+<!-- fin resumen pdf -->
+
+> Ver PDF: Ejemplo en Bash.pdf
+
+## Ejemplo en Bash <a id='c5b2'></a>
+
+<!-- inicio resumen pdf -->
+
+## Preparacion de entorno
+
+
+
 <!-- subir al inicio -->
 [🚩 subir al indice](#up)
->>>>>>> 4335172ff62ba23675c34ae127a4c786a1e6968c
+
