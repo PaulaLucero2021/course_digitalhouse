@@ -55,17 +55,47 @@ background-color: #90e0ef;
         - [¿Cuáles son los problemas más comunes con los informes de defectos?](#c2b5)
         - [Partes de un informe de defectos](#c2b6)
     - [Actividad](#c3c)
-
-2. Gestion de defectos
-3. Disenio de pruebas
-4. implementación de la prueba
-5. Analisis de la prueba
-6. Planificacion de la prueba
-7. Introduccion a TDD 
-8. Be testing
-9. Introduccion a automation
-10. Full stack y DevOps tester
-
+- [C3 - Repaso](#c3)
+2. Diseño e implementación de la prueba
+- [C4 - Diseno de la prueba](#c4)
+    - [Diseno de la prueba](#c4a)
+        - [Características de un buen caso de prueba](#c4a1)
+        - [¿Qué debe contener un caso de prueba?](#c4a2)
+        - [Testing positivo y testing negativo](#c4a3)
+        - [Ejemplo de caso de prueba](#c4a4)
+        - [Happy path testing](#c4a5)
+        - [Casos de uso](#c4a6)
+        - [Actividad en clase 📑](#c4sm1)
+        - [Notas clase 4](#c4s)
+- [C5 - Niveles y tipos prueba](#c5)
+    - [Ciclo de vida de las pruebas de Software](#c5a1)
+    - [Tareas principales](#c5a1a)
+        - [Planificacion](#c5a1b)
+        - [Seguimiento y control](#c5a1c)
+        - [Analisis](#c5a1d)
+        - [Diseño](#c5a1e)
+        - [Implementacion](#c5a1f)
+        - [Ejecucion](#c5a1g)
+        - [Conclusion](#c5a1h)
+    - [Niveles de prueba](#c5a2)
+        - [Prueba de componente o unitaria](#c5a2a)
+        - [Prueba de integración](#c5a2b)
+        - [Prueba de sistema](#c5a2c)
+        - [Prueba de aceptación](#c5a2d)
+    - [Implementacion tradicional vs agil](#c5a3)
+    - [Tipos de prueba](#c5b)
+        - [Prueba Funcional](#c5b1)
+        - [Prueba No Funcional](#c5b2)
+        - [Prueba Estructurales](#c5b3)
+        - [Prueba Asociada al Cambio](#5b4)
+    - [Esquema de niveles - Tipos de prueba](#c5a4)
+    - [Ejemplos de tipos de prueba](#c5a5)
+        - [Pruebas funcionales](#c5a5a)
+        - [Pruebas estructurales](#c5a5b)
+        - [Pruebas asociadas al cambio](#c5a5c)
+    - [Notas clase 5](#c5s)
+- [C6 - Repaso](#c6)
+    - [Notas clase 6](#c6s)
 
 # C1 - Primeros pasos <a id='c1'></a>
 
@@ -107,7 +137,7 @@ Testing sirve para:
 
 [Evolucion historica](https://view.genial.ly/60ae4430920d0f0dae99949f)
 
-![Evolucion](./img/c1.1.png)
+![evolucion](./img/c1.png)
 
 <!-- inicio resumen link -->
 
@@ -191,13 +221,16 @@ El éxito de un sistema no solo depende de encontrar errores y corregirlos hasta
 
 ## Aspecto psicológico del testing 
 
-Los seres humanos tienden a ser sumamente orientados a objetivos y el establecimiento de la meta adecuada tiene un efecto psicológico importante. Si nuestro objetivo es demostrar que un programa no tiene errores, entonces, subconscientemente estaremos dirigidos a esa meta, es decir, tendemos a seleccionar los datos de prueba que tienen una baja probabilidad de causar que el programa falle. Por otro lado, <r>si nuestro objetivo es demostrar que un programa tiene errores, nuestros datos de prueba tendrán una mayor probabilidad de encontrarlos.</r>
+Los seres humanos tienden a ser sumamente orientados a objetivos y el establecimiento de la meta adecuada tiene un efecto psicológico importante. Si nuestro objetivo es demostrar que un programa no tiene errores, entonces, subconscientemente estaremos dirigidos a esa meta, es decir, <r>tendemos a seleccionar los datos de prueba que tienen una baja probabilidad de causar que el programa falle</r>. Por otro lado, <r>si nuestro objetivo es demostrar que un programa tiene errores, nuestros datos de prueba tendrán una mayor probabilidad de encontrarlos.</r>
 
 Más allá del desarrollador o el tester, las tareas de prueba pueden ser realizadas por personas que desempeñan un rol de prueba específico u otro rol —por ejemplo, clientes—.
 
 ## Prueba independiente
 
-La forma en que se implementa la independencia de la prueba varía dependiendo del modelo de ciclo de vida de desarrollo de software. Por ejemplo, en el desarrollo ágil, los probadores pueden formar parte de un equipo de desarrollo. En algunas organizaciones que utilizan métodos ágiles, estos probadores también pueden ser considerados parte de un equipo de prueba independiente más grande. Además, en dichas organizaciones, los propietarios de producto pueden realizar la prueba de aceptación para validar las historias de usuario al final de cada iteración.
+La forma en que se implementa la independencia de la prueba 
+- Varía dependiendo del modelo de ciclo de vida de desarrollo de software. Por ejemplo, en el desarrollo ágil, <r>los probadores pueden formar parte de un equipo de desarrollo</r>. 
+- En algunas organizaciones que utilizan métodos ágiles, <r>estos probadores también pueden ser considerados parte de un equipo de prueba independiente más grande</r>. 
+- En dichas organizaciones, <r>los propietarios de producto pueden realizar la prueba de aceptación para validar las historias de usuario al final de cada iteración</r>.
 
 ## Ventajas y desventajas de la prueba independiente <a id='c1x'></a>
 
@@ -229,13 +262,13 @@ Su función es diseñar, producir, programar o mantener componentes o subconjunt
 
 ### QA
 
-La principal función es probar los sistemas informáticos para que funcionen correctamente de acuerdo a los requerimientos del cliente, documentar los errores encontrados y desarrollar procedimientos de prueba para hacer un seguimiento de los problemas de los productos de forma más eficaz y eficiente.
+La principal función es <r>probar los sistemas informáticos para que funcionen correctamente de acuerdo a los requerimientos del cliente</r>, documentar los errores encontrados y desarrollar procedimientos de prueba para hacer un seguimiento de los problemas de los productos de forma más eficaz y eficiente.
 
 <!-- fin resumen link -->
 
 > Ver actividad: 1
 
-## C2 - Gestion de defectos <a id='c2'></a>
+# C2 - Gestion de defectos <a id='c2'></a>
 
 **Grandes empresas - Grandes defectos**
 
@@ -265,7 +298,7 @@ Esto se convierte en un **defecto** y al ejecutarse provoca un mal funcionamient
 
 <!-- fin resumen video -->
 
-## ciclo de vida de un defecto <a id='c2a1'></a>
+## Ciclo de vida de un defecto <a id='c2a1'></a>
 
 El proceso que gestiona un defecto desde su descubrimiento hasta su solución se denomina ciclo de vida de un defecto. 
 En cada estado solo existe un responsable del defecto, excepto en estados terminales —cerrado, duplicado—, debido
@@ -275,6 +308,25 @@ más acciones.
 [Detalle del ciclo](https://view.genial.ly/609948c81ba6380d85590b90)
 
 ![ciclo de vida de un defecto](./img/c2.png)
+
+1. **Nuevo/Inicial** Se recopila la información y se registra el defecto.
+2. **Asignado** Si es un defecto válido y debe solucionarse se asigna al equipo de desarrollo, sino se puede rechazar o diferir (bug triage).
+`Duplicado`: Si el defecto se repite o existe otro
+con una misma causa raíz.
+`Devuelto o rechazado`: Se solicita más información o el receptor rechaza el defecto.
+`Diferido`: el defecto
+no es prioritario y se solucionará en una próxima versión.
+2. **En progreso** Se analiza y trabaja en la solución.
+3. **Corregido** Se realizan los cambios de código para solucionar el defecto..
+4. **En espera de verificacion** En espera de que sea asignado a un probador. El desarrollador está a la expectativa del resultado de la verificación.
+5. **En verificacion** El probador ejecuta una prueba de confirmación.
+`Reabierto`: debe contener la siguiente descripción “La prueba de confirmación indica que el defecto no se ha solucionado.” 
+6. **Verificado** Se obtiene el resultado esperado en la prueba de confirmación
+7. **Cerrado** El defecto fue corregido y se encuentra disponible para el usuario final.
+
+
+
+
 
 ## Gestion de defectos <a id='c2b'></a>
 
@@ -301,7 +353,7 @@ más acciones.
 
 ## ¿Cómo escribir un buen informe? <a id='c2b3'></a>
 
-Si el defecto se reporta eficientemente, las probabilidades de que sea solucionado rápidamente es mayor. Entonces, la solución de un defecto dependerá de la eficiencia con que se reporte. 
+Si el defecto se reporta eficientemente, las probabilidades de que sea solucionado rápidamente es mayor. Entonces, <r>la solución de un defecto dependerá de la eficiencia con que se reporte</r>. 
 
 ## ¿Qué condiciones debemos tener en cuenta? <a id='c2b4'></a>
 
@@ -313,7 +365,8 @@ Si el defecto no es reproducible, no es un defecto. Para defectos que ocurren en
 
 ## ¿Cuáles son los problemas más comunes con los informes de defectos? <a id='c2b5'></a>
 
-- Redactar un defecto de manera excesivamente coloquial y ambigua.- Dar solo una captura del defecto sin indicar qué se estaba haciendo cuando sucedió. 
+- Redactar un defecto de manera excesivamente coloquial y ambigua.
+- Dar solo una captura del defecto sin indicar qué se estaba haciendo cuando sucedió. 
 - No incluir en la descripción del defecto cuál era el resultado esperado para los pasos realizados.
 - No determinar un patrón con el cual el defecto ocurre antes de reportar el mismo —es importante para ser directos en cuál es el problema—.
 - No leer el defecto reportado siguiendo los pasos uno mismo para ver que la descripción es clara.
@@ -324,7 +377,9 @@ Si el defecto no es reproducible, no es un defecto. Para defectos que ocurren en
 
 ### Defectos
 
-Cuando se detecta un defecto —como parte de las pruebas estáticas—, o se observa un fallo —como parte de las pruebas dinámicas—, la persona implicada debería recopilar los datos e incluirlos en el informe de defectos. Esta información debería ser suficiente para tres fines:
+Cuando se detecta un defecto —como parte de las pruebas estáticas—, o se observa un fallo —como parte de las pruebas dinámicas—, la persona implicada debería recopilar los datos e incluirlos en el informe de defectos. 
+
+Esta información debería ser suficiente para tres fines:
 
 - Gestión del informe durante el ciclo de vida de los defectos.
 - Evaluación del estado del proyecto, especialmente en términos de calidad del producto y progreso de las pruebas.
@@ -377,12 +432,810 @@ Verdadero
 
 Como tester, puedo reportar un defecto sin indicar cómo reproducirlo nuevamente ni evidenciar con pruebas.
 Falso
+
 <!-- fin quizz -->
 
+# C3 - Repaso <a id='c3'></a>
+
+> Ver actividad 3
+
+# C4 - Diseño de prueba <a id='c4'></a>
+
+## Caso de prueba <a id='c4a'></a>
+
+Un caso de prueba es un <r>conjunto de acciones que se ejecutan para verificar una característica o funcionalidad particular de una aplicación de software. Es decir, que todas las características de una aplicación de software van a ser representadas por uno o más casos de prueba</r>. Es por ello que este documento es de vital importancia en el mundo de la calidad.
+
+En esta parte de la materia, aprenderemos cómo crear un caso de prueba de manera correcta mediante el uso de técnicas de prueba. También, nos centraremos en la relación existente entre casos de prueba y defectos.
+
+> ver PDF: Casos de Prueba.pdf
+
+<!-- Resumen pdf inicio -->
+
+**¿Qué es un caso de prueba?**
+
+Es un documento escrito que <r>proporciona información escrita **sobre qué y cómo probar.</r>**
+
+## Características de un buen caso de prueba <a id='c4a1'></a>
+
+### Deben ser simples 
+Se deben crear casos de prueba que sean lo más simples posibles ya que otra persona que no sea el autor puede ejecutarlos. Utilizar un lenguaje asertivo para facilitar la comprensión y que la ejecución sea más rápida. 
+
+### El título debe ser fuerte
+Solo leyendo el título, cualquier probador debería comprender el objetivo del caso de prueba.
+
+### Tener en cuenta al usuario final
+El objetivo final es crear casos de prueba que cumplan con los requisitos del cliente y que sean fáciles de usar. 
+
+### No asumir
+No asumir la funcionalidad y las características de la aplicación mientras se prepara el caso de prueba. Se debe ser fiel a los documentos de especificación y ante cualquier duda, hay que consultar. 
+
+### Asegurar la mayor cobertura posible
+Escribir casos de prueba para todos los requisitos especificados. 
+
+### Autonomía
+El caso de prueba debe generar los mismos resultados siempre, sin importar quien lo pruebe. 
+
+### Evitar la repetición de casos de prueba
+Si se necesita un caso de prueba para ejecutar otro, indicar el caso de prueba por su ID.
+
+## ¿Qué debe contener un caso de prueba? <a id='c4a2'></a>
+
+### Identificador
+
+Puede ser numérico o alfanumérico. La mayoría de herramientas lo generan automáticamente.
+
+### Nombre del caso de prueba (conciso)
+
+Se debe utilizar una nomenclatura que esté definida, pero, si no existe, lo recomendable es incluir el nombre de módulo al que corresponde el caso de prueba.
+
+### Descripción
+
+Debe decir qué se va a probar, el ambiente de pruebas y los datos necesarios para ejecutarlo.
+
+### Precondición
+
+Asunción que debe cumplirse antes de ejecutar el caso de prueba
+
+### Pasos
+
+Son las acciones que se deben realizar para obtener los resultados.
+
+### Resultados esperados
+
+Es lo que le indica al probador cuál debería ser la experiencia luego de ejecutar los pasos y determinar si el test falló o no
+<!-- fin resumen pdf -->
+
+## Testing positivo y testing negativo <a id='c4a3'></a>
+
+### Testing positivo (+)
+
+Son aquellos casos de prueba que validan el flujo normal de un sistema bajo prueba. Es decir, flujos que están relacionados a los requisitos funcionales del sistema bajo prueba.
+
+### Testing negativo (-)
+
+Son aquellos casos de prueba que validan flujos no contemplados dentro de los requisitos de un sistema bajo prueba. 
+
+## Ejemplo de caso de prueba <a id='c4a4'></a>
+
+![fb](./img/c4a3.png)
+
+**Ejemplo: Caso prueba positivo**
+
+Este es un caso de prueba positivo para el login de Facebook basado en el siguiente requerimiento y pantalla:
+
+- Verificar el login en la página de Facebook para un usuario:
+
+![caso 1](./img/c4a3a.png)
+
+**Ejemplo: Caso prueba negativo**
+
+A continuación, vemos un caso de prueba negativo para el login de Facebook basado en el mismo requerimiento y pantalla
+
+![caso 2](./img/c4a3b.png)
+
+## Happy path testing <a id='c4a5'></a>
+
+- Escenarios de prueba diseniados
+- Deben recorrer mismo flujo que usuario final
+- Ela primera forma de prueba que se realiza en una aplicacion
+- Es una prueba positiva
+- Su proposito no es encontrar defectos si no ver que el producto funcione como ha sido diseniado
+
+![happy path testing - Ventajas y Limitaciones](./img/c4a5.jpg)
 
 
+## Casos de uso <a id='c4a6'></a>
+
+Antes de realizar el diseño de los casos de prueba, lo que se debe llevar a cabo es el análisis de los documentos que van a ser la base para la generación de esos casos de prueba. **Estos documentos van a asegurar los requisitos del cliente**. Generalmente, estos requisitos se encuentran escritos como casos de uso. **Un tester debe comprender qué es un caso de uso y cómo diseñar los casos de prueba a partir de estos**.
+
+![caso de uso y caso de prueba](./img/c4a6.jpg)
+
+Se pueden crear uno o mas casos de prueba para cada comportamiento detallado en los casos de uso.
+
+> Ver pdf: Ejercicio - Caso de Prueba.pdf
+
+### Actividad en clase <a id='c4sm1'></a>
+
+**Consigna:** Dada la aplicación Playground, seleccionar 3 escenarios y escribir 3 casos de prueba. Dentro de
+los escenarios que van a utilizar, se deberá contemplar al menos un caso de testing negativo y
+uno de testing positivo.
+
+**Solucion:**
+
+[link spreadsheet](https://docs.google.com/spreadsheets/d/1ZiXXRQR0R-knsEGOCOjDVWD8PmUOyn6fPpFNi28_OyU/edit#gid=0)
+
+![solucion](./img/c4sm1.png)
+
+## NOTAS: Clase 4 <a id='c4s'></a>
+
+- Un defecto es consecuencia  de un caso de prueba que fallo
+- Un **caso de prueba** es un documento que le dice al probador que es lo que debo probar y como lo debo probar
+- los modulos del sistema van a estar agrupados
+- **La comparacion del sistema con el documento de requemiento se haran a traves de los casos de prueba.**
+- los casos de prueba analizan/desmenuzan el documento de requerimiento, creando casos de prueba para poder validar mi sistema.
+- Lo que une el doc de requermientos y al sistema que esta bajo prueba, son los casos de prueba
+
+```mermaid
+flowchart LR
+    id1(Sistema) --- id2(Casos de prueba) --- id3(Doc de requerimientos)
+```
+- **El caso de prueba** es el documento por excelencia del equipo de calidad, detalle `que y como probar`, se basa en el doc de casos de uso.
+- Analista crea un documento de pruebas basandose en un documento de requerimientos, por ejemplo el documento de casos de uso
+**por ejemplo:**
+    - El usuario tiene que poder logguearse
+    - El usuario tiene que poder cambair su foto de perfil
+    - El usuario tiene que poder publicar un articulo a la venta
+    
+    El analista tiene que desmenuzar eso en varios casos de prueba: ejemplo con el caso de loggearse:
+
+        - Formato de contrasenia
+        - Cantidad largo de password
+        - Caracteres especiales
+        - Si tiene arroba, si no.
+
+- El caso de prueba puede ser positivo o negativo
+- Caso de prueba que falla desencadena un defecto
+- Los casos de testing positivo y negativo estan cercanos a encontrar defectos
+- **Testing positivo**: Valida flujo normal de un sistema, el flujo que se va a repetir mas en el sistema. no esta visiado, no tiene impronta de maldad. Ej: loguearse con credenciales correctas, caracteres correctos.
+- **Testing negativo:** contempla flujos no contemplados en los requerimientos, donde mas "maldad como probador se deben tener", crea escenarios mas negativos, cuestionamos mas al documento de requerimientos. Forza mas a encontrar el defecto, el sistema deberia responder bien antes estas pruebas. No porque sea negativo va a dar falla.
+- El happy path dentro de los positivos, los mas importantes o prioridad uno y mas comunes del sistema.
+    **Por ejemplo:** Tenemos una pantalla login con dos casos de prueba positivos.
+    1. Contrasenia con letras
+    es el happy path, el que mas se va a usar, el que menos deberia fallar
+    2. contrasenia con letras numeros y caracteres especiales
+    
+    Son los que a nivel camino no deberian fallar. Hace mas foco en el testing positivo. Es el mas positivo de los positivos
+    El objetivo de happy path es encontrar defectos con una prioridad alta de resolucion por que si falla un happy path es grave ya que son replicas de usuarios finales.
+    Happy path pone warnings super grandes
+
+- Si tengo un sistema bajo prueba que falla tengo un defecto
+- El QA reporta defectos.
+- Casos de uso, es uno de los formatos que puede venir el documento de requerimientos, es uno de los mas conocidos y usados. Que describe la forma en que el usuario va a interactuar para lograr un determinado objetivo.
+- Un requerimiento de un caso de uso puede ser: 
+
+    **por ejemplo**: El usuario pueda operar con tarjeta de credito; como analista tenemos que contemplar lo que implique: 
+    - fecha de vencimiento de la tarjeta
+    - formato de la fecha de vencimiento 
+    - cantidad de numeros
+
+- Cada caso de prueba debe representar un solo defecto, se reporta individualmente
+- Estado: `TO DO`, `IN PROGRESS`: cuando lo estoy escribiendo. `DEPRECATED`: Cuando ya lo borraron. `FAIL`: Cuando falla algun resultado esperado. `PASSED`: Cuando da el resultado esperado.
+
+![Plantilla](./img/c4s1.png)
+
+<!-- fin notas clase 4 vivo -->
+
+# C5 - Niveles y tipos prueba <a id='c5'></a>
+
+En toda actividad es importante conocer el marco global, es decir, tener esa visión general para no perder de vista dónde estamos y cómo seguimos. En este módulo, para lograr esta visión global, comenzaremos por conocer cómo se relacionan en forma lógica y cronológica las actividades que se desarrollan a lo largo del ciclo de vida de las pruebas de software (STLC).
+
+Luego, se agruparán estas actividades con el fin de organizarlas y gestionarlas conjuntamente en los distintos niveles de prueba. <r>Cada nivel de prueba es una instancia del proceso de prueba</r>, desde componentes individuales hasta sistemas completos.
+
+Finalmente, <r>estas actividades de prueba serán agrupadas de acuerdo a características específicas</r> que se necesitan probar en un sistema de software o partes de un sistema. <r>Estos grupos de pruebas con un objetivo específico son llamados tipos de prueba. </r>
+
+>Ver pdf: Ciclo de vida de las pruebas de Software.pdf
+
+<!-- inicio resumen pdf -->
+
+## Ciclo de vida de las pruebas de Software <a id='c5a1'></a>
+
+No existe un proceso de prueba único y universal, pero existen actividades de prueba comunes que nos ayudan a organizarnos para alcanzar los objetivos establecidos
+
+**El proceso de prueba en contexto**
+
+Algunos factores de contexto que influyen en el proceso de prueba son:
+
+- Modelo de ciclo de vida de desarrollo de software y metodologías de proyecto en uso. 
+- Niveles y tipos de prueba considerados. 
+- Riesgos de producto y de proyecto. 
+- Dominio del negocio. 
+- Restricciones operativas, incluyendo, pero no limitadas a:
+    - Plazos
+    - Complejidad
+
+## Ciclo de vida: Tareas principales <a id='c5a1a'></a>
+
+El ciclo de vida de las pruebas de software consiste en las siguientes actividades principales —aunque no siempre están agrupadas de esta manera en todos los proyectos de software:
+
+![tareas](./img/c5a1.png)
+
+### Planificación <a id='c5a1b'></a>
+
+En esta actividad se definen los objetivos y el enfoque de la prueba dentro de las restricciones impuestas por el contexto.
+
+Algunas subactividades realizadas son:
+- Determinar el alcance, los objetivos y los riesgos.
+- Definir el enfoque y estrategia general.
+- Integrar y coordinar las actividades a realizar durante el ciclo de vida del software.
+- Definir las especificaciones de técnicas, tareas de prueba adecuadas, las personas y otros recursos necesarios
+- Establecer un calendario de pruebas para cumplir con un plazo límite.
+- Generar el plan de prueba
+
+**Documentos de salida:**
+- Plan de prueba —general y/o por nivel de prueba—.
+
+### Seguimiento y control <a id='c5a1c'></a>
+
+El objetivo de esta actividad es reunir información y proporcionar retroalimentación y visibilidad sobre las actividades de prueba. Como parte del control, se pueden tomaracciones correctivas, como cambiar la prioridad de las pruebas, el calendario y reevaluar los criterios de entrada y salida.
+
+**Algunas subactividades realizadas son:**
+- Comprobar los resultados y los registros de la prueba en relación con los criteriosde cobertura  especificados.
+- Determinar si se necesitan más pruebas dependiendo del nivel de cobertura quese debe alcanzar.
+
+**Documento de salida:**
+- Informe de avance de la prueba.
+
+### Análisis <a id='c5a1d'></a>
+
+Durante esta actividad se determina “qué probar”.
+
+**Algunas subactividades realizadas son:**
+- Analizar la base de prueba correspondiente al nivel de prueba considerado —información de diseño e implementación, la implementación del componente o sistema en sí, informes de análisis de riesgos, etc.—.
+- Identificar defectos de distintos tipos en las bases de prueba —ambigüedades, omisiones, inconsistencias, inexactitudes, etc.—.
+- Identificar los requisitos que se van a probar y definir las condiciones de prueba para cada requisito.
+- Capturar la trazabilidad entre la base de prueba y las condiciones de prueba.
+
+**Documento de salida:**
+- Contratos de prueba que contienen las condiciones de prueba
+
+### Diseño <a id='c5a1e'></a>
+
+Durante esta actividad se determina “cómo probar”.
+
+**Algunas subactividades realizadas son:**
+- Diseñar y priorizar casos de prueba y conjuntos de casos de prueba de alto nivel. 
+- Identificar los datos de prueba necesarios.
+- Diseñar el entorno de prueba e identificar la infraestructura y las herramientas necesarias. 
+- Capturar la trazabilidad entre la base de prueba, las condiciones de prueba, los casos de prueba y los procedimientos de prueba.
+
+**Documento de salida:**
+- Casos de prueba de alto nivel diseñados y priorizados.
+
+### Implementación <a id='c5a1f'></a>
+
+Se completan los productos de prueba necesarios para la ejecución de la prueba, incluyendo la secuenciación de los casos de prueba en procedimientos de prueba.
+
+**Algunas subactividades realizadas son:**
+
+- Desarrollar y priorizar procedimientos de prueba.
+- Crear juegos de prueba (test suite) a partir de los procedimientos de prueba.
+- Organizar los juegos de prueba dentro de un calendario de ejecución.
+- Construir el entorno de prueba y verificar que se haya configurado correctamente todo lo necesario.
+- Preparar los datos de prueba y asegurarse de que estén correctamente cargados.
+- Verificar y actualizar la trazabilidad entre la base de prueba, las condiciones de prueba, los casos de prueba, los procedimientos de prueba y los juegos de prueba.
+
+**Documento de salida:**
+- Procedimientos y datos de prueba. 
+- Calendario de ejecución.
+- Test suite
+
+### Ejecución <a id='c5a1g'></a>
+
+Durante esta actividad se realiza la ejecución de los casos de prueba. 
+
+**Algunas subactividades realizadas son:**
+- Registrar los identificadores y las versiones de los elementos u objetos de prueba.
+- Ejecutar y registrar el resultado de las pruebas de forma manual o utilizando herramientas.
+- Comparar los resultados reales con los resultados esperados. 
+- Informar sobre los defectos en función de los fallos observados.
+- Repetir las actividades de prueba, ya sea como resultado de una acción tomada para una anomalía o como parte de la prueba planificada —retest o prueba de confirmación—.
+- Verificar y actualizar la trazabilidad entre la base de prueba, las condiciones de prueba, los casos de prueba, los procedimientos de prueba y los resultados de la prueba.
+
+**Documento de salida:**
+- Reporte de defectos. 
+- Informe de ejecución de pruebas
+
+> Se recopilan la información de las actividades completadas y los productos de prueba. Puede ocurrir cuando un sistema de software es liberado, un proyecto de prueba es completado —o cancelado—, finaliza una iteración de un proyecto ágil, se completa un nivel de prueba o se completa la liberación de un mantenimiento.
+
+### Conclusión <a id='c5a1h'></a>
+
+**Algunas subactividades realizadas son:**
+
+- Comprobar que todos los informes de defecto están cerrados. - Finalizar, archivar y almacenar el entorno de prueba, los datos de prueba, la infraestructura de prueba y otros productos de prueba para su posterior reutilización. 
+- Traspaso de los productos de prueba a otros equipos que podrían beneficiarse con su uso.
+- Analizar las lecciones aprendidas de las actividades de prueba completadas.
+- Utilizar la información recopilada para mejorar la madurez del proceso de prueba. 
+
+**Documento de salida:**
+- Informe resumen de prueba.
+- Lecciones aprendidas.
+
+<!-- fin resumen pdf -->
+
+## Niveles de prueba <a id='c5a2'></a>
+
+[Link: Niveles de prueba](https://view.genial.ly/6140fef03f7d930d762f0233)
+
+Vamos a conocer los objetivos específicos, las bases de prueba, el objeto de prueba, los defectos y fallos característicos y los enfoques y responsabilidades específicas de cada nivel de prueba.
+
+### Prueba de componente o unitaria <a id='c5a2a'></a>
+
+**Objetivos especificos**
+- Reducir el riesgo.
+- Verificar que los comportamientos funcionales y no funcionales del componente son los diseñados y especificados.
+- Generar confianza en la calidad del componente.
+- Encontrar defectos en el componente.
+- Prevenir la propagación de defectos a niveles de prueba superiores.
+
+**Bases de prueba**
+Algunos ejemplos de productos de trabajo que se pueden utilizar como base de prueba incluyen:
+
+- Diseño detallado.
+- Código.
+- Modelo de datos.
+- Especificaciones de los componentes.
+
+**Objeto de prueba**
+Los objetos de prueba característicos para la prueba de componente incluyen:
+
+- Componentes, unidades o módulos.
+- Código y estructuras de datos.
+- Clases.
+- Módulos de base de datos.
+
+**Defectos y fallos característicos**
+
+Ejemplos de defectos y fallos característicos de la prueba de componente incluyen:
+
+- Funcionamiento incorrecto —por ejemplo, no lo hace de la manera en que se describe en las especificaciones de diseño—.
+- Problemas de flujo de datos.
+- Código y lógica incorrectos.
+
+**Enfoques y responsabilidades específicas**
+
+En general, el desarrollador que escribió el código realiza la prueba de componente. Los desarrolladores pueden alternar el desarrollo de componentes con la búsqueda y corrección de defectos. A menudo, estos escriben y ejecutan pruebas después de haber escrito el código de un componente. Sin embargo, especialmente en el desarrollo ágil, la redacción de casos de prueba de componente automatizados puede preceder a la redacción del código de la aplicación.
+
+### Prueba de integración <a id='c5a2b'></a>
+
+**Objetivos especificos**
+La prueba de integración se centra en las interacciones entre componentes o sistemas.
+
+- Reducir el riesgo.
+- Verificar que los comportamientos funcionales y no funcionales de las interfaces sean los diseñados y especificados.
+- Generar confianza en la calidad de las interfaces.
+- Encontrar defectos —que pueden estar en las propias interfaces o dentro de los componentes o sistemas—.
+- Prevenir la propagación de defectos a niveles de prueba superiores.
+
+**Bases de prueba**
+Algunos ejemplos de productos de trabajo que pueden utilizarse como base de prueba incluyen:
+
+- Diseño de software y sistemas.
+- Diagramas de secuencia.
+- Especificaciones de interfaz y protocolos de comunicación.
+- Casos de uso.
+- Arquitectura a nivel de componente o de sistema.
+- Flujos de trabajo.
+- Definiciones de interfaces externas.
+
+**Objeto de prueba**
+Los objetos de prueba característicos para la prueba de integración incluyen:
+
+- Subsistemas.
+- Bases de datos.
+- Infraestructura.
+- Interfaces.
+- Interfaces de programación de aplicaciones —API por sus siglas en inglés—.
+- Microservicios.
+
+**Defectos y fallos característicos**
+- Datos incorrectos, datos faltantes o codificación incorrecta de datos.
+- Secuenciación o sincronización incorrecta de las llamadas a la interfaz.
+- Incompatibilidad de la interfaz.
+- Fallos en la comunicación entre componentes.
+- Fallos de comunicación entre componentes no tratados o tratados de forma incorrecta.
+- Suposiciones incorrectas sobre el significado, las unidades o las fronteras de los datos que se transmiten entre componentes.
+
+**Enfoques y responsabilidades específicas**
+
+La prueba de integración debe concentrarse en la integración propiamente dicha. Se puede utilizar los tipos de prueba funcional, no funcional y estructural. En general es responsabilidad de los testers.
+
+### Prueba de sistema <a id='c5a2c'></a>
+
+**Objetivos específicos**
+- Reducir el riesgo.
+- Verificar que los comportamientos funcionales y no funcionales del sistema son los diseñados y especificados.
+- Validar que el sistema está completo y que funcionará como se espera.
+- Generar confianza en la calidad del sistema considerado como un todo.
+- Encontrar defectos.
+- Prevenir la propagación de defectos a niveles de prueba superiores o a producción.
+
+**Bases de prueba**
+Algunos ejemplos de productos de trabajo que se pueden utilizar como base de prueba incluyen:
+
+- Especificaciones de requisitos del sistema y del software —funcionales y no funcionales—.
+- Informes de análisis de riesgo.
+- Casos de uso.
+- Épicas e historias de usuario.
+- Modelos de comportamiento del sistema.
+- Diagramas de estado.
+- Manuales del sistema y del usuario.
+
+**Objeto de prueba**
+- Aplicaciones.
+- Sistemas hardware/software.
+- Sistemas operativos.
+- Sistema sujeto a prueba (SSP).
+- Configuración del sistema y datos de configuración.
+
+**Defectos y fallos característicos**
+- Cálculos incorrectos.
+- Comportamiento funcional o no funcional del sistema incorrecto o inesperado.
+- Control y/o flujos de datos incorrectos dentro del sistema.
+- Incapacidad para llevar a cabo, de forma adecuada y completa, las tareas funcionales extremo a extremo.
+- Fallo del sistema para operar correctamente en el/los entorno/s de producción.
+- Fallo del sistema para funcionar como se describe en los manuales del sistema y de usuario.
+
+**Enfoques y responsabilidades específicas**
+La prueba de sistema debe centrarse en el comportamiento global y extremo a extremo del sistema en su conjunto, tanto funcional como no funcional. Deben utilizar las técnicas más apropiadas para los aspectos del sistema que serán probados. Los probadores independientes, en general, llevan a cabo la prueba de sistema.
+
+### Prueba de aceptación <a id='c5a2d'></a>
+
+**Objetivos específicos**
+La prueba de aceptación, al igual que la prueba de sistema, se centra normalmente en el comportamiento y las capacidades de todo un sistema o producto. Los objetivos de la prueba de aceptación incluyen:
+
+- Establecer confianza en la calidad del sistema en su conjunto.
+- Validar que el sistema está completo y que funcionará como se espera.
+- Verificar que los comportamientos funcionales y no funcionales del sistema sean los especificados.
+
+**Bases de prueba**
+Entre los ejemplos de productos de trabajo que se pueden utilizar como base de prueba se encuentran:
+
+- Procesos de negocio.
+- Requisitos de usuario o de negocio.
+- Normativas, contratos legales y estándares.
+- Casos de uso.
+- Requisitos de sistema.
+- Documentación del sistema o del usuario.
+- Procedimientos de instalación.
+- Informes de análisis de riesgo.
+
+**Objeto de prueba**
+- Sistema sujeto a prueba.
+- Configuración del sistema y datos de configuración.
+- Procesos de negocio para un sistema totalmente integrado.
+- Sistemas de recuperación y sitios críticos —para pruebas de continuidad del negocio y recuperación de desastres—.
+- Procesos operativos y de mantenimiento.
+- Formularios.
+- Informes.
+- Datos de producción existentes y transformados.
+
+**Defectos y fallos característicos**
+Entre los ejemplos de defectos característicos de cualquier forma de prueba de aceptación se encuentran:
+
+- Los flujos de trabajo del sistema no cumplen con los requisitos de negocio o de usuario.
+- Las reglas de negocio no se implementan de forma correcta.
+- El sistema no satisface los requisitos contractuales o reglamentarios.
+- Fallos no funcionales tales como vulnerabilidades de seguridad, eficiencia de rendimiento inadecuada bajo cargas elevadas o funcionamiento inadecuado en una plataforma soportada.
+
+**Enfoques y responsabilidades específicas**
+A menudo es responsabilidad de los clientes, usuarios de negocio, propietarios de producto u operadores de un sistema, y otros implicados también pueden estar involucrados. La prueba de aceptación se considera, a menudo, como el último nivel de prueba en un ciclo de vida de desarrollo secuencial.
+
+> Ver video: Niveles de pruebas
+
+<!-- inicio resumen video -->
+
+Cuando se desarrolla una aplicacion de software hay que llevar a cabo pruebas en todos los niveles para entregarle al cliente un producto que cumpla todas sus espectativas y necesidades, asegurando la calidad del mismo.
+
+Para entregar un producto de calidad debemos testearlo; para esto existen distintos niveles de prueba y actividades que se organizan y gestionan conjuntamente.
+
+Para comprender que son niveles de prueba:
+
+**Modelo en V**
 
 
+Aparecio en los anios 90, define las fases de desarrollo de un proyecto, los procedimientos de gestiones de calidad que lo acompanian y describe como pueden interactuar estas fases individuales entre si.
 
-<!-- subir al inicio -->
-[subir al indice](#up)
+Este modelo compara las fases de desarrollo con las fases de control de calidad correspondientes
+
+> Para cada fase del desarrollo debe existir un resultado verificable
+
+![modelo v 90](./img/c5a2d1.png))
+
+Del lado izquiero observamos las fases de desarrollo y disenio y para cada una de ellas a su derecha se encuentran las medidas de control de calidad
+
+En el medio de ambos lados se situa la implementacion del producto
+
+![c5a2d2.gif](./img/c5a2d2.gif)
+
+Empezando del lado izquierdo el modelo preeve un analisis de requisimos y especificaciones
+Luego el proyecto se centra en las caracteristicas funcionales y no funcionales 
+Posteriormente de definen los componentes y las interfaces 
+y finalmente se realiza la implementacion
+
+En paralelo, de acuerdo a estas etapas, se produce el desarrollo en si del software a traves de diferentes niveles de control de la calidad o tambien llamadas de verificacion o validacion que siempre estan relacionadas con las fases de desarrollo
+
+**Verificacion** Es el conjunto de actividades que aseguran que el software implemente correctamente una funcion especifica.
+Estamos construyendo el producto correstamente?
+
+**Validacion** Es un conjunto de actividades que aseguran que el software construido respeta los requisitos del cliente.
+Estamos construyendo el producto correcto?
+
+![c5a2d5](./img/c5a2d5.gif)
+
+El metodo v abarca las pruebas de:
+- De componente
+- De integracion
+- De sistema
+- De aceptacion 
+
+En las pruebas de componente se aisla cada parte del programa: clases, modulos, paquetes, subsistemas; para comprobar que cada una de esas partes funciona por separado
+
+En las de integracion se realiza sobre un conjunto de modulos de la aplicacion para comprobar que funcionan correctamente; es decir, se prueba la interaccion entre las distintas partes del software
+
+Luego, las pruebas de sistemas son llevadas a cabo por el proveedor para demostrar que el sistema cumple con los requisitos funcionales y no funcionales y con el disenio tecnico
+
+Las pruebas de aceptacion, son realizadas por el usuario en un entorno muy similar al de produccion para demostrar que el sistema cumple las especificaciones funcionales y requisitos del cliente
+
+![c5a2d4.png](./img/c5a2d4.png)
+
+## Implementacion tradicional vs agil <a id='c5a3'></a>
+
+![tradicional vs agil](./img/c5a3.jpg)
+
+> Ver PDF: Tipos de prueba.pdf
+
+<!-- inicio resumen -->
+
+## Tipos de prueba <a id='c5b'></a>
+
+### Prueba Funcional <a id='c5b1'></a>
+
+La prueba funcional de un sistema incluye pruebas que evalúan las funciones que el sistema debe realizar. Las funciones describen **qué hace** el sistema
+
+**implementacion:**
+La prueba funcional observa el comportamiento del software.
+
+**Niveles de Prueba**
+Se pueden realizar pruebas funcionales en todos los niveles de prueba.
+
+**Alcance**
+Los requisitos funcionales pueden estar detallados en los siguientes documentos: especificaciones de requisitos del negocio, épicas, historias de usuarios, casos de uso y/o especificaciones funcionales
+
+**Cobertura**
+La cobertura funcional es la medida en que algún tipo de elemento funcional ha sido practicado por pruebas, y se expresa como un porcentaje del tipo o tipos de elementos cubiertos.
+
+### Prueba No Funcional <a id='c5b2'></a>
+
+La prueba no funcional prueba **“cómo de bien”** se comporta el sistema.**Como lo hace**
+
+**implementacion:**
+El diseño y ejecución de la prueba no funcional puede implicar competencias y conocimientos especiales, como el conocimiento de las debilidades inherentes a un diseño o tecnología -por ejemplo: vulnerabilidades de seguridad asociadas con determinados lenguajes de programación-.
+
+**Niveles de prueba**
+Se pueden realizar pruebas no funcionales en todos los niveles de prueba
+
+**Alcance**
+La prueba no funcional del sistema evalúa características como la usabilidad, la eficiencia del desempeño o la seguridad
+
+**Cobertura**
+La cobertura no funcional es la medida en que algún tipo de elemento no funcional ha sido practicado por pruebas,  y se expresa como un porcentaje del tipo o tipos de elementos cubiertos.
+
+
+### Prueba Estructurales <a id='c5b3'></a>
+
+Éstas pruebas están basadas en la estructura interna del sistema o en su  implementación. La estructura interna puede incluir código, arquitectura, flujos de trabajo y/o flujos de datos  dentro del sistema
+
+**implementacion:**
+El diseño y la ejecución de este tipo de pruebas pueden implicar competencias o conocimientos  especiales, como la forma en que se construye el código, cómo se almacenan los datos, y cómo utilizar las herramientas de cobertura e interpretar correctamente sus resultados.
+
+**Niveles de prueba**
+Se puede realizar en el nivel de componente y de integración. 
+
+**Alcance**
+En el nivel de prueba de integración de componentes, la prueba estructural pueden basarse en la arquitectura del sistema, como las interfaces entre componentes
+
+**Cobertura**
+La cobertura  estructural es la medida en que algún tipo de elemento estructural ha sido practicado mediante pruebas, y  se expresa como un porcentaje del tipo de elemento cubierto.
+
+###  Prueba Asociada al Cambio <a id='c5b4'></a>
+
+Existen 2 tipos de prueba relacionadas al cambio:
+
+- **Prueba de confirmación**: Una vez corregido un defecto, el software se puede probar con todos los  casos de prueba que fallaron debido al defecto, que se deben volver a ejecutar en la nueva versión  de software. <r>El  objetivo de una prueba de confirmación es confirmar que el defecto original se ha solucionado de  forma satisfactoria</r>.  
+
+- **Prueba de regresión**: Es posible que un cambio hecho en una parte del código, ya sea una  corrección u otro tipo de cambio, pueda afectar accidentalmente el comportamiento de otras partes  del código, ya sea dentro del mismo componente, en otros componentes del mismo sistema, o  incluso en otros sistemas. <r>La prueba de regresión implica la  realización de pruebas para detectar estos efectos secundarios no deseados</r>.  
+
+**implementacion:**
+Especialmente en los ciclos de vida de desarrollo iterativos e incrementales (por ejemplo, Agile), las nuevas  características, los cambios en las características existentes y la refactorización del código dan como  resultado cambios frecuentes en el código, lo que también requiere pruebas asociadas al cambio.
+
+**Niveles de prueba**
+La prueba de confirmación y la prueba de regresión se realizan en todos los niveles de prueba
+
+**Cobertura**
+Los juegos de prueba de regresión se ejecutan muchas veces y generalmente evolucionan lentamente,  por lo que la prueba de regresión es un fuerte candidato para la automatización.
+La cobertura crece a medida que se agregan más funcionales al sistema por lo tanto más pruebas de regresión
+
+<!-- fin resumen pdf -->
+
+
+## Esquema de niveles - Tipos de prueba <a id='c5a4'></a>
+
+[img gigante](https://assets.digitalhouse.com/content/ar/td/ts/niveles%20y%20%20tipos%20de%20prueba_Mesa%20de%20trabajo%201.jpg)
+
+![Niveles](./img/c5a4.jpg)
+
+## Ejemplos de tipos de prueba <a id='c5a5'></a>
+
+Los siguientes ejemplos están basados en una aplicación bancaria.
+
+### Pruebas funcionales: <a id='c5a5a'></a>
+
+**Prueba de componente:** las pruebas se diseñan con base en la forma en que un componente debe calcular el interés a pagar por un préstamo.
+
+**Prueba de integración de componentes:** las pruebas se diseñan en función de cómo la información de la cuenta capturada en la interfaz de usuario se transfiere a la lógica de negocio.
+
+**Prueba de sistema:** las pruebas se diseñan sobre la base de cómo los titulares de cuentas pueden solicitar una línea de crédito sobre sus cuentas corrientes.
+    
+**Prueba de integración de sistemas:** las pruebas se diseñan en función de cómo el sistema utiliza un microservicio externo para comprobar la calificación crediticia del titular de una cuenta.
+
+**Prueba de aceptación:** las pruebas se diseñan con base en la forma en que el empleado del banco tramita la aprobación o rechazo de una solicitud de crédito.
+
+### Pruebas estructurales: <a id='c5a5b'></a>
+
+**Prueba de componente:** pruebas están diseñadas para lograr una cobertura completa de sentencia y decisión para todos los componentes que realizan cálculos financieros.
+
+**Prueba de integración de componentes:** las pruebas están diseñadas para evaluar cómo cada pantalla de la interfaz del navegador pasa datos a la siguiente pantalla y a la lógica de negocio.
+
+**Prueba de sistema:** las pruebas están diseñadas para cubrir las secuencias de páginas web que pueden ocurrir durante una solicitud de línea de crédito (workflow).
+
+**Prueba de integración de sistemas:** las pruebas están diseñadas para evaluar todos los tipos de consulta posibles que se envían al microservicio de calificación crediticia.
+
+**Prueba de aceptación:** las pruebas están diseñadas para cubrir todas las estructuras de archivos de datos financieros soportados y rangos de valores para transferencias de banco a banco. 
+
+### Pruebas asociadas al cambio: <a id='c5a5c'></a>
+
+**Prueba de componente:** se construyen pruebas de regresión automatizadas para cada componente y se incluyen dentro del marco de integración continua.
+
+**Prueba de integración de componentes:** las pruebas están diseñadas para confirmar la corrección de defectos relacionados con la interfaz a medida que las correcciones se registran en el repositorio de código.
+
+**Prueba de sistema:** las pruebas de un flujo de trabajo dado se ejecutan de nuevo si cambia alguna pantalla de ese flujo de trabajo.
+
+**Prueba de integración de sistemas:** las pruebas de la aplicación que interactúa con el microservicio de calificación de crédito se vuelven a ejecutar diariamente como parte del despliegue continuo de ese microservicio.
+
+**Prueba de aceptación:** todas las pruebas que han fallado previamente se vuelven a ejecutar después de que se haya corregido un defecto encontrado en la prueba de aceptación.
+
+>Ver PDF: Ejercitacion 5
+
+<!-- inicio actividad -->
+
+**Consigna**
+Dado el sistema de PlayGround, ejemplificar:
+- 2 niveles de prueba que podrían aplicarse.
+- 2 casos de prueba que podrían redactarse y ejecutarse para tareas de testing.
+
+**Solucion ejercitacion 5** 
+
+Nivel III
+Prueba del sistema:
+Se probará que el acceso a zoom de la clase que se está dictando en el momento funcione correctamente haciendo click en el mismo en la página de inicio luego del logueo.
+
+Nivel IV
+Prueba de aceptación:
+Dentro de la pestaña de usuario esperaríamos encontrar los datos personales que servirían para reportar algún tipo de error de los mismos. Además sería interesante tener un analítico parcial para poder tener un seguimiento de la trayectoria académica.  
+
+<!-- fin actividad -->
+
+## NOTAS: Clase 5 <a id='c5s'></a>
+
+- **Tipos de prueba**: clasificacion que se pueden hacer a las pruebas: funcionales, no funcionales, dinamicas, no dinamicas 
+- **Los niveles de prueba** son momentos dentro del circuito de desarrollo donde enfoco mi energia en un formato de prueba en especifico. **Segun el momento de desarrollo en el que este voy a hacer una prueba de componente, una prueba de iteracion, de sistemas, de aceptacion.** El feedback o el output que yo voy a recibir de cada prueba va a ser distinta segun cada nivel y mi forma de encarar la prueba va a ser distinta segun el nivel donde yo este parado. Los niveles de prueba nos dan distintas opticas a los probadores 
+
+    - **`Prueba componente:`** Nivel I, Desarrollo. Se hace sobre el codigo, o algun modelo de datos, sobre algunas partes que hacen al desarrollo de mi sistema, aplican como pruebas de caja blanca; tengo acceso al codigo, puedo probarlo individualmente, el desarrollador es el encargado de estas pruebas, se hacen con `scripts`. Cuando hacemos prueba de componente nos enfocamos en la funcionalidad que estamos validando, no las relacionamos, somos atomicos con la funcionalidad que estoy probando y no su impacto en otro lugar. El componente puede ser un metodo de java. Los objetivos pueden ser recidir un riesgo, intenta que no suba a un nivel superior. Detectarlo de forma temprana.
+    podemos eencontrar problemas de codigo, problemas de logica, variables sin uso.
+    - **Objetivos especificos:** 
+        - Reducir riesgo 
+        - Verificar que los comportamientos funcionales y no funcionales del componente son los esperados. 
+        - Generar confianza en la calidad del componente. 
+        - Encontrar confianza en la calidad del componente. 
+        - Prevenir la prolongacion de defectos a niveles de prueba superiores.
+    - **Base de prueba:**
+        - Codigo
+        - Modelo de datos
+
+    - **`Pruebas de integracion`**: Nivel II, QA y Desarrollo. El objetivo es como se integra, como interactua con los componentes cercanos a el. Ejemplo: si estoy probando una pantalla de login, voy a ver como esa pantalla se relaciona con las pantallas amigas. el logout, con el registro, la primer pantalla despues del login. Valida el componente con sus componentes hermanos. Relacion en los casos de prueba (precondiciones). 
+    - **Objetivos especificos:** 
+        - Verificar que los comportamientos funcionales y no funcionales de las interfaces sean los diseniados y especificados
+        - Generar confianza en la calidad de las interfaces.
+        - Encontrar defectos
+        - Prevenir la propagacion de defectos a niveles superiores
+    - **Base de prueba:**
+        - Disenio de software
+        - Casos de uso
+        - Arquitectura
+
+    - **`Prueba de sistemas`** Nivel III, QA. Dependencias de conectores, de apis, sistema como un todo, la completitud del sistema. Prueba end to end, cumplir todos los requisitos del sistema. Interactua con componentes directos pero se ve todo el sistema en su totalidad, no se incluye al usuario final. hay conjuntos de pasos mas largos.
+    - **Objetivos especificos:** 
+        - Verificar que los comportamientos funcionales y no funcionales del sistema son los dinseniados y especificados
+        - Validar que el sistema esta completo
+        - Considerar el sistema como un todo
+        - Encontrar defectos
+        - Prevenir la prolongacion de defectos en produccion
+    - **Base de prueba:**
+        - Informes de analisis de prueba
+        - Casos de uso
+        - Manuales de sistema y del usuario
+        
+    - **`Prueba de aceptacion`** Nivel IV, El sistema segun mi ojo no tiene defectos, ahora vemos si impacta positivamente, si es lo que quiere el cliente. Que sea usable, que no infrinja la ley, como impacta. Todo lo que no hace a la calidad.
+    - **Objetivos especificos:** 
+        - Establecer confianza en la calidad del sitema en su conjunto
+        - Validar que el sistema esta completo y que funcionara como se espera
+        - Verificar que los comportamientos funcionales y no funcionales son los especificados
+    - **Base de prueba:**
+        - Procesos de negocio
+        - Normativas, contratos legales, y estandares
+        - Documentos del sistema o del usuario
+
+- Mientras mas arriba estamos mas caro es un defecto.
+- Tipos de prueba: 
+    - **Pruebas funcionales** Validar lo que hace el sistema. La prueba funcional de un sistema incluye pruebas que evaluan las funciones que el sistema debe realizar. Describen que hace el sistema.
+    La prueba funcional observa el comportamiento del sotfware. **Que deberia hacer el sistema**
+    Ejemplo: El sistema me deja logguear, el sistema me deja cambiar la foto de perfil
+    - **Pruebas no funcionales:** **Que tan bien hace las cosas**, como lo hace? Rapido, lento? Dificil? con poca usabiliad? Mantenerlo a nivel codigo es dificil? Poca escalabilidad?
+    
+    <!-- fin notas clase 5 vivo -->
+
+# C6 - Repaso <a id='c6'></a>
+
+## NOTAS: Clase 6 <a id='c6s'></a>
+
+> Ver pdf: Cierre semana
+
+<!-- resumen pdf -->
+
+## ¿Qué es Testing?
+
+Probar un software es un proceso que incluye muchas actividades diferentes: 
+    - Ejecución de prueba y comprobación de resultados. 
+    - Planificar las pruebas. 
+    - Analizar, diseñar e implementar las pruebas. 
+    - Informar el avance y resultado de la ejecución de pruebas. 
+    - Evaluar la calidad de un objeto de prueba.
+
+## 7 Principios de Testing
+1. La prueba muestra la presencia de defectos, no su ausencia. 
+2. La prueba exhaustiva es imposible. 
+3. La prueba temprana ahorra tiempo y dinero. 
+4. Los defectos se agrupan. 
+5. Cuidado con la prueba del pesticida. 
+6. La prueba se realiza de manera diferente según el contexto. 
+7. La ausencia de errores es una falacia
+
+## Niveles de Prueba
+
+- Componentes
+- Integración
+- Sistema
+- Aceptación
+
+## Tipos de prueba
+
+- Funcionales
+- Pruebas no funcionales
+
+
+> Ver PDF: Actividad 
+
+**Solucion**
+
+[Solucion actividad clase 6](https://docs.google.com/spreadsheets/d/14ISa3o4D0VEYkJMyNrHAs-0YOKW6UjAIk_UWTySUawI/edit#gid=0)
+
