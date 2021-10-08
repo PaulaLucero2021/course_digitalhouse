@@ -23,6 +23,9 @@ color: #e07a5f;
 h3 {
 color: #cd9777
 }
+h4 {
+color: #e5989b
+}
 r {
 color: #03045e;
 background-color: #90e0ef;
@@ -64,9 +67,9 @@ background-color: #90e0ef;
         - [Testing positivo y testing negativo](#c4a3)
         - [Ejemplo de caso de prueba](#c4a4)
         - [Happy path testing](#c4a5)
-        - [Casos de uso](#c4a6)
-        - [Actividad en clase 📑](#c4sm1)
-        - [Notas clase 4](#c4s)
+        - [Casos de uso y casos de prueba](#c4a6)
+        - [Actividad en clase](#c4sm1)
+    - [Notas clase 4](#c4s)
 - [C5 - Niveles y tipos prueba](#c5)
     - [Ciclo de vida de las pruebas de Software](#c5a1)
     - [Tareas principales](#c5a1a)
@@ -89,13 +92,18 @@ background-color: #90e0ef;
         - [Prueba Estructurales](#c5b3)
         - [Prueba Asociada al Cambio](#5b4)
     - [Esquema de niveles - Tipos de prueba](#c5a4)
-    - [Ejemplos de tipos de prueba](#c5a5)
-        - [Pruebas funcionales](#c5a5a)
-        - [Pruebas estructurales](#c5a5b)
-        - [Pruebas asociadas al cambio](#c5a5c)
     - [Notas clase 5](#c5s)
 - [C6 - Repaso](#c6)
     - [Notas clase 6](#c6s)
+- [C7 - Tecnicas de prueba](#c7)
+    - [Tecnicas de prueba](#c7a)
+        - [Categorías de técnicas de prueba](#c7a1)
+            - [Técnicas de caja negra](#c7a1a)
+                - [Partición de equivalencia](#c7a1a1)
+                - [Valores límites](#c7a1a2)
+                - [Tabla de decision](#c7a1a3)
+                - [Transición de estados](#c7a1a4)
+    - [Notas clase 7](#c7s)
 
 # C1 - Primeros pasos <a id='c1'></a>
 
@@ -619,7 +627,7 @@ flowchart LR
     - cantidad de numeros
 
 - Cada caso de prueba debe representar un solo defecto, se reporta individualmente
-- Estado: `TO DO`, `IN PROGRESS`: cuando lo estoy escribiendo. `DEPRECATED`: Cuando ya lo borraron. `FAIL`: Cuando falla algun resultado esperado. `PASSED`: Cuando da el resultado esperado.
+- Estado: `TO DO`, `IN PROGRESS`: cuando es muy largo el proceso y esta en proceso. `DEPRECATED`: Cuando ya lo borraron. `FAIL`: Cuando falla algun resultado esperado. `PASSED`: Cuando da el resultado esperado.
 
 ![Plantilla](./img/c4s1.png)
 
@@ -1014,6 +1022,18 @@ Los requisitos funcionales pueden estar detallados en los siguientes documentos:
 **Cobertura**
 La cobertura funcional es la medida en que algún tipo de elemento funcional ha sido practicado por pruebas, y se expresa como un porcentaje del tipo o tipos de elementos cubiertos.
 
+#### Ejemplo:
+
+**Prueba de componente:** las pruebas se diseñan con base en la forma en que un componente debe calcular el interés a pagar por un préstamo.
+
+**Prueba de integración de componentes:** las pruebas se diseñan en función de cómo la información de la cuenta capturada en la interfaz de usuario se transfiere a la lógica de negocio.
+
+**Prueba de sistema:** las pruebas se diseñan sobre la base de cómo los titulares de cuentas pueden solicitar una línea de crédito sobre sus cuentas corrientes.
+    
+**Prueba de integración de sistemas:** las pruebas se diseñan en función de cómo el sistema utiliza un microservicio externo para comprobar la calificación crediticia del titular de una cuenta.
+
+**Prueba de aceptación:** las pruebas se diseñan con base en la forma en que el empleado del banco tramita la aprobación o rechazo de una solicitud de crédito.
+
 ### Prueba No Funcional <a id='c5b2'></a>
 
 La prueba no funcional prueba **“cómo de bien”** se comporta el sistema.**Como lo hace**
@@ -1047,6 +1067,18 @@ En el nivel de prueba de integración de componentes, la prueba estructural pued
 **Cobertura**
 La cobertura  estructural es la medida en que algún tipo de elemento estructural ha sido practicado mediante pruebas, y  se expresa como un porcentaje del tipo de elemento cubierto.
 
+#### Ejemplo:
+
+**Prueba de componente:** pruebas están diseñadas para lograr una cobertura completa de sentencia y decisión para todos los componentes que realizan cálculos financieros.
+
+**Prueba de integración de componentes:** las pruebas están diseñadas para evaluar cómo cada pantalla de la interfaz del navegador pasa datos a la siguiente pantalla y a la lógica de negocio.
+
+**Prueba de sistema:** las pruebas están diseñadas para cubrir las secuencias de páginas web que pueden ocurrir durante una solicitud de línea de crédito (workflow).
+
+**Prueba de integración de sistemas:** las pruebas están diseñadas para evaluar todos los tipos de consulta posibles que se envían al microservicio de calificación crediticia.
+
+**Prueba de aceptación:** las pruebas están diseñadas para cubrir todas las estructuras de archivos de datos financieros soportados y rangos de valores para transferencias de banco a banco.
+
 ###  Prueba Asociada al Cambio <a id='c5b4'></a>
 
 Existen 2 tipos de prueba relacionadas al cambio:
@@ -1065,44 +1097,7 @@ La prueba de confirmación y la prueba de regresión se realizan en todos los ni
 Los juegos de prueba de regresión se ejecutan muchas veces y generalmente evolucionan lentamente,  por lo que la prueba de regresión es un fuerte candidato para la automatización.
 La cobertura crece a medida que se agregan más funcionales al sistema por lo tanto más pruebas de regresión
 
-<!-- fin resumen pdf -->
-
-
-## Esquema de niveles - Tipos de prueba <a id='c5a4'></a>
-
-[img gigante](https://assets.digitalhouse.com/content/ar/td/ts/niveles%20y%20%20tipos%20de%20prueba_Mesa%20de%20trabajo%201.jpg)
-
-![Niveles](./img/c5a4.jpg)
-
-## Ejemplos de tipos de prueba <a id='c5a5'></a>
-
-Los siguientes ejemplos están basados en una aplicación bancaria.
-
-### Pruebas funcionales: <a id='c5a5a'></a>
-
-**Prueba de componente:** las pruebas se diseñan con base en la forma en que un componente debe calcular el interés a pagar por un préstamo.
-
-**Prueba de integración de componentes:** las pruebas se diseñan en función de cómo la información de la cuenta capturada en la interfaz de usuario se transfiere a la lógica de negocio.
-
-**Prueba de sistema:** las pruebas se diseñan sobre la base de cómo los titulares de cuentas pueden solicitar una línea de crédito sobre sus cuentas corrientes.
-    
-**Prueba de integración de sistemas:** las pruebas se diseñan en función de cómo el sistema utiliza un microservicio externo para comprobar la calificación crediticia del titular de una cuenta.
-
-**Prueba de aceptación:** las pruebas se diseñan con base en la forma en que el empleado del banco tramita la aprobación o rechazo de una solicitud de crédito.
-
-### Pruebas estructurales: <a id='c5a5b'></a>
-
-**Prueba de componente:** pruebas están diseñadas para lograr una cobertura completa de sentencia y decisión para todos los componentes que realizan cálculos financieros.
-
-**Prueba de integración de componentes:** las pruebas están diseñadas para evaluar cómo cada pantalla de la interfaz del navegador pasa datos a la siguiente pantalla y a la lógica de negocio.
-
-**Prueba de sistema:** las pruebas están diseñadas para cubrir las secuencias de páginas web que pueden ocurrir durante una solicitud de línea de crédito (workflow).
-
-**Prueba de integración de sistemas:** las pruebas están diseñadas para evaluar todos los tipos de consulta posibles que se envían al microservicio de calificación crediticia.
-
-**Prueba de aceptación:** las pruebas están diseñadas para cubrir todas las estructuras de archivos de datos financieros soportados y rangos de valores para transferencias de banco a banco. 
-
-### Pruebas asociadas al cambio: <a id='c5a5c'></a>
+#### Ejemplo
 
 **Prueba de componente:** se construyen pruebas de regresión automatizadas para cada componente y se incluyen dentro del marco de integración continua.
 
@@ -1113,6 +1108,15 @@ Los siguientes ejemplos están basados en una aplicación bancaria.
 **Prueba de integración de sistemas:** las pruebas de la aplicación que interactúa con el microservicio de calificación de crédito se vuelven a ejecutar diariamente como parte del despliegue continuo de ese microservicio.
 
 **Prueba de aceptación:** todas las pruebas que han fallado previamente se vuelven a ejecutar después de que se haya corregido un defecto encontrado en la prueba de aceptación.
+
+<!-- fin resumen pdf -->
+
+
+## Esquema de niveles - Tipos de prueba <a id='c5a4'></a>
+
+[img gigante](https://assets.digitalhouse.com/content/ar/td/ts/niveles%20y%20%20tipos%20de%20prueba_Mesa%20de%20trabajo%201.jpg)
+
+![Niveles](./img/c5a4.jpg)
 
 >Ver PDF: Ejercitacion 5
 
@@ -1238,4 +1242,566 @@ Probar un software es un proceso que incluye muchas actividades diferentes:
 **Solucion**
 
 [Solucion actividad clase 6](https://docs.google.com/spreadsheets/d/14ISa3o4D0VEYkJMyNrHAs-0YOKW6UjAIk_UWTySUawI/edit#gid=0)
+
+# C7 - Tecnicas de pruebas <a id='c7'></a>
+
+## Técnicas de prueba <a id='c7a'></a>
+
+Dado que la escritura, diseño e implementación de casos de prueba ocupan un lugar central dentro de un proceso de calidad, estamos descubriendo juntos todo aquello que rodea a estos conceptos.
+
+Comprender y aplicar las técnicas de pruebas más utilizadas en el mercado nos dará una gran ventaja como testers al momento de analizar y dar cobertura a una funcionalidad dentro de un sistema que está bajo prueba.
+
+Conocer estas técnicas de prueba será una gran ventaja en nuestro rol, ya que <r>nos facilitará la tarea de certificar calidad dentro de un proyecto de software. Otra ventaja será el orden que nos dará al momento de escribir casos de prueba empezando desde cero, desde un caso de uso o desde una historia de usuario</r>.
+
+Es por ello que nos centraremos en los fundamentos teóricos escondidos dentro del diseño de casos de pruebas.
+
+![cajas](./img/c7a.jpg)
+
+> Ver PDF: Técnicas de Prueba.pdf
+
+<!-- inicio prueba pdf -->
+
+## Categorías de técnicas de prueba <a id='c7a1'></a>
+
+El objetivo de una técnica de prueba es ayudar a identificar las condiciones, los casos y los datos de prueba.
+
+**Elección de una técnica de prueba**
+
+La elección de la técnica de prueba a utilizar depende de los siguientes factores:
+- Tipo y complejidad del componente o sistema
+- Estándares de regulación
+- Requisitos del cliente o contractuales
+- Clases y niveles de riesgo
+- Objetivo de la prueba
+- Documentación disponible
+- Conocimientos y competencias del probador
+- Modelo del ciclo de vida del software
+- Tiempo y presupuesto
+
+**Clasificación de las técnicas de prueba**
+
+### Técnicas de caja negra: <a id='c7a1a'></a>
+
+se basan en el comportamiento extraído del análisis de los documentos que son base de prueba (documentos de requisitos formales, casos de uso, historias de usuario, etc). Son aplicables tanto para pruebas funcionales como no funcionales. Se concentran en las entradas y salidas sin tener en cuenta la estructura interna.
+
+#### Partición de equivalencia <a id='c7a1a1'></a>
+
+En esta técnica se dividen los datos en particiones conocidas como clases de equivalencia donde cada miembro de estas clases o particiones es procesado de la misma manera. Las características de esta técnica son:
+
+- La “partición de equivalencia válida” contiene valores que son aceptados por el componente o sistema.
+- La “partición de equivalencia no válida” contiene valores que son rechazados por el componente o sistema.
+- Se pueden dividir las particiones en subparticiones.
+- Cada valor pertenece a solo una partición de equivalencia.
+- Las particiones de equivalencia no válidas deben probarse en forma individual para evitar el enmascaramiento de fallos.
+- La cobertura se mide de la siguiente manera:
+
+![cobertura](./img/c7a2.png)
+
+**Ejemplo**
+
+Colores RGB en formato String minúscula. El valor de entrada solo puede corresponder a uno de los colores RGB escrito en minúscula, << red >>, << green >>, << blue >>. Se supone que cada una de esas entradas se debería manejar de forma distinta en el programa. Por lo tanto, tendríamos tres entradas de equivalencia válidas, una para cada unos de los valores de entrada: << red >>, << green >> y << blue >>. Una clase de equivalencia inválida incluiría aquellos colores no especificados en la condición. 
+
+#### Análisis de valores límites <a id='c7a1a2'></a>
+
+Es una extensión de la técnica de partición de equivalencia
+que solo se puede usar cuando la partición está ordenada, 
+y consiste en datos numéricos o secuenciales. 
+
+- Se deben identificar los valores límites mínimo y máximo (o valores inicial y final).
+- Se pueden utilizar 2 o 3 valores límites.
+- Para 2 valores límites se toma el valor que marca el límite (como valor que corresponde a la partición válida), y el valor anterior o posterior  que corresponda a la partición de equivalencia inválida.
+- Para 3 valores límites se toma el valor que marca el límite, un valor anterior y otro posterior a ese límite.
+- La cobertura se mide de la siguiente manera:
+
+![cobertura](./img/c7a3.png)
+
+**Ejemplos**
+
+Si una condición para un dato de entrada i especifica un rango de valores definido como n <= i <= m, los casos de prueba resultantes de aplicar el análisis de valores límite corresponden a n-1, n, n+1, m-1, m y m+1.
+
+Por ejemplo, si el dato de entrada corresponde a un número que nos indica el día de la semana en el que estamos, deberíamos definir el rango de valores válidos como: 1 <= día <= 7. En ese caso, los casos de prueba resultantes a aplicar serían 0, 1, 2, 6, 7 y 8.
+
+#### Tabla de decisión <a id='c7a1a3'></a>
+
+Esta técnica se utiliza para **pruebas combinatorias**, formadas por reglas de negocio complejas que un sistema debe implementar. Las características de esta técnica son:
+
+- Se deben identificar las condiciones (entradas) y las acciones resultantes (salidas). Estas conforman las filas de la tabla.
+- Las columnas de la tabla corresponden a reglas de decisión. Cada columna forma una combinación única de condiciones y la ejecución de acciones asociadas a esa regla.
+- Los valores de las condiciones y acciones pueden ser valores booleanos,discretos, numéricos o intervalos de números.
+- Ayuda a identificar todas las combinaciones importantes de condiciones y a encontrar cualquier desfase en los requisitos.
+- La cobertura se mide de la siguiente manera:
+
+![tabla](./img/c7a4.png)
+
+**Ejemplo**
+
+Cuando un cliente de la empresa paga dentro de los 30 días y la cantidad solicitada no supera el stock, se factura con descuento y se envía la mercadería solicitada. Sin embargo, si el pago se hiciera después de los 30 días, se facturará sin descuento, remitiendo la mercadería. Las mismas acciones se emprenden si se trata de un cliente nuevo. Se debe hacer lo mismo cualquiera sea el plazo de pago.
+
+Si no existe cantidad suficiente de stock y se trata de un cliente de la empresa que paga dentro de los 30 días, facturar con descuento, realizando la entrega de la cantidad de stock y dejar pendiente el resto del pedido. Si el cliente fuera nuevo, no practicar descuento alguno.
+
+En el caso de que el pago se efectuara dentro de los 30 días, cualquiera sea el cliente, se procederá de esta última manera.
+
+Si un cliente que compra por primera vez solicita mayor mercadería que la de stock, cualquiera sea el plazo de pago, no se le practicará descuento alguno, remitiendo la cantidad en stock y dejando pendiente la diferencia.
+
+Separemos las condiciones y las acciones:
+
+- Condiciones:
+
+    - Cliente de la empresa.
+    - Paga dentro de los 30 días.
+    - Cantidad solicitada no supera el stock.
+    - Pago después de 30 días.
+    - Cliente nuevo.
+    - Cantidad no supera el stock.
+    - Cualquiera sea el plazo.
+    - No hay suficiente cantidad en stock.
+    - Cliente por primera vez.
+    - Mayor cantidad de mercadería que la de stock.
+
+- Acciones:
+
+    - Facturar con descuento.
+    - Enviar mercadería solicitada.
+    - Facturar sin descuento.
+    - Dejar pendiente lo solicitado menos el stock.
+    - Enviar stock.
+    
+Normalicemos el lenguaje y construyamos la tabla:
+
+![tabla](./img/c7a6.png)
+
+**Tipos de reglas:**
+
+En cada regla se distinguen dos partes. La primera corresponde a las condiciones y la segunda, a las acciones. En la parte de las condiciones se pueden colocar tres tipos de entradas: S (sí), N (no), - (indiferencia). La entrada S (sí) significa que la condición debe satisfacerse o que es cierto que la condición se satisface. La entrada N (no) significa que la condición no debe cumplirse o que es cierto que la condición no se cumple. El – (indiferencia) significa que no importa que la condición se cumpla o no. En la parte de reglas de las acciones hay dos tipos de entradas: X si se debe realizar esa acción y el - si no se debe realizar esa acción. Finalmente, leyendo cada una de las columnas, tendremos los potenciales casos de pruebas para esta funcionalidad.
+
+#### Transición de estados <a id='c7a1a4'></a>
+
+Un diagrama de transición de estado muestra los posibles estados del software, así como la forma en que el software entra, sale y realiza las transiciones entre estados. Las características de esta técnica son:
+
+- Una tabla de transición de estado muestra todas las transiciones válidas y las transiciones potencialmente inválidas entre estados, así como los eventos, las condiciones de guarda y las acciones resultantes para las transiciones válidas.
+- Los diagramas de transición de estado, normalmente, sólo muestran las transiciones válidas y excluyen las transiciones no válidas.
+- La prueba de transición de estado se utiliza para aplicaciones basadas en menús y es extensamente utilizada en la industria del software embebido. La técnica también es adecuada para modelar un escenario de negocio con estados específicos o para probar la navegación en pantalla.
+- La cobertura se mide de la siguiente manera:
+
+![transicion](./img/c7a5.png)
+
+**Ejemplo**
+
+Veamos un ejemplo en donde podríamos aplicar la técnica de transición de estados:
+
+Visitás un cajero automático y retirás $1000. Obtenés tu dinero en efectivo. Ahora te quedás sin saldo y hacés exactamente la misma solicitud de retirar $1000. Esta vez, el cajero automático se niega a darte el dinero por falta de saldo. Entonces, aquí la transición que causó el cambio de estado es la extracción anterior.
+
+
+### Técnicas de caja blanca:
+se basan en la estructura extraída de los documentos de arquitectura, diseño detallado, estructura interna o código del sistema. Se concentran en el procesamiento dentro del objeto de prueba.
+
+### Técnicas basadas en la experiencia: 
+aprovechan el conocimiento de desarrolladores, probadores y usuarios para diseñar, implementar y ejecutar las pruebas.
+
+**Predicción de errores**
+
+Esta técnica se utiliza para anticipar la ocurrencia de equivocaciones, defectos y fallos basados en el conocimiento del probador.
+
+**Se crea una lista teniendo en cuenta:**
+
+- Cómo ha funcionado la aplicación en el pasado.
+- Equivocaciones comunes en los desarrolladores.
+- Fallos en aplicaciones relacionadas.
+
+En base a esa lista se diseñan pruebas que expongan esos fallos y defectos.
+
+**Prueba exploratoria**
+
+En esta técnica se diseñan, ejecutan, registran y evalúan de forma dinámica pruebas informales durante la ejecución de la prueba.
+
+Los resultados de estas pruebas se utilizan para aprender más sobre el funcionamiento del  componente o sistema.
+
+Generalmente se utilizan para complementar otras técnicas formales o cuando las especificaciones son escasas, inadecuadas o con restricciones de tiempo.
+
+**Prueba basada en listas de comprobación**
+
+En esta técnica se diseñan, implementan y ejecutan casos de prueba que cubren las condiciones que se encuentran en una lista de comprobación definida. 
+
+Se crean basadas en la experiencia y conocimiento de lo que el  probador cree que es importante para el usuario y se utilizan debido a la falta de casos de prueba detallados. 
+
+Durante la ejecución puede haber cierta variabilidad, dependiendo de quién ejecuta la prueba y condiciones del contexto. Esto da lugar a una mayor cobertura.
+
+Se utiliza tanto en pruebas funcionales como no funcionales.
+
+> Ver PDF: Ejercitacion
+
+**Casos de prueba:** Usando las tecnicas de particion de equivalencia y analisis de valores limites.
+
+**Solucion mesa Gaby-Benja-Cami**
+
+![img](./img/c7m1.png)
+
+
+## Notas clase 7 <a id='c7s'></a>
+
+> ver PDF: Ejercitacion-mesas.pdf
+
+- caso de prueba doc que ayuda a validar un sistema
+- clasificar pruebas funcionales no funcionales, asociadas al cambio
+- niveles son los momentos donde ejecutar pruebas
+- tipos son los distintos escenarios donde crear pruebas, recetas o formas de encarar o encaminar una prueba
+- integracion y sistema suele estar muy pegados
+- no debemos tratar todo con una tecnica, veamos todas las herramientas a disposicion
+- clasificamos las tecnicas de prueba: caja negra, caja blanca, basada en la experiencia.
+- caja blanca tiene mas codigo
+
+![cuadro cajas](./img/c7s2.png)
+**caja negra** siempre tenemos un doc de requerimiento/ que describe el comportamiento del software. Existen varios formatos
+Tenemos un sistema que debe ser probado nos basamos en defectos del sistema
+Es mas facil
+
+### Particion de equivalencias
+
+Agrupa datos que tengan el mismo resultado final.
+Se ahorra casos de prueba
+
+**Ejemplo**
+un sistema que tenemos que ingresar colores
+tenemos un campo donde ingresan los colores
+rojo-verde-azul
+nuestro sistema hace algo distinto para cuando ingrese cualquiera de los 3 colores
+pueden ingresarlo en cualquier formato: mayus, min...
+cada grupo que se arme se llama clase equivalencia
+hay clase validas y no validas
+las no validas son usadas como escenarios negativos; testing negativo
+
+### Análisis de valores límites
+Es un tipo de particio de equivalencias
+Tiene que ser para daos numericos y estar ordenado
+
+**Ejemplo**
+
+Dias de la semana
+de 1 a 7 dias de la semana para ingresar
+traza particiones en los valores limites que tengan los datos.
+analiza que pasa en los bordes, 
+crea un caso de prueba para el 0 y el 1 y otro para el 7 y otro para el 8
+
+1 se puede juntar con 7 porque van al final
+
+![img](./img/c7s1.png)
+
+
+**caja blanca**, mas documentacion, acceso al codigo, acceso a la base de datos, con credenciales de lectura, soporte mas profundo.
+Estandares que sno se estan cumpliendo, focos que hacen a la calidad del codigo
+El desarrollador hace mas testing de caja blanca
+Requiere mas conocimientos tecnicos
+
+
+**caja gris** Capturas de base de datos, charlas con admnistrador de base de datos, mas info que el doc de requerimientos, el uso de dev tools del navegador permite hacer una prueba msa profunda
+
+las cajas pueden convivir en simultaneo, 
+
+# C8 - Implementacion y ejecucion de la prueba <a id='c8'></a>
+
+## Implementacion de la prueba <a id='c8a'></a>
+
+Al completarse la implementación de los cambios o nuevas funcionalidades solicitados por el cliente, y ya diseñados los casos de pruebas correspondientes, estamos en la etapa de ejecutar las pruebas como parte de la fase de pruebas del ciclo de desarrollo de software (SDLC).
+
+El objetivo de la implementación de las pruebas es asegurar que se cumplen los requerimientos del usuario, comprobando que los resultados obtenidos coinciden con los esperados, al mismo tiempo que se identifican y reportan los defectos encontrados. Las tareas dentro de la ejecución se llevan a cabo en forma iterativa hasta conseguir un sistema lo más estable posible. 
+
+## Ejecucion de la prueba <a id='c8a1'></a>
+
+[Ejecucion de la prueba](https://view.genial.ly/60c0ef03ddae960d163e7d71)
+
+Durante la ejecución de las pruebas, los conjuntos de pruebas se ejecutan luego del despliegue de cambios en los ambientes de prueba como parte del desarrollo planificado dentro de un sprint. 
+La ejecución de pruebas incluye las siguientes actividades principales. Para conocerlas, pasar con el mouse por encima de cada uno de los iconos que se encuentran a continuación.
+
+![img](./img/c8a1.png)
+
+
+1. Registrar los identificadores y las versiones de los elementos u objetos de prueba, las herramientas de prueba y los productos de prueba. 
+
+2. Ejecutar pruebas de forma manual o utilizando herramientas de ejecución de pruebas.
+
+3. Comparar resultados reales con resultados esperados.
+
+4. Analizar las anomalías para establecer sus causas probables.
+
+5. Informar sobre los defectos en función de los fallos observados.
+
+6. Registrar el resultado de la ejecución de la prueba.
+
+7. Repetir las actividades de prueba, ya sea como resultado de una acción tomada para una anomalía o como parte de la prueba planificada.
+
+## Pruebas de humo y pruebas de regresión <a id='c8a2'></a>
+
+Las pruebas de humo y las pruebas de regresión son dos de las pruebas más importantes que se ejecutan a lo largo del desarrollo de un sistema. Ambas son necesarias para el funcionamiento saludable del producto en construcción y relevantes para la calidad final del producto.
+
+Las pruebas de humo son previas a las de regresión. 
+
+Si se encuentra algún problema durante las de humo, la compilación no se encuentra estable por lo que retorna al equipo de desarrollo hasta que lo sea. 
+
+Una vez que nos encontramos en una versión estable del sistema, se llevan a cabo las pruebas de regresión sobre las funcionalidades existentes de forma exhaustiva.
+
+> Ver video: Creacion de suites
+
+<!-- inicio resumen video -->
+
+Durante el desarrollo de software
+
+✅ Se implementan continuamente cambios
+
+✅ Soluciones a defectos
+
+✅ Mas funcionalidades
+
+Que pueden presentar fallas en el funcionamiento de apps
+
+Estos casos se van a ejecutar luego del despliegue de nuevas compilaciones y/o versiones del mismo 
+
+Conocidas como `suites de casos de prueba`
+
+## 1. Las pruebas de humo / Smoke testing
+
+Se ejecutan para evaluar la estabilidad de las compilaciones de software iniciales o desarrolladas recientemente. 
+
+Cumplen las funcionalidades principales de un componente o sistema
+
+Su objetivo es verificar la escalabilidad de la aplicacion para continuar con pruebas mas exhaustivas
+
+Se ejecutan en las etapas iniciales del SDLC - Software developing life cycle (Ciclo de vida de desarrollo de un software) Cada vez que los desarrolladores entregan una nueva version del sistema al equipo de software.
+
+Asi con pruebas rapidas y sencillas verificamos que funcionan correctamente los flujos criticos del sistema en desarrollo
+
+Por ejemplo: en la app de whatsapp, verificando que se pueda 
+- mandar un mensaje, 
+- que las configuraciones no me den problemas, 
+- que pueda cambiar la foto de perfil...
+
+
+## 2. Las pruebas de regresión / Regression testing
+
+Tienen la tarea de verificar y validar las funcionalidades existentes de la aplicación después de cada modificación o en la adición de nuevas funciones.
+
+Estas pruebas son mas detalladas y nos aseguran que despues de cualquier mejora, actualizacion, o cambio de codigo, no sufran danios:
+
+✅ Interfaces
+
+✅ Componentes
+
+✅ Sistemas
+
+Manteniendo el funcionamiento esperado, esta suite es mas completa, profundizaria en las pruebas
+
+- Envio de imagenes
+- Envio de videos
+- Llamadas
+- Pruebas de envio:
+- Gestion de estados
+- Configuraciones
+- Vinculacion o desvinculacion de dispositivos
+
+Para verificar que todo funcione sin fallas
+
+Estas pruebas de regresion se ejecutan periodicamente y evolucionan lentamente. Si se requiere iniciar un proyecto de automatizacion deberian ser las primeras candidatas, se gana el tiempo y garantiza calidad.
+
+Las pruebas manuales de regresion:
+- Requieren mas tiempo
+- Mas propensas a errores
+
+Primero se ejecutan las pruebas de humo, una vez confirmadas la ejecucion exitosa de estas pruebas, estamos en condiciones de continuar con las pruebas de regresion en nuestro sistema.
+
+### Porque es importante ejecutar estas pruebas:
+
+✅ Las pruebas de uno ayudan a confirmar que luego del despliegue las funcionalidades basicas, no sufrieron fallas.
+
+✅ Las pruebas de regresion terminan por confirmar y ratificar que todo sigue funcionando de la misma forma
+
+## Actividad
+
+> Ver pdf: Actividad - Ejecución de casos de pruebas.pdf
+<!-- HACER -->
+> Actividad - Creación de suites.pdf
+
+## Notas clase 8 <a id='c8s'></a>
+
+## Tecnica de prueba 
+
+Nos dicen cuales son los casos de prueba suficientes que yo tengo que crear/diseniar para una funcionalidad 
+
+## **caja negra** 
+
+### ✅ Particion de equivalencia
+
+vamos a usar estas tecnicas cuando haya **ingreso de datos**, estos datos hay que organizarlos, y esta organizacion va a estar soportada por una **Particion de equivalencias** a menos que sea numerica, los datos se agrupan.
+
+La idea de esta técnica de prueba es evitar ir probando valor por valor. Es por ello que dividen los datos en clases y si los test para uno de los datos es correcto, suponemos que para los demás también.
+Los datos que estan en una particion de equivalencia tienen el mismo resultado final  en el sistema. 
+
+- Crea un caso de prueba por cada valor limite que se detecte;por cada punto limite 
+- Por cada clase de equivalencia, creamos un caso de prueba
+
+> ## 💡 Ejemplo: 
+> Formularios, desplegables, texto libre, ingresar campos.
+>
+> 1. elegir sexo: masculino, femenino, otros, se hace una particion de equivalencias para cada uno. 
+> 2. Formato correo login, que tenga `@` y `.com`
+>   - Clase válida:  tiene `@` dominio y `.com` (se cumple la condición)
+>   - Clase no válida:  no tenga `@` (no cumple la condición)
+> 3. El sistema permite sólo los nombres que comiencen con mayúscula.
+>   - Clase válida:  cadenas cuya primera letra es una mayúscula (se cumple la condición)
+>   - Clase no válida:  cadenas que comienzan en minúscula (no cumple la condición)
+
+
+### ✅ Analisis de valores limites
+
+vamos a usar estas tecnicas cuando haya **ingreso de datos**; estos datos hay que organizarlos, y esta organizacion va a estar soportada si los datos son numericos o secuenciales por un **analisis de valores limites**.
+Viene se clase de equivalencias entonces tiene la idea de agrupar valores.
+Se harian 3 casos por cada punta. s
+
+> ## 💡 Ejemplo: 
+> Formularios, desplegables, texto libre, ingresar campos.
+>
+> 1. Limites de horarios
+> 2. cantidad de caracteres.
+
+### ✅ Tablas de decision
+
+Donde hay reglas de negocio complejos, requiere muchas validaciones previas, donde esta tecnica ayuda. Esta regla plantea que armes una tabla para ver todos los flujos dentro del sistema.
+
+Esta tabla es un documento estandarizado en donde yo poniendo condiciones y acciones puedo darme cuenta cual es la accion que se va a ejecutar, cada **columna** nos da un caso de prueba
+
+> ## 💡 Ejemplo: 
+> Comprar articulos, publicar fotos en instagram, transferencias bancarias, descuentos de tarjeta, inscripcion de alumnos, dosis de vacunas, prepagas( margen de edades, enfermedades, antecedentes), calificacion de notas, seguros.
+
+**Actividad en mesas**
+<!-- benja lo hizo -->
+
+![img](./img/c8s1.png)
+![img](./img/c8s2.png)
+
+### ✅ Transicion de estados
+
+No declaramos varias acciones, declaramos estados posibles y segun se va moviendo el usuario entre esos estados, va a llegar a un estado final, usado para reglas de negocio o procesos de muchos pasos, los casos de prueba estan organizados en **filas**
+Permite organizar al momento de probar, concepto de movimiento en el tiempo, se hace temporal.
+
+> ## 💡 Ejemplo
+> Procesos que van el linea temporal.
+
+# C9 - Repaso
+
+[link ejercicio vivo](https://docs.google.com/spreadsheets/d/1orYkZcPIdLn5zcKQMT19VX1MQXB3s8zBJR3hE6eN4oA/edit#gid=1409603249)
+
+## Notas clase 9
+
+La aplicacion de una tecnica de prueba es un proceso previo a la redaccion de un caso de prueba.
+
+Los casos de prueba se van a agrupar en conjuntos/suites de casos de prueba
+
+## Por modulos/features/funcionalidades
+
+Hay dos conjuntos de casos de prueba. Se pueden ejecutar en cualquier nivel de prueba, son bolsas conenedoras de casos de prueba
+
+> ## 💡 
+> Publicar un articulo, vender un articulo, agrupacion muy pegada al negocio.
+
+### ✅ Pruebas de humo
+
+- Verifica estabilidad
+- Intenta encontrar defectos graves
+
+- Cubren la funcionalidad principal de un componente o sistema 
+- Su objetivo es asegurar que las funciones cruciales de un programa funcionan, pero sin preocuparse por los detalles finos.
+- Con este conjunto de pruebas demanda poco tiempo de ejecucion
+
+
+### ✅ Pruebas de regresion
+
+- Corresponde a aquellos conjuntos de pruebas que nos permiten asegurarnos que los cambios no han daniado los componentes, las interfaces o los sistemas exitentes.
+
+- Busca cambios no deseados en el comportamiento que resulten de cambios en el software o en el entorno
+
+- Dentro de un proyecto de automatizacion, lo idea es comenzar con las pruebas de regresion, ya que estas se ejecutan muchas veces y generalmente evolucionan lentamente.
+
+## Ejecutar:
+
+Leer el caso de prueba y replicarlo en el sistema
+
+## Implementar
+Es lo que hace a ese momento de implementacion que estamos llevando a cabo
+
+ 
+> Ver pdf: Ejercitación.pdf
+
+
+
+# C10 - Análisis y Planificación de la prueba <a id='c10'></a>
+
+## Pruebas estáticas y dinámicas <a id='c10a'></a>
+
+Las pruebas son una combinación de múltiples actividades del ciclo de vida del software relacionadas con la planificación, el diseño y la evaluación del producto de software, con el objetivo de encontrar los defectos y determinar si el software cumple o no con los requisitos especificados.
+
+Es por ello que en este módulo continuaremos desarrollando otros tipos de pruebas: las pruebas estáticas y las pruebas dinámicas. Estas se complementan entre sí y nos permiten entregar un software con la mejor calidad posible.
+
+> Ver pdf: Pruebas estáticas y dinámicas.pdf
+
+Las pruebas estáticas y dinámicas tienen el objetivo de proporcionar una evaluación de calidad de los productos de trabajo e identificar defectos en forma temprana.
+
+
+
+## Pruebas estáticas <a id='c10a1'></a>
+
+> TODO LO QUE ES PAPALEEO, NO TIENE NADA QUE VER CON EL SISTEMA, DIAGRAMAS, ARQUITECTURA, CALENDARIO, PROYECTO, REQUISITOS, HISTORIAS DE USUARIO, NORMATIVAS.
+
+**Conceptos básicos de la prueba estática**
+
+La prueba estática se basa en la evaluación manual de los productos de trabajo  (es  decir,revisiones)  o  en  la  evaluación  basada  en  herramientas del  código  u  otros  productos  de  trabajo  (es  decir,análisis  estático).  Este tipo  de  pruebas  no  requieren  la  ejecución  del  software  que  se  está probando.
+
+Se utilizan este tipo de pruebas para examinar cualquier producto de trabajo, como por ejemplo:
+- Especificaciones, requisitos de negocio, funcionales y de seguridad.
+- Épicas, historias de usuarios y criterios de aceptación.
+- Especificaciones de arquitectura y diseño.
+- Código.
+- Productos de prueba: planes, casos, procedimientos y guiones de prueba.
+- Manuales de usuario.
+- Contratos, planes de proyecto, calendarios y presupuestos.
+
+### Ventajas de las pruebas estáticas tempranas <a id='c10a2'></a>
+
+Cuando se aplica al principio del ciclo de vida del desarrollo del software, la prueba estática permite la detección temprana de defectos. Esto genera una reducción de costos y tiempo de desarrollo y prueba.Por el contrario, si el defecto se encuentra luego de las pruebas dinámicas, solucionarlo va a requerir el cambio de código, realizar una prueba de confirmación y luego incluir el mismo en pruebas de regresión, además de los cambios de toda la documentación asociada.
+
+### Defectos encontrados con pruebas estáticas <a id='c10a3'></a>
+
+Algunos de los defectos encontrados con pruebas estáticas que son más fáciles y económicos de detectar y corregir son:
+- Defectos en los requisitos (inconsistencias, ambigüedades, etc.).●Defectos de diseño (estructura de base de datos ineficiente, alto acoplamiento, etc.).●Defectos de codificación (variables con valores no definidos, código inalcanzable o duplicado, etc.).●Desviaciones con respecto a estándares (falta de uso de estándares de codificación).
+
+## Kahoot
+- Cual de estos no es principio de testing:
+cuidado con el defecto del pesticida.
+
+- la ausencia de errores es posible
+falso
+
+- un eror es la ejecucion de un defecto
+falso
+la falla es la ejecución del defecto
+defecto es introducido por un error humano
+un defecto puede ser descubierto hasta que se ejecute el sistema
+
+- un defecto es introducido al sistema por medio de un error
+verdadero
+
+- un caso de prueba es un conjunto de acciones que se ejecutan para verificar una caracteristica de una aplicacion
+verdadero,
+qué y cómo probar
+
+- la mayoria de las caracteristicas de una aplicacion de software van a ser representadas por uno o mas casos de prueba
+falso, 
+es todas las caracteristicas
+
+- los niveles de prueba son
+componente, integracion, sistema, aceptacion
+
+- particion de equivalencias es una tecnica de
+caja negra
+
+> En el documento de requerimientos deberíamos buscar el requisito que mencione: "el campo de password (contraseña) y confirm password (confirmar contraseña) deben ser iguales y tener una extensión entre 6 y 12 caracteres alfanuméricos" **PROCESO DE REVISIÓN FORMAL**
+
+
 
