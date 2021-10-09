@@ -1,34 +1,4 @@
----
-title: "Programacion rientada a objetos"
-author: "Liliana Ospina"
-output: PDF_document
-lang: es-ES
-toc: TRUE
----
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-
-t {
-font-size: 50px;
-color: #006d77;
-font-family: 'Roboto Mono', monospace;
-letter-spacing: 5px;
-}
-h1 {
-color: #f2cc8f
-}
-h2 {
-color: #e07a5f;
-}
-h3 {
-color: #cd9777
-}
-r {
-color: #03045e;
-background-color: #90e0ef;
-}
-</style>
+<link rel="stylesheet" type="text/css" media="all" href="../styles.css" />
 
 <t>Programacion orientada a objetos</t>
 
@@ -99,8 +69,25 @@ background-color: #90e0ef;
         -   [Ejemplos de uso](#c5e4)
     -   [Conclusion: Live coding](#c5f)
     -   [Actividad en clase](#c5s1)
-
+- [C6 - Repaso](#c6)
 2. Programacion orientada a objetos en Java
+- [C7 - Relaciones entre clases](#c7)
+    - [Relaciones entre clases](#c7a)
+    - [Representacion en UML de relaciones](#c7b)
+      - [Relacion de asociacion](#c7b1)
+      - [Relacion de uso / dependencia](#c7b2)
+      - [Ejemplos](#c7b3)
+    - [Agregacion](#c7c)
+    - [Composicion](#c7d)
+    - [Implementacion en Java](#c7e)
+      - [Actividad PG](#c7e1)
+- [C8 - Herencia en UML](#c8)
+  - [Relaciones entre clases](#c8a)
+  - [Herencia](#c8b)
+  - [Alcance, protected](#c8c)
+  - [Firma de un metodo](#c8d)
+  - [Sobrecarga y Sobreescritura](#c8e)
+
 3. Patrones de disenio
 
 # C1 - Que es Java <a id='c1'></a>
@@ -157,7 +144,7 @@ System.out.println("El valor es " + num);
 
 Vamos a ver cómo se utilizan en Java algunas herramientas que ya conocemos. En algunos conceptos la sintaxis es similar a JavaScript, pero tiene algunas variaciones. Una de las cosas que es bastante diferente es el tratamiento de variables. Vamos a verlo a continuación
 
-> ver PDF: ¿Qué es un tipo de dato\_.pdf
+> ver PDF: ¿Qué es un tipo de dato.pdf
 
 <!-- Resumen pdf -->
 
@@ -194,9 +181,10 @@ Veamos varias situaciones
 
 > Ver video: Declaracion de variables.mp4
 
-### Actividad PG <a id='c1pg'></a>
+## Actividad PG <a id='c1pg'></a>
 
-**Ejercicio 1**
+### Ejercicio 1
+
 Es hora de que crees tus primeras variables en java
 La idea es que crees tres variables una que se va a llamar numeroEntero y va a ser de tipo int una que se va a llamar numeroConComa de tipo double y por último una llamada nombre de tipo string
 
@@ -215,9 +203,9 @@ public class Main {
 }
 ```
 
-> Como en muchos otros lenguajes de programación, en Java podemos realizar diversas operaciones. Vamos a necesitar realizarlas para poder resolver problemáticas con nuestros futuros programas. A continuación, nos encontramos con ejercicios de operaciones y una Java cheat sheet muy útil con los principales operadores que podemos utilizar en este lenguaje.
+Como en muchos otros lenguajes de programación, en Java podemos realizar diversas operaciones. Vamos a necesitar realizarlas para poder resolver problemáticas con nuestros futuros programas. A continuación, nos encontramos con ejercicios de operaciones y una Java cheat sheet muy útil con los principales operadores que podemos utilizar en este lenguaje.
 
-**Ejercicio 2**
+#### Ejercicio 2
 
 Ahora ya te damos dos variables creadas, numeroEntero y numeroConComa;
 El objetivo del ejercicio es que le asignes un valor acorde a su tipo a cada variable, el valor puede ser cualquiera mientras que respetes el tipo de dato
@@ -238,7 +226,6 @@ public class Main {
 }
 ```
 
-[🔺](#up)
 
 ## Sintaxis Java <a id='c1y'></a>
 
@@ -281,14 +268,16 @@ public class Main {
 | char                      | Un carácter (Ej: ‘a’) Unicode                                                  |
 | boolean                   | Verdadero o falso (true /false)                                                |
 
-[🔺](#up)
 
 ## Estructura de control en Java <a id='c1e'></a>
 
-Las estructuras de control en Java tienen la misma sintaxis que en JavaScript. Contamos con:
+Las estructuras de control en Java tienen la misma sintaxis que en JavaScript. 
 
-Decisión if - switch
-Repetición while - for
+Contamos con:
+
+✅ Decisión if - switch
+
+✅ Repetición while - for
 
 A continuación recordemos brevemente cómo es su sintaxis.
 
@@ -320,7 +309,6 @@ default:
 }
 ```
 
-[🔺](#up)
 
 ### Estructuras de repetición:
 
@@ -345,13 +333,12 @@ while(condición){
 > Ver video: Ciclo for
 >
 > Ver PDF: Ejercitacion estructuras.pdf
-> [🔺](#up)
+
 
 ### Ejercitacion estructuras <a id='c1act'></a>
 
-Ejercitación Estructuras
 
-Ejercicio 1
+#### Ejercicio 1
 Definir dos números enteros. Asignarles un valor a cada uno. Comprobar si un número es
 divisible por el segundo e indicar mediante un mensaje el resultado obtenido.
 NOTA: Que sea divisible quiere decir que al dividir da un valor exacto, es decir, sin
@@ -376,13 +363,11 @@ public class C1ejercitacionEstructuras {
 // Muestra en consola: El numero 10 es divisible por 5
 ```
 
-[🔺](#up)
-
 > Ver PDF: Definiendo mascotas / Ejercitacion tipo variables.pdf <a id='c1s'></a>
 
 <!-- inicio actividad -->
 
-### Solucion actividad sincronica
+#### Solucion actividad sincronica
 
 ```java
 public class c1_actividad_mascotas {
@@ -409,15 +394,7 @@ public class c1_actividad_mascotas {
 
 # C2 - Introduccion a Java <a id='c2'></a>
 
-## String, Integer, Float <a id='c2a'></a>
-
-> Ver PDF: Clases String, Integer, Float.pdf
-
-<!-- inicio resumen pdf -->
-
-## **El lenguaje Java**
-
-El núcleo de Java son las clases, más adelante veremos que son y cómo construirlas.
+El núcleo de Java son **las clases**, más adelante veremos que son y cómo construirlas.
 Pero para comenzar a trabajar debemos comenzar a utilizar las clases propias de Java.
 
 ## Variables
@@ -428,32 +405,43 @@ Cuando definimos una variable con estos tipos primitivos, solo podemos almacenar
 
 ## Clases
 
-En este caso tendremos <r>un elemento que, además de almacenar un valor, nos permite realizar ciertas operaciones que ya vienen programadas, a estas operaciones las llamamos métodos.</r>
-**Por ejemplo:** `String` es una clase, por eso, se la inicializa en mayúscula.
+En este caso tendremos un elemento que:
+
+✅ Almacena un valor, 
+
+✅ Nos permite realizar ciertas operaciones que ya vienen programadas, a estas operaciones las llamamos métodos.
+
+### Por ejemplo:
+
+`String` es una clase, por eso, se la inicializa en mayúscula.
 **Todas las clases las nombramos con la inicial en mayúscula**, si definimos:
 
 ```java
-String nombre
+String nombre;
 ```
 
 Al utilizar nombre, veremos que nos ofrece los métodos disponibles
 
-![c2](./img/c2.png)
+![.nombre](./img/c2.png)
 
-Estas son funciones que ya vienen resueltas y solo podemos utilizarlas con la clase a la cual le pertenece, es decir, cada clase en Java tiene sus propios métodos.
+Estas son funciones que ya vienen resueltas y solo podemos utilizarlas con la clase a la cual le pertenece, es decir, <r>**cada clase en Java tiene sus propios métodos**</r>.
 
 Para comenzar a conocer cómo funcionan las clases propias del lenguaje, vamos a nombrar 3 clases que nos resultan útiles —y de hecho String ya la utilizamos en nuestra primera clase—:
-String, Integer, Float, notemos que todas comienzan con la
-inicial en mayúscula.
 
-**Las clases `Integer` y `Float` son equivalentes a los tipos de datos primitivos, es decir, me permiten almacenar valores de los tipos indicados, pero además me dan ciertas funcionalidades.**
+✅ String
 
-> Se suele decir que envuelven los tipos primitivos.
+✅ Integer
 
-## `.equals()` <a id='c2a1'></a>
+✅ Float 
 
-Algo a tener en cuenta cuando usamos estas clases es que no podemos usar operadores como `“==”`, para efectuar una comparación por igual usamos `.equals()`,
-por ejemplo:
+> ## 💡
+> Notemos que todas comienzan con la inicial en mayúscula.
+
+### Metodo .equals() <a id='c2a1'></a>
+
+Algo a tener en cuenta <r>cuando usamos estas clases es que no podemos usar operadores como `“==”`</r>, para efectuar una comparación por igual usamos `.equals()`.
+
+Por ejemplo:
 
 ```java
 nombre.equals(“Juan”)
@@ -463,36 +451,32 @@ Esto nos devuelve `true` en el caso que en nombre se guarde la cadena “Juan”
 
 El **`equals()`** se utiliza para comparar por igual, siempre que estemos trabajando con clases.
 
-## `.compareTo()` <a id='c2a2'></a>
+### Metodo .compareTo() <a id='c2a2'></a>
 
 Si queremos comparar si un valor es mayor o menor que otro debemos usar `.compareTo()`
 
 Otra cosa a destacar es que una `String` a la cual no le asignamos nada tiene el valor `null`.
-**Esto sucede con todas las clases, si definimos un elemento (objeto) de una clase inicialmente tendrá el valor null.**
 
-[🔺](#up)
+> ## 💡
+> Esto sucede con todas las clases, si definimos un elemento (objeto) de una clase inicialmente tendrá el valor `null`.
 
 ## Paquetes <a id='c2a3'></a>
 
-Para organizar las clases, existen los paquetes, estos son contenedores donde se pueden agrupar las clases. Más adelante los utilizaremos para nuestras clases, pero por ahora debemos saber que también las clases de Java se encuentran agrupadas en paquetes, o como su nombre en inglés: package.
+Para organizar las clases, existen los paquetes, estos son contenedores donde se pueden agrupar las clases. Más adelante los utilizaremos para nuestras clases, pero por ahora debemos saber que <r>también las clases de Java se encuentran agrupadas en paquetes</r>, o como su nombre en inglés: _package_.
 
-> Ver pdf: String, Integer, Float
+## Tipos de dato: 
 
-<!-- inicio resumen PDF -->
+### String <a id='c2a4'></a>
 
-## String <a id='c2a4'></a>
-
-Para utilizar datos de tipo texto, vamos a declararlos como String. Las Strings nos permiten utilizar funciones ya programadas, que le pertenecen. Las llamamos métodos.
+Para utilizar datos de tipo texto, vamos a declararlos como `String`. Las Strings nos permiten utilizar funciones ya programadas, que le pertenecen. Las llamamos métodos.
 
 ```java
-public static voidmain(String[] args){
+public static void main(String[] args){
     String nombre;
 }
 ```
 
 A partir de esta variable vamos a ver cómo utilizar algunos de estos métodos de uso frecuente.
-
-**Codigo ejemplo**
 
 Métodos usados:
 
@@ -500,8 +484,10 @@ Métodos usados:
 .length() //calcula longitud del string
 .toUpperCase() //convierte a mayuscula
 .equals() //comprueba
-.toChar() //obtiene caracteres en el () indicamos la ubicacion
+.toChar() //obtiene caracteres, en el () indicamos la ubicacion
 ```
+
+#### 📜 Ejemplo! <a id='c2a4a'></a>
 
 ```java
 String nombre= "Juan";
@@ -516,17 +502,16 @@ if(nombre.equals("JUAN")){
     System.out.println("Se pasó a mayúscula");
 }
 inicial = nombre.charAt();
-
 ```
 
 ## String vacía
 
-Si aún no hemos asignado nada a las String, entonces, contiene un valor `null`, **en ese caso no se pueden usar los métodos.**
+Si aún no hemos asignado nada a las String, entonces, contiene un valor `null`, <r>en ese caso no se pueden usar los métodos.</r>
 
 ```java
 String nombre;
 
-if(nombre==null){ //Comprueba si aun no se ha inicializado
+if(nombre==null){
     System.out.println("Cadena con valor nulo");
 }
 ```
@@ -545,26 +530,32 @@ Puede tener un valor nulo o estar vacía.
 ## Integer <a id='c2a6'></a>
 
 Integer como clase y no como tipo primitivo se utiliza de una forma distinta.
+
 Para comenzar a utilizar un Integer tenemos dos posibilidades:
+
+1. En este caso definimos y creamos un Integer, dándole un valor inicial 0
 
 ```java
 Integer valor = 0;
 ```
 
-En este caso definimos y creamos un Integer, dándole un valor inicial 0
+2. En la segunda forma hacemos algo similar, pero la parte de la izquierda es la definición y la parte de la derecha la creación con un valor inicial 1.
 
 ```java
 Integer num = new Integer(1);
 ```
 
-En la segunda forma hacemos algo similar, pero la parte de la izquierda es la definición y la parte de la derecha la creación con un valor inicial 1.
-
 > Cuando solo definimos algo de tipo Integer, su valor inicial es null, es necesario darle un valor inicial.
 
-**Codigo ejemplo**
+### 📜 Ejemplo!
 
-Comprobamos la relación entre dos números enteros, utilizando clasesMétodos usados:
-`.equal()`, `.compareTo()`
+Comprobamos la relación entre dos números enteros, utilizando clases
+
+Métodos usados:
+
+✅ `.equal()`
+
+✅ `.compareTo()`
 
 ```java
 Integer valor1 = 10;
@@ -587,27 +578,33 @@ else {
 
 ## Float <a id='c2a7'></a>
 
-Integer como clase y no como tipo primitivo se utiliza de una forma distinta.
-Para comenzar a utilizar un Integer tenemos dos posibilidades:
+Float como clase y no como tipo primitivo se utiliza de una forma distinta.
+Para comenzar a utilizar un Float tenemos dos posibilidades:
+
+1. En este caso definimos y creamos un Float, dándole un valor inicial `2.5f`, la f quiere decir `float`, si no lo ponemos se asume que es algo de tipo `Double`.
 
 ```java
 Float coeficiente=2.5f;
 ```
 
-En este caso definimos y creamos un Integer, dándole un valor inicial `2.5f`, la f quiere decir `float`, si no lo ponemos se asume que es algo de tipo `Double`.
+2. En la segunda forma hacemos algo similar, pero la parte de la izquierda es la definición y la parte de la derecha la creación con un valor inicial 0.5.
 
 ```java
 Float num = new Float(0.5);
 ```
 
-En la segunda forma hacemos algo similar, pero la parte de la izquierda es la definición y la parte de la derecha la creación con un valor inicial 0.5.
 Al igual que `Integer`, si no tiene un valor inicial, está en `null`
 
-> Cuando solo definimos algo de tipo `Float`, su valor inicial es `null`, siempre es necesario darle un valor inicial.
+Cuando solo definimos algo de tipo `Float`, su valor inicial es `null`, siempre es necesario darle un valor inicial.
+
+> ## 💡
+> Las clases `Integer` y `Float` son equivalentes a los tipos de datos primitivos, es decir, me <r>permiten almacenar valores de los tipos indicados, pero además me dan ciertas funcionalidades.</r>
+> **Se suele decir que envuelven los tipos primitivos**.
+> Ver pdf: String, Integer, Float y Clases String, Integer, Float.pdf
 
 ## Date <a id='c2a8'></a>
 
-La clase **Date** permite trabajar con fechas. A diferencia de las clases que vimos hasta ahora, si definimos un objeto de tipo **Date**, no es posible hacerlo vacío. Un objeto Date se crea con un valor inicial que el la fecha actual.
+La clase **Date** permite trabajar con fechas. A diferencia de las clases que vimos hasta ahora, si definimos un objeto de tipo **Date**, no es posible hacerlo vacío. Un objeto Date se crea con un valor inicial que el de la fecha actual.
 
 ```java
 import java.util.Date;
@@ -647,22 +644,25 @@ los meses los enumera desde cero o sea 11 es en realidad 12 (diciembre)De esta f
 
 <!--FIN hacer ejercitacion -->
 
-## Ingreso de datos, Scanner <a id='c2b'></a>
+### Ingreso de datos, Scanner <a id='c2b'></a>
 
 Muchos elementos de Java son clases, vimos anteriormente String, Integer y Float.
 Para realizar la entrada y salida de datos también utilizamos clases propias de Java.
+
+## Clase System
 
 Una clase muy importante es `System`, en ella encontramos `System.in` y `System.out`, que nos permitirán <r>interactuar con las entradas y salidas del programa. </r>
 
 Ya vimos que `Sistem.out.println` nos permite mostrar un dato o mensaje.
 Para ingresar valores vamos a utilizar `System.in`.
-Las entradas se realizan mediante esta clase, es decir, **la información ingresa a través de System.in, pero para gestionarla y asignarla a las variables utilizaremos los métodos que nos provee `Scanner`**.
+
+Las entradas se realizan mediante esta clase, es decir, <r>la información ingresa a través de `System.in`, pero para gestionarla y asignarla a las variables utilizaremos los métodos que nos provee `Scanner`</r>.
 
 Veamos de qué se trata.
 
 [Link: Ingreso de datos con Scanner](https://view.genial.ly/60abec1fea8a290d34b9fe66)
 
-### Que es Scanner
+## Clase Scanner
 
 Es una clase propia de Java, que nos permite ingresar valores. Tiene métodos, funciones ya programadas, que nos permiten ingresar distintos tipos de datos.
 
@@ -679,7 +679,7 @@ public static void Main(String[] args) {
 
 **Definición**
 
-Cuando aceptamos la sugerencia que se vio en la pantalla anterior, nos agrega el import, finalizamos la definición dándole un nombre como lo haríamos con cualquier variable.
+Cuando aceptamos la sugerencia, nos agrega el `import`, finalizamos la definición dándole un nombre como lo haríamos con cualquier variable.
 
 ```java
 import java.util.Scanner;
@@ -692,9 +692,9 @@ public class Main {
 }
 ```
 
-**Creación del objeto Scanner**
+### Creación del objeto Scanner
 
-Luego de definirlo, es necesario crear el objeto u instanciarlo.
+Luego de definirlo, es necesario crear el objeto o instanciarlo.
 
 ```java
 Scanner lector; //Definicion del objeto lector
@@ -1164,15 +1164,14 @@ class Mascota {
 
 ## Diagramar clases y atributos <a id='c4c1'></a>
 
-```plantuml
-@startuml
-!theme amiga
+```mermaid
+classDiagram
+
 class Mascota{
     nombre: texto
     color: texto
     especie: texto
 }
-@enduml
 ```
 
 vamos a entender cada `clase` como un **nuevo tipo de dato**
@@ -1189,34 +1188,31 @@ Vamos a agregarle responsabilidades que al estar programando vamos a llamar meto
 
 Pero como estamos definiendo un tipo de dato desde 0, tenemos que aclarar en nuestro diagrama, todos los metodos; es decir todas las responsabilidades que van a poder ejecutar los objetos de nuestra clase.
 
-```plantuml
-@startuml
-!theme amiga
+```mermaid
+classDiagram
+
 class Mascota{
     nombre: texto
     color: texto
     especie: texto
-    ---
-    responsabilidades
-    (se diagraman los metodos de la clase)
+    responsabilidades(se diagraman los metodos de la clase)
 }
-@enduml
+
 ```
 
 **por ejemplo**
 
-```plantuml
-@startuml
-!theme amiga
+```mermaid
+classDiagram
+
 class Mascota{
     nombre: texto
     color: texto
     especie: texto
-    ---
     jugar()
     comer()
 }
-@enduml
+
 ```
 
 De esta forma agregamso los metodos a las clases de nuestro sistema
@@ -1227,18 +1223,16 @@ Tambien podemos definir si un metodo va a devolver un resultado, senialandolo co
 
 Ademas agregaremos adelante del metodo un `+` si es publico o un `-` si es privado
 
-```plantuml
-@startuml
-!theme amiga
+```mermaid
+classDiagram
+
 class Mascota{
-    nombre: texto
-    color: texto
-    especie: texto
-    ---
-    `+jugar(): tipo de dato
-    `-comer(): tipo de dato
+    - nombre: texto
+    - color: texto
+    - especie: texto
+    + jugar(): tipo-de-dato
+    - comer(): tipo-de-dato
 }
-@enduml
 ```
 
 ## Encapsulamiento <a id='c4c2'></a>
@@ -1293,35 +1287,32 @@ A partir de esa clase, podemos crear los objetos. Cada objeto tendrá sus valore
 
 Nuestro contexto es la veterinaria. Ahora vamos a modelar a nuestro **objeto Veterinario** mediante un diagrama. A la derecha podemos apreciar cómo modelamos los objetos mediante el lenguaje unificado de modelado, por sus siglas en inglés, UML.
 
-```plantuml
-@startuml
-!theme amiga
+```mermaid
+classDiagram
 class Veterinario{
-    `-nombre: String
-    `-color: String
-    `-especie: String
+    -nombre: String
+    -color: String
+    -especie: String
     ---
     `+recibirMascota(): void
     `+curar(): void
     `+hacerDiagnostico():void
 }
-@enduml
+
 ```
 
 Cambiemos de contexto, ahora nos encontramos analizando el sistema contable de la clínica veterinaria. Vamos a modelar nuestro objeto Veterinario para el nuevo contexto
 
-```plantuml
-@startuml
-!theme amiga
+```mermaid
+classDiagram
 class Veterinario{
-    `- nombre: String
-    `- apellido: String
-    `- valorConsulta: float
-    ---
-    `+ hacerRecibo(): void
-    `+ facturar(): void
+    - nombre: String
+    - apellido: String
+    - valorConsulta: float
+    + hacerRecibo(): void
+    + facturar(): void
 }
-@enduml
+
 ```
 
 ¿Podemos ver que ahora hay otros atributos y responsabilidades diferentes?
@@ -1440,37 +1431,29 @@ Es tu turno…. ¡vamos!
 
 <!-- solucion en clase -->
 
-```plantuml
-@startuml
-!theme amiga
+```mermaid
+classDiagram
 class CajaDeAhorro {
-    `- nombreUsuario: String
-    `- saldo: Double
-    `- cbu: String
-    `- alias: String
-    `- numeroDeCuenta: String
-    --
-    `+ depositar(Double, String, String, String): boolean
-    `+ retirar(Double, String, String, String): boolean
-    `+ transferenciaEntrante(String, String, String, Double): boolean
+    - nombreUsuario: String
+    - saldo: Double
+    - cbu: String
+    - alias: String
+    - numeroDeCuenta: String
+    + depositar(Double, String, String, String): boolean
+    + retirar(Double, String, String, String): boolean
+    + transferenciaEntrante(String, String, String, Double): boolean
 }
-
-@enduml
 ```
 
-```plantuml
-@startuml
-!theme amiga
+```mermaid
+classDiagram
 class Cheque {
-    `- tipoChequeComun: Boolean
-    `- tipoChequeDiferido: Boolean
-    `- fechaEmision: Date
-    `- fechaVencimiento: Date
-    ---
-    `+ endosar(String, String, int): boolean
+    - tipoChequeComun: Boolean
+    - tipoChequeDiferido: Boolean
+    - fechaEmision: Date
+    - fechaVencimiento: Date
+    + endosar(String, String, int): boolean
 }
-
-@enduml
 ```
 
 # C5 - Clases <a id='c5'></a>
@@ -1512,17 +1495,17 @@ El constructor
 
 **Los constructor de la clase Articulo en Java**
 
-```bash
+```java
 public class Articulo{
     private String descripcion;
     private double precioVenta;
     private int stock;
 
-        public Articulo(String descripcion, int cantidad,double precio){
-        this.descripcion = descripcion;
-        precioVenta = precio;
-        stock = cantidad;
-        }
+    public Articulo(String descripcion, int cantidad,double precio){
+    this.descripcion = descripcion;
+    precioVenta = precio;
+    stock = cantidad;
+    }
 }
 ```
 
@@ -1931,20 +1914,17 @@ System.out.println(“El precio de venta es “ + articulo.consultarPrecio());
 
 <!-- resumen pdf -->
 
-```plantuml
-@startuml
-!theme amiga
+```mermaid
+classDiagram
 class Articulo{
-    `- descripcion : String
-    `- precioVenta : double
-    `- stock : int
-    ---
-    `+ Articulo(descripcion: String, cantidad: int, precio: float)
-    `+ boolean hayStock()
-    `+ double consultarPrecio()
-}
+    - descripcion : String
+    - precioVenta : double
+    - stock : int
+    +Articulo(descripcion: String, cantidad: int, precio: float)
 
-@enduml
+    +boolean hayStock()
+    +double consultarPrecio()
+}
 ```
 
 ```java
@@ -2062,7 +2042,7 @@ Vamos a llamar variables de clase a aquellas variables —atributos— que guard
 
 ## Métodos de clase <a id='c5e3'></a>
 
-Un método de clase se puede utilizar, sin necesidad de instanciar o crearun objeto, directamente con la clase.
+Un método de clase se puede utilizar, sin necesidad de instanciar o crear un objeto, directamente con la clase.
 
 ![ej](./img/c5e4.png)
 
@@ -2148,21 +2128,19 @@ Te invitamos a ver el siguiente live coding donde mostramos un ejemplo de lo vis
 
 Para desarrollar un juego necesitamos implementarla clase UsuarioJuego. Los usuariostienen nombre y clave, estos datos se deben suministrarcuando se crea un nuevo usuario.Inicialmente tienen puntaje y nivel en cero. Sin embargo,pueden aumentar tanto el puntajecomo el nivel en 1, debemos suministrar un métodopara poder hacerlo. El usuario tambiénpuede recibir un bonus, esto quiere decir que recibeun valor extra que se suma a su puntaje
 
-```plantuml
-@startuml
-!theme amiga
+```mermaid
+classDiagram
+
 class UsuarioJuego{
-    `- nombre: String
-    `- clave: String
-    `- puntaje: Double
-    `- nivel: int
-    ---
-    `+ UsuarioJuego(nombre, clave; String)
-    `+ aumentarPuntaje()
-    `+ subirNivel()
-    `+ bonus(int valor)
+    - nombre: String
+    - clave: String
+    - puntaje: Double
+    - nivel: int
+    +UsuarioJuego(nombre: String, clave: String)
+    +aumentarPuntaje()
+    +subirNivel()
+    +bonus(int valor)
 }
-@enduml
 ```
 
 **Solucion:**
@@ -2224,12 +2202,571 @@ public class Main {
 }
 ```
 
--
--
--
--
+# C6 - Repaso <a id='c6'></a>
 
+> Ver actividad
+> Pegar solucion
+
+# C7 - Relaciones entre clases <a id='c7'></a>
+
+## Relacionemos las clases de objetos. <a id='c7a'></a>
+
+Los objetos se comunican, se relacionan entre sí, enviándose mensajes. Cuando un objeto le envía un mensaje a otro, el objeto receptor responde con otro mensaje. En ese intercambio de mensajes se generan relaciones y en esta clase vamos a explorar cada una de ellas.
+
+> Ver pdf: Relaciones entre clases.pdf
+
+<!-- inicio resumen pdf -->
+
+Las clases no se encuentran solas ni trabajan individualmente.
+
+### Relaciones entre clases <a id='c7a1'></a>
+
+Como destacamos siempre, todo va a depender del contexto y como los problemas que debemos solucionar requieren de la creación de clases, las mismas no trabajan por separado.
+
+En una fábrica de gaseosas, los diferentes objetos que encontramos colaboran entre sí. Debemos representar esa realidad al momento de modelar las clases.
+
+A partir de lo dicho anteriormente, podemos llegar a la conclusión de que:
+
+Las clases interactúan y se relacionan entre ellas de diferentes formas y que la relación que exista entre ellas, existirá una comunicación específica respetando un contexto determinado.
+
+## Tipos de relaciones <a id='c7a2'></a>
+
+Existen numerosas relaciones entre las clases, a continuación un listado de los principales tipos de relaciones:
+
+-   Asociación
+-   Agregación
+-   Composición
+-   Generalización
+-   Especialización
+
+En esta clase nos vamos a focalizar en <r>las 3 primeras a las que llamamos relaciones del tipo **“tiene un”**</r> y en la próxima clase nos vamos a dedicar a explorar la generalización y especialización a las que llamamos relaciones del tipo “es un”
+
+> Ver video: Relaciones entre clases
+<!-- HACER -->
+
+## Representacion en UML de relaciones <a id='c7b'></a>
+
+> Ver video: Asociacion
+
+<!-- mini resumen -->
+
+> Ver pdf: Relacion de clases
+
+### Relacion de asociacion <a id='c7b1'></a>
+
+La relación de asociación conocida como una relación del tipo “tiene un” se establece cuando un objeto de una clase colabora con uno o más objetos de otra clase.
+
+En este diagrama diremos que la clase Persona conoce a una instancia de la clase Mascota, de ahí que la dirección de la flecha es de la clase Persona hacia clase Mascota.
+
+> Esta relación representa que Persona tiene un atributo del tipo Mascota.
+
+![img](./img/c7b3.png)
+
+Cuando una asociación lleva una flecha indica una dirección de recorrido (de navegación). Implica que es posible para un objeto en un extremo acceder al objeto del otro extremo porque el primero contiene referencias específicas a este último (al que apunta la flecha), no siendo cierto en el sentido contrario
+
+> En este ejemplo diremos que es la Persona la que tiene un atributo (objeto) de la clase Trabajo.
+
+![img](./img/c7b4.png)
+
+> Recordá que siempre depende del contexto. Si lo que necesitamos es por cada trabajo saber todas las personas que trabajan allí, entonces, el sentido sería al revés
+
+![img](./img/c7b5.png)
+
+✅ Colaboracion continua
+
+✅ Fecha completa
+
+✅ Atributo
+
+```
+classG --> classH : Association
+```
+
+![img](./img/c7b1.png)
+
+## Multiplicidad o cardinalidad <a id='c7b1a'></a>
+
+La multiplicidad también llamada cardinalidad especifica el número de instancias de una clase que puede estar relacionadas con una única instancia de una clase asociada. La multiplicidad limita el número de objetos relacionados.
+
+![img](./img/c7b4.png)
+
+Para establecer las multiplicidades, primero, nos paramos en una de las clases, por ejemplo, la clase Persona y paso siguiente debemos hacernos la siguiente pregunta:
+
+> ¿Para una instancia de esa clase, en este caso de la clase Persona, cuántas posibles instancias podría tener de la clase a la que está asociada, en este caso Trabajo?
+
+Luego nos paramos en la otra clase, en nuestro caso la clase Trabajo y nos debemos hacer la misma pregunta
+
+> ¿Para una instancia de esa clase, o sea, para un trabajo, cuántas posibles personas podrían tener ese trabajo?
+
+<r>La multiplicidad depende de suposiciones y —como venimos nombrando— muchas veces, del contexto del problema.</r> Tener poca información del contexto suele hacer incierta la multiplicidad.
+
+> Por ejemplo, la asociación que acabamos de ver entre Persona y Trabajo ¿es (1 a muchos) o (muchos a muchos)? Esto depende del contexto.
+
+Una aplicación para el cálculo de impuestos podría permitir que una personatrabajase en múltiples trabajos. Por otra parte, un sindicato de trabajadores del gremio del automóvil que mantuviera registros de sus afiliados trabajadores podría considerar irrelevantes los segundos trabajos.
+
+### Relacion de uso / dependencia <a id='c7b2'></a>
+
+Una relación de uso es un tipo de asociación que como lo indica su nombre es una relación del tipo **“usa un”**. La particularidad frente al otro tipo de asociación “tiene un” es que no hay una referencia de una clase a la otra, sino que en este caso, <r>la relación se da porque hay algún método que devuelve o recibe como parámetro una variable que es del tipo de la otra clase</r>.
+
+En el ejemplo a continuación la clase `Cuenta` tiene un método que devuelve un Extracto, pero no necesita tener una instancia Extracto dentro de la Cuenta.
+
+![img](./img/c7b6.png)
+
+✅ Colaboracion temporal
+
+✅ Flecha punteada
+
+✅ Parametro
+
+```
+classK ..> classL : Dependency
+```
+
+![img](./img/c7b2.png)
+
+## Ejemplos <a id='c7b3'></a>
+
+### Mucho a muchos
+
+Una persona tiene muchas reuniones y en una misma reunión participan muchas personas. A diferencia del modelo relacional donde las relaciones muchos a muchos se transforman en una nueva entidad en el modelo orientado a objetos es posible tener relaciones mucho a muchos.
+
+```
+Persona *--->*Reunion
+```
+
+> Es posible tener relaciones “mucho a muchos”
+
+### Uno a uno
+
+Una persona tiene una sola partida de nacimiento y una partida de nacimiento es de una única persona
+
+Persona 1 --> 1 PartidaNacimiento
+
+> Vale aclarar que cuando la multiplicidad es 1 no se suele escribir en el diagrama
+
+Persona --> partidaNacimiento
+
+### Uno a muchos o muchos a uno
+
+También podemos tener multiplicidades con cantidad de instancias limitadas en el ejemplo que vemos a continuación una persona puede tener 2 pulmones y cada pulmón es de una única persona y, como vimos en el ejemplo anterior, no hay que olvidar que si no escribimos nada en la multiplicidad se entiende que es 1
+
+![img](./img/c7b7.png)
+
+## Agregacion <a id='c7c'></a>
+
+> Ver pdf Agregación.pdf
+
+Un caso muy común de relaciones entre clases es la llamada agregación, donde existe una relación entre los agregados y el todo, pero los componentes pueden existir aunque el todo
+fuese destruido. Dicho en otras palabras, <r>es una relación que indica que una clase forma parte de otra/s clase/s con una relación débil, de tal forma que existe una independencia
+respecto a su existencia</r>. Decimos también que una agregación es una relación de tipo **“es parte de”**.
+
+![img](./img/c7c1.png)
+
+**Análisis del ejemplo**
+
+Una bicicleta está formada por diversos otros elementos (objetos), como ruedas, pedales, frenos y chasis. Mediante un proceso de ensamblaje, unimos los elementos y conformamos una bicicleta.
+¿Qué pasa si efectuamos el proceso inverso? Si desarmamos la bicicleta. ¿Los otros elementos todavía siguen existiendo y cumplen su propósito? La respuesta es sí, ya que cada elemento puede ser utilizado en otra bicicleta o hasta en otro tipo de
+transporte como un triciclo o monociclo.
+Aquí es donde radica la cuestión. Los objetos tienen una relación débil con la bicicleta y pueden continuar existiendo aun después de que desarmemos la bicicleta.
+
+> Ver pdf Ejercitacion Modelado Relaciones I.pdf
+
+<!-- HACER -->
+
+## Composicion <a id='c7d'></a>
+
+> Ver pdf: Composicion
+
+<!-- inicio resumen pdf -->
+
+La composición es un tipo de agregación que es más fuerte, donde todas las partes (clases)
+solamente pueden pertenecer a un todo y lo representamos con un rombo relleno en lugar
+de vacío como en la agregación.
+Es el caso en el que <r>una clase de objeto A **“es dueño de”** una
+clase de objeto B, y B no tiene razón de existir sin A</r>.
+
+Como mencionamos anteriormente, a diferencia de la agregación, en este caso, la parte no tiene sentido sin el todo.
+
+![img](./img/c7d1.png)
+
+**Análisis del ejemplo**
+
+Una empresa tiene empleados, estos por sí solos no tienen sentido, si existe un
+empleado es porque tiene que existir una empresa donde ese empleado trabaje.
+
+```
+classC --* classD : Composition
+```
+
+> Ver pdf: Ejercitacion Modelado Relaciones II.pdf
+
+<!-- HACER -->
+
+## Implementacion en Java <a id='c7e'></a>
+
+> Ver video: Implementación en JAVA
+
+<!-- inicio resumen -->
+
+Las relaciones entre clases nos indican como se comunican los objetos de esas clases entre si y la manera en que sus mensajes de dirigen
+
+
+**Relacion de asociacion: Un auto tiene un motor**
+Relacion 1 a 1: Las relaciones se implementan como atributos
+En el UML no se suele poner el atributo de la clase motor ya que se entiende a traves de la relacion y seria redundante.
+
+![img](./img/c7e1.png)
+
+**Relacion de asociacion: Un auto tiene mas de una rueda**
+Relacion 1 a muchos: En este caso se utiliza un array donde se guardan muchos objetos del mismo tipo.
+Con un array o lista podemos resolver estas relaciones
+
+![img](./img/c7e2.png)
+
+**Relacion de agregacion: Un objeto usa a otro para poder funcionar**
+Tenemos una computadora que para funcionar necesita un mouse
+
+![img](./img/c7e3.png)
+
+<!-- fin resumen video -->
+
+## Actividad PG <a id='c7e1'></a>
+
+**Consigna**
+Es momento de asociar nuestra clase Cliente con nuestra clase Cuenta. 
+
+En otro archivo ya tenemos una clase Cliente con sus atributos y responsabilidades ,  nuestra clase Cuenta debe tener un atributo titular de tipo Cliente.
+
+Les pedimos que modifiquen la Clase Cuenta para que tenga un Cliente. El constructor de la clase Cuenta recibe además de los valores que ya tiene un Cliente.
+
+
+```java
+public class Cuenta {
+
+    private int numeroDeCuenta;
+    private Double saldo;
+    private Cliente titular;
+
+    //Modificar este constructor
+    public Cuenta(int numeroDeCuenta, Double saldo, Cliente titular) {
+        this.numeroDeCuenta = numeroDeCuenta;
+        this.saldo = saldo;
+        this.titular = titular;
+    }
+
+    //no tocar este codigo
+    public Cliente getTitular(){
+        return titular;
+    }
+}
+```
+## Live coding <a id='c7f'></a>
+
+> Ver video: Live coding
+
+## Notas clase 7 <a id='c7s'></a>
+
+-   Clases sin responsabilidades se llaman POJOs
+-   La revista va a tener como atributo una lista de ediciones
+-   Cuando creamos la relacion la revista tiene cmo atributo lista de ediciones. No es necesario escribirlas por la relacion entre Revista y Edicion `- ediciones : list<Edicion>`
+-   Es raro en objetos que la relacion sea de muchos a muchos, generalmente la relacion es unilateral
+-   la clase articulo va a tener un titulo, un tema y un autor
+
+```mermaid
+classDiagram
+  direction LR
+  class Revista {
+    - nombre : String
+    - codigo : String
+    - periodicidad : String
+  }
+  class Edicion{
+    - numeroDeEdicion : Integer
+    - fecha : Date
+    - precio : Double
+  }
+  class Articulo{
+    - titulo : String
+    - tema : String
+    - fecha : Date
+    - autor : String
+  }
+  Revista "1" *--> "n" Edicion
+  Edicion "1" o--> "n"Articulo
+```
+
+**Otro ejemplo**
+
+```mermaid
+classDiagram
+  direction LR
+  class Persona {
+    - nombre : String
+    - mascota : Mascota
+  }
+  class Mascota{
+    - nombre : String
+    - edad : Integer
+  }
+  class Paseador {
+    - nombre : String
+    - pasearMascota(Mascota) : void
+  }
+  Persona "1" --|> "n" Mascota
+  Mascota "1" <.. "n" Paseador
+
+```
+
+Si el metodo lo tiene el paseador, el paseador usa a la mascota y se muestra punteado
+
+
+# C8 - Herencia en UML <a id='c8'></a>
+
+Nos resta ver un tipo de relación más...
+
+Hasta aquí estudiamos que para comenzar a resolver un problema utilizando el paradigma de objetos, debemos pasar por un proceso para identificar los objetos al que podemos llamar proceso de abstracción. Durante este, no solo identificamos las partes que integran nuestro “universo” o “dominio” según el contexto, sino cómo interactúan esas partes a través de relaciones. Es así como llegamos a definir clases, con sus atributos y operaciones. Además, definimos qué debe hacer cada parte para contribuir a la solución del problema, es decir, establecimos las responsabilidades de las clases. En esta clase veremos la relación de herencia y sus beneficios.
+
+> Ver video: Presentacion de la herencia
+
+<!-- HACER -->
+
+## Herencia <a id='c8b'></a>
+
+> Ver PDF: Herencia.pdf
+
+<!-- HACER -->
+
+## Relación “es un” <a id='c8b1a'></a>
+
+La herencia es uno de los pilares del paradigma orientado a objetos, también conocida como una relación del tipo “es un”.
+
+Todos los perros tiene un nombre, una edad y todos ladran y juegan. Cuando nos nombran estas características rápidamente reconocemos que se trata de un perro.
+
+> Si analizamos un caniche, veremos como juega y ladra; si analizamos un dóberman, también veremos como juega y ladra, aunque lo hace muy distinto al caniche
+
+Entonces, tanto el caniche como el dóberman juegan, ladran y ambos tienen nombre y edad: sería razonable asumir que si tienen y hacen todo lo que hace un perro, entonces, es un perro.
+
+Por todo esto, podemos decir que un caniche es un Perro. De la misma manera que podríamos decir que Profesor es un Empleado, y más aún: un Empleado es una Persona, por lo tanto, un Profesor es una Persona.Nuevamente, al observar la realidad y pasar por el proceso de abstracción, obtuvimos una serie de entidades que se ordenan naturalmente, y la herencia responde a ello.
+
+![img](./img/c8b1a.png)
+
+Podemos decir entonces que la herencia es un ordenamiento entre clases que define una relación “es un”. Entonces decimos que un caniche y un dóberman es un perro, porque tiene y hace todo lo que hace un perro.
+
+**¿Para qué sirve la herencia?**
+
+## Utilidad de la herencia <a id='c8b1b'></a>
+
+Esta es una pregunta interesante, ya que la herencia es uno de los pilares de la orientación a objetos. Si analizamos el esquema anterior, tanto Caniche como Doberman hacen lo mismo que hace el perro. ¿Si hacen lo mismo que el perro, para qué escribir el código de lo que hacen? ¿No sería más conveniente escribirlo una sola vez en la clase Perro y que Doberman, Caniche, “obtengan” este comportamiento desde Perro?
+
+De hacer esto, decimos que Caniche y Dóberman “heredan” el comportamiento de un perro, es decir, la clase Dóberman hereda de la clase Perro, todos sus atributos y  responsabilidades favoreciendo la reutilización
+
+> La Herencia favorece la reutilización de código
+
+![img](./img/c8b1b.png)
+
+## Ejemplo Jerarquía de empleados <a id='c8b1c'></a>
+
+
+### Gerente
+Además de los atributos fechaAscenso y montoPresupuesto, tiene los atributos nombre, direccion y salario que hereda de Empleado como así también las responsabilidades ingresa() y egresa().
+
+### Gerente de proyecto
+Además del atributo tipoProyecto y la responsabilidad de planificarProyecto() tiene todos los atributos y responsabilidades de Gerente y Empleado
+
+![img](./img/c8b1c.png)
+
+## Ejemplo Jerarquía de personas <a id='c8b1d'></a>
+
+![img](./img/c8b1d.png)
+
+> Una clase que hereda de otra, suma a sus propios atributos y responsabilidades los de la clase a la cual hereda.
+
+## Herencia múltiple <a id='c8b1e'></a>
+
+Se establece cuando una clase hereda de varias otras clases, en este caso, la clase hija hereda atributos y responsabilidades de los diferentes padres
+
+![img](./img/c8b1e.png)
+
+> 💡 El uso de herencia múltiple requiere una consideración muy atenta para evitar la superposición funcional de atributos y responsabilidades.
+>
+> 👎 Es por ello que en Java no está permitida la herencia múltiple y al no ser considerada una buena prácticade diseño no la utilizaremos en esta materia.
+
+![img](./img/c8b1f.png)
+
+> 👍 Como el uso de la herencia lo tendremos prohibido, buscaremos la manera siempre de mantener una línea de herencia.
 <!-- fin resumen pdf -->
-<!-- subir al inicio -->
 
-[🔺](#up)
+[Generalizacion y especializacion](https://view.genial.ly/60c153221f2fc20d9c415ed8)
+
+### Generalizacion <a id='c8b1'></a>
+
+Nos encontramos en el modelo que estamos realizando un conjunto de clases, por ejemplo, Caniche y Doberman. Nos damos cuenta que ambas tienen algunos atributos y/o responsabilidades comunes. En dicho caso, creamos una clase de la cual ambas heredarán ambas y transportamos todos los atributos y/o responsabilidades que eran comunes a esta nueva clase que, en este ejemplo, llamaremos Perro. Este proceso mental de abstracción lo llamamos generalización.
+
+### Especializacion <a id='c8b2'></a>
+
+Nos encontramos en el modelo que estamos realizando con que modelamos una clase Perro y, analizando mejor el contexto, nos dimos cuenta que hay perros como el dóberman que tienen además de los atributos y/o responsabilidades que describimos otros diferentes que no tienen todos los perros, como, por ejemplo, cuidar(), ya que los caniches no cuidan. En este caso, creamos una clase y le colocamos estos atributos y/o responsabilidades que únicamente tiene ese tipo de perro, en este ejemplo, esas clases son Doberman y Caniche. Este proceso mental de abstracción lo llamamos especialización.
+
+> Ver pdf: Ejercitación Modelado Herencia Inicial.pdf
+
+<!-- HACER -->
+
+## Alcance, protected <a id='c8c'></a>
+
+Encapsulamiento y la herencia
+
+Ahora que ya aprendimos a modelar relaciones de herencia y tenemos en claro el concepto de encapsulamiento, analizaremos cómo se comporta la herencia frente al encapsulamiento.
+
+Recordemos que cuando una propiedad es pública significa que es accesible desde cualquier clase. Es decir, en el momento en que un objeto quiera acceder a un valor público puede obtenerlo y modificarlo sin ninguna operación de por medio. Esto sería el equivalente a no ocultar información y, por lo tanto, “romper” el encapsulamiento.
+
+Por el contrario, si declaramos un atributo privado limitamos completamente el acceso al dato. Nadie que no sea la propia clase puede acceder a ese dato. Siempre que se quiera acceder o modificar el dato, se debe hacer una operación para tal fin, por ejemplo, a través de getters o setters.
+
+Con la herencia aparece un modificador de visibilidad nuevo llamado protegido, que en los diagramas UML se especifica con el “#”, donde nos permite tener una visibilidad intermedia del atributo o método al que declaramos como tal. Es decir, es privado para otras clases, pero público para las clases hijas. El uso de este modificador de visibilidad “rompe” el encapsulamiento y evitaremos en lo posible su uso como buena práctica.
+
+Veamos esto en el siguiente ejemplo gráfico:
+
+[El modificador de visibilidad](https://view.genial.ly/60c13148ddae960d163e85a6)
+
+![img](./img/c8c1.png)
+
+`- nombre: String`: Este atributo es privado y solo puede ser accedido o modificado por otras clases o las clases hijas a través de un método get() o set().
+
+`# edad: int`: Este atributo es protegido y no podrá ser accedido o modificado por otras clases, excepto por sus clases hijas.
+
+`+ jugar()`: Este método es público y puede ser accedido por cualquier clase y, por consiguiente, por cualquier clase hija.
+
+`# ladrar()`: Este método es protegido, con lo cual no podrá ser invocado por ninguna otra clase, excepto por las clases hijas.
+
+## Firmas de un metodo <a id='c8d'></a>
+
+La firma de un método
+
+En términos generales, una firma nos permite identificarnos y expresar nuestro consentimiento de un determinado documento. En nuestro documento de identidad podemos encontrar muchos elementos, entre ellos está la firma o rúbrica.
+
+Con esta idea vamos a abordar la firma de un método en la programación orientada a objetos, que no es ni más ni menos que la definición completa de un método, es decir, su nombre, sus parámetros y sus tipos y el orden de aparición de dichos parámetros.
+
+No podrán en una misma clase existir dos métodos con la misma firma, es decir, con el mismo nombre y cantidad de parámetros con sus respectivos tipos en el mismo orden. Decimos, entonces, que los siguientes métodos tienen diferentes firmas, son métodos diferentes porque, si bien se llaman igual, tienen diferente cantidad de parámetros o difiere alguno de sus tipos:
+
+`+ sumar(numero1: double, numero2: double): double`
+
+`+ sumar(numero1: double, numero2: double, numero3: double): double`
+
+`+ sumar(numero1: int, numero2: int): int`
+
+## Sobrecarga y Sobreescritura <a id='c8e'></a>
+
+> Ver pdf: Sobrecarga y Sobreescritura.pdf
+
+<!-- HACER -->
+
+> Ver pdf: Ejercitacion Modelado Herencia I.pdf
+
+## <!-- HACER -->
+
+
+## Actividad en clase 
+
+**Ejercicio 1**
+
+```mermaid
+classDiagram
+direction TB
+
+class Horario {
+    - dia: String
+    - horarioEntrada: String
+    - horarioSalida: String
+}
+class Persona {
+    - nroLegajo: Integer
+    - horarios: List<Horario>
+}
+class Estudiante {
+    + estudian(): void
+}
+class PersonalAdministrativo {
+    - cargo : String
+    + realizarActividades(): void
+}
+class Profesor {
+    - titulo: String
+    - aniosAntiguedad: Integer
+    + darClases(): void
+}
+
+Horario "n" <-- Persona
+Persona <|-- Estudiante
+Persona <|-- PersonalAdministrativo
+Persona <|-- Profesor
+```
+
+**Ejercicio 2**
+
+```mermaid
+classDiagram
+direction TB
+
+class IntegranteEquipo {
+    - nombre: String
+    - edad: Integer
+    + method(type):type
+}
+class Entrenador {
+    + diseniarTacticas():
+    + dirigir(): void
+}
+class Fisioterapeuta {
+    + realizarControl(): void
+    + progresoLesiones(): void
+}
+class Futbolista {
+    - lesionado: Boolean
+    + entrarEnCalor(): void
+}
+class Suplente {
+    + mirarPartido(): void
+}
+class Titular {
+    + jugar(): void
+}
+
+IntegranteEquipo <-- Entrenador
+IntegranteEquipo <-- Fisioterapeuta
+IntegranteEquipo <-- Futbolista
+Futbolista <-- Suplente
+Futbolista <-- Titular
+
+```
+
+
+## Notas clase 9 
+
+```mermaid
+classDiagram
+class Ciudad {
+- nombre: String
+- viviendas: List<Vivienda>
+- calcularCalefaccion(): Double
+}
+class Vivienda {
+- tamanioEnMetros2: Double
+- estufas: List<Estufa>
+- porcentajeAislamiento: Double
++ necesidadCalefaccion(): Double
+}
+class ViviendaCasa {
++ necesidadCalefaccion(): Double
+}
+class ViviendaDepartamento {
+- numeroHabitantes(): Integer
++ necesidadCalefaccion(): Double
+}
+class Estufa {
+    - canidadQuemadores
+    - caloriasPorQuemador
+    + calcularCaloriasEmitidas():Double
+}
+Ciudad "1" *-- "n" Vivienda
+Vivienda <-- ViviendaDepartamento
+Vivienda <-- ViviendaCasa
+Vivienda --> "n" Estufa
+```
