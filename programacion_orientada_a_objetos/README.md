@@ -1,3 +1,7 @@
+---
+output:
+    css: ./styles.css
+---
 
 <link rel="stylesheet" type="text/css" media="all" href="./styles.css" />
 
@@ -21,14 +25,14 @@
     - [1.9 Clase en vivo](#c1s) 🎥
 - [C2 - Introducción a Java](#c2)
   - [2.1 Clases > Variables > Tipos de datos](#c2a)
-        - [2.1.1 Método .equals()](#c2a1)
-        - [2.1.2 Método .comparteTo()](#c2a2)
-        - [2.1.3 Paquetes](#c2a3)
-        - [2.1.4 String](#c2a4)
-        - [2.1.5 String vacía y String nula](#c2a5)
-        - [2.1.6 Integer](#c2a6)
-        - [2.1.7 Float](#c2a7)
-        - [2.1.8 Date](#c2a8)
+    - [2.1.1 Método .equals()](#c2a1)
+    - [2.1.2 Método .comparteTo()](#c2a2)
+    - [2.1.3 Paquetes](#c2a3)
+    - [2.1.4 String](#c2a4)
+    - [2.1.5 String vacía y String nula](#c2a5)
+    - [2.1.6 Integer](#c2a6)
+    - [2.1.7 Float](#c2a7)
+    - [2.1.8 Date](#c2a8)
     - [2.2 Ingreso de datos, Scanner](#c2b)
       - [2.2.1 Clase System](#c2b)
       - [2.2.2 Clase Scanner](#c2b)
@@ -50,11 +54,11 @@
             - [Primera solución](#c4a1a)
     - [Clases](#c4b)
     <!-- - [Atributos, responsabilidades y constructor](#c4c) -->
-      - [Diagramar clases y atributos](#c4c1)
-      - [Encapsulamiento](#c4c2)
-      - [Objetivo: Definir atributos y responsabilidades](#c4c3)
-        - [Atributos y responsabilidades](#c4c3a)
-          - [Ejemplos de un objeto con sus atributos y métodos ⭐⭐⭐](#c4c5)
+    - [Diagramar clases y atributos](#c4c1)
+    - [Encapsulamiento](#c4c2)
+    - [Objetivo: Definir atributos y responsabilidades](#c4c3)
+    - [Atributos y responsabilidades](#c4c3a)
+        - [Ejemplos de un objeto con sus atributos y métodos ⭐⭐⭐](#c4c5)
       - [Constructor de un objeto](#c4c4)
     - [Encapsulamiento (publico / privado)](#c4d)
       - [Detalles importantes ⭐⭐⭐](#c4d1)
@@ -3312,7 +3316,7 @@ En `Cuenta.java`
 package com.company;
 
 public class Cuenta {
-    private String numero;
+    private String numer
     protected double saldo;
 
     public Cuenta(String numero, double saldo) {
@@ -3450,6 +3454,291 @@ public class Vendedor extends Empleado{
     }
 }
 ```
+> ### 💡
+> Para los objetos Vendedor, el método a ejecutar es este que sobreescribe el anterior.
 
-Para los objetos Vendedor, el método a ejecutar es este que sobreescribe el anterior.
+> ### [📌Actividad: PG > @Override > Extends > descubierto](./Actividades/pg-override.md) <a id='c10d'></a>
+> Override > Cuenta > CuentaCorriente > descubierto
+
+## La clase Object <a id='c10e'></a>
+
+- Todas las clases que creamos en Java derivan de la clase Object, 
+- Cuando creamos una clase nueva, tiene ciertos métodos que hereda. 
+- si no los implementamos, los objetos que instanciamos tendrán este método
+
+De estos métodos vamos a tomar algunos y para que funcionen correctamente, debemos **sobreescribirlos**. 
+
+> ### 💡
+> El comportamiento que tienen por defecto puede causar errores o no ser el más adecuado.
+
+### Métodos heredados
+
+✅ String `toString()`
+
+✅ int `hashCode()`
+
+✅ boolean `equals(Object o)`
+
+> #### 📑
+> pdf: Sobreescribir toString - hashCode
+> pdf: Sobreescribir equals().pdf
+
+#### Método .toString()
+
+- El método .toString(), intenta representar con texto el objeto
+- Al usar el método, no tendríamos un error, pero la información mostrada no sería algo comprensible
+
+### 📜 Ejemplo!
+
+```java
+public static void main(String[] args) {
+   Empleado nuevoEmpleado = new Empleado("Juan","1111");
+   System.out.println(nuevoEmpleado.toString());
+}
+```
+En consola tendriamos:
+
+```
+com.company.Empleado@540e19d
+```
+
+>### 👍
+> La solución es sobreescribir el método mostrando solo la información que deseamos mostrar y dándole a la cadena de salida el formato más adecuado.
+
+> ### 💡
+> Recordemos que es importante no cambiar la firma del método, sino estaremos sobrecargando
+
+### 📜 Ejemplo!
+
+Agregamos el método toString() y devolvemos la cadena con la información del objeto que queremos devolver.
+
+```java
+public class Empleado{
+    private String nombre;
+    private String legajo;
+    protected double sueldo;
+    protected double descuentos; 
+    
+    @Override
+    public String toString(){
+        return "Nombre: " + nombre + "\n" + "Legajo: " + legajo;
+    }
+}
+```
+La salida que obtenemos es la que nosotros programamos, en este caso, el 
+nombre y el legajo.
+
+```java
+public static void main(String[] args) {
+    Empleado nuevoEmpleado = new Empleado("Juan","1111");
+    System.out.println(nuevoEmpleado.toString());
+}
+```
+En consola:
+```
+Nombre: Juan
+Legajo: 1111
+```
+
+#### Método .hashCode()
+
+Cuando se utiliza este método nos <r>devuelve un número único que identifica al objeto</r>, es decir, si tengo dos objetos de la misma clase, el hashCode() generaría un número distinto para 
+cada uno y ese número me va a servir para identificarlo.
+
+<r>Lo que tenemos que asegurarnos es que este código identificador sea único para cada objeto</r>
+
+Lo sobreescribimos:
+
+```java
+public class Empleado{
+    private String nombre;
+    private String legajo;
+    protected double sueldo;
+    protected double descuentos; 
+
+    @Override
+    public int hashCode(){
+        int hash=31;
+        hash= hash* nombre.hashCode();
+        hash= hash* legajo.hashCode();
+        return hash;
+    }
+}
+```
+
+La clase Empleados con el .hashCode() sobrecargado. 
+A continuación, veremos cómo se resuelve.
+
+Para generar un número único:
+
+✅ Se trabaja con números primos. Puede ser cualquier número primo, en este caso se usó el 31.
+
+✅ Como nombre y legajo son strings, o sea, también son objetos, tienen su propio hashCode(). 
+
+✅ Multiplicamos todos los números y obtenemos el hashCode del objeto. 
+
+✅ En una string, el hashCode se genera a partir de los caracteres. 
+
+Por ejemplo, el número de legajo es siempre distinto. 
+
+Con la sobrecarga que hicimos, obtenemos el valor que se muestra:
+
+```java
+public static void main(String[] args) {
+    Empleado nuevoEmpleado = new Empleado("Juan","1111");
+    System.out.println(nuevoEmpleado.hashCode());
+}
+```
+
+En consola:
+
+```
+-1480218112
+```
+
+#### Método .equals(Object o)
+
+Cuando creamos un objeto o instancia, lo que tenemos es una referencia a la memoria (RAM), es decir, no se almacenan datos directamente en la variable de tipo objeto, solo la referencia al lugar donde están los valores de los atributos del objeto. Es por eso que no podemos utilizar el operador “==” para comparar la igualdad entre dos objetos porque estaríamos comparando referencias.
+
+Para comparar correctamente debemos usar el método `equals()`, el cual lo heredamos de Object, pero no siempre funciona correctamente el equals que obtenemos por defecto, por eso, es necesario sobreescribirlo. 
+
+> ### 💡
+> El método equals() recibe como parámetro un objeto Object, esto nos dará una dificultad adicional a la hora de sobreescribirlo. 
+>
+>Recordemos que no podemos cambiar la firma del método si queremos sobreescribirlo.
+
+✅ Cuando escribimos una clase, una de las cosas que debemos determinar es cómo vamos a comprobar la igualdad de dos instancias de esa clase.
+
+### 📜 Ejemplo!
+
+Antes de comenzar a trabajar con el equals, debemos pensar qué quiere decir que dos objetos son iguales. 
+
+Por ejemplo: si comparamos dos empleados, podríamos definir que son iguales si sus legajos son iguales.
+
+Como ejemplo vamos a trabajar con la clase empleado y, tal como mencionamos, dos empleados son iguales si sus legajos también lo son.
+
+```java
+public class Empleado{
+    private String nombre;
+    private String legajo;
+    protected double sueldo;
+    protected double descuentos; 
+}
+```
+
+Vamos a sobreescribir el `.equals(Object o)`. 
+
+Nuestro primer paso es recordar cómo es la firma de este método, <r>debemos respetar la firma del equals() heredado de Object</r>
+
+```java
+public class Empleado{
+    private String nombre;
+    private String legajo;
+    private double sueldo;
+    private double descuentos; 
+    
+    @Override
+        public boolean equals(Object o){
+    }
+}
+```
+
+Para comenzar a escribir nuestro equals, debemos considerar que el parámetro que me está llegando es un Object, no dice que sea un Empleado, entonces, <r>lo primero a verificar es si realmente es un Empleado, si no lo fuera ya podemos decir que no son iguales.</r> 
+
+Vamos a ver dos formas de comprobarlo:
+
+✅ instanceof 
+
+✅ getClass()
+
+#### Operador instanceof <a id='c10f'></a>
+
+Una forma de comparar dos instancias.
+
+```java
+@Override
+public boolean equals(Object o){
+    //Por ser un objeto podría tener valor null, es lo primero que comprobamos.
+    if (o == null)
+        return false;
+    //instanceof es un operador que nos permite comprobar si es o no, una instancia de Empleado. En este caso, si no lo es devolvemos falso, los objetos no pueden ser iguales.
+    if (!(o instanceof Empleado))
+        return false;
+    //Si es una instancia de Empleado, sigue la comprobación.
+    else{
+    }
+} 
+
+```
+
+#### Método .getClass()
+
+Con getClass() también podemos comparar la clase a la que pertenecen los objetos.
+
+```java
+@Override
+public boolean equals(Object o){
+    if (o==null)
+        return false;
+    //Comprobamos si la clase de la instancia es la misma clase del objeto recibido como parámetro.
+    if (this.getClass() ==  o.getClass())
+        return false;
+    else{
+    } 
+}
+```
+
+### Casteo / Casting
+
+Con el casting lo que logramos es transformar, para poder asignarlo a un objeto de tipo Empleado y de esta forma usar sus métodos.
+
+Ahora nos restaría comprobar la igualdad (tener el mismo legajo). 
+Para hacer esta comprobación, vamos a necesitar pedirle a "o", el legajo para compararlo con el de la instancia. Pero “o” es un Object, o sea, no “sabe” que tiene legajo.
+
+Asi quedaria el método terminado, pero para mayor comodidad usamos un casteo. <r>Si bien no es necesario, crear un nuevo objeto, es más cómodo para una posterior lectura.</r>
+
+con instansof:
+
+```java
+@Override
+public boolean equals(Object o){
+    if (o==null)
+        return false;
+    if (!(o instanceof Empleado))
+        return false;
+    else{
+        //Casteamos/transformamos “o” y lo asignamos a un objeto de tipo Empleado y de esta forma usar sus métodos.
+        Empleado empleadoAux = (Empleado)o;
+        return 
+        this.getLegajo().equals(empleadoAux.getLegajo());
+    } 
+}
+```
+
+con .getClass()
+
+```java
+@Override
+public boolean equals(Object o){
+    if (o==null)
+        return false;
+    if (this.getClass()==o.getClass())
+        return false;
+    else{
+        //Casteamos/transformamos “o” y lo asignamos a un objeto de tipo Empleado y de esta forma usar sus métodos.
+        Empleado empleadoAux = (Empleado)o;
+        //Comprobamos que tiene el mismo legajo, lo hacemos con equals. Legajo es un atributo de tipo String, por eso, no podemos usar el operador "==".
+        if(this.getLegajo().equals(empleadoAux.getLegajo()));
+            return true;
+        }   
+        return false;
+    } 
+}
+```
+
+> ### [📌Actividad: PG > Herencia (Object) > hashCode() > equals() > instanceof > @Override](./Actividades/pg-herencia-object.md) <a id='c10g'></a>
+> Herencia (Object) > hashCode() > equals() > instanceof > @Override
+
+> #### 🎬
+> Video: live coding - herencia.mp4
 
