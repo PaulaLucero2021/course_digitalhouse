@@ -18,4 +18,4 @@
 - [Programación Orientada a Objetos](./programacion_orientada_a_objetos/README.md)   
 
 
-![CTD](./assets/firma.png)
+![CTD](./assets/firm.png)
