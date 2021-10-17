@@ -1,7 +1,3 @@
----
-output:
-    css: ./styles.css
----
 
 <link rel="stylesheet" type="text/css" media="all" href="./styles.css" />
 
@@ -13,116 +9,144 @@ output:
 
 1. Introducción a la programación orientada a objetos
 <!-- path intellij C:\Users\Leandro\Desktop\Li\courses\CTD\Bimestre_II\programación_orientada_a_objetos -->
-- [C1- Que es Java](#c1)
-    - [1.1 Bienvenida](#c1a)
-    - [1.2 Primer acercamiento a Java](#c1b)
-    - [1.3 Primer programa](#c1c)
-    - [1.4 Tipos de datos](#c1d)
-    - [1.5 ¿Qué es un tipo de dato?](#c1z)
-    - [1.6 Actividad PG](#c1pg) 
-    - [1.7 Sintaxis Java](#c1y)
-    - [1.8 Estructura de control if, for, while, switch](#c1e)
-    - [1.9 Clase en vivo](#c1s) 🎥
-- [C2 - Introducción a Java](#c2)
-  - [2.1 Clases > Variables > Tipos de datos](#c2a)
-    - [2.1.1 Método .equals()](#c2a1)
-    - [2.1.2 Método .comparteTo()](#c2a2)
-    - [2.1.3 Paquetes](#c2a3)
-    - [2.1.4 String](#c2a4)
-    - [2.1.5 String vacía y String nula](#c2a5)
-    - [2.1.6 Integer](#c2a6)
-    - [2.1.7 Float](#c2a7)
-    - [2.1.8 Date](#c2a8)
-    - [2.2 Ingreso de datos, Scanner](#c2b)
-      - [2.2.1 Clase System](#c2b)
-      - [2.2.2 Clase Scanner](#c2b)
-        - [2.2.2.1 Instanciación del objeto Scanner](#c2b1)
-        - [2.2.2.1 Metodos de Scanner](#c2b2)
-        - [Ejemplo paso a paso Scanner](#c2b3)
-    - [2.3 Funciones](#c2c)
-      - [2.3.1 Definir una funcion > Nombre > Parametros > Devuelto](#c2c1)
-      - [Implementación de la función](#c2c2)
-      - [Actividad PG > Calculadora > Es divisible](#c2c3)
-    - [Array](#c2d)
-        - [Ciclos en arrays](#c2d1)
-- [C3 - Repaso](#c3)
+-   [C1- Que es Java](#c1)
+    -   [1.1 Bienvenida](#c1a)
+    -   [1.2 Primer acercamiento a Java](#c1b)
+    -   [1.3 Primer programa](#c1c)
+    -   [1.4 Tipos de datos](#c1d)
+    -   [1.5 ¿Qué es un tipo de dato?](#c1z)
+    -   [1.6 Actividad PG](#c1pg)
+    -   [1.7 Sintaxis Java](#c1y)
+    -   [1.8 Estructura de control if, for, while, switch](#c1e)
+    -   [1.9 Clase en vivo](#c1s) 🎥
+-   [C2 - Introducción a Java](#c2)
+    -   [2.1 Clases > Variables > Tipos de datos](#c2a)
+        -   [2.1.1 Método .equals()](#c2a1)
+        -   [2.1.2 Método .comparteTo()](#c2a2)
+        -   [2.1.3 Paquetes](#c2a3)
+        -   [2.1.4 String](#c2a4)
+        -   [2.1.5 String vacía y String nula](#c2a5)
+        -   [2.1.6 Integer](#c2a6)
+        -   [2.1.7 Float](#c2a7)
+        -   [2.1.8 Date](#c2a8)
+        -   [2.2 Ingreso de datos, Scanner](#c2b)
+            -   [2.2.1 Clase System](#c2b)
+            -   [2.2.2 Clase Scanner](#c2b)
+                -   [2.2.2.1 Instanciación del objeto Scanner](#c2b1)
+                -   [2.2.2.1 Metodos de Scanner](#c2b2)
+                -   [Ejemplo paso a paso Scanner](#c2b3)
+        -   [2.3 Funciones](#c2c)
+            -   [2.3.1 Definir una funcion > Nombre > Parametros > Devuelto](#c2c1)
+            -   [Implementación de la función](#c2c2)
+            -   [Actividad PG > Calculadora > Es divisible](#c2c3)
+        -   [Array](#c2d)
+            -   [Ciclos en arrays](#c2d1)
+-   [C3 - Repaso](#c3)
 <!-- HACERNOTAS -->
-- [C4 - Objetos y UML](#c4)
-    - [Concepto de Objeto y Clases](#c4a)
-      - [Análisis de items ⭐⭐⭐](#c4a1)
-      - [Ejemplo: Caso veterinaria](#c4a2)
-            - [Primera solución](#c4a1a)
-    - [Clases](#c4b)
-    <!-- - [Atributos, responsabilidades y constructor](#c4c) -->
-    - [Diagramar clases y atributos](#c4c1)
-    - [Encapsulamiento](#c4c2)
-    - [Objetivo: Definir atributos y responsabilidades](#c4c3)
-    - [Atributos y responsabilidades](#c4c3a)
-        - [Ejemplos de un objeto con sus atributos y métodos ⭐⭐⭐](#c4c5)
-      - [Constructor de un objeto](#c4c4)
-    - [Encapsulamiento (publico / privado)](#c4d)
-      - [Detalles importantes ⭐⭐⭐](#c4d1)
-    - [Diagrama UML](#c4e)
-        - [Diagrama de clases](#c4e1)
-        - [Quiz](#c4e2)
-- [C5 - Clases](#c5)
-    - [Atributos, constructores  y métodos en Java](#c5a)
-      - [Atributos](#c5a1)
-      - [Constructores](#c5a2)
-      - [Métodos](#c5a3)
-      - [Nombres en Java](#c5a4)
-      - [Crear una clase en Java](#c5a5)
-      - [Crear una clase en el IDE](#c5a6)
-    - [Proteger el Encapsulamiento](#c5b)
-        - [Métodos de acceso: setters y getters](#c5b)
-        - [Uso de setters y getters](#c5b1)
-        - [Actividad PG](#c5b2)
-    - [Instancia](#c5c)
-    - [La clase en Java ⭐⭐⭐](#c5d)
-    - [Variables y métodos de clase](#c5e)
-        - [Variable de clase](#c5e2)
-        - [Métodos de clase](#c5e3)
-        - [Ejemplos de uso: La clase Camión](#c5e4)
-        - [Actividad PG](#c5e1)
-    - [Live coding: Creación de clase y uso](#c5f)
-    - [Actividad en clase](#c5s1)
-- [C6 - Repaso](#c6)
-  - [Actividad: Clase Perro > chip > adopcion](#c6a)
+-   [C4 - Objetos y UML](#c4)
+    -   [Concepto de Objeto y Clases](#c4a)
+        -   [Análisis de items ⭐⭐⭐](#c4a1)
+        -   [Ejemplo: Caso veterinaria](#c4a2) - [Primera solución](#c4a1a)
+    -   [Clases](#c4b)
+        <!-- - [Atributos, responsabilidades y constructor](#c4c) -->
+        -   [Diagramar clases y atributos](#c4c1)
+        -   [Encapsulamiento](#c4c2)
+        -   [Objetivo: Definir atributos y responsabilidades](#c4c3)
+            -   [Atributos y responsabilidades](#c4c3a)
+                -   [Ejemplos de un objeto con sus atributos y métodos ⭐⭐⭐](#c4c5)
+        -   [Constructor de un objeto](#c4c4)
+    -   [Encapsulamiento (publico / privado)](#c4d)
+        -   [Detalles importantes ⭐⭐⭐](#c4d1)
+    -   [Diagrama UML](#c4e)
+        -   [Diagrama de clases](#c4e1)
+        -   [Quiz](#c4e2)
+-   [C5 - Clases](#c5)
+    -   [Atributos, constructores y métodos en Java](#c5a)
+        -   [Atributos](#c5a1)
+        -   [Constructores](#c5a2)
+        -   [Métodos](#c5a3)
+        -   [Nombres en Java](#c5a4)
+        -   [Crear una clase en Java](#c5a5)
+        -   [Crear una clase en el IDE](#c5a6)
+    -   [Proteger el Encapsulamiento](#c5b)
+        -   [Métodos de acceso: setters y getters](#c5b)
+        -   [Uso de setters y getters](#c5b1)
+        -   [Actividad PG](#c5b2)
+    -   [Instancia](#c5c)
+    -   [La clase en Java ⭐⭐⭐](#c5d)
+    -   [Variables y métodos de clase](#c5e)
+        -   [Variable de clase](#c5e2)
+        -   [Métodos de clase](#c5e3)
+        -   [Ejemplos de uso: La clase Camión](#c5e4)
+        -   [Actividad PG](#c5e1)
+    -   [Live coding: Creación de clase y uso](#c5f)
+    -   [Actividad en clase](#c5s1)
+-   [C6 - Repaso](#c6)
+    -   [Actividad: Clase Perro > chip > adopción](#c6a)
+
 2. Programación orientada a objetos en Java
-- [C7 - Relaciones entre clases](#c7)
-    - [Introducción: Relaciones entre clases](#c7a)
-    - [Representacion en UML de relaciones](#c7b)
-      - [Navegación](#c7b1)
-      - [Multiplicidad o cardinalidad](#c7b2)
-      - [Ejemplos](#c7b3)
-    - [Tipos de relaciones](#c7c)
-      - [Relación de asociación](#c7c1)
-      - [Relación de uso / dependencia](#c7c2)
-      - [Relación de Agregación](#c7c3)
-      <!-- HACER ejercitarían-->
-      - [Relación de Composicion](#c7c4)
-      <!-- HACER ejercitarían -->
-    - [Implementación en Java](#c7d)
-      - [Actividad PG](#c7d2)
-- [C8 - Herencia](#c8)
-  - [Proceso de abstracción](#c8a)
-  - [Relación de Herencia](#c8b)
-  - [Relación de herencia en UML](#c8c)
-  - [Herencia múltiple](#c8d)
-  - [Generalización y especialización](#c8e)
-    <!-- HACER -->
-  - [Encapsulamiento y la herencia](#c8f)
-  - [Modificador de visibilidad `(#)`](#c8g)
-  - [Firma de un método](#c8h)
-  - [Sobrecarga de métodos](#c8i)
-  - [Sobreescritura de métodos](#c8j)
-- [C9 - Repaso](#c9)
+
+-   [C7 - Relaciones entre clases](#c7)
+    -   [Introducción: Relaciones entre clases](#c7a)
+    -   [Representacion en UML de relaciones](#c7b)
+        -   [Navegación](#c7b1)
+        -   [Multiplicidad o cardinalidad](#c7b2)
+        -   [Ejemplos](#c7b3)
+    -   [Tipos de relaciones](#c7c)
+        -   [Relación de asociación](#c7c1)
+        -   [Relación de uso / dependencia](#c7c2)
+        -   [Relación de Agregación](#c7c3)
+        <!-- HACER ejercitarían-->
+        -   [Relación de Composicion](#c7c4)
+        <!-- HACER ejercitarían -->
+    -   [Implementación en Java](#c7d)
+        -   [Actividad PG](#c7d2)
+-   [C8 - Herencia](#c8)
+    -   [Proceso de abstracción](#c8a)
+    -   [Relación de Herencia](#c8b)
+    -   [Relación de herencia en UML](#c8c)
+    -   [Herencia múltiple](#c8d)
+    -   [Generalización y especialización](#c8e)
+        <!-- HACER -->
+    -   [Encapsulamiento y la herencia](#c8f)
+    -   [Modificador de visibilidad `(#)`](#c8g)
+    -   [Firma de un método](#c8h)
+    -   [Sobrecarga de métodos](#c8i)
+    -   [Sobreescritura de métodos](#c8j)
+-   [C9 - Repaso](#c9)
 <!-- HACER -->
-- [C10 - Herencia en Java](#c10)
-  - [Actividad PG: Herencia](#c10a)
-  - [Sobrecarga en Java](#c10b)
-  - [Sobreescritura en Java](#c10c)
-<!-- CONTINUAR -->
+-   [C10 - Herencia en Java](#c10)
+    -   [Actividad PG: Herencia](#c10a)
+    -   [Sobrecarga en Java](#c10b)
+    -   [Sobreescritura en Java](#c10c)
+    -   [Anotación @Override](#c10h)
+    -   [Actividad: PG > @Override > Extends > descubierto](#c10d)
+    -   [La clase Object: Metodos .toString(), .hashCode(), .equals()](#c10e)
+    -   [Operador instanceof > Método .getClass > Casting](#c10f)
+    -   [Actividad: PG > Herencia (Object) > hashCode() > equals() > instanceof > @Override](#c10g)
+        <!-- CONTINUAR -->
+        <!-- HACER -->
+-   [C11 - Clases abstractas](#c11)
+    -   [Clase abstracta en UML](#c11a)
+    -   [Clase abstracta en Java](#c11b)
+    -   [Metodos abstractos](#c11c)
+    -   [Los metodos abstractos en UML](#c11d)
+    -   [Métodos abstractos en Java](#c11e)
+    -   [Sobreescribir metodos abstractos](#c11f)
+    -   [Atributos y métodos en clases abstractas](#c11g)
+    -   [Binding (Vinculación)](#c11h)
+    - [Polimorfismo](#c11i)
+    - [Casting](#c11j)
+    - [Diferencias entre clases abstractas y clases concretas](#c11k)
+    - [Live coding: Clases abstractas](#c11l)
+    - [Quiz: Clases abstractas](#c11m)
+- [C12 - Repaso](#c12)
+- [C13 - Interface](#c13)
+    - [Polimorfismo en Interfaces](#c13a)
+    - [Interface e Implements](#c13b)
+    - [Interface Comparable ](#c13c)
+    - [Método CompareTo()](#c13d)
+    - [Live coding - Interface](#c13e)
 
 # C1 - Que es Java <a id='c1'></a>
 
@@ -3074,11 +3098,11 @@ el método `ladrar()` está sobrecargado, ambos métodos tienen diferente firma.
 classDiagram
 
 class Perro {
-    -nombre: String
-    -edad: int
-    +jugar()
-    +ladrar() String
-    +ladrar(intensidad: int)
+-nombre: String
+-edad: int
++jugar()
++ladrar() String
++ladrar(intensidad: int)
 }
 ```
 > ### ❌
@@ -3099,7 +3123,6 @@ Al escribir en las subclases el método ladrar() estamos diciendo que dicho mét
 
 ```mermaid
 classDiagram
-
     class Perro{
     -nombre: String
     -edad: int
@@ -3316,7 +3339,7 @@ En `Cuenta.java`
 package com.company;
 
 public class Cuenta {
-    private String numer
+    private String number
     protected double saldo;
 
     public Cuenta(String numero, double saldo) {
@@ -3378,7 +3401,7 @@ class Empleado{
     +calcularSueldo(premio:double)
 }
 class Vendedor{
-    -comision:int
+    -comisión:int
     -importeVentas:double
     +Vendedor(nombre:String,dni:String:legajo:String)
     +calcularSueldo()
@@ -3456,6 +3479,48 @@ public class Vendedor extends Empleado{
 ```
 > ### 💡
 > Para los objetos Vendedor, el método a ejecutar es este que sobreescribe el anterior.
+
+## Anotación @Override <a id='c10h'></a>
+
+**Redefinición de método, ¿cómo evitar equivocarnos?**
+
+Vimos que para redefinir un método de una superclase, debemos sobrescribir el mismo, es decir, tenemos que escribir el mismo método con la misma firma en la subclase.
+
+Sin embargo, ¿qué sucede, si cuando intentamos sobrescribir este método en la subclase tipeamos mal el nombre o nos olvidamos alguno de sus parámetros? Lo que pasaría es que la firma de este método sería diferente a la de la clase padre que intentábamos sobrescribir y este error no sería descubierto durante la compilación, excepto que sea un método abstracto.
+
+Pero no nos preocupemos...
+
+En Java existe una anotación llamada @override que podemos escribir en el método que estamos sobrescribiendo. Con esta anotación el compilador validará que ese método que estamos sobrescribiendo tenga una firma igual a algún método de la superclase y nos ayudará a no tener estos errores.
+
+```java
+public class Perro {
+    public String ladrar() {
+        return “guau”;
+    }
+}            
+
+```
+```java
+public class Doberman extends Perro{
+    @Override
+    public String ladrar() {  
+        return “GUAU GUAU!!!”;
+    }
+}
+```
+
+La anotación `@Override` le pide al compilador que verifique que efectivamente estamos redefiniendo un método de la superclase. 
+
+A continuación, te mostramos un ejemplo donde el compilador emitirá un error, al no encontrar en la superclase Perro, un método con la misma firma donde colocamos la anotación `@Override`. 
+
+```java
+public class Doberman extends Perro{
+    @Override
+    public String ladrar(int intensidad) {
+        return “GUAU GUAU!!!”;
+    }
+}
+```
 
 > ### [📌Actividad: PG > @Override > Extends > descubierto](./Actividades/pg-override.md) <a id='c10d'></a>
 > Override > Cuenta > CuentaCorriente > descubierto
@@ -3742,3 +3807,804 @@ public boolean equals(Object o){
 > #### 🎬
 > Video: live coding - herencia.mp4
 
+> #### 📑
+> pdf: Practica clase 10
+
+# C11 - Clases abstractas <a id='c11'></a>
+
+Las clases abstractas son aquellas que por sí mismas no se pueden identificar con algo “concreto” (no existen como tal en el mundo real).
+
+Poseen determinadas características que son comunes en otras clases que heredarán de esta.
+
+<r>Estas clases abstractas nos permite declarar métodos, pero que estos no estén implementados,</r> o sea, que no hacen nada en la clase abstracta, y estos métodos que también llamaremos abstractos obligarán a las subclases a sobreescribirlos para darles una implementación.
+
+## Clases abstractas
+
+> #### 🎬
+> Video: Clases abstractas
+
+✅ Una clase abstracta puede tener atributos y métodos que serán heredados por las subclases 
+
+✅ También puede contener métodos abstractos que actúan como un contrato obligando a estas subclases a implementar dichos métodos. 
+
+✅ Los metodos en la clase abstracta no hacen nada, en las clases que los heredan si.
+
+✅ Las subclases heredan los metodos de la clase abstracta y los sobreescriben para implementarlos
+
+✅ No creamos instancias de esa clase
+
+✅ Sirve para agrupar clases
+
+✅ Agrupa clases bajo un criterio especifico
+
+✅ Permite compartir características y comportamientos en común
+
+
+En el UML se indica asi:
+
+![img](./img/c11a.png)
+
+> ### 💡
+> Se utiliza en estrecha asociación a la idea de herencia
+>
+> No olvidemos que no podremos instanciar objetos de una clase abstracta
+>
+> Si bien una clase abstracta puede tener uno o varios métodos abstractos, no es obligatorio que los tenga.
+
+> #### 📑
+> pdf: Clases Abstractas en el Diseño
+
+### Clase abstracta en UML <a id='c11a'></a>
+
+Las representaremos ya sea indicando su nombre en forma cursiva o explicitando arriba de su nombre que es abstracta `<<abstract>>`
+
+```mermaid
+classDiagram
+
+class Perro{
+    <<abstract>>
+    -nombre String
+    -edad int
+    +jugar()
+    +ladrar()
+}
+```
+
+### Clase abstracta en Java <a id='c11b'></a>
+
+✅ Definimos a las clases abstractas y el comportamiento en abstracto con la palabra clave “abstract”. o el nombre en cursiva
+
+✅ Cómo el comportamiento es abstracto (solo decimos qué hacer) 
+
+✅ los métodos abstractos no tienen código asociado, no tienen “cuerpo”.  
+
+Veamos un ejemplo:
+
+![img](./img/c11d.png)
+
+
+### 📜 Ejemplo!
+
+Al contar la clase abstracta Perro con un método abstracto, obliga a la clase Caniche y Doberman a sobrescribir dicho método implementandolo.
+
+```mermaid
+classDiagram
+
+class Perro{
+<<abstract>>
+-nombre: String
+-edad: int
++jugar()
++ladrar()* String
+}
+
+class Caniche {
++ladrar()
+}
+
+class Doberman{
++ladrar()
+}
+
+Perro <|-- Caniche
+Perro <|-- Doberman
+
+```
+> ### 💡
+> Todo Perro debe ladrar(), pero solo cada Perro específico sabe “cómo” debe ladrar.
+
+### 📜 Ejemplo: Empleado abstracto 
+
+En el siguiente modelo UML, se muestra a una Compañía que tiene varios tipos de empleados y cuyo cálculo de sueldo es diferente en cada caso.
+
+![img](./img/c11b.png)
+
+### 📜 Ejemplo: Rol abstracto
+
+Los diferentes docentes en un instituto tienen diferentes roles y si bien todos los roles preparan la clase, reparten su tiempo de manera diferente según el rol.
+
+![img](./img/c11c.png)
+
+>### 💡
+> Martin Fowler describió a esta problemática de roles “Role Object” como un patrón de diseño para modelar roles, siendo una buena práctica a la hora de modelar esta problemática.
+
+
+## Metodos abstractos <a id='c11c'></a>
+
+✅ Las reglas para la implementación de los métodos abstractos son las de la sobreescritura
+
+> #### 📑
+> pdf: Metodos abstractos.pdf
+
+### Los metodos abstractos en UML <a id='c11d'></a>
+
+Al convertir en abstracto al método ladrar nos indica que el mismo no está implementado en la clase Perro y deberá implementarlo toda clase que herede de Perro.
+
+```mermaid
+classDiagram
+class Perro{
+    <<abstract>>
+    -nombre: String
+    -edad: int
+    +jugar()
+    +ladrar()* String
+}
+```
+
+### Métodos abstractos en Java <a id='c11e'></a>
+
+Si **Doberman quiere SER UN Perro**, entonces <r>debe respetar el contrato de los Perros: debe implementar un método que se llame ladrar, que devuelva un String y que no reciba parámetros</r>. 
+
+En pocas palabras, <r>debe sobrescribir todos los métodos abstractos definidos en Perro.</r>
+
+```java
+public class Doberman extends Perro{
+    public String ladrar() {
+        return "ladro como un Doberman GUAU!!!";
+    }
+}
+```
+
+Es decir, si ***Perro*** dice qué todos los perros deben `ladrar()`, la hija **Doberman**, debe “explicar” cómo hacerlo. 
+Llamaremos a esta operación “implementar” el método `ladrar()`.
+
+```java
+public class Doberman extends Perro{
+
+}
+```
+> ### ❌
+> En este caso, la clase Doberman arrojará un error de compilación, porque no respeta el contrato de la clase Perro.
+
+### Sobreescribir metodos abstractos <a id='c11f'></a>
+
+
+Si **Caniche quiere SER UN Perro**, también debe sobrescribir todos los métodos abstractos definidos en Perro.
+
+
+```java
+public class Caniche extends Perro{
+    public string ladrar() {
+        return "ladro como un caniche guau...";
+    }
+}
+```
+
+> ### 💡
+> ✅ Cuando implementamos los métodos, estos dejan de ser abstractos, por eso, en Doberman y Caniche ya no usamos la palabra clave abstract. 
+>
+> ✅ Las reglas para la implementación de los métodos abstractos son las de la sobreescritura (de hecho, es lo que estamos haciendo, sobrescribiendo comportamiento abstracto) así que aplican las mismas reglas: respetar tipo, cantidad y orden de los parámetros
+
+> ### ❌
+> Si no lo hacemos, entonces no respetamos el contrato, si no respetamos el contrato, la clase arrojará un error de compilación.
+
+## Atributos y métodos en clases abstractas <a id='c11g'></a>
+
+Una clase abstracta es una clase como cualquier otra y, por tanto, puede tener atributos y puede tener métodos concretos. Aun así:
+
+✅ Tengamos en cuenta que solo los abstractos serán los que definan el contrato
+
+```java
+public abstract class Perro{
+    private String nombre;
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+    public String getNombre(){
+        return nombre;
+    }
+    public abstract string ladrar();
+}
+```
+
+**¿Por qué tener métodos concretos en una clase que no se puede instanciar?** 
+
+✅ Porque estos métodos son susceptibles de ser reutilizados. 
+
+✅ Por otro lado, <r>que una clase abstracta no se pueda instanciar, no significa que no pueda tener constructores</r>, 
+
+✅ El objetivo es el mismo: <r>podemos definir constructores para reutilizar código cuando heredamos de esa clase abstracta.</r>
+
+### 📜 Ejemplo!
+
+```java
+public class Prueba{
+    
+    public static void main(String[] args){
+    Doberman perro1 = new Doberman();
+        perro1.ladrar();
+    Caniche perro2 = new Caniche();
+        perro2.ladrar();
+    }
+}
+```
+
+### 📜 Ejemplo! ❌
+
+```java
+public class Prueba{
+    
+    public static void main(String[] args){
+    Perro perro1 = new Perro();
+        perro1.ladrar();
+    }
+}
+```
+> ### ❌
+> Esto dará error al compilar. Recordá que por definición una clase abstracta NO puede ser instanciada.
+
+> #### 📑
+> pdf: Ejercitación Modelado Clase y Método Abstracto
+
+## Binding (Vinculación) <a id='c11h'></a>
+
+![img](./img/c11h.jpg)
+
+## Vinculación dinámica (dynamic binding)
+
+La vinculación dinámica de una referencia funciona igual que un enchufe. En un enchufe se puede conectar diferentes cosas: un TV, una heladera, una notebook.
+
+> ### 💡
+> Veremos que en una referencia podremos apuntar a diferentes tipos de objetos.
+
+Aquí, tanto la referencia como el objeto referenciado son del mismo tipo: 
+Doberman. Sin embargo, es posible que la referencia y el objeto referenciado sean de distinto tipo.
+
+![img](./img/c11i.png)
+
+En los lenguajes que no son tipados la referencia y el objeto pueden ser de cualquier tipo,
+
+✅ En los fuertemente tipados como Java el objeto debe ser de una clase que tenga una relación del tipo **“es un”** respecto de la referencia
+
+![img](./img/c11j.png)
+
+![img](./img/c11k.png)
+
+Vemos que en este caso la  referencia tiene un tipo diferente al objeto referenciado, pero cumple con la condición **“es un”**.
+
+![img](./img/c11l.png)
+
+### ❌
+
+Un perro no necesariamente siempre es un Doberman. Esto no está permitido.
+
+![img](./img/c11m.png)
+
+Un Doberman puede tener cosas parecidas a un Caniche, pero no lo es.
+
+![img](./img/c11m.png)
+
+En Java todas las clases por definición heredan de Object con lo cual un Doberman es un Object.
+
+![img](./img/c11o.png)
+
+## Polimorfismo <a id='c11i'></a>
+
+Es la capacidad de un mismo objeto de comportarse como otro. En otras palabras, es la capacidad de un objeto de funcionar de diversas formas.
+
+Capacidad de un objeto de reaccionar de manera diferente a un mismo mensaje
+
+> #### 📑
+> pdf: Polimorfismo.pdf
+
+Veamos con lo ejemplos anteriores:
+
+```java
+Perro p;
+   p = new Doberman();
+   p.ladrar();
+   
+   p = new Caniche();
+   p.ladrar();
+```
+
+✅ La referencia p se puede comportar y ladrar como un Doberman. 
+
+✅ Y la misma referencia p al vincularse dinámicamente (dynamic binding)  con un Caniche.
+
+✅ Se comporta de forma diferente y ladra como un Caniche.
+
+> ### 💡
+> Si utilizamos polimorfismo, podemos estar seguros de que modificaciones futuras, que agreguen nuevas subclases, no deberían afectar el código ni su funcionamiento.
+
+Si el código usa Perros (es decir, cualquier objeto que **“es un”** Perro) siempre que nuevas razas de perros introducidas al sistema hereden de Perro funcionaran correctamente. 
+
+## Casting <a id='c11j'></a>
+   
+Supongamos que Doberman tiene un método llamado 
+`morderComoDoberman()`, pero la referencia o sea la variable es del tipo Perro. Para forzar a un perro a que sea un Doberman utilizamos el casteo. De esta manera podremos invocar los métodos propios de Doberman.
+
+![img](./img/c11p.png)
+
+Lo mismo sucede si nuestro objeto referencia es del tipo Object. En este caso como la clase Object no tiene tampoco el `métodoladrar()` debemos castearlo ya sea a Perro que tiene dicho método o a Doberman.
+
+![img](./img/c11q.png)
+
+
+## Diferencias entre clases abstractas y clases concretas <a id='c11k'></a>
+
+![img](./img/c11r.jpg)
+
+> #### 🎬
+> Video: Te invitamos a ver el siguiente live coding donde mostramos un ejemplo de como crear una clase abstracta, métodos abstractos y el concepto de polimorfismo. 
+> Video: Live coding: Clases abstractas
+
+## Live coding: Clases abstractas <a id='c11l'></a>
+
+#### Paso a paso del video:
+
+A partir de un UML
+1. Creamos la clase abstracta
+2. Creamos los atributos de la clase abstracta
+3. Construimos el constructor de la clase abstracta
+4. Creamos el método abstracto: hacerRuido(), no lleva contenido, lo cerramos con `;`
+5. Creamos las clases hijas: Perro y Gato
+
+Clase Perro:
+6. Usamos extends para indicar que la clase Perro es hija de la clase abstracta Animal
+7. Creamos el constructor
+8. Sobreescribimos la responsabilidad de hacerRuido que viene por contrato de Animal.
+9. Escribimos el contenido de hacerRuido, que sera void ya que solo imprimirá por pantalla `guau`
+
+Clase Gato:
+10. Usamos extends para indicar que la clase Gato es hija de la clase abstracta Animal
+11. Creamos el constructor
+12. Sobreescribimos la responsabilidad de hacerRuido que viene por contrato de Animal.
+13. Escribimos el contenido de hacerRuido, que sera void ya que solo imprimirá por pantalla `miau`
+
+En el Main:
+14. Creamos la variable animal de Tipo Animal
+```java
+Animal animal;
+```
+15. No se puede instanciar Animal porque es abstracta pero si instanciamos o Perro o Gato
+```java
+animal = new Perro('juano',5);
+```
+16. llamamos el método de animal:
+
+```java
+animal.hacerRuido();
+//dirá en consola: guau
+```
+16. Igual con Gato
+```java
+Animal animal = new Gato('piero',7);
+```
+18. Por el polimorfismo, ahora hacerRuido:
+
+```java
+animal.hacerRuido();
+//dirá en consola: miau
+```
+
+>### 📝 Quiz! <a id='c11m'></a>
+> 
+>**¿Qué relación entre objetos modela la herencia?**
+>
+> “Es un”
+>
+>**Una Clase Abstracta...**
+>
+> Puede no tener métodos abstractos
+>
+>**La sobreescritura...**
+>
+> Se dá dentro de un contexto de Herencia 
+>
+>**Dado el siguiente código donde la clase ImpresoraEmpson hereda de la clase Impresora:**
+> ```java
+> Impresora p = new ImpresoraEpson();
+> p.imprimir();
+> ```
+>**¿Qué sucede en la primera línea y que sucede en la segunda línea?**
+>
+> Dynamic Binding, Polimorfismo
+>
+>**Polimorfismo**
+>
+> Sirve para alternar el comportamiento de los objetos durante la ejecución.
+
+> #### 📑
+> pdf: Practica clase 11
+
+# C12 - Repaso <a id='c12'></a>
+
+> #### 📑
+>
+> Practica clase 12
+>
+> zip: CuentasBanco
+>
+> resuelto-CuentasBanco.zip
+
+# C13 - Interface <a id='c13'></a>
+
+> #### 🎬
+> Video: Que es una interface.mp4
+
+> #### 📑
+> pdf: Interfaces y la herencia.pdf
+
+Interfaces son el concepto clave para agrupar clases a partir de comportamientos.
+
+Cuando implementamos una interface solo obligamos a la clase que la implementa a sobreescribir, es decir, implementar, los métodos de la misma.
+
+Tienen en común que son relaciones del tipo “es un”, con lo cual las interfaces también nos permite realizar vinculación dinámica y, por ende, polimorfismo
+
+Lo que permiten las interfaces es independizarse de una jerarquía, <r>permiten agregar comportamiento a una clase que no se obtenga desde un nivel superior en la jerarquía, se “enchufa” lateralmente a la jerarquía.</r> 
+Incluso podríamos hasta mezclar ambos mecanismos
+
+![img](./img/c12g.png)
+
+
+✅ Las interfaces son también relaciones del tipo “es un”,
+
+✅ Una interface establece un contrato
+
+✅ Se definen con la palabra clave `interface` en vez de class
+
+✅ Las interfaces nos dan características compartidas por las clases; un contrato que deben cumplir, permite entenderlas de forma genérica, según su comportamiento.
+
+✅ Todos sus metodos son abstractos, por eso no es necesario la palabra abstract, como estos, no definen cuerpo.
+
+✅ En UML las interfaces no tienen atributos
+
+✅ Se distinguen del resto de las clases poniendo el nombre entre simbolos dobles de mayor y menor 
+
+✅ Se relacionan con una flecha como la herencia, pero punteada
+
+✅ Cada clase que se le relacione debe implementar sus metodos.
+
+✅ Las interfaces no nos permiten definir instancias.
+
+✅ Una clase solo puede heredar de una sola clase, pero puede implementar múltiples interfaces. 
+
+✅ Las interfaces son fáciles de identificar a traves de los sufijos: `...able` / `...ible` y representan los distintos comportamientos que van a tener las clases concretas.
+
+![img](./img/c12a.png)
+
+### 📜 Ejemplo!
+
+Modelando una impresora:
+
+- Tendremos las clases `ArchivoPs` y `ArchivoDoc`
+- Tendremos una clase impresosa que va a tener un método: `imprimir()` que va a recibir archivos por parametro.
+- Una impresora imprime cosas que se puedan imprimir, sin importar que tipo de cosas son.
+- Nos importan aquellos objetos que son de clases que se comportan de una forma particular, o sea, aquellos que **Son imprimibles** (imprimibles: Algo que se puede imprimir)
+- Definimos el concepto de imprimibles con las interfaces.
+- Agregamos una interface que se llama `<<imprimible>>` que define la responsabilidad `imprimir()`. No define como lo va a imprimir, solo indica que puede haber objetos que se comporten como imprimibles.
+- Podemos decir que nuestras clases se comportan como imprimibles 
+- Cada clase debe implementar su método `imprimir()`, porque debe cumplir con el contrato definido por la interface 
+
+![img](./img/c12.png)
+
+### 📜 Ejemplo! #2
+
+![img](./img/c12c.png)
+
+>### 👍
+> Como vemos, Doberman implementa 2 interfaces, ya que además de `ladrar()` también tendrá la responsabilidad de `custodiar()` por ser Cuidador.
+
+![img](./img/c12d.png)
+
+### Polimorfismo en Interfaces <a id='c13a'></a>
+
+Tienen en común que son relaciones del tipo “es un”, 
+con lo cual las interfaces también nos permite realizar vinculación dinámica y, por ende, polimorfismo.
+
+![img](./img/c12e.png)
+
+![img](./img/c12f.png)
+
+> #### 📑
+> pdf: Ejercicio Herencia, Clases Abstractas e Interfaces
+
+## Interface e Implements <a id='c13b'></a>
+
+### 📜 Ejemplo!
+[Interface e Implements](https://view.genial.ly/60cfb7b0823a1b0d2d87b434)
+
+
+![img](./img/c12h.png)
+
+`<<Interface>>`
+`Cuidador`
+
+```java
+public interface Cuidador{
+
+    public String custodiar();
+
+}
+```
+`<<Interface>>`
+`Ladrador`
+
+```java
+public interface Ladrador{
+
+   public String ladrar();
+
+}
+```
+
+`Class Doberman`
+
+```java
+public class Doberman implements Cuidador, Ladrador{
+
+    public String custodiar(){
+
+        return "estoy atento custodiando la casa";
+
+    }
+
+    public String ladrar(){
+
+        return "Guau! Guau!";
+
+    }
+
+}
+```
+
+`Class Lobo`
+
+```java
+public class Lobo implements Ladrador{
+
+    public String ladrar(){
+
+        return "guau! los lobos también ladramos";
+
+    }
+
+}
+```
+
+`Class Main`
+
+```java
+/*Dada una referencia ladrador del tipo Ladrador (Ladrador ladrador)*/
+
+ladrador = new Doberman(); //ladrador es ahora del tipo Doberman()
+System.out.println(ladrador.ladrar()); //Polimorfismo
+
+/*Dada una referencia ladrador del tipo Ladrador (Ladrador ladrador)*/
+
+ladrador = new Lobo(); //ladrador es ahora del tipo Lobo()
+System.out.println(ladrador.ladrar()); //Polimorfismo
+
+```
+
+> ### [📌Actividad PG: Interface](./Actividades/pg-interface.md)
+
+
+## Interface Comparable <a id='c13c'></a>
+
+No necesitamos crear una interface para comparar objetos porque Java tiene la suya, es la interface **Comparable** y es necesaria utilizarla en otras circunstancias para comparar objetos, por ejemplo, para ordenarlos en las colecciones.
+
+El método que obliga a implementar la interface Comparable de Java es el método `compareTo`.
+
+> ### 💡
+> Para utilizar la interface Comparable de Java debemos importar el paquete java.lang
+
+> #### 📑
+> pdf: Comparando Objetos
+
+### 📜 Ejemplo!
+
+A la hora de comparar tipos primitivos lo hacemos con los operadores 
+“==”, “>”, “<”, “>=”, “<=”, “!”, “!=”, pero, ¿cómo hacemos si queremos 
+comparar dos objetos? Por ejemplo, dos pimientos
+
+```java
+int i = 5;
+    int j = 6;
+If(i < j)
+    System.out.println("i <  j");
+else
+    System.out.println("j >= i");
+```
+
+Para poder comparar dos objetos lo primero que tendremos que saber es por cuál o cuáles de sus atributos los vamos a comparar. Es decir, cómo responderíamos a la pregunta: ¿estos pimientos son iguales?
+
+
+>### 👍
+> La primer duda que nos surgirá es si debemos considerar el **color**, **tipo**, **peso** o el **tamaño** y sobreescribir el método `equals()`.
+
+Pero qué sucede ahora si lo que queremos saber es 
+¿cuál de los pimientos es **mayor** que el otro?
+
+> ### ❌
+> El método `equals()` solo nos sirve para comparar igualdad, pero **no** si es mayor o menor a otro objeto
+
+### Método CompareTo() <a id='c13d'></a>
+
+Una solución a la problemática planteada es: 
+
+✅ Lograr que todos los objetos que necesite comparar tengan por ejemplo un método `compararTo()` 
+
+✅ Que reciban como parámetro al otro objeto con el que se desea hacer la comparación y nos devuelva, 
+
+Por ejemplo:  
+
+**Cero**: si son iguales.
+
+**Mayor a cero**: si el objeto que invoca el método es mayor al recibido como parámetro.
+
+**Menor a cero**: si el objeto que invoca el método es menor al recibido como parámetro.
+
+
+¿Cómo hacemos para obligar a todos los objetos que queremos comparar para que tengan un método `compareTo()`?  
+
+>### 👍
+> Con la **interfaces** podemos hacer que quien la implemente posea sí o sí un método `compareTo()` y pueda establecer su propia implementación.
+
+![img](./img/c12i.png)
+
+### Implementación en Java de CompareTo()
+
+> ### 💡
+> El método `compareTo` debe devolver:
+> Si son iguales: `0`.
+> Si es mayor: un número mayor a cero. `1`
+> Si es menor: un número menor a cero. `-1`
+
+### 📜 Ejemplo!
+
+`Class Pimiento`
+
+```java
+import java.lang.*;
+
+public class Pimiento implements Comparable{
+    private String tipo;
+    private String color;
+    private double tamano;
+    private double peso;
+
+    public Pimiento(){
+    }
+
+    public int compareTo(Object obj){
+
+        Pimiento p2 = (Pimiento) obj;
+        int respuesta = 0;
+
+        if(this.getPeso() > p2.getPeso())
+            respuesta = 1;
+        if(this.getPeso() < p2.getPeso())
+            respuesta = -1;
+
+        return respuesta;
+    }
+    //Setters
+    public void setTipo(String tipo){
+        this.tipo = tipo;
+    }
+    public void setColor(String color){
+        this.color = color;
+    }
+    public void setTamano(double tamano){
+        this.tamano = tamano;
+    }
+    public void setPeso(double peso){
+        this.peso = peso;
+    }
+    //Getters
+    public String getTipo(){
+        return tipo;
+    }
+    public String getColor(){
+        return color;
+    }
+    public double getTamano(){
+        return tamano;
+    }
+    public double getPeso(){
+        return peso;
+    }
+}
+```
+`Class Prueba`
+
+```java
+public class Prueba{
+
+    public void main(String args[]){
+
+        Pimiento p1 = new Pimiento();
+                    p1.setPeso(200);
+                    p1.setColor(“amarillo”);
+        Pimiento p2 = new Pimiento();
+                    p2.setColor(“rojo”);
+                    p2.setPeso(150);
+
+        if(p1.compareTo(p2) > 0){
+            System.out.println("Pimiento amarillo es mayor al rojo");
+        }else if(p1.compareTo(p2) < 0){
+            System.out.println("Pimiento rojo es mayor al amarillo");
+        }else{
+            System.out.println("Pimiento rojo es igual al amarillo");
+        }
+    }
+}
+```
+
+>### 👍
+> Finalmente, por nuestra implementación, podemos decir que el pimiento amarillo es mayor al rojo.
+
+## Live coding - Interface <a id='c13e'></a>
+
+> #### 🎬
+> Video: Live coding - Interface
+
+En `Persona.java`
+
+```java
+public class Persona implements Comparable{
+    private int edad;
+
+    public int getEdad(){
+        return this.edad();
+    }
+    public void decirEdad(){
+        System.out.println(this.edad);
+    }
+
+    @Override
+    public int compareTo(Object o){
+        //Casteo
+        Persona p = (Persona) o;
+        //Comparacion
+        if(this.edad > p.getEdad()){
+            return 1; //Mayor a cero
+        }
+        else if(this.edad < p.getEdad()){
+            return -1; //Menor a cero
+        }
+        return 0;
+    }
+}
+```
+Podemos implementarlo de una manera mas sencilla si trabajamos con `int` 
+
+```java
+public class Persona implements Comparable{
+    private int edad;
+
+    public int getEdad(){
+        return this.edad();
+    }
+    public void decirEdad(){
+        System.out.println(this.edad);
+    }
+
+    @Override
+    public int compareTo(Object o){
+        return this.edad - ((Persona)o).getEdad();
+    }
+}
+```
