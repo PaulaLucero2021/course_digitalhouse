@@ -9,7 +9,7 @@
 1. Bienvenida e Introducción a Javascript Front
 
 -   [C1 - Bienvenida](#c1)
-    -   [Introduccion a la materia](#c1a)
+    -   [Introducción a la materia](#c1a)
     -   [Origen de JavaScript](#c1b)
     -   [DevTools: Consola](#c1c)
     -   [console.log()](#c1z)
@@ -26,15 +26,14 @@
     -   [Bucles específicos](#c2c)
         -   [for in](#c2c1)
         -   [for of](#c2c2)
-    -   [Notas clase 2](#c2s)
+    - [Notas clase 2](#c2s)
     -   [Juego: Piedra papel o tijera - Nivel I](#c2s1)
         -   [Solución: Juego Nivel I](#c2s1a)
 -   [C3 - Repaso](#c3)
     -   [Juego: Piedra papel o tijera - Nivel II](#c3s1)
-    -   [Solucion: Juego Nivel II](#c3s1a)
+    -   [Solución: Juego Nivel II](#c3s1a)
 
 2. Manipulacion del DOM
-
 -   [C4 - Introducción al DOM](#c4)
     -   [Objeto window y document](#c4a)
         -   [window](#c4a1)
@@ -45,64 +44,77 @@
         -   [.querySelectorAll](#c4b2)
         -   [Selectores del DOM](#c4b3)
         -   [Comparando selectores](#c4b4)
--   [C5 - Modificando elementos con Javascript](#c5)
-    -   [Modificando el DOM](#c5a)
-    -   [Plantillas de texto / template literals](#c5b)
-    -   [Modificando estilos](#c5c)
-    -   [Modificando clases](#c5d)
--   [C6 - Trabajando con nodos](#c6)
-    -   [Nodos en HTML](#c6a)
-        -   [Creación de nodos en el DOM](#c6a1)
-        -   [Métodos del objeto document](#c6a2)
-        -   [Sintaxis para crear un nodo elemento](#c6a3)
-        -   [Sintaxis para crear un nodo de texto](#c6a4)
-        -   [Sintaxis para adherir un elemento hijo al DOM](#c6a5)
-    -   [Elementos y atributos dinamicos](#c6b)
-        -   [Atributos dinamicos](#c6b1)
-
+- [C5 - Modificando elementos con Javascript](#c5)
+    - [Modificando el DOM](#c5a)
+    - [Plantillas de texto / template literals](#c5b)
+    - [Modificando estilos](#c5c)
+    - [Modificando clases](#c5d)
+- [C6 - Trabajando con nodos](#c6)
+    - [Nodos en HTML](#c6a)
+        - [Creación de nodos en el DOM](#c6a1)
+        - [Métodos del objeto document](#c6a2)
+        - [Sintaxis para crear un nodo elemento](#c6a3)
+        - [Sintaxis para crear un nodo de texto](#c6a4)
+        - [Sintaxis para adherir un elemento hijo al DOM](#c6a5)
+    - [Elementos y atributos dinamicos](#c6b)
+        - [Atributos dinamicos](#c6b1)
 3. Web reactiva
-
--   [C7 - Catch-up + Intro a eventos](#c7)
--   [C8 - Que son los eventos?](#c8)
-    -   [¿Qué son los eventos?](#c8a)
-        -   [Carga de archivo js](#c8a1)
-        -   [on](#c8a2)
-        -   [preventDefault()](#c8a3)
-        -   [Eventos mas usados](#c8a4)
-        -   [preventDefault()](#c8a5)
-        -   [AddEventListener()](#c8a)
-    -   [Eventos de mouse](#c8b)
-        -   [Ejemplo varios eventos en simultaneo](#c81)
-    -   [Eventos del teclado](#c8c)
-    -   [Invocando funciones](#c8d)
-        -   [Tipos de funciones](#c8d1)
-        -   [Scope](#c8d2)
-        -   [Arrow functions](#c8d3)
-        -   [Funciones como parametros](#c8d4)
-        -   [Callbacks](#c8d5)
-    -   [Palabras reservadas: var - let - const](#c8e)
--   [C9 - Enlazando conceptos](#c9) - [Notas clase 9](#c9s) - [setTimeOut()](#c9s1) - [setInterval()](#c9s2)
-    <!-- VERCLASE CLASE -->
-    <!-- HACER codig conometro -->
--   [C10 - Primer entregable](#c10)
--   [C11 - Formularios I](#c11)
-    -   [Estructura de un formulario: Inputs > Select > Textarea](#c11a)
-    -   [Almacenar datos](#c11b)
-    -   [Normalizando datos: Metodos de strings](#c11c)
-    -   [Quiz](#c11d)
--   [C12 - Repaso](#c12)
+- [C7 - Catch-up + Intro a eventos](#c7)
+- [C8 - Que son los eventos?](#c8)
+    - [¿Qué son los eventos?](#c8a)
+        - [Carga de archivo js](#c8a1)
+        - [on](#c8a2)
+        - [preventDefault()](#c8a3)
+        - [Eventos mas usados](#c8a4)
+        - [preventDefault()](#c8a5)
+        - [AddEventListener()](#c8a)
+    - [Eventos de mouse](#c8b)
+        - [Ejemplo varios eventos en simultaneo](#c81)
+    - [Eventos del teclado](#c8c)
+    - [Invocando funciones](#c8d)
+        - [Tipos de funciones](#c8d1)
+        - [Scope](#c8d2)
+        - [Arrow functions](#c8d3)
+        - [Funciones como parametros](#c8d4)
+        - [Callbacks](#c8d5)
+    - [Palabras reservadas: var - let - const](#c8e)
+- [C9 - Enlazando conceptos](#c9)
+    - [Notas clase 9](#c9s)
+        - [setTimeOut()](#c9s1)
+        - [setInterval()](#c9s2)
+- [C10 - Primer entregable](#c10)
+- [C11 - Formularios I](#c11)
+    - [Estructura de un formulario: Inputs > Select > Textarea](#c11a)
+    - [Almacenar datos](#c11b)
+    - [Normalizando datos: Metodos de strings](#c11c)
+    - [Quiz](#c11d)
+- [C12 - Repaso](#c12)
 
 4. Validación del lado del cliente
 
--   [C13 - Formularios II](#c13) - [Evento de formularios](#c13a) - [Quiz](#c13b) - [Validaciones](#c13c) - [Live coding : Validaciones](#c13d) - [Objeto `location`](#c13e) - [Quiz](#c13f)
-<!-- HACEREJFORMULARIO -->
--   [C14 - Json y Storage](#c14)
-    -   [Objeto literal vs Json](#c14a)
-    -   [Metodos JSON](#c14b)
-    -   [Objetos: LocalStorage y SessionStorage](#c14c)
-    -   [Quiz!](#c14d)
+- [C13 - Formularios II](#c13)
+    - [Evento de formularios](#c13a)
+    - [Quiz](#c13b)
+    - [Validaciones](#c13c)
+    - [Live coding : Validaciones](#c13d)
+    - [Objeto `location`](#c13e)
+    - [Quiz](#c13f)
+- [C14 - Json y Storage](#c14)
+    - [Objeto literal vs Json](#c14a)
+    - [Metodos JSON](#c14b)
+    - [Objetos: LocalStorage y SessionStorage](#c14c)
+    - [Quiz!](#c14d)
+- [C15 -  Proyecto integrador](#c15)
 
 5. Asincronismo y APIs
+- [C16 - Introducción a Asincronismo](#c16)
+    - [Introducción a HTTP > Request - Response](#c16a)
+    - [Protocolo http > URI](#c16b)
+    - [Como viaja la información](#c16c)
+    - [Metodos http](#c16d)
+    - [Códigos de estado HTTP](#c16e)
+    - [Quiz](#c16f)
+
 6. implementación practica, animaciones y librerías
 
 # C1 - Introducción <a id='c1'></a>
@@ -617,9 +629,9 @@ let persona = {
 };
 // palabra reservada for, parentesis y llaves, dentro de los parentesis declaramos unas variable cualquiera seguido de in mencionamos el objeto que deseemos iterar
 for (let caracteristica in persona) {
-    //aqui podemos el codigo que va a iterar
-    //la variable caracteristica toma las propiedades del objeto, no sus valores
-    //si usamos en el console log el objeto y en corchetes la variable, traera los valores de cada propiedad
+    //aquí podemos el código que va a iterar
+    //la variable característica toma las propiedades del objeto, no sus valores
+    //si usamos en el console log el objeto y en corchetes la variable, traerá los valores de cada propiedad
     console.log(persona[caracteristica]);
 }
 ```
@@ -630,7 +642,7 @@ for (let caracteristica in persona) {
 
 Lo usaremos para iterar sobre arrays
 necesitamos un array sobre el cual iterar
-tambien nos servira para iterar sobre cadenas de texto
+también nos servira para iterar sobre cadenas de texto
 La sintaxis es parecida a la de `for in`
 
 ```javascript
@@ -672,27 +684,27 @@ parseInt(Math.random() * 3 + 1);
 // Permite redonear, parseInt se queda con la parte entera del numero
 ```
 
-> Ver codigo ejemplos: `for in` y `for of` en practica.js
+> Ver código ejemplos: `for in` y `for of` en practica.js
 
 <!-- juego piedra papel o tijera -->
 
 ## Juego: Piedra papel o tijera - Nivel I <a id='c2s1'></a>
 
-con el metodo y funcion `math.random()` retorna un valor aleatorio entre 0 y 1 `[0,1)`
+con el método y funcion `math.random()` retorna un valor aleatorio entre 0 y 1 `[0,1)`
 
-> Informacion dice que el valor no es realmente aleatorio, ya que esta basado en un algoritmo que toma como semilla el valor del el reloj de la computadora.
+> Información dice que el valor no es realmente aleatorio, ya que esta basado en un algoritmo que toma como semilla el valor del el reloj de la computadora.
 > para que me de un numero entre un numero especifico:
 
 ```javascript
 Math.random() * 3;
-//Esto me dara valores entre 0 y 3
+//Esto me dará valores entre 0 y 3
 ```
 
 para hacerlo mas acorde a un numero y que no salga el `0`
 
 ```javascript
 Math.random() * 3 + 1;
-//Esto da numeros aleatorios entre 1 y 3
+//Esto da números aleatorios entre 1 y 3
 ```
 
 para obtener el numero que necesito; quedandome con el entero puedo usar `parseInt`
@@ -702,7 +714,7 @@ parseInt(Math.random() * 3 + 1);
 //Toma el entero del Math.random()
 ```
 
-para pedir la eleccion del jugador usamos `prompt()`
+para pedir la elección del jugador usamos `prompt()`
 
 ```javascript
 const usuario = parseInt(prompt(`Ingrese 1 para piedra, 2 para papel, 3 tijera`));
@@ -711,7 +723,7 @@ const usuario = parseInt(prompt(`Ingrese 1 para piedra, 2 para papel, 3 tijera`)
 
 <!-- min 55 condicionales -->
 
-**Solucion: Juego Nivel I** <a id='c2s1a'></a>
+**Solución: Juego Nivel I** <a id='c2s1a'></a>
 
 ```javascript
 const computadora = parseInt(Math.random() * 3 + 1);
@@ -720,7 +732,7 @@ const usuario = parseInt(prompt("Ingrese 1 para piedra, 2 para papel o 3 para ti
 
 let resultado = "Sin resultado aun";
 
-// logica del juego
+// lógica del juego
 //si el usuario selecciona piedra
 if (usuario == 1) {
     if (computadora == 1) {
@@ -766,7 +778,7 @@ alert("El resultado de la partida fue: " + resultado);
 
 ## Juego: Piedra papel o tijera - Nivel II <a id='c3s1'></a>
 
-Refactorizando el codigo, pensarlo en momentos clave, dentro de los momentos mejorar procesos.
+Refactorizando el código, pensarlo en momentos clave, dentro de los momentos mejorar procesos.
 
 Implementar funciones y reutilizarlas:
 
@@ -778,18 +790,18 @@ function jugadaComputadora() {
 ```
 
 otro momento es la jugada del usuario.
-Por ahora no recibiria parametro, pero podria usar un `prompt` para recibir por parametro el ingreso del numero por parte del usuario
+Por ahora no recibiría parametro, pero podria usar un `prompt` para recibir por parametro el ingreso del numero por parte del usuario
 
 ```javascript
 function jugadaUsuario() {
     //2. definimos la variable
     let usuario;
 
-    //4. Necesitamos una estructura que pregunte minimamente una vez, si responde bien, puede salir, si no, sigue en la misma situacion.
+    //4. Necesitamos una estructura que pregunte mínimamente una vez, si responde bien, puede salir, si no, sigue en la misma situación.
     do {
         //3. parsea el ingreso del usuario ---> 5.la muevo al do while
         usuario = parseInt(prompt("Ingrese 1 para piedra, 2 para papel o 3 para tijera."));
-        //hago la comparacion: Lo dejo salir si cumple con condicion para que la jugada sea valida: del 1 al 3, que sea numero,
+        //hago la comparacion: Lo dejo salir si cumple con condición para que la jugada sea valida: del 1 al 3, que sea numero,
     } while (usuario < 1 || usuario > 3 || isNaN(usuario));
 
     //1.devolveremos la jugada del usuario
@@ -798,7 +810,7 @@ function jugadaUsuario() {
 ```
 
 Otro momento son las comparaciones de las jugadas
-Recibe las jugadas de pc y usuario por parametro, valores que seran entre 1 y 3 y devolvera el resultado de la jugada para saber quien gano
+Recibe las jugadas de pc y usuario por parametro, valores que serán entre 1 y 3 y devolverá el resultado de la jugada para saber quien gano
 
 ```javascript
 
@@ -846,7 +858,7 @@ const puntajes = {
     computadora: 0,
 };
 
-//segun lo que venga de resultado, la guardamos en una variable para que quede mas legible
+//según lo que venga de resultado, la guardamos en una variable para que quede mas legible
 let partida = comparacionJugada(jugador, computadora);
 
 //sumamos un punto en el contador
@@ -864,7 +876,7 @@ Hacer que el programa se repita hasta que alguno de los usuarios llegue a los 2 
 ```javascript
 let juego = true;
 //usamos ciclo while puede ser for
-//Se van a ugar partidas hasta que un jugador llegue a 2 puntos
+//Se van a jugar partidas hasta que un jugador llegue a 2 puntos
 while (juego) {
     //pero el juego
     let computadora = jugadaComputadora();
@@ -884,9 +896,9 @@ while (juego) {
 }
 ```
 
-> `while` corta cuando encuentra la condicion, `for` sigue iterando a menos que se haga `return` pero no es buena practica poner muchos return en funciones.
+> `while` corta cuando encuentra la condición, `for` sigue iterando a menos que se haga `return` pero no es buena practica poner muchos return en funciones.
 
-podemos cambiar la condicion de `while` por:
+podemos cambiar la condición de `while` por:
 
 ```javascript
 while (puntajes.usuario < 2 && puntajes.computadora < 2) {
@@ -903,7 +915,7 @@ while (puntajes.usuario < 2 && puntajes.computadora < 2) {
 }
 ```
 
-usamos los mensajes segun las partidas
+usamos los mensajes según las partidas
 
 ```javascript
 //Creo alertas y uso los mensajes en la funcion
@@ -936,7 +948,7 @@ if (puntajes.usuario > puntajes.computadora) {
 }
 ```
 
-**Solucion: Juego Nivel II** <a id='c3s1a'></a>
+**Solución: Juego Nivel II** <a id='c3s1a'></a>
 
 ```javascript
 /* ---------------------- JUEGO --------------------------- */
@@ -1066,12 +1078,12 @@ window.innerHeight;
 //ancho de ventana
 window.innerWidth;
 //retorna ej 650
-window.innerWitdh = 300;
+window.innerWidth = 300;
 //300
 window.innerWith;
 //300
 
-//Podemos saber el host donde estamos, el nombre, ubicacion, protocolo, path
+//Podemos saber el host donde estamos, el nombre, ubicación, protocolo, path
 window.location;
 //Puedo pisar los datos
 window.location.href = "http://noticias.com";
@@ -1096,7 +1108,7 @@ document.bgColor = "red";
 document.styleSheets;
 
 document.styleSheets[0];
-//siendo un array ingreso con la posicion
+//siendo un array ingreso con la posición
 ```
 
 ### Divs
@@ -1136,7 +1148,7 @@ Cuando queremos modificar que queremos modificar del contenido html
 ## .querySelector() <a id='c4b1'></a>
 
 Este selector recibe un string que indica el selector CSS del elemento del DOM que estamos buscando.
-Metodo que pemite determinar donde queremos hacer el cambio.
+Método que permite determinar donde queremos hacer el cambio.
 
 > Es importante declarar una variable para almacenar el dato que nos traiga el selector, ya que de otra manera lo perderíamos al continuar la ejecución del programa.
 
@@ -1151,18 +1163,18 @@ document.querySelector("form#unico");
 document.querySelector(".especial");
 ```
 
-retornara la etiqueta que estemos buscando, si la clase esta en muchas ubicaciones, devolvera la primera que haga match
+retornara la etiqueta que estemos buscando, si la clase esta en muchas ubicaciones, devolverá la primera que haga match
 
 ## .querySelectorAll() <a id='c4b2'></a>
 
-Devuelve todas las etiquetas que matcheen con las etiquetas que le haya indicado, devolviendo una lista de nodos que podemos trabajar como un array
+Devuelve todas las etiquetas que macheen con las etiquetas que le haya indicado, devolviendo una lista de nodos que podemos trabajar como un array
 
 ```js
-//Devuelve todas etiquetas que matcheen con .especial
+//Devuelve todas etiquetas que macheen con .especial
 document.querySelectorAll(".especial");
 ```
 
-> Siempre que le pedimos a javascript que capture algo y no exista devolvera `null`
+> Siempre que le pedimos a javascript que capture algo y no exista devolverá `null`
 
 Podemos recorrer los párrafos usando `for of`
 
@@ -1327,8 +1339,61 @@ titulo.style.backgroundColor = "#dddddd";
 
 > Ver PDF: template strings
 
-<!-- HACER -->
-<!-- FIN -->
+## Sintaxis de un template string
+
+![img](./img/c5b2.png)
+
+### 📜 Ejemplos!
+
+```js
+const nombre= 'Mauro';
+const miTemplate = `Mi nombre es ${nombre}`;
+console.log(miTemplate) //Mi nombre es mauro
+```
+```js
+const miTemplate =`2 * 3 es ${ 2 * 3 }`;
+console.log(miTemplate); //2 * 3 es 6
+```
+```js
+function suma(var1, var2) { 
+    return var1 + var2
+}
+const temp =`El resultado es ${suma(2,2)}`;
+console.log(temp); //El resultado es 4
+```
+
+> ### 💡
+> Como se puede ver, dentro de las llaves se puede ejecutar cualquier código JavaScript, pero es buena costumbre que sea lo más sencillo posible
+
+Ejemplos en html y su js
+
+```html
+<html lang="es"> <!-- JS en la siguiente hoja -->
+    <head>
+        <meta charset="UTF-8">
+        <script src="scripts.js"></script>
+        <title>Ejemplo</title>
+    </head>
+        <body id="body">
+
+        </body>
+</html>
+```
+```js
+function escribirHTML(titulo, texto) {
+    const body= document.getElementById('body');
+    const miTemplate= `    
+        <h1>${titulo}</h1>    
+        <p>${texto}</p>
+        `;  
+        body.innerHTML+= miTemplate;
+        }
+        
+        escribirHTML('Hola', 'Esto es un ejemplo de template string en html.');
+        escribirHTML('Es dinámico', 'Podemos insertar elementos HTML mediante <b>JavaScript</b>');
+        escribirHTML('Facilita la programación', 'Evita escribir mucho código y reutilizar el que si escribamos.');
+        escribirHTML('En este ejemplo', 'Hemos utilizado una única función para poder escribir 4 veces en HTML, ¿te imaginás lo que sería esto sin esta función?');
+```
 
 Supongamos que tenemos un objeto de JavaScript con la siguiente estructura, el cual necesitamos utilizar para rellenar dinámicamente en el front end.
 
@@ -1728,13 +1793,13 @@ Linkear el script abajo de `<link rel="stylesheet" href="style.css">
 
 y queremos que el archivo `index.js` se ejecute despues que se cargue toda la pagina crearemos el siguiente evento
 
-## Eventos con `on`
+## Eventos con on
 
-### Evento `onload`
+### Evento onload
 
 Este evento permite que todo el script se ejecute cuando se haya cargado por completo el objeto document dentro del objeto window
 
-```js
+```
 window.onload = function () {
     console.log("el documento está listo");
 };
@@ -1748,7 +1813,7 @@ window.onload = function () {
 
 Este evento nos permite ejecutar una acción cuando se haga clic sobre el elemento al cual le estamos aplicando la propiedad.
 
-```js
+```
 btn.onclick = function () {
     console.log("hiciste clic!");
 };
@@ -1756,14 +1821,14 @@ btn.onclick = function () {
 
 #### Eventos mas usados <a id='c8a4'></a>
 
-| Evento      | Descripcion                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| onclick     | Cuando el usuario hace clic.                                     |
-| ondblclick  | Cuando el usuario hace doble clic.                               |
-| onmouseover | Cuando el mouse se mueve sobre el elemento                       |
-| onmousemove | Cuando se mueve el mouse.                                        |
-| onscroll    | Cuando se hace scroll.                                           |
-| onkeydown   | Cuando se aprieta una tecla.                                     |
+| Evento      | Descripcion                                                     |
+| ----------- | --------------------------------------------------------------- |
+| onclick     | Cuando el usuario hace clic.                                    |
+| ondblclick  | Cuando el usuario hace doble clic.                              |
+| onmouseover | Cuando el mouse se mueve sobre el elemento                      |
+| onmousemove | Cuando se mueve el mouse.                                       |
+| onscroll    | Cuando se hace scroll.                                          |
+| onkeydown   | Cuando se aprieta una tecla.                                    |
 | onload      | Cuando se carga la página onsubmitCuando se envía un formulario. |
 
 Para obtener más información, podemos visitar la documentación oficial haciendo clic en el siguiente link:
@@ -1779,7 +1844,7 @@ Evita cualquier comportamiento nativo en un elemento HTML
 
 > Siempre tenemos que tener seleccionado el elemento al que le queremos aplicar el preventDefault() mediante los selectores
 
-```js
+```
 let hipervinculo = document.querySelector("a");
 
 hipervinculo.addEventListener("click", function (event) {
@@ -1801,6 +1866,7 @@ window.addEventListener("load", function () {});
 > Con AddEventListener, se harán todos los eventos en simultaneo, no se pisan. Permite tener muchas mas reacciones a algo
 
 ### 📜 Ejemplo!
+
 
 ```html
 <!DOCTYPE html>
@@ -1912,6 +1978,7 @@ window.addEventListener("load", () => {
 ```
 
 ### 📜 Ejemplo!
+
 
 ```js
 let texto = document.querySelector(".text");
@@ -2025,6 +2092,7 @@ miInput.onkeypress = function (event) {
 
 ### 📜 Ejemplo!
 
+
 ```js
 window.addEventListener("load", () => {
     window.addEventListener("keypress", () => {
@@ -2036,28 +2104,27 @@ window.addEventListener("load", () => {
 });
 ```
 
-> ### 📝 Quiz! <a id='c'></a>
+>### 📝 Quiz! <a id='c'></a>
 >
-> **¿Cuál de todas las propiedades de un evento de teclado es la que almacena el valor de la tecla presionada?**
+>**¿Cuál de todas las propiedades de un evento de teclado es la que almacena el valor de la tecla presionada?**
 > key
->
-> **Cuál de las siguientes opciones es la correcta para reemplazar los “?????” en la siguiente línea de código, teniendo en cuenta que queremos enviar un alert cuando se libere la tecla después de haber sido presionada:**
->
-> ```js
->  elemento.????? = function(){
->  alert(“¡se liberó la tecla!”)
->  }
-> ```
->
+> 
+>**Cuál de las siguientes opciones es la correcta para reemplazar los “?????” en la siguiente línea de código, teniendo en cuenta que queremos enviar un alert cuando se libere la tecla después de haber sido presionada:**
+>   ```js
+>    elemento.????? = function(){
+>    alert(“¡se liberó la tecla!”)
+>    }
+>    ```
 > onkeyup
+
 
 ## Invocando funciones <a id='c8d'></a>
 
 > #### 📑
->
 > pdf: Invocando funciones
 
 JavaScript cuenta con estructuras denominadas funciones, estas no son más que fragmentos de código, los cuales no se ejecutan hasta que, en algún momento, lo ‘’invoquemos’’ o llamemos mediante un nombre o identificador.
+
 
 [link fuera de lugar](https://view.genial.ly/60c352166df6b60db1b9d034)
 
@@ -2087,9 +2154,7 @@ function funcionDeEjemplo() {
 }
 console.log(x); // error
 ```
-
 > ### 💡
->
 > Si queremos llamar a una variable desde afuera de su bloque, esta no va a existir.
 
 También entra en juego la jerarquía de los bloques, esto quiere decir que los scopes secundarios tienen acceso a los ámbitos primarios, pero no al revés.
@@ -2242,7 +2307,7 @@ blindando el documento para que todo funcione mejor
 
 ## `setTimeOut()` <a id='c9s1'></a>
 
-Es un metodo de `window` que nos permite ejecutar un codigo despues de un determinado tiempo
+Es un método de `window` que nos permite ejecutar un codigo despues de un determinado tiempo
 
 ```js
 setTimeout(() => {
@@ -2306,26 +2371,26 @@ Estos están definidos por:
 
 ```html
 // input de texto
-<input type="text" />
+<input type="text">
 
 // input que solo admite números
-<input type="number" />
+<input type="number">
 
 // input para campos de email
-<input type="email" />
+<input type="email">
 
 // input de fecha
-<input type="date" />
+<input type="date">
 
 // grupo de opciones de selección única
-<input type="radio" name="miOpcion" value="1" />
-<input type="radio" name="miOpcion" value="2" />
-<input type="radio" name="miOpcion" value="3" />
+<input type="radio" name="miOpcion" value="1">
+<input type="radio" name="miOpcion"value="2">
+<input type="radio" name="miOpcion"value="3">
 
 // grupo de opciones de selección múltiple
-<input type="checkbox" name="miOpcion" value="1" />
-<input type="checkbox" name="miOpcion" value="2" />
-<input type="checkbox" name="miOpcion" value="3" />
+<input type="checkbox" name="miOpcion"value="1">
+<input type="checkbox" name="miOpcion"value="2">
+<input type="checkbox" name="miOpcion"value="3">
 ```
 
 ### Select
@@ -2503,8 +2568,7 @@ La normalización de datos no es otra cosa que una serie de procesos, reglas o m
 Dicho proceso, puede incluir desde instrucciones que se brindan al usuario cuando se le pide que complete un determinado campo (por ejemplo: “Ingresá tu número de teléfono sin el 15”), hasta validaciones y manipulación de los datos recolectados, las que pueden realizarse tanto del lado del cliente como del servidor.
 
 > ### 💡
->
-> El proceso de normalizar es organizar los datos de manera tal que respeten el formato deseado para ser enviados o posiblemente almacenados en una base de datos.
+> El proceso de normalizar es organizar los datos de manera tal que respeten el formato deseado para ser enviados o posiblemente almacenados en una base de datos. 
 
 Y, entonces, ¿qué métodos podemos utilizar para manipular estos datos?
 
@@ -2537,67 +2601,65 @@ console.log(peliculasNormalizadas);
 
 Ahora la informacion se encuentra normalizada y lista para ser almacenada.
 
-### Metodo `.toLowerCase()`
+### Método `.toLowerCase()`
 
 Permite convertir el texto a minuscula
 
 ![img](./img/c11b.png)
 
-### Metodo `.toUpperCase()`
+### Método `.toUpperCase()`
 
 Permite convertir el texto a mayuscula
 
 ![img](./img/c11c.png)
 
-### Metodo `.concat()`
+### Método `.concat()`
 
 Permite concatenar 2 o mas strings en un unico valor
 
 ![img](./img/c11d.png)
 
-### Metodo `.trim()`
+### Método `.trim()`
 
 Permite eliminar los espacios en blanco que se encuentran en al final de un string
 
 ![img](./img/c11e.png)
 
-### Metodo `.replace()` y `.replaceAll()`
+### Método `.replace()` y `.replaceAll()`
 
 Permite cambiar o reemplazar caracteres por otros
 
 ![img](./img/c11f.png)
 
-> ### 📝 Quiz! <a id='c11d'></a>
+
+>### 📝 Quiz! <a id='c11d'></a>
 >
-> **¿Qué método nos ayudaría si el usuario ingresa espacios de más al final de su nombre?**
+>**¿Qué método nos ayudaría si el usuario ingresa espacios de más al final de su nombre?**
 > Método trim
->
-> **¿Qué hace el método split?**
+> 
+>**¿Qué hace el método split?**
 > Separa un string por sus caracteres o varios strings en valores de array.
->
-> **Con el método concat, podemos incorporar un array dentro de otro.**
-> FALSO. concat crea un nuevo conjunto de valores de las 2 variables existentes. Por lo que en total, quedan 3 variables.
->
-> **¿Qué resultado se espera de este código?**
->
-> ```js
-> const p = "El veloz zorro rojo saltó sobre el perro dormido";
-> console.log(p.replace("perro", "mono"));
-> ```
->
+> 
+>**Con el método concat, podemos incorporar un array dentro de otro.**
+> FALSO. concat crea un nuevo conjunto de valores de las 2 variables existentes. Por lo que en total, quedan 3 variables. 
+> 
+>**¿Qué resultado se espera de este código?** 
+>    ```js
+>    const p = 'El veloz zorro rojo saltó sobre el perro dormido';
+>    console.log(p.replace('perro', 'mono'));
+>    ```
 > const p = 'El veloz zorro rojo saltó sobre el mono dormido'.
 >
 > **Si un usuario ingresa su nombre en mayúsculas, ¿qué podríamos hacer al respecto?**
 > Método toLowerCase
 
+
 # C13 - Formularios II <a id='c13'></a>
 
 > ### 💡
->
-> Cuando hablamos de validar un dato lo que hacemos es establecer una serie de reglas que debe cumplir el mismo para ser correcto. En cambio, el proceso de normalizar es organizar los datos de manera tal que respeten el formato deseado para ser enviados o posiblemente almacenados en una base de datos. Pasemos a practicar ambos casos.
+> Cuando hablamos de validar un dato lo que hacemos es establecer una serie de reglas que debe cumplir el mismo para ser correcto. En cambio, el proceso de normalizar es organizar los datos de manera tal que respeten el formato deseado para ser enviados o posiblemente almacenados en una base de datos. Pasemos a practicar ambos casos. 
 
 > #### 🎬
->
 > Video: Eventos de formulario
 
 ## Evento de formularios <a id='c13a'></a>
@@ -2621,7 +2683,6 @@ Detecta un cambio en el html de ese campo
 Sucede cuando se le da click a un input o boton de tipo submit
 
 > ### 💡
->
 > Usar el preventDefault en la primer linea para evitar que evie el formulario antes
 
 ### Combinacion `this.value`
@@ -2630,34 +2691,33 @@ Retorna la informacion dentro del campo que estamos analizando
 
 ![img](./img/c12a.png)
 
----
 
+***
 <!-- En nuestra carrera profesional como desarrolladores, nos encontraremos con muchas situaciones en las que será necesario obtener y manipular datos que provienen de formularios. Por ello, y ahora que ya vimos los métodos que nos permiten obtener los datos de un formulario, es momento de que veamos de qué manera podemos utilizar los mismos en una aplicación real.
 
 En esta instancia, te proponemos una actividad mediante la cual partiremos de un formulario en el cual las personas completarán ciertos datos para poder registrarse en nuestra aplicación. El objetivo principal del ejercicio es poder aplicar los conocimientos que adquirimos hasta aquí, para obtener los datos ingresados por la persona, realizar algunas validaciones básicas sobre la información obtenida y almacenar los mismos en un objeto que contenga dicha información.
 
 El punto de partida, es un repositorio de Github que se encuentra en este link. Allí, encontraremos la consigna, archivos y todo lo necesario para poder realizar la actividad. Para comenzar, podemos realizar un fork del repositorio para almacenarlo en nuestra cuenta de Github o simplemente descargarlo como un archivo .zip para trabajarlo localmente en la computadora. ¡Manos a la obra! -->
 
-> ### 📝 Quiz! <a id='c13b'></a>
+>### 📝 Quiz! <a id='c13b'></a>
 >
-> **El evento blur sirve para...**
+>**El evento blur sirve para...**
 > detectar que el usuario quitó el cursor de un input del formulario.
->
-> **El evento focus sirve para...**
+> 
+>**El evento focus sirve para...**
 > detectar que el usuario situó el cursor en un input del formulario.
->
-> **El evento change sirve para...**
+> 
+>**El evento change sirve para...**
 > detectar cambios en el valor de un input.
 
 ## Validaciones <a id='c13c'></a>
 
 > #### 🎬
->
 > Video: Validaciones
 
 > #### 📑
->
 > pdf: Validación del lado del cliente
+
 
 ✅ Capturo el formulario, hay 2 formas:
 
@@ -2672,13 +2732,11 @@ let formulario = document.forms["reservation"];
 ✅ Cuando se envia el formulario se ejecuta el evento `submit` entonces lo esucchamos
 
 ```js
-formulario.addEventListener("submit", function (event) {});
+formulario.addEventListener("submit", function(event){});
 ```
-
 o
-
 ```js
-formulario.onsubmit = (event) => {};
+formulario.onsubmit= (event) => {};
 ```
 
 ✅ Validamos cada campo; Podemos obtener nuestro input con querySelector para que finalmente preguntemos si el valor campo está vacío
@@ -2686,20 +2744,20 @@ formulario.onsubmit = (event) => {};
 ```js
 event.preventDefault();
 let campoNombre = document.querySelector("input.nombre");
-if (campoNombre.value == "") {
+if(campoNombre.value==""){
     alert("El campo nombre no debe estar vacío");
-}
+};
 ```
 
 ✅ Almacenamos los errores: Creamos un array para acumular estos errores y cambiar nuestra lógica. Es decir, si el array no está vacío, entonces, prevenimos el envío del formulario, caso contrario, el formulario se enviará
 
 ```js
-let errores = [];
+let errores= [];
 let campoNombre = document.querySelector("input.nombre");
-if (campoNombre.value == "") {
+if(campoNombre.value==""){
     errores.push("El campo nombre está vacío");
 }
-if (errores.length > 0) {
+if(errores.length>0){
     event.preventDefault();
 }
 ```
@@ -2709,9 +2767,9 @@ if (errores.length > 0) {
 En el HTML:
 
 ```html
-<section class="errores">
+<section class="errores">   
     <ul>
-        ...
+        ...   
     </ul>
 </section>
 ```
@@ -2719,97 +2777,97 @@ En el HTML:
 En Js:
 
 ```js
-if (errores.length > 0) {
+if(errores.length>0){
     event.preventDefault();
     let ulErrores = document.querySelector(".errores ul");
-    errores.forEach((error) => {
-        ulErrores.innerHTML += `<li>${error}</li>`;
+    errores.forEach(error=> {
+        ulErrores.innerHTML+=`<li>${error}</li>`
     });
 }
 ```
 
 ### 📜 Ejemplo! Live coding : Validaciones <a id='c13d'></a>
 
-Validaciones con `alert`
 
+Validaciones con `alert`
 ```js
-window.addEventListener("load", () => {
+window.addEventListener('load', ()=>{
     //Capturo el formulario
-    let formulario = document.querySelector("form.reservation");
+    let formulario = document.querySelector('form.reservation');
     //Quiero definir un evento en el momento en que se envíe el formulario
-    formulario.addEventListener("submit", (e) => {
+    formulario.addEventListener('submit', (e)=>{
         //prevenimos que se envíe el formulario antes de las validaciones
         e.preventDefault();
 
         //obtenemos cada uno de los campos y verificamos que si el campo no tiene lo que espero:error
-        let campoNombre = document.querySelector("input.name");
+        let campoNombre = document.querySelector('input.name');
         //Vemos el contenido del campo
-        if (campoNombre.value == "") {
-            alert("campo nombre debe estar completo");
-        } else if (campoNombre.value.length < 3) {
-            alert("campo nombre debe tener al menos 3 caracteres");
+        if(campoNombre.value == ""){
+            alert('campo nombre debe estar completo')
+        } else if(campoNombre.value.length < 3){
+            alert('campo nombre debe tener al menos 3 caracteres')
         }
 
-        let campoMensaje = document.querySelector("input.message");
+        let campoMensaje = document.querySelector('input.message');
         //Vemos el contenido del campo
-        if (campoMensaje.value == "") {
-            alert("campo mensaje debe estar completo");
+        if(campoMensaje.value == ""){
+            alert('campo mensaje debe estar completo')
         }
 
-        let campoFecha = document.querySelector("input.date");
+        let campoFecha = document.querySelector('input.date');
         //Vemos el contenido del campo
-        if (campoFecha.value == "") {
-            alert("campo fecha debe estar completo");
+        if(campoFecha.value == ""){
+            alert('campo fecha debe estar completo')
         }
-
-        let campoPersonas = document.querySelector("input.people");
+        
+        let campoPersonas = document.querySelector('input.people');
         //ver como se valida..
-    });
-});
+    })
+})
 ```
 
 Validaciones con un `array` de errores
 
 ```js
-window.addEventListener("load", () => {
-    let formulario = document.querySelector("form.reservation");
-    formulario.addEventListener("submit", (e) => {
+window.addEventListener('load', ()=>{
+    let formulario = document.querySelector('form.reservation');
+    formulario.addEventListener('submit', (e)=>{
         e.preventDefault();
         // creamos un array para mostrar los errores en una lista en un div>ul>lixerror
         let errores = [];
         //se va a pushear cada error, al array.
-        let campoNombre = document.querySelector("input.name");
-        if (campoNombre.value == "") {
-            errores.push("campo nombre debe estar completo");
-        } else if (campoNombre.value.length < 3) {
-            errores.push("campo nombre debe tener al menos 3 caracteres");
+        let campoNombre = document.querySelector('input.name');
+        if(campoNombre.value == ""){
+            errores.push('campo nombre debe estar completo')
+        } else if(campoNombre.value.length < 3){
+            errores.push('campo nombre debe tener al menos 3 caracteres')
         }
 
-        let campoMensaje = document.querySelector("input.message");
-        if (campoMensaje.value == "") {
-            errores.push("campo mensaje debe estar completo");
+        let campoMensaje = document.querySelector('input.message');
+        if(campoMensaje.value == ""){
+            errores.push('campo mensaje debe estar completo')
         }
 
-        let campoFecha = document.querySelector("input.date");
-        if (campoFecha.value == "") {
-            errores.push("campo fecha debe estar completo");
+        let campoFecha = document.querySelector('input.date');
+         if(campoFecha.value == ""){
+            errores.push('campo fecha debe estar completo')
         }
-
-        let campoPersonas = document.querySelector("input.people");
+        
+        let campoPersonas = document.querySelector('input.people');
         //ver como se valida..
-
+        
         //Si el array esta vacío no hay errores, entonces is no hay errores se envía
-        if (errores.length > 0) {
+        if(errores.length>0){
             e.preventDefault();
             //Busca seccion de errores
-            let ulErrores = document.querySelector("div.errores ul");
-
-            for (let i = 0; i < errores.length; i++) {
-                ulErrores.innerHTML += `<li>${errores[i]}</li>`;
+            let ulErrores = document.querySelector('div.errores ul');
+            
+            for (let i = 0; i< errores.length; i++) {
+                ulErrores.innerHTML += `<li>${errores[i]}</li>`
             }
         }
-    });
-});
+    })
+})
 ```
 
 ## validación "on time"
@@ -2820,31 +2878,29 @@ Sirve para:
 
 ✅ Procurar una limpieza de los datos
 
-✅ Ayuda a garantizar una excelente user experience.
+✅ Ayuda a garantizar una excelente user experience. 
 
 Porque resulta realmente molesto que cuando tenemos un error en el front end, sea necesario enviar la información al servidor para que este la verifique y nos haga ver el error cometido, ¿no?
 
-Los procesos de validación no son para nada triviales, por el contrario, son una parte fundamental de nuestro proceso como desarrolladores. Además, vale la pena aclarar que nunca está de más sumar capas de validación a nuestro sistema.
+Los procesos de validación no son para nada triviales, por el contrario, son una parte fundamental de nuestro proceso como desarrolladores. Además, vale la pena aclarar que nunca está de más sumar capas de validación a nuestro sistema. 
 
 > ### 💡
->
 > [link](https://github.com/alazzuri/ejercicio-formulario-timeout)
 >
-> ✅ Simularemos el proceso de login de una persona dentro de nuestra aplicación, utilizando los conceptos que vimos hasta el momento.
+> ✅ Simularemos el proceso de login de una persona dentro de nuestra aplicación, utilizando los conceptos que vimos hasta el momento. 
+
 
 <!-- Imaginemos, por ejemplo, que queremos iniciar sesión en una aplicación. Para ello, ingresamos nuestro email y contraseña y, seguidamente, damos clic en el botón Iniciar sesión. En ese momento, nuestra aplicación realiza un pedido al servidor, quién deberá validar que los datos ingresados sean correctos —es decir, que exista un usuario con esas credenciales registradas en la base de datos—. Si los datos son correctos, podremos loguearnos; caso contrario, el servidor nos devolverá un mensaje de error. -->
 
 ## Objeto `location` <a id='c13e'></a>
 
 > #### 📑
->
 > pdf: Objeto location
 
 > #### 🎬
->
 > Video: Objeto location
 
-Trae consigo un par de propiedades y métodos que nos van a permitir recopilar información que viaje en la barra de direcciones.
+Trae consigo un par de propiedades y métodos que nos van a permitir recopilar información que viaje en la barra de direcciones. 
 
 ✅ Permite operar con la URL donde estamos
 
@@ -2854,9 +2910,10 @@ Trae consigo un par de propiedades y métodos que nos van a permitir recopilar i
 
 ![img](./img/c14.png)
 
-### Metodo `reload()`
+### Método `reload()`
 
 Permite recargar nuestra pagina desde el front
+
 
 ### Atributo `search`
 
@@ -2872,14 +2929,13 @@ Cuando hacemos un pedido por `GET` o por medio de un hipervinculo, los datos via
 
 ```js
 let query = newURLSearchParams(location.search);
-if (query.has("search_query")) {
-    let search = query.get("search_query");
-    console.log(search);
-}
+if(query.has('search_query')){
+    let search = query.get('search_query');
+    console.log(search)
+};
 ```
 
 #### 📜 Ejemplo!
-
 Buscamos Rosalia en el buscador de youtube
 
 ```
@@ -2902,86 +2958,86 @@ let query = new URLSearchParams(location.search);
 
 ![img](./img/c14a.png)
 
-### Metodo `.has()`
+### Método `.has()`
 
 Revisa si se encuentra un determinado parametro en la query string y devuelve un booleano
 
 ```js
-query.has("search_query"); //true
+query.has('search_query'); //true
 ```
 
-### Metodo `.get()`
+### Método `.get()`
 
 Nos devuelve el valor del parametro buscado.
 
 ```js
-query.get("search_query"); //Rosalia
+query.get('search_query'); //Rosalia
 ```
-
 ![img](./img/c14b.png)
 
-> ### 📝 Quiz! <a id='c13f'></a>
+
+>### 📝 Quiz! <a id='c13f'></a>
 >
-> **Si utilizáramos el atributo href de location sobre la URL: https://www.youtube.com/results?search_query=peaky+blinders, ¿qué obtendríamos??** > https://www.youtube.com/results?search_query=peaky+blinders
->
-> **¿Qué método del objeto location permite recargar el sitio??**
+>**Si utilizáramos el atributo href de location sobre la URL: https://www.youtube.com/results?search_query=peaky+blinders, ¿qué obtendríamos??**
+> https://www.youtube.com/results?search_query=peaky+blinders
+> 
+>**¿Qué método del objeto location permite recargar el sitio??**
 > location.reload()
->
-> **Si utilizáramos el atributo location.search de la URL: https://www.youtube.com/results?search_query=peaky+blinders, ¿qué obtendríamos?**
+> 
+>**Si utilizáramos el atributo location.search de la URL: https://www.youtube.com/results?search_query=peaky+blinders, ¿qué obtendríamos?**
 > search_query=peaky+blinders
->
-> **Si estamos en la URL: https://www.youtube.com/results?search_query=peaky+blinders, y teniendo en cuenta el código: "let query = new URLSearchParams(location.search)", ¿qué devolvería si implementáramos el método query.get(search_query)?**
-> peaky+blinders
+> 
+>**Si estamos en la URL: https://www.youtube.com/results?search_query=peaky+blinders, y teniendo en cuenta el código: "let query = new URLSearchParams(location.search)", ¿qué devolvería si implementáramos el método query.get(search_query)?**
+> peaky+blinders        
+> 
 
 > #### 📑
->
 > zip: ejercicio-formulario-timeout-main
+
 
 # C14 - Json y Storage <a id='c14'></a>
 
-JSON es un formato de texto sencillo para el intercambio de datos.
+JSON es un formato de texto sencillo para el intercambio de datos. 
 
-Su implementación deviene de la notación de objetos de JavaScript.
+Su implementación deviene de la notación de objetos de JavaScript. 
 
 ✅ Está compuesto por clave valor
 
 ✅ Las propiedades van siempre entre comillas dobles. Esto último es un requisito esencial para su correcto funcionamiento.
+
 
 ```json
 {
     "nombre": "JSON",
     "significado": "Javascript Object Notation",
     "lenguajeDeProgramacion": false,
-    "tiposDeDatosDisponibles": ["numbers", "strings", "booleans", "null", "arrays", "objects"]
+    "tiposDeDatosDisponibles": [ "numbers", "strings", "booleans", "null", "arrays", "objects" ]
 }
 ```
 
 **¿En qué momento es útil?**
 
-Cuando trabajamos con mucha cantidad de información, es necesario organizarla en nuestro proyecto de tal manera que todos los datos se almacenen en un archivo separado del archivo donde tenemos el código de nuestro programa.
+Cuando trabajamos con mucha cantidad de información, es necesario organizarla en nuestro proyecto de tal manera que todos los datos se almacenen en un archivo separado del archivo donde tenemos el código de nuestro programa. 
 
-> ### 👍
->
+>### 👍
 > Así, si necesitamos actualizar o modificar datos, podremos recurrir directamente al archivo JSON.
 
-✅ Para poder recurrir a esta información, debemos utilizar ciertos métodos para leer esos datos.
+✅ Para poder recurrir a esta información, debemos utilizar ciertos métodos para leer esos datos. 
 
 > #### 📑
->
 > pdf: Métodos de JSON
 
 ## Objeto literal vs Json <a id='c14a'></a>
 
-| Objeto literal                                      | JSON                                            |
-| --------------------------------------------------- | ----------------------------------------------- |
-| Admite comillas simples y dobles                    | Las claves van entre comillas                   |
-| Las claves del objeto van sin comillas              | Sólo se pueden usar comillas dobles             |
-| Podemos escribir métodos sin problemas              | No admite métodos, sólo propiedades y valores   |
-| Se recomienda poner una coma en la última propiedad | No podemos poner una coma en el último elemento |
+Objeto literal | JSON
+------- | -------
+Admite comillas simples y dobles | Las claves van entre comillas 
+Las claves del objeto van sin comillas | Sólo se pueden usar comillas dobles | 
+Podemos escribir métodos sin problemas | No admite métodos, sólo propiedades y valores
+Se recomienda poner una coma en la última propiedad | No podemos poner una coma en el último elemento
 
 > ### 💡
->
-> Debemos saber interpretar y parsear esa información para poder trabajarla como lo hacemos con los objetos literales.
+>  Debemos saber interpretar y parsear esa información para poder trabajarla como lo hacemos con los objetos literales.
 
 ## Metodos JSON <a id='c14b'></a>
 
@@ -2991,7 +3047,7 @@ Tenemos dos procesos que nos facilitan esto:
 
 ✅ `JSON.stringify()` = JS → JSON
 
-## Metodo `JSON.parse()`
+## Método `JSON.parse()`
 
 Analiza una cadena de texto JSON, la cual recibe por parámetro. Retorna un objeto de JS que se corresponde con el texto parseado
 
@@ -3000,12 +3056,12 @@ Analiza una cadena de texto JSON, la cual recibe por parámetro. Retorna un obje
 ✅ Devuelve JS
 
 ```js
-JSON.parse("{}"); // {}
-JSON.parse("true"); // true
-JSON.parse('"hola!"'); // "hola!"
+JSON.parse('{}');              // {}
+JSON.parse('true');            // true
+JSON.parse('"hola!"');           // "hola!"
 ```
 
-## Metodo `JSON.stringify()`
+## Método `JSON.stringify()`
 
 Recibe un objeto o valor de JavaScript y lo convierte. Retorna una cadena de texto con el formato correspondiente a la notación JSON
 
@@ -3018,21 +3074,18 @@ Para practicar el parseo de un JSON, utilicemos el siguiente repositorio y resol
 <https://github.com/mates-code/practicando-JSON>
 
 > #### 📑
->
-> zip: practicando-JSON-main
+> zip: practicando-JSON-main 
 
 ## Objetos: LocalStorage y SessionStorage <a id='c14c'></a>
 
-Para poner un ejemplo, pensemos por un momento en un sistema de e-commerce, más exactamente en su carrito de compras. Seguramente, muchas veces hemos agregado productos a un carrito y repentinamente salimos de la página, para simplemente volver instantes después y darnos cuenta que las cosas que agregamos al carrito siguen ahí, intactas. Eso es posible gracias al almacenamiento local del navegador. Esta funcionalidad mejora la experiencia de usuario, sin tener que saturar el servidor de peticiones que nos sabemos si se van a concretar del lado del cliente. Con esto en mente, veamos cómo implementar estos conceptos que ya son algo familiares, pero esta vez desde el lado del front end.
+Para poner un ejemplo, pensemos por un momento en un sistema de e-commerce, más exactamente en su carrito de compras. Seguramente, muchas veces hemos agregado productos a un carrito y repentinamente salimos de la página, para simplemente volver instantes después y darnos cuenta que las cosas que agregamos al carrito siguen ahí, intactas. Eso es posible gracias al almacenamiento local del navegador. Esta funcionalidad mejora la experiencia de usuario, sin tener que saturar el servidor de peticiones que nos sabemos si se van a concretar del lado del cliente. Con esto en mente, veamos cómo implementar estos conceptos que ya son algo familiares, pero esta vez desde el lado del front end. 
 
-Uno de los usos más frecuentes de dicha técnica consiste en almacenar información relativa a la sesión de una persona dentro de determinada aplicación. De esta manera, por ejemplo, podemos mantener iniciada la sesión por más de que la persona cierre el navegador, evitando que deba realizar el login correspondiente cada vez que visita nuestra aplicación.
+Uno de los usos más frecuentes de dicha técnica consiste en almacenar información relativa a la sesión de una persona dentro de determinada aplicación. De esta manera, por ejemplo, podemos mantener iniciada la sesión por más de que la persona cierre el navegador, evitando que deba realizar el login correspondiente cada vez que visita nuestra aplicación. 
 
 > #### 🎬
->
 > Video: LocalStorage y SessionStorage
 
 > #### 📑
->
 > pdf: Session storage y local storage
 
 Ls funcion de ambos es almacenar informacion en el navegador.
@@ -3049,16 +3102,15 @@ Ls funcion de ambos es almacenar informacion en el navegador.
 
 Permite almacenarlas por tiempo indeterminado; Los datos almacenados en localStorage no tienen fecha de expiración
 
-```js
-localStorage.setItem("key", "value");
-```
 
 ```js
-localStorage.getItem("key");
+localStorage.setItem('key', 'value');
 ```
-
 ```js
-localStorage.removeItem("key");
+localStorage.getItem('key');
+```
+```js
+localStorage.removeItem('key');
 ```
 
 ### Objeto `sessionStorage`
@@ -3066,15 +3118,13 @@ localStorage.removeItem("key");
 Nos permitirá guardar información en sesión. Es decir que si usamos esta opción y cerramos el navegador, la información acá almacenada se perderá
 
 ```js
-sessionStorage.setItem("key", "value");
+sessionStorage.setItem('key', 'value');
 ```
-
 ```js
-sessionStorage.getItem("key");
+sessionStorage.getItem('key');
 ```
-
 ```js
-sessionStorage.removeItem("key");
+sessionStorage.removeItem('key');
 ```
 
 ### Metodos `setItem()`
@@ -3084,29 +3134,28 @@ sessionStorage.removeItem("key");
 ✅ El primer parametro: sera la clave que querramos guardar y el segundo sera el valor que esta clave lleve
 
 ```js
-sessionStorage.setItem("nombre", "Liliana");
+sessionStorage.setItem('nombre','Liliana');
 ```
 
 ### Metodos `getItem()`
 
 Nos va a devolver el valor de la clave que le pasemos
-
 ```js
 //Aqui le estamos pidiendo que nos de el valor que posee la clave nombre
-sessionStorage, getItem("nombre"); //Liliana
+sessionStorage,getItem('nombre'); //Liliana
 ```
 
-### Metodo `removeItem()`
+### Método `removeItem()`
 
 Recibe un solo parametro, la llave.
 
 ✅ Busca la clave correspondiente y la elimina
 
 ```js
-sessionStorage.removeItem("nombre");
+sessionStorage.removeItem('nombre');
 ```
 
-### Metodo `clear()`
+### Método `clear()`
 
 Borra todo el contenido que hayamos almacenado en storage
 
@@ -3115,29 +3164,28 @@ sessionStorage.clear();
 ```
 
 > ### 💡
->
 > Si queremos guardar los datos en localStorage y sessionStorage y estamos trabajando con arrays u objetos debemos usar los metodos de JSON.stringify para poder guardar la informacion
 
-> ### 📝 Quiz! <a id='c14d'></a>
+>### 📝 Quiz! <a id='c14d'></a>
 >
-> **¿Cuál es la diferencia entre sessionStorage y localStorage?**
-> localStorage permite almacenar información por tiempo indeterminado y sessionStorage, no.
->
-> **El método .setitem() de localStorage, ¿qué nos permite realizar?**
+>**¿Cuál es la diferencia entre sessionStorage y localStorage?**
+>localStorage permite almacenar información por tiempo indeterminado y sessionStorage, no.
+> 
+>**El método .setitem() de localStorage, ¿qué nos permite realizar?**
 > Agregar valores asociados a una key en localStorage.
->
-> **El método .removeitem() de sessionStorage, ¿qué nos permite realizar?**
+> 
+>**El método .removeitem() de sessionStorage, ¿qué nos permite realizar?**
 > Remover valores asociados a una key en el sessionStorage.
-> ¡Perfecto! Recuerda siempre que el método es el mismo tanto para localStorage como para sessionStorage. En este caso lograste identificar la responsabilidad de remover los valores asociados al sessionStorage.
->
-> **El método .clear() de localStorage, ¿qué nos permite realizar?**
+>¡Perfecto! Recuerda siempre que el método es el mismo tanto para localStorage como para sessionStorage. En este caso lograste identificar la responsabilidad de remover los valores asociados al sessionStorage.
+> 
+>**El método .clear() de localStorage, ¿qué nos permite realizar?**
 > Borrar todo el contenido de localStorage.
 > ¡Muy bien! Este método es muy útil para programar la opción de cerrar sesión en nuestros proyectos.
 >
-> **¿Cuál de las siguientes es una de las características de sessionStorage?**
+>**¿Cuál de las siguientes es una de las características de sessionStorage?**
 > Los datos se borran al cerrar la ventana del navegador.
 
-<!--
+<!-- 
 
 ¡Muy bien! Si llegamos hasta acá quiere decir que ya aprendimos:
 
@@ -3151,7 +3199,245 @@ sessionStorage.clear();
  -->
 
 > #### 📑
->
-> zip: ejercicio-login-storage-main
+> zip: ejercicio-login-storage-main 
 
-# C15 - Proyecto integrador
+# C15 -  Proyecto integrador <a id='c15'></a>
+
+> ### [📌Actividad: Proyecto integrador To Do App](./Actividades/c15-proyecto-integrador-to-do-app.md)
+
+# C16 - Introducción a Asincronismo <a id='c16'></a>
+
+## Introducción a HTTP <a id='c16a'></a>
+
+> #### 🎬
+> Video: Introducción a HTTP
+
+> #### 📑
+> pdf: Introducción a HTTP
+
+> ### 💡
+> **Protocolo:** Reglamentos o instrucciones que se fijan por tradición o por convenio
+
+### Request - Response
+
+Dentro de esta estructura de comunicación, hablamos de `request` cada vez que el **cliente** le solicita un recurso al servidor y de `response` cada vez que el **servidor** le devuelve una respuesta al cliente.
+
+![img](./img/c16a.png)
+
+En versiones anteriores, los mensajes HTTP eran textos planos. 
+
+En HTTP/2, los mensajes están estructurados en un nuevo formato, lo que contribuye a una mayor legibilidad y debugging más eficiente.
+
+> ### 💡
+> HTTPS es un protocolo mejorado de HTTP. Usando este protocolo, el servidor codifica la sesión con un certificado digital
+
+> #### 🎬
+> Video: Request y Response
+
+## Protocolo http <a id='c16b'></a>
+
+Hyper Text Transfer Protocol, o en castellano: protocolo de transferencia de hipertexto, gestiona las transacciones web entre clientes y servidores.
+ 
+Gestiona la comunicación entre dos máquinas conectadas a una red, en donde una pide por un contenido específico y la otra se encarga de responder a dicha solicitud.
+
+<!-- 
+- ¿Será que el tipo de petición al servidor es el mismo cuando publicamos una foto en nuestra cuenta de Instagram que cuando queremos ver una foto de otra cuenta que no es nuestra?
+
+- Cuando iniciamos sesión en nuestro correo electrónico, ¿nuestra contraseña está protegida desde que sale de nuestra computadora hasta que llega al servidor?
+
+- Cuando queremos editar solo nuestro nombre en el perfil de LinkedIn, ¿la información que no modificamos se mantiene o se sobrescribe nuevamente por más que sea la misma?
+
+- ¿Cuál será la diferencia entre ocultar alguna foto de nuestro perfil de Facebook y borrarla? -->
+
+✅ Nos permite navegar hacia sitios web a traves de direcciones www y enlaces
+
+✅ El protocolo HTTP permite la transferencia de información en la web a través de direcciones web, técnicamente llamadas URI.
+
+
+### URI 
+
+Una URI (identificador de recursos uniformes) 
+Es un bloque de texto que se escribe en la barra de direcciones de un navegador web y está compuesto por dos partes: la URL y la URN.
+
+`www` conocida como dirección web y técnicamente conocida como URI
+
+- `URL`: Indica donde se encuentra el recurso que deseamos obtener y siempre comienza con un protocolo
+- `URN`: Es el nombre exacto del recurso, el nombre del dominio 
+
+![img](./img/c16c.png)
+
+#### Componentes de una URI
+
+![img](./img/c16e.png)
+
+## Como viaja la informacion <a id='c16c'></a>
+
+La información viaja a través de los headers o cabeceras, que son porciones de texto conteniendo la información requerida por el cliente o el servidor.
+
+![img](./img/c16f.png)
+
+Además de las cabeceras, tenemos el body o cuerpo del mensaje, que es donde estará la información en sí del pedido o su respuesta. 
+
+### 📜 Ejemplo!
+
+- En el caso del pedido, puede ser el contenido de un formulario. 
+- En el caso de una respuesta, puede ser el código de la página que solicitamos.
+
+![img](./img/c16g.png)
+
+
+## Metodos http <a id='c16d'></a>
+
+El protocolo HTTP define métodos de petición. 
+
+Cada método representa una acción y, si bien comparten algunas características, implementan funcionalidades diferentes entre sí. 
+
+✅ Se usan para indicar la accion que se desea realizar con un recurso determinado 
+
+Los métodos más utilizados por este protocolo son:
+
+![img](./img/c16d.png)
+
+### Método `GET`
+
+Se utiliza para pedirle información al servidor de un recurso específico. Cada vez que escribimos una dirección en el navegador o accedemos a un enlace, estamos utilizando el método GET. En caso de querer enviar información al servidor usando este método, la misma viajará a través de la URL.
+
+### Método `POST`
+
+Se utiliza para enviar datos al servidor. Este método es más seguro que GET, ya que la información no viaja a través de la URL.
+
+### Método `PUT`
+
+Es muy parecido a POST. Se usa para reemplazar toda la información actual de un recurso presente en el servidor
+
+### Método `PATCH`
+
+Similar a PUT. Es utilizado para aplicar modificaciones parciales a un recurso en el servidor
+
+### Método `DELETE`
+
+Borra un recurso presente en el servidor. Cuando eliminamos un posteo en Facebook, por ejemplo, estamos utilizando este método.
+
+> ### 💡
+> PUT y PATCH suelen ser lo mismo. Elegir entre uno y otro va a depender del contexto y lo que queramos implementar en nuestra aplicación. Al editar un posteo o un perfil estaremos usando alguno de estos dos métodos
+
+En resumen, tenemos 5 métodos y cada uno de ellos tiene un propósito.
+
+![img](./img/c16h.png)
+
+## Códigos de estado HTTP <a id='c16e'></a>
+
+Cada vez que <r>el servidor</r> recibe una petición o request, este <r>emite un código de estado que indica, de forma abreviada, el estado de la respuesta HTTP</r>. 
+
+El código tiene tres dígitos. 
+
+El primero representa uno de los 5 tipos de respuesta posibles:
+
+✅ 1 _ _  Respuestas informativas
+
+✅ 2 _ _  Respuestas exitosas
+
+✅ 3 _ _  Redirecciones
+
+✅ 4 _ _  Errores del cliente
+
+✅ 5 _ _  Errores de servidor
+
+Algunos de los códigos más usados son:
+
+- `200`: OK → La petición se realizó con éxito.
+- `301`: Moved Permanently → El recurso se ha movido.
+- `302`: Found → El recurso fue encontrado.
+- `304`: Not Modified → El recurso no cambió, se cargará desde el caché.
+- `400`: Bad Request → El pedido está mal.
+- `401`: Unauthorized → No estás autorizado, seguramente debas autenticarte.
+- `403`: Forbidden → El pedido está prohibido y no debería repetirse.
+- `404`: Not Found → El recurso no fue encontrado.
+- `500`: Internal Server Error → Hubo un error en el servidor.
+- `503`: Service Unavailable → El servicio solicitado no está disponible.
+- `550`: Permission denied → Permiso denegado
+
+>### 📝 Quiz! <a id='c16f'></a>
+>
+>**HTTP es**
+> un protocolo de transferencia
+> 
+>**HTTP nos permite...**
+> transferir información en la web.
+> 
+>**Utilizando el método GET podemos...**
+> podemos enviar información al servidor y también recibirla.
+> 
+>**El método POST es más seguro que el método GET cuando se trata de enviar información al servidor.**
+> Verdadero
+> 
+> **En HTTP, cuando hablamos de request nos referimos al...**
+> Cliente
+>
+> **En HTTP, cuando hablamos de response nos referimos al...**
+> Servidor
+>
+> **¿Cuáles de los siguientes métodos son los más utilizados por HTTP?**
+> get, patch, update, put , delete
+>
+
+## AJAX
+
+AJAX (Asynchronous JavaScript and XML) es un conjunto de tecnologías que se utilizan para crear aplicaciones web asíncronas. 
+
+✅ Esto las vuelve más rápidas y con mejor respuesta a las acciones del usuario. 
+
+![img](./img/c16.png)
+
+
+1. Se produce un evento en una página web (se carga la página, se hace clic en un botón)
+2. JavaScript crea un objeto `XMLHttpRequest`
+3. El objeto `XMLHttpRequest` envía una solicitud a un servidor web
+4. El servidor procesa la solicitud.
+5. El servidor envía una respuesta a la página web.
+6. La respuesta es leída por JavaScript.
+7. JavaScript realiza la acción adecuada (como la actualización de la página)
+
+### 📜 Ejemplos prácticos de AJAX!
+
+#### Autocompletado de Google
+
+Esta te ayuda a completar tus palabras clave mientras las escribes. Las palabras clave cambian en tiempo real, sin embargo, la página como tal no cambia.
+
+#### Votación o sorteo
+
+En este se calculan resultados en tiempo real y se muestran los indicadores actualizado
+
+#### Chat de atención al cliente
+
+El usuario puede explorar la página al mismo tiempo y que el chat queda abierto sin que se recargue la web con cada nuevo mensaje
+
+#### Notificaciones en redes sociales
+
+Tanto Twitter, Facebook e Instagram, entre otras aplicaciones, reciben actualizaciones constantemente y llegan a ti como mensajes o contenido del inicio que podría interesarte
+
+Para conocer métodos y propiedades del objeto:
+
+<https://www.w3schools.com/xml/ajax_xmlhttprequest_create.asp> 
+
+## Concepto de asincronismo
+
+Gracias al asincronismo generamos un código más funcional, rápido y eficiente, sin necesidad de recargar la página para actualizar la información. JavaScript es un lenguaje de programación asíncrono porque es capaz de ejecutar un hilo de tareas o peticiones en las cuales, si la respuesta demora, el hilo de ejecución de JavaScript continuará con las demás tareas que hay en el código. 
+
+### Concurrencia y paralelismo
+
+Existen 2 tipos de asincronismo:
+
+- Concurrencia: cuando las tareas pueden comenzar, ejecutarse y completarse en períodos de tiempo superpuestos, en donde al menos dos hilos están progresando
+
+- Paralelismo: cuando dos o más tareas se ejecutan exactamente al mismo tiempo.
+
+La diferencia entre la concurrencia y el paralelismo está en que, en el primer caso, no implica que las tareas terminen de ejecutarse al mismo tiempo literalmente como sí ocurre en el segundo caso. Además, decimos que JavaScript es un lenguaje no-bloqueante porque las tareas no se quedan bloqueadas esperando a que finalicen evitando proseguir con el resto de tareas.
+
+Además, decimos que Javascript es un lenguaje no-bloqueante porque las tareas no se quedan bloqueadas esperando a que finalicen evitando proseguir con el resto de tareas. 
+
+## Sincronismo/asincronismo
+
+[Link: tareas sinconas vs asincronas](https://view.genial.ly/60ddcde1acd3a70d5261b118)
+
+![img](./img/c16b.png)
