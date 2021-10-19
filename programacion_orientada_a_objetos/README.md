@@ -1072,6 +1072,9 @@ for(String nombre : nombres)
 
 <!-- fin resumen pdf -->
 
+> #### 🎬
+> Video: Clase 2 vivo
+
 # C3 - Repaso <a id='c3'></a>
 
 > Ver PDF: Ejercicio 3
@@ -2395,7 +2398,7 @@ Resultado en consola:
 
 **Fin transcripción**
 
-> ### [📌Actividad: UsuarioJuego > Puntajes > Nivel](./Actividades/act-usuariojuego.md)  <a id='c5s1'></a>
+> ### [📌Actividad: UsuarioJuego > Puntajes > Nivel](./Actividades/act-usuariojuegopreparcial-.md)  <a id='c5s1'></a>
 
 
 ### Actividad PG <a id='c5e1'></a>
@@ -2438,7 +2441,21 @@ public class Cuenta {
 ```
 # C6 - Repaso <a id='c6'></a>
 
-> ### [📌Actividad: Clase Perro > chip > adopción](./Actividades/act-perro-chip.md) <a id='c6a'></a>
+> #### 🎬
+> Video: Clases 6 vivo
+
+> ### [📌Actividad: Clase Perro > chip > adopción](./Actividades/act-perro-chippreparcial-.md) <a id='c6a'></a>
+
+## Notas Clase 6 <a id='c6s'></a>
+
+✅ Podemos crear varios constructores a una sola clase, creando un constructor nuevo, con diferentes parametros, no pueden ser idénticos porque no si no, no sabra cual usar.
+
+![img](./img/c6s.png)
+
+
+![img](./img/c6s1.png)
+
+No se pasa por parametros a un método que esta en la misma clase.
 
 # C7 - Relaciones entre clases <a id='c7'></a>
 
@@ -2758,10 +2775,10 @@ Las relaciones entre clases nos indican como se comunican los objetos de esas cl
 > #### 🎬
 > Video: Live coding
 
-> ### [📌Actividad: Relaciones UML > Chofer > Auto](./Actividades/lc-relaciones.md)
+> ### [📌Actividad: Relaciones UML > Chofer > Auto](./Actividades/lc-relacionespreparcial-.md)
 > El chofer tiene asignado un auto
 
-> ### [📌Actividad: Relaciones UML > Chofer > Auto > Motor](./Actividades/lc-relaciones-ii.md)
+> ### [📌Actividad: Relaciones UML > Chofer > Auto > Motor](./Actividades/lc-relaciones-iipreparcial-.md)
 > El chofer tiene asignado un auto, el auto tiene un motor.
 
 >### 👍
@@ -2857,6 +2874,11 @@ Si el método lo tiene el paseador, el paseador usa a la mascota y se muestra pu
 
 ![img](./img/c7m.png)
 
+## Notas clase 7 <a id='c7s'></a>
+
+La relación de tiene como atributo a otra
+
+La relación de usa, esa clase tiene como retorno o recibe como parametro algo de otra clase
 
 # C8 - Herencia <a id='c8'></a>
 
@@ -3522,7 +3544,7 @@ public class Doberman extends Perro{
 }
 ```
 
-> ### [📌Actividad: PG > @Override > Extends > descubierto](./Actividades/pg-override.md) <a id='c10d'></a>
+> ### [📌Actividad: PG > @Override > Extends > descubierto](./Actividades/pg-overridepreparcial-.md) <a id='c10d'></a>
 > Override > Cuenta > CuentaCorriente > descubierto
 
 ## La clase Object <a id='c10e'></a>
@@ -3801,7 +3823,7 @@ public boolean equals(Object o){
 }
 ```
 
-> ### [📌Actividad: PG > Herencia (Object) > hashCode() > equals() > instanceof > @Override](./Actividades/pg-herencia-object.md) <a id='c10g'></a>
+> ### [📌Actividad: PG > Herencia (Object) > hashCode() > equals() > instanceof > @Override](./Actividades/pg-herencia-objectpreparcial-.md) <a id='c10g'></a>
 > Herencia (Object) > hashCode() > equals() > instanceof > @Override
 
 > #### 🎬
@@ -4398,7 +4420,7 @@ System.out.println(ladrador.ladrar()); //Polimorfismo
 
 ```
 
-> ### [📌Actividad PG: Interface](./Actividades/pg-interface.md)
+> ### [📌Actividad PG: Interface](./Actividades/pg-interfacepreparcial-.md)
 
 
 ## Interface Comparable <a id='c13c'></a>
@@ -4608,3 +4630,18 @@ public class Persona implements Comparable{
     }
 }
 ```
+> #### 📑
+> pdf: Ejercicio Batalla del Futuro.pdf
+
+# C14 - Repaso <a id='c14'></a>
+
+> #### 📑
+> pdf: Ejercicio Tipo Parcial Alumnos
+
+> ### [📌Practica # 1](./Actividades/preparcial-1.md)
+
+> ### [📌Practica # 2](./Actividades/preparcial-2.md)
+
+> ### [📌Practica # 3](./Actividades/preparcial-3.md)
+
+> ### [📌Practica # 4](./Actividades/preparcial-4.md)
