@@ -1,38 +1,8 @@
----
-title: "Infraestructura I"
-author: "Liliana Ospina"
-output: PDF_document
-lang: es-ES
-toc: TRUE
----
-[final](#final)
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-t {
-font-size: 50px;
-color: #006d77;
-font-family: 'Roboto Mono', monospace;
-letter-spacing: 5px;
-}
-h1 {
-color: #f2cc8f
-}
-h2 {
-color: #e07a5f;
-}
-h3 {
-color: #cd9777
-}
-r {
-color: #03045e;
-background-color: #90e0ef;
-}
-</style>
+<link rel="stylesheet" type="text/css" media="all" href="./styles.css" />
 
 <t>Infraestructura I</t>
 
-## Índice <a id='up'></a>
+## Índice
 
 1. Inmersion
 - [C1 - Introducción a la materia & the big picture](#c1)
@@ -144,15 +114,23 @@ background-color: #90e0ef;
       - [Ejemplo de un inventario](#c11a4)
     - [Playbooks](#c11a5)
       - [Ejemplo de un playbook](#c11a6)
-    - [Modulos](#c11a7)
+    - [Módulos](#c11a7)
       - [Ejemplo de un modulo](#c11a8)
     - [La herencia en python](#c11a9)
     - [Los casos de uso de Ansible](#c11a10)
     - [Configuration management con Ansible](#c11a11)
   - [Ansible en accion](#c11b)
     - [Configuración de IP en MV](#c11b2)
-        
+- [C12 - Primer parcial](#c12)
 3. Containers
+- [C13 - Docker en profundidad](#c13)
+  - [Plataforma de Docker](#c13b)
+  - [Containers y entornos](#c13a)
+  - [Maquina virtual vs Contenedores](#c13c)
+- [C14 - El ecosistema de Docker y mejores practicas](#c14)
+  - [Creación de una imagen](#c14a)
+  - [Las redes de Docker > bridge driver > Resolución de nombres](#c14b)
+  - [Mejores practicas en Docker](#c14c)
 4. Cloud computing
 5. Cierre
 
@@ -332,7 +310,7 @@ Seguimos el camino de esta carrera mostrándote configuration management y Ansib
 
 Continuaremos con una tecnología que nos encanta (y a vos seguro también): Docker. Recorreremos todos los productos de esta simpática ballenita y vamos a ver todos sus usos y mejores prácticas.
 
-Terminaremos este viaje que es Infrastructura I mostrándote todo lo relacionado a cloud computing. Analizaremos los modelos de responsabilidad y vas a poder diferenciar los modelos IaaS, PaaS y SaaS. Conocerás modelos como nube híbrida y serverless. Te mostraremos diferentes nubes: Azure, Google y AWS. Practicarás con AWS Educate y armaremos un pequeño ambiente.
+Terminaremos este viaje que es Infraestructura I mostrándote todo lo relacionado a cloud computing. Analizaremos los modelos de responsabilidad y vas a poder diferenciar los modelos IaaS, PaaS y SaaS. Conocerás modelos como nube híbrida y serverless. Te mostraremos diferentes nubes: Azure, Google y AWS. Practicarás con AWS Educate y armaremos un pequeño ambiente.
 
 Del otro lado somos un equipo que armamos con mucha pasión todo el contenido de esta materia, con los requerimientos que el programa pide y de lo que nos hubiese gustado aprender a nosotros en el paso que ahora están haciendo. Te agradecemos enormemente tu tiempo y esperamos que nuestro aporte te sea de mucha utilidad en tu carrera. ¿Comenzamos?
 
@@ -342,9 +320,9 @@ Del otro lado somos un equipo que armamos con mucha pasión todo el contenido de
 
 ![Actividad grupo 7](./img/actividad-grupo-7.png)
 
-# C2 - Automatizacion <a id='c2'></a>
+# C2 - Automatización <a id='c2'></a>
 
-## Automatizacion de la infraestructura <a id='c2a'></a>
+## Automatización de la infraestructura <a id='c2a'></a>
 
 Habitualmente resulta cansador realizar las mismas tareas rutinarias en el área de sistemas. ¿Por qué mejor no automatizamos la infraestructura? Es decir, que esa tarea la realice un sistema sin errores y más eficientemente. En esta clase vas a conocer cómo implementar la automatización en infraestructura. 
 
@@ -437,7 +415,7 @@ Kubernetes o Docker Swarm.
 
 ## Ambientes de trabajo <a id='c2a6'></a>
 
-Luego, hay que tener en cuenta en qué ambiente está nuestro clúster.
+Luego, hay que tener en cuenta en qué ambiente está nuestro cluster.
 
 En cada ambiente se trabaja con distintas tecnologías, según el grado de exposición del producto. Automatizando estos procesos vamos a tener más eficiencia, transparencia, facilidad de replicación y recuperación. 
 
@@ -480,7 +458,7 @@ Estas tecnologías expuestas para automatizar la infraestructura TI no son todas
 
 <!-- fin resumen pdf -->
 
-## Virtualizacion <a id='c2b'></a>
+## Virtualización <a id='c2b'></a>
 
 ¿Cómo viene todo hasta acá? Ahora vamos a refrescar algunos conocimientos que ya vimos en Introducción a la Informática, principalmente la virtualización, dado que es una de las formas de automatización más utilizadas en la infraestructura IT.
 
@@ -499,11 +477,11 @@ Algunas **ventajas** de la virtualización son:
 
 A continuación, encontrarás la historia de la virtualización y sus componentes. 
 
-## Historia de la virtualizacion <a id='c2b1'></a>
+## Historia de la virtualización <a id='c2b1'></a>
 
 ![cronologia](./img/c2b.jpg)
 
-## Componentes de la virtualizacion <a id='c2b2'></a>
+## Componentes de la virtualización <a id='c2b2'></a>
 
 [Componentes](https://view.genial.ly/60a95ee45e2a3d0d271c0bbd)
 
@@ -549,10 +527,10 @@ su -
 ***
 <!-- inicio notas clase 2 en vivo -->
 
-**Notas - Clase 2: Virtualizacion** 
+**Notas - Clase 2: Virtualización** 
 <!-- inicio notas sincronico 2 -->
 
-Uso de virtualizacion para testeo y aprovechar recursos de hardware.
+Uso de virtualización para testeo y aprovechar recursos de hardware.
 Saber el comportamiento de una aplicacion en un sistema operativo.
 Al hacer un servidor quiza sirva virtualizarlo, aprovechando los recursos de hardware de esa forma.
 
@@ -566,7 +544,7 @@ servidores Legacy se refiere a los servidores fisicos.
 >
 >Ver PDF: Crear una VM
 >
->Link video: habilitar virtualizacion [link](https://www.youtube.com/watch?v=oTMMc9KWtco)
+>Link video: habilitar virtualización [link](https://www.youtube.com/watch?v=oTMMc9KWtco)
 
 instalamos la vm en oracle vm, para administrar un servidor sin un entorno grafico
 
@@ -624,7 +602,7 @@ y ya nos conecta, usamos el login del usuario normal no el root, ya que ssh no d
 
 ![putty](./img/c2s3.png)
 
-esto nos sirve para usar vagrant y nos acerca a la automatizacion.
+esto nos sirve para usar vagrant y nos acerca a la automatización.
 
 > PuTTY is a free implementation of Telnet and SSH for Windows and Unix platforms, along with an xterm terminal emulator. 
 <!-- fin resumen clase sincronica 2 -->
@@ -633,9 +611,9 @@ esto nos sirve para usar vagrant y nos acerca a la automatizacion.
 
 <!-- inicio notas clase 3 sincronica -->
 
-## Vagrant: Automatizacion box Debian <a id='c3s1'></a>
+## Vagrant: Automatización box Debian <a id='c3s1'></a>
 
-Vamos a usar vagrant para automatizar la virtualizacion.
+Vamos a usar vagrant para automatizar la virtualización.
 Con un script con vagrant lo haremos mucho mas rapido
 
 paso a paso:
@@ -657,9 +635,9 @@ ejecutamos el comando:
 ```powershell
 vagrant box add debian/buster64
 ```
-esto demora un poco, luego seleccionamos la opcion 2: virtualbox
+esto demora un poco, luego seleccionamos la opción 2: virtualbox
 
-el **vagranfile** que tiene el siguiente codigo con extension `all types`, configura la maquina virtual y le pone nombre `network server` y que configure una `public network`
+el **vagranfile** que tiene el siguiente código con extension `all types`, configura la maquina virtual y le pone nombre `network server` y que configure una `public network`
 
 ```powershell
 # -*- mode: ruby -*-
@@ -676,7 +654,7 @@ Vagrant.configure("2") do |config|
   end  
 end
 ```
-validamos el codigo:
+validamos el código:
 ```powershell
 vagrant validate
 ```
@@ -684,7 +662,7 @@ si hacemos
 ```powershell
 vagrant up
 ``` 
-y hay un error, tambien lo va a validar
+y hay un error, también lo va a validar
 con `vagrant up` corre la maquina virtual
 
 Todo el proceso de la clase 2 de instalar y configurar el sistema operativo vagrant lo va a automatizar; lo ahorramos con la box.
@@ -700,12 +678,12 @@ Si dice running y abrimos el virtualbox vemos que esta corriendo
 
 ahora vamos a instalar un servidor web, vamos a tener que loggearnos a esta maquina virtual
 
-Como vagrant ya estala un ssh usamos el siguiente codigo y esto evita el uso de puTTy
+Como vagrant ya estala un ssh usamos el siguiente código y esto evita el uso de puTTy
 
 ```powershell
 vagrant ssh server
 ```
-el comando anterior nos logea automaticamente a la maquina virtual
+el comando anterior nos loguea automáticamente a la maquina virtual
 
 ahora vamos a instalar un servidor web: apache, para eso necesitamos los permisos de root, vagrant es el password por defecto de root.
 
@@ -727,7 +705,7 @@ para ver si esta funcionando nos fijamos la ip
 ```powershell
 ip address
 ```
-Verficamos que funcione en el navegador
+Verificamos que funcione en el navegador
 que corre nuestro servidor web
 
 ![apache con vagrant](./img/c3s3.png)
@@ -760,7 +738,7 @@ vagrant destroy -f
 
 ## Automatizar: modificando file de vagrant <a id='c3s2'></a>
 
-Agregamos las intrucciones al script para que se instale automaticamente el `Apache2`
+Agregamos las instrucciones al script para que se instale automáticamente el `Apache2`
 
 ```powershell
 Vagrant.configure("2") do |config|
@@ -883,7 +861,7 @@ En Linux tenemos una multitud de shells o intérpretes diferentes. El más conoc
 Lleva el nombre de su creador en los Laboratorios Bell, Steve Bourne. Fue la primera shell utilizada para el sistema operativo Unix y ha superado en gran parte la funcionalidad de muchas de las shells más recientes. Todas las versiones de Linux Unix permiten a los usuarios cambiar a la original Bourne Shell, conocida simplemente como "sh", si así lo desean. Sin embargo, hay que tener en cuenta que al hacerlo, se renuncia a funcionalidades como el completado de nombres de archivo y el historial de comandos que los depósitos posteriores han añadido.
 
 ### C/TC Shell <a id='c4a2b'></a>
-El C Shell fue desarrollado posteriormente al Bourne Shell y está pensado en facilitar el control del sistema al programador en lenguaje C. La razón de esto es que su sintaxis, como vamos a apreciar, es muy similar a la de este lenguaje.Conocido popularmente también como csh, está presente en otros SO, por ejemplo, en Mac OS.  Posee una evolución, conocida como tcsh que incorpora funcionalidades avanzadas y mayores atajos de teclado
+El C Shell fue desarrollado posteriormente al Bourne Shell y está pensado en facilitar el control del sistema al programador en lenguaje C. La razón de esto es que su sintaxis, como vamos a apreciar, es muy similar a la de este lenguaje.Conocido popularmente también como csh, está presente en otros SO, por ejemplo, en Mac OS.  Posee una evolución, conocida como `tcsh` que incorpora funcionalidades avanzadas y mayores atajos de teclado
 
 ### Korn Shell <a id='c4a2c'></a>
 Esta también fue escrita por un programador en los Laboratorios Bell, David Korn. Intenta combinar las características de la C Shell, TC Shell y Bourne Shell en un solo paquete. También incluye la capacidad para crear nuevos comandos de shell para los desarrolladores cuando surja la necesidad.
@@ -894,7 +872,7 @@ Esta también fue escrita por un programador en los Laboratorios Bell, David Kor
 
 La Bourne-Again Shell es una versión actualizada de la Bourne Shell original. Es una shell utilizada ampliamente en la comunidad de código abierto.Su sintaxis es similar a la utilizada por la Bourne Shell, incorporando funcionalidades más avanzadas que se encuentran en las shells C, TC y Korn.Entre las funcionalidades adicionales que carecía Bourne, está la capacidad para completar nombres de archivos pulsando la tecla TAB, la capacidad de recordar un historial de comandos recientes y la capacidad de ejecutar múltiples programas en segundo plano a la vez.
 
-## Ejecucion de la consola <a id='c4a3'></a>
+## Ejecución de la consola <a id='c4a3'></a>
 
 ### Consola de Linux: Ejecución en inicio
 Si bien cada distribución de Linux tiene su manera particular de acceder a la consola, cuando el SO se inicia en los niveles 1, 2, 3 y 4 nos llevará por defecto a la consola.
@@ -1557,7 +1535,7 @@ En esta clase vamos a presentar la interfaz de Bash como un shell de Unix, donde
 
 `bash` es una interfaz que interpreta las ordenes que el usuario le hace al sistema ejecutado en una consola de UNIX
 Tambien se pueden leer y ejecutar ordenes desde un archivo llamado script que nos permite hacer persistente una lista de tareas a realizar por el sistema operativo
-Tambien es un lenguaje de scripting, lo que lo hace una herramienta muy potente para la administracion de sistemas y automatizacion de tareas 
+Tambien es un lenguaje de scripting, lo que lo hace una herramienta muy potente para la administracion de sistemas y automatización de tareas 
 
 Para ejecutar multiples comandos en un solo paso desde el shell, podemos escribirlos en una sola linea y separarlos en `;`
 
@@ -1707,7 +1685,7 @@ nano script.sh
 ```
 ![ej](./img/c5s2.png)
 
-Pegamos el siguiente codigo
+Pegamos el siguiente código
 
 ```bash
 #!/bin/bash
@@ -1718,7 +1696,7 @@ done
 ```
 Lo guardamos.
 
-Modificamos los permisos de ejecucion del archivo desde el usuario `root` con el codigo
+Modificamos los permisos de ejecucion del archivo desde el usuario `root` con el código
 
 ```bash
 chmod +x script.sh
@@ -1797,7 +1775,7 @@ creamos una carpeta
 ![img](./img/c6s1b.png)
 
 entramos con nano a editar el nuevo script `script.sh`
-copiamos de la actividad el codigo al nano y tabulamos
+copiamos de la actividad el código al nano y tabulamos
 
 **Codigo actividad a reemplazar**
 ![img](./img/c6s1c.png)
@@ -1834,7 +1812,7 @@ con este script consultara las apis
 
 Ejercicio pide: seleecionar aleatoriamente 5 nombres que no empiecen ni con a ni con l 
 
-ponemos un `elif`; otra condicion del `if` y una opcion es poner que sea distinto de a
+ponemos un `elif`; otra condicion del `if` y una opción es poner que sea distinto de a
 
 ![img](./img/c6s1i.png)
 
@@ -1844,7 +1822,7 @@ Lo testeamos...
 
 > Ver script.sh
 
-el codigo es:
+el código es:
 
 ```bash
 req=`curl https://raw.githubusercontent.com/olea/lemarios/master/nombres-propios-es.txt | shuf`
@@ -1941,11 +1919,11 @@ Para escribir scripts que pueden ser utilizados por un software de monitoreo.
 
 Las pruebas de infraestructura en Pester son código de PowerShell que ejecuta el módulo Pester PowerShell y se crea de una manera específica, conocida como lenguaje específico de dominio (DSL). Este DSL describe el estado deseado y tiene el código necesario para verificar ese estado y comparar el resultado.
 
-### Automatizacion de procesos
+### Automatización de procesos
 
 Automatizar tareas en un proceso de liberación de software (CI/CD).
 
-### Automatizacion de tareas
+### Automatización de tareas
 
 PowerShell sirve para facilitar a los administradores de sistemas las tareas de automatización, administración y configuración de sistemas.
 
@@ -3151,10 +3129,10 @@ Una vez la configuracion esta codificada puede suceder 2 escenarios:
 usando git como fuente de verdad, para que un sistema de CM observe los cambios y aplique la configuracion en los servidores
 Este enfoque suele ser parte de las practicas que se utilizan en el modelo `GitOps`
 
-Habiendo enviado el codigo al repositorio git, comienza el proceso automatico.
+Habiendo enviado el código al repositorio git, comienza el proceso automatico.
 Un sistema externo tomara la configuracion del repositorio git para lego plasmarla en los servidores indicados 
 
-**Como llega la configuracion definida como codigo a ese sistema**
+**Como llega la configuracion definida como código a ese sistema**
 Esto depende de la naturaleza del *configuration manegement* que hayamos elegido.
 Algunos podrian monitorear el repositorio git en busca de cambios, y en caso de detectar cambios configurar los activos requeridos con la configracion correspondiente al ultimo `commit` del branch que estan monitoreando.
 
@@ -3251,7 +3229,7 @@ Si no esta registrado, no hay control sobre ese cambio.
 
 Da una ventaja de solucionar problemas de una manera mas dinamica y rapida.
 
-Aplicamos esas configuraciones en formato de codigo **Configuration as code** 
+Aplicamos esas configuraciones en formato de código **Configuration as code** 
 donde podemos definir la estrutura como un todo.
 
 Un servidor `chef` que funciona con pull, se mantiene comunicado con los servidores tipo cliente(web, db), estos tienen que tener un cliente chef instalado en cada servidor, que es el que va a estar consultando periodicamente al servidor de chef a ver si hay algun cambio que necesita. Cuando hay una nueva configuracion el servidor chef le manda la configuracion y eso se llama **pull**, es decir que estamos trayendo esa configuracion desde el otro servidor.
@@ -3263,44 +3241,57 @@ Usa un archivo de configuracion `yaml` que se llama **playbook**, para aplicar l
 
 # C11 - Ansible <a id='c11'></a>
 
-¿Qué es Ansible y para qué sirve? Se trata de un software de gestión de la configuración automática y remota, que nos permite centralizar la configuración de numerosos servidores, dispositivos de red y cloud providers de una forma sencilla y automatizada.
-
-En esta clase, lo analizaremos con más profundidad.
+> #### 📑
+> pdf: Conociendo Ansible
 
 ![img](./img/c11.png)
 
-> Ver pdf: Conociendo Ansible.pdf
+✅ Se trata de un software de gestión de la configuración automática y remota
 
-## Conociendo Ansible <a id='c11a'></a>
+✅ Permite centralizar la configuración de numerosos servidores, dispositivos de red y cloud providers de una forma sencilla y automatizada.
 
-### Introducción a Ansible
+✅ Ansible es una herramienta open source de configuration management y de aprovisionamiento, similar a Chef, Puppet o Salt.
 
-- Ansible es una herramienta open source de configuration management y de aprovisionamiento, similar a Chef, Puppet o Salt.
-- Usa SSH para conectarse a los servidores y ejecutar las tareas de configuración. Ansible nos permite controlar y configurar nodos desde un servidor central.
-- Lo que lo hace diferente de otras herramientas de configuration management es que Ansible utiliza la infraestructura de SSH. El proyecto se originó en 2013 y, finalmente, fue comprado por Red Hat en 2015.
+✅ Usa SSH para conectarse a los servidores y ejecutar las tareas de configuración. 
 
-### ¿Por qué elegir Ansible?
+✅ Ansible nos permite controlar y configurar nodos desde un servidor central.
 
-- **No usa agentes**: Mientras que al equipo que queramos configurar se pueda acceder vía SSH y correr Python, se podrá configurar usando Ansible. 
-- **Idempotente**: Toda la arquitectura de Ansible está estructurada alrededor del concepto de idempotencia. La idea es que solo se harán configuraciones si son necesarias y que se podrán aplicar de manera repetible sin provocar efectos secundarios.
-- **Declarativo**: A diferencia de un script, en donde debemos escribir la lógica necesaria para efectuar una configuración, Ansible trabaja por nosotros, dejándonos escribir una descripción del estado que deseamos para un servidor o conjunto de servidores. Es luego Ansible el que se encarga de aplicar dicha descripción de forma idempotente.
-- **Fácil de aprender**.
+> ### 💡
+> Lo que lo hace diferente de otras herramientas de configuration management es que <r>Ansible utiliza la infraestructura de SSH</r>. El proyecto se originó en 2013 y, finalmente, fue comprado por Red Hat en 2015.
 
-### ¿Idempotencia? <a id='c11a1'></a>
-- Wikipedia define a la idempotencia como: _“es la propiedad para realizar una acción determinada varias veces y aun así conseguir el mismo resultado que se obtendría si se realizase una sola vez”_.
-- En los procesos de infraestructura modernos, en donde las configuraciones se definen en **forma de código** y muchas veces de forma **declarativa**, la idempotencia no solo es una herramienta sino una necesidad para poder implementar procesos de alta predictibilidad
+## Ventajas de Ansible
 
-## Arquitectura <a id='c11a2'></a>
+✅ **No usa agentes**: Mientras que al equipo que queramos configurar se pueda acceder vía SSH y correr Python, se podrá configurar usando Ansible. 
+
+✅ **Idempotente**: Toda la arquitectura de Ansible está estructurada alrededor del concepto de idempotencia. La idea es que solo se harán configuraciones si son necesarias y que se podrán aplicar de manera repetible sin provocar efectos secundarios.
+
+✅ **Declarativo**: A diferencia de un script, en donde debemos escribir la lógica necesaria para efectuar una configuración, Ansible trabaja por nosotros, dejándonos escribir una descripción del estado que deseamos para un servidor o conjunto de servidores. Es luego Ansible el que se encarga de aplicar dicha descripción de forma idempotente.
+
+✅ **Fácil de aprender**.
+
+> ### 💡 ¿Idempotencia?
+> - Wikipedia define a la idempotencia como: _“es la propiedad para realizar una acción determinada varias veces y aun así conseguir el mismo resultado que se obtendría si se realizase una sola vez”_.
+> - En los procesos de infraestructura modernos, en donde las configuraciones se definen en **forma de código** y muchas veces de forma **declarativa**, la idempotencia no solo es una herramienta sino una necesidad para poder implementar procesos de alta predictibilidad
+
+## Arquitectura Ansible <a id='c11a2'></a>
 
 ![img](./img/c11a2.png)
 
-## Inventario <a id='c11a3'></a>
+### Inventario <a id='c11a3'></a>
 
-- El inventario es una lista de los nodos que pueden ser accedidos por Ansible. Por defecto, el inventario está soportado por un archivo de configuration, cuya ubicación es `/etc/ansible/hosts`. Los nodos pueden estar listados por nombre o IP.
-- Cada nodo es asignado a un grupo, como pueden ser “web servers”, “db servers”, entre otros. 
-- El  inventario debe estar escrito en uno de muchos formatos, estos pueden ser YAML, INI, etcétera. YAML es el formato más utilizado en la industria
+El inventario es una lista de los nodos que pueden ser accedidos por Ansible. 
 
-### Ejemplo de un inventario <a id='c11a4'></a>
+✅ Por defecto, el inventario está soportado por un archivo de configuration, cuya ubicación es `/etc/ansible/hosts`. 
+
+✅ Los nodos pueden estar listados por nombre o IP.
+
+✅ Cada nodo es asignado a un grupo, como pueden ser “web servers”, “db servers”, entre otros. 
+
+✅ El inventario debe estar escrito en uno de muchos formatos, estos pueden ser `YAML`, `INI`, etcétera. 
+
+✅ YAML es el formato más utilizado en la industria
+
+#### 📜 Ejemplo!
 
 ```yaml
 mail.example.com
@@ -3315,17 +3306,23 @@ two.example.com
 three.example.com
 ```
 
-## Playbooks <a id='c11a5'></a>
+### Playbooks
 
-- Los playbooks son archivos también escritos en formato YAML. Estos archivos son la descripción del estado deseado de los sistemas que vamos a configurar. Ansible es el que hace todo el trabajo para llevar los servidores al estado que nosotros hayamos especificado sin importar el estado en el que estén cuando la configuración se aplique. Los playbooks hacen que las nuevas instalaciones, actualizaciones y la administración del día a día sea repetible, predecible y confiable
-- Los playbooks son simples de escribir y mantener. Se escriben en un lenguaje natural por lo que son muy sencillos de evolucionar y editar.
-- Los playbooks contienen Plays (jugadas).
-- Las jugadas (contienen tareas (en inglés, tasks).
-- Las tareas invocan módulos.
+Los playbooks son archivos también escritos en formato YAML. 
 
-## Ejemplo de un playbook <a id='c11a6'></a>
+✅ Estos archivos son la descripción del estado deseado de los sistemas que vamos a configurar. 
 
-Este playbook instala la versión más reciente de Apache y se asegura que este corriendo en aquellos servidores que estén bajo el grupo “webservers” en el inventario:
+✅ Ansible es el que hace todo el trabajo para llevar los servidores al estado que nosotros hayamos especificado sin importar el estado en el que estén cuando la configuración se aplique. 
+
+✅ Los playbooks hacen que las nuevas instalaciones, actualizaciones y la administración del día a día sea repetible, predecible y confiable
+
+✅ Los playbooks son simples de escribir y mantener. Se escriben en un lenguaje natural por lo que son muy sencillos de evolucionar y editar.
+
+✅ Los playbooks contienen Plays (jugadas). Las jugadas (contienen tareas (en inglés, tasks). Las tareas invocan módulos.
+
+#### 📜 Ejemplo!
+
+Este playbook instala la versión más reciente de `Apache` y se asegura que este corriendo en aquellos servidores que estén bajo el grupo “webservers” en el inventario:
 
 ```yaml
 ---
@@ -3345,23 +3342,34 @@ Este playbook instala la versión más reciente de Apache y se asegura que este 
       enabled: yes
 ```
 
-## Módulos <a id='c11a7'></a>
+### Módulos
 
-- Hay más de 1000 módulos incluidos con Ansible para automatizar las diferentes partes de nuestro ambiente. Se puede pensar en los módulos como los plugins que hacen el trabajo real de configuración. Cuando se ejecutan las tareas escritas en un playbook, lo que se está ejecutando es en realidad un módulo. 
-- Cada módulo es independiente (no debería tener dependencia de otros módulos) y se lo puede escribir en cualquiera de los lenguajes de scripting standard de mercado (Python, Perl, Ruby, Bash, etc.). Uno de los principios de diseño de los módulos es la idempotencia.
-- Dentro de los módulos más populares podemos encontrar: Service, file, copy, iptables, entre otros
+✅ Hay más de 1000 módulos incluidos con Ansible para automatizar las diferentes partes de nuestro ambiente. 
 
-## Ejemplo de la invocación de un módulo <a id='c11a8'></a>
+✅ Se puede pensar en los módulos como los plugins que hacen el trabajo real de configuración. Cuando se ejecutan las tareas escritas en un playbook, lo que se está ejecutando es en realidad un módulo. 
 
-Ya vimos que los módulos se incluyen en los playbooks para componer configuraciones complejas o abarcativas. Pero también es posible invocar módulos individualmente desde la línea de comandos una única vez. Ya sea para probar el módulo o realizar una tarea específica. 
-A continuación, vemos dos comandos, el primero reproduce una de las tareas que ya vimos en un playbook que nos ayuda a asegurarnos que el servicio de Apache está corriendo. Mientras que el segundo invoca el módulo ‘ping’ para hacer un ‘ping’ localmente contra ‘localhost’:
+✅ Cada módulo es independiente (no debería tener dependencia de otros módulos) y se lo puede escribir en cualquiera de los lenguajes de scripting standard de mercado (Python, Perl, Ruby, Bash, etc.). 
+
+✅ Uno de los principios de diseño de los módulos es la idempotencia.
+
+✅ Dentro de los módulos más populares podemos encontrar: Service, file, copy, iptables, entre otros
+
+#### 📜 Ejemplo!
+
+Ya vimos que los módulos se incluyen en los playbooks para componer configuraciones complejas o abarcativas. <r>Pero también es posible invocar módulos individualmente desde la línea de comandos una única vez</r>. Ya sea para probar el módulo o realizar una tarea específica. 
+
+A continuación, vemos dos comandos:
+
+El primero reproduce una de las tareas que ya vimos en un playbook que nos ayuda a asegurarnos que el servicio de Apache está corriendo. 
+
+El segundo invoca el módulo ‘ping’ para hacer un ‘ping’ localmente contra ‘localhost’:
 
 ```bash
 ansible 127.0.0.1 -m service -a "name=httpd state=started"
 ansible localhost -m ping
 ```
 
-## La herencia de Python <a id='c11a9'></a>
+## La herencia de Python
 
 Ansible está desarrollado en Python y, en consecuencia, hereda y/o implementa algunos aspectos del lenguaje. Y si bien, no es necesario ser desarrollador de Python para poder hacer uso de Ansible. Hay algunas cuestiones que es importante conocer:
 
@@ -3369,30 +3377,57 @@ Ansible está desarrollado en Python y, en consecuencia, hereda y/o implementa a
 - Operador ternario: El operador ternario de Python se puede utilizar dentro de los templates de Jinja para alterar algunos comportamientos de nuestros playbooks en función de ciertas condiciones.
 - Errores: Muchas veces los errores que encontremos van a estar en un formato que, de estar familiarizados con Python, nos resultará más sencillo de leer.
 
-## Los casos de uso de Ansible <a id='c11a10'></a>
+## Casos de uso de Ansible
 
-- **Aprovisionamiento**: Utilizar Ansible para instanciar servidores o máquinas virtuales “configurando el sistemas de virtualización”.●Configuration management: gestionar y mantener las configuraciones de nuestros servidores.
+- **Aprovisionamiento**: Utilizar Ansible para instanciar servidores o máquinas virtuales “configurando el sistemas de virtualización”.
+
+- **Configuration management**: gestionar y mantener las configuraciones de nuestros servidores.
+
 - **App deployment**: distribuir aplicaciones.
+
 - **Continuous delivery**: Utilizarlo como componente de un proceso de CI/CD para automatizar el despliegue de una aplicación luego de su proceso de compilación.
+
 - **Seguridad y compliance:** La naturaleza idempotente de Ansible hace que podamos utilizarlo para distribuir configuraciones asociadas con la seguridad sin importar la configuración actual. 
+
 - **Orchestration:** Puede ser utilizado también para orquestar operaciones en la nube o ‘configurar’ la nube.
 
-## Configuration management con Ansible <a id='c11a11'></a>
+## Configuration management con Ansible 
 
-Ansible es la herramientas más simple para implementar una estrategia de configuration management. Está diseñado para ser minimalista, consistente, seguro y altamente confiable. Cualquier desarrollador, tester o administrador de infraestructura puede fácilmente utilizarlo para configurar un conjunto de nodos. Además, cualquier persona en el departamento de IT podría escribir un playbook sin mayores dificultades.Las configuraciones descritas en Ansible (playbooks) son sencillamente una descripción de la infraestructura (en un lenguaje fácilmente inteligible para el ojo humano) de modo que cualquier persona en el área de IT podría entender el significado de cada tarea en un playbook.Ansible solo requiere el password o la clave privada del usuario que se utilizará para acceder desde Ansible a los sistemas que se configuraron.
+Ansible es la herramientas más simple para implementar una estrategia de configuration management. 
+
+✅ Está diseñado para ser minimalista, consistente, seguro y altamente confiable.
+
+✅ Cualquier desarrollador, tester o administrador de infraestructura puede fácilmente utilizarlo para configurar un conjunto de nodos. 
+
+✅ cualquier persona en el departamento de IT podría escribir un playbook sin mayores dificultades.
+
+✅ Las configuraciones descritas en Ansible (playbooks) son sencillamente una descripción de la infraestructura (en un lenguaje fácilmente inteligible para el ojo humano) de modo que cualquier persona en el área de IT podría entender el significado de cada tarea en un playbook.
+
+> ### 💡
+> Ansible solo requiere el password o la clave privada del usuario que se utilizará para acceder desde Ansible a los sistemas que se configuraron.
 
 ![img](./img/c11a11.jpg)
 
 ![img](./img/c11a12.jpg)
 
+>### 👍
+> Links: galaxy.ansible.com
+> Investigar: jinja2
+
 ## Ansible en acción <a id='c11b'></a>
 
 ¡Vamos a poner manos a la obra! Veamos cómo nos ayuda Ansible en la infraestructura IT.
 
-> Ver pdf: Ansible en accion
 
-<!-- HACER -->
->
+### Creación del ambiente de trabajo
+
+> #### 📑
+> pdf: Ansible en accion
+> Preparacion de entorno
+
+> ### 💡
+> Con los playbooks aplicamos configuraciones de forma automatica a varios servidores al mismo tiempo
+
 > Ver pdf: Configuración de IP en MV.pdf
 
 ## Configuración de IP en MV <a id='c11b2'></a>
@@ -3511,16 +3546,546 @@ GATEWAY1=192.168.9.
 sudo service network restart
 ```
 
-En la próxima clase tendrás una evaluación. Te sugerimos que vuelvas a revisar todo el material asincrónico y las ejercitaciones realizadas en las mesas de trabajo.
+# Modulo 3: Containers
 
-Dentro del examen los temas que se van a evaluar son:
+## Tutorial docker
 
-    Módulo 1: Inmersión
-    El centro de cómputos
-    Arquitectura cliente-servidor
-    Módulo 2: Automatización
-    Shell scripting
-    PowerShell
-    Python
-    Configuration management
-    Ansible
+```
+docker run -d -p 80:80 docker/getting-started
+```
+
+`-d` - run the container in detached mode (in the background)
+`-p 80:80` - map port 80 of the host to port 80 in the container
+`docker/getting-started` - the image to use
+
+### Pro tip
+
+You can combine single character flags to shorten the full command. As an example, the command above could be written as: 
+```
+docker run -dp 80:80 docker/getting-started
+```
+
+
+# C13 - Docker en profundidad <a id='c13'></a>
+
+## Vocabulario de Docker
+
+Te dejamos algunos conceptos que serán importantes que reconozcas para que te familiarices con ellos:
+
+`Host`: una máquina virtual que ejecuta Docker daemon para alojar una colección de contenedores Docker.
+
+`Cliente`: aquí se ejecutan los comandos que están siendo ejecutados. (cliente-servidor).
+
+`Imagen`: una colección ordenada de sistemas de archivos (capas) que se utilizarán al crear una instancia de un contenedor.
+
+`Contenedor`: una instancia en tiempo de ejecución de una imagen.
+
+`Registro`: una colección de imágenes de Docker.
+
+> #### 🎬
+> Video: Que es docker
+
+Los contenedores son la vía que nos coloca Docker para tener el mismo uso que con las máquinas virtuales creadas de la forma tradicional. 
+
+Docker utiliza estos contenedores para aislar uno o más procesos. 
+Estos procesos en el host necesitan memoria, CPU, acceso a la red y espacio en disco.
+
+✅ Proporciona una capa adicional de abstraccion y automatización de virtualizaion de aplicaciones en multiples sistemas operativos
+
+✅ Facilidad para: Construir, ejecutar, detener, investigar, modificar y manipular contenedores. 
+
+✅ Utilizando Docker podemos contener cualquier aplicacion en cualquier lenguaje, usando cualquier sistema operativo
+
+✅ Docker provee una API de alto nivel para proveer contenedores livianos que ejecutan procesos de manera aislada
+
+✅ Usar Docker puede simplificar la creacion de sistemas distribuidos, permitiendo que multiples aplicaciones, tareas de trabajadores y otros procesos funciones de forma <r>autonoma</r> en una sola maquina fisica o en varias maquinas virtuales
+
+✅ Los sistemas operativos que los ejecutan, pueden reducirse, ya que los contenedores ya cuentan con la mayor parte de lo que necesitan para ejecutarse
+
+✅ Simplifica la creacion y el funcionamiento de tareas de carga de trabajo y otros sistemas distribuidos.
+
+✅ Docker reduce costos en infraestructura, ahorra costos de mantenimiento y servidores.
+
+✅ Permite que los equipos de desarrollo seanmas eficientes, siendo otro ahorro de costos y disminucion de problemas.
+
+**Docker con aplicaciones:**
+
+✅ Es un ambiente perfecto para que las aplicaciones funcionen de forma correcta.
+
+✅ Automatiza el despliegue de aplicaciones dentro de los contenedores de software
+
+✅ Es una forma siplificada de empaquetar y ejecutar aplicaciones
+
+✅ Posibilita implementar aplicaciones de manera mas eficiente en entornos de nube
+
+✅ Las aplicaciones dockerizadas, pueden ejecutarse en cualquier lugar y sobre cualquier cosa.
+
+✅ La naturaleza de Docker, permite que se necesiten mejor recursos para ejecutar la misma aplicacion
+
+
+![Mediante el uso de contenedores:](./img/c13b.png)
+
+- Los recursos pueden ser aislados
+- Los servicios restringidos
+- Los procesos tienen una vision casi privada del sistema operativo
+
+con:
+
+- Su identificados de espacio de proceso
+- Estructura del sistema de archivos
+- Interfaces de red
+
+Entonces:
+Contenedores multiples, comparten el mismo nucleo pero cada contenedor puede ser restringido a usar solo una cantidad definida de recursos. Como CPU y memoria.
+
+> ### 💡
+>Encapsulando las dependencias, se trabaja mejor en conjunto.
+
+> #### 📑
+> pdf: Containers y Plataforma de Docker.pdf
+
+## Plataforma de Docker <a id='c13b'></a>
+
+![img](./img/c13.png)
+
+
+### Docker Engine 
+
+✅ También conocido como `Docker daemon`
+
+✅ Es el programa que permite **construir**, **enviar** y **ejecutar** contenedores. 
+
+✅ Utiliza espacios de nombres y grupos de control del kernel de Linux para proporcionar un entorno de tiempo de ejecución aislado para cada aplicación.
+
+### Docker Hub 
+
+Es un registro en línea de imágenes de Docker 
+
+✅ Docker Hub es un servicio de registro de repositorios proporcionado por Docker Inc. Compartir y colaborar son sus premisas.
+
+✅ Nos permite extraer y enviar imágenes de la ventana 
+acoplable hacia y desde Docker Hub
+
+✅ Es un repositorio en línea basado en la nube que almacena ambos tipos de repositorios, es decir, el repositorio público y el privado.
+Los repositorios públicos son accesibles para todos, pero el privado es accesible para el propietario interesado de los repositorios. 
+
+> ### 💡
+> Podemos tratar esto como un GitHub, donde obtenemos y enviamos nuestro código fuente, pero en el caso de Docker Hub descargamos o publicamos nuestras imágenes de contenedor.
+
+#### Caracteristicas
+
+1. Repositorios de imágenes:
+Nos ayuda a encontrar y extraer imágenes de contenedores de Docker Hub.
+
+2. Equipo y organizaciones:
+Nos permite crear grupos de trabajo e impulsar los repositorios privados, que están disponibles para su uso únicamente dentro de nuestra organización. 
+De esta forma, hemos gestionado el acceso a nuestros repositorios privados de imágenes de contenedores
+
+3. Integración de GitHub y Bitbucket:
+Permite la integración con repositorios de código fuente como GitHub y Bitbucket.
+
+4. Construcciones automatizadas:
+Si se ha enviado algún cambio en el código fuente a los repositorios, automáticamente detecta y crea imágenes de contenedor desde GitHub o Bitbucket y las envía a Docker Hub
+
+5. Webhooks:
+Una vez que hemos enviado nuestras imágenes con éxito, con la ayuda de un webhook, desencadena una acción para integrar Docker Hub con otros servicios.
+
+6. Imágenes oficiales y del editor:
+Las imágenes de alta calidad proporcionadas por los dockers se consideran imágenes oficiales y se pueden extraer y utilizar. Del mismo modo, las imágenes de alta calidad proporcionadas por proveedores externos son imágenes del editor —también llamadas imágenes certificadas— que brindan soporte y garantía de compatibilidad con Docker Enterprise.
+
+### Docker Trusted Registry 
+
+Es un registro privado en el sitio para imágenes de Docker.
+
+✅ Los registros Docker sirven para almacenar las diversas imágenes Docker que utilicemos en nuestro sistema. 
+De esta forma podremos subir imágenes nuevas a los registros o descargarlas cuando las necesitemos en alguna máquina Docker.
+
+✅ El registro es como una estantería donde las imágenes se almacenan y están disponibles para extraerlas con el fin de compilar contenedores que ejecuten servicios o aplicaciones web. 
+
+✅ Hay registros de Docker privados a nivel local y en la nube pública. 
+
+✅ Docker Hub es que un registro público mantenido por Docker; junto con Docker Trusted Registry, una solución a nivel empresarial
+
+✅ Colocar imágenes en un registro permite almacenar fragmentos de la aplicación que son estáticos e inmutables, incluidas todas sus dependencias a nivel de marco. Después, esas imágenes se pueden versionar e implementar en varios entornos y, por lo tanto, proporcionar una unidad de implementación coherente.
+
+### Docker Client 
+
+✅ Es el que toma las entradas del usuario y las envía al daemon. 
+
+✅ El cliente y el daemon pueden ejecutarse en el mismo host o en diferentes hosts.
+
+### Docker Images 
+
+✅ Es una plantilla de solo lectura utilizada para crear contenedores. 
+
+✅ Contiene un conjunto de instrucciones para crear los contenedores
+
+![img](./img/c13f.jpg)
+
+### Docker Containers
+
+Es una plataforma de aplicación aislada basada en una o más imágenes que contiene todo lo necesario para ejecutar una aplicación
+
+![img](./img/c13a.png)
+
+### Docker Compose
+
+Aprender a utilizar Docker Compose
+
+Docker Compose es una herramienta que permite simplificar el uso de Docker. A partir de archivos YAML es más sencillo crear contendores, conectarlos, habilitar puertos, volúmenes, etc. 
+
+✅ Con Compose podemos crear diferentes contenedores y al mismo tiempo, en cada contenedor, diferentes servicios, unirlos a un volumen común, iniciarlos y apagarlos, etc. 
+
+✅ Es un componente fundamental para poder construir aplicaciones y microservicios.
+
+✅ En vez de utilizar Docker vía una serie inmemorizable de comandos Bash y scripts, Docker Compose te permite mediante archivos YAML para poder instruir al Docker Engine a realizar tareas, programáticamente. Y esta es la clave, la facilidad para dar una serie de instrucciones y luego repetirlas en diferentes ambientes.
+
+**¿Por qué utilizar Docker con Docker Compose?**
+
+Docker y Docker Compose nos brindan algunos beneficios:
+
+- No necesitamos instalar ni mantener software adicional en nuestro equipo.
+- Podemos tener todo nuestro entorno de desarrollo en un único repositorio, por ejemplo, tenemos el back end, el front end y las configuraciones de la base de datos en un mismo repositorio lo que facilita a los desarrolladores el poder colaborar de mejor manera en el proyecto.
+- Levantar todo el entorno de desarrollo se limita a un solo comando 
+```
+docker-compose up.
+```
+#### Desventaja
+
+Pero no todo es color de rosa, también tenemos una desventaja que está enfocada al rendimiento, ya que a pesar de que los contenedores están enfocados a ser eficientes, siguen consumiendo recursos de la máquina anfitriona tales como procesador y memoria por lo que si la cantidad de contenedores que están corriendo al mismo tiempo es grande o si los contenedores son pesados al momento de crearse y levantarse, podrían llevar a cuelgues del sistema y cosas similares.
+
+![img](./img/c14b.png)
+
+### Docker Swarm
+
+Es una herramienta integrada en el ecosistema de Docker que permite la gestión de un cluster de servidores. Pone a nuestra disposición una API con la que podemos administrar las tareas y asignación de recursos de cada contenedor dentro de cada una de las máquinas.
+
+![img](./img/c14c.png)
+
+
+## Desafio de la virtualización
+
+![img](./img/c13c.jpg)
+
+## Maquina virtual vs Contenedores <a id='c13c'></a>
+
+[Link](https://view.genial.ly/60d4f1dc1c0f540d68e8011f)
+
+![img](./img/c13d.png)
+
+### Sistema operativo duplicado
+
+Las máquinas virtuales deberán contener el sistema operativo y todos los componentes de soporte.
+
+### Arquitectura del contenedor
+
+✅ Los contenedores ofrecen una alternativa a la ejecución de aplicaciones directamente en el host o en una máquina virtual que puede hacer que las aplicaciones sean más rápidas, portátiles y escalables. 
+
+✅ La flexibilidad proviene de que el contenedor puede llevar todos los archivos que necesita. Al igual que la aplicación que se ejecuta en una máquina virtual, puede tener sus propios archivos de configuración y bibliotecas dependientes, además de tener sus propias interfaces de red distintas de las configuradas en el host. 
+
+Entonces, nuevamente, al igual que con la VM:
+
+✅ Una aplicación en contenedores debería poder moverse más fácilmente que sus contrapartes instaladas directamente y no tener que competir por los mismos números de puerto porque cada contenedor en el que se ejecutan tiene interfaces de red separadas.
+
+
+## Docker en accion
+
+![img](./img/c13e.png)
+
+## Taxonomia basica en Docker
+
+![img](./img/c13g.jpg)
+
+### Containers <a id='c13a'></a>
+
+#### Entornos fisicos
+
+- Aplicaciones construidas e implementadas tradicionalmente en sistemas físicos con relación 1:1.
+- Las nuevas aplicaciones a menudo requieren nuevos sistemas físicos para el aislamiento de recursos
+
+#### Entornos virtuales
+
+- Mejor utilización e implementación de aplicaciones, más rápidas que en un entorno físico tradicional.
+- Las aplicaciones implementadas en máquinas virtuales son muy compatibles.
+
+#### Entornos fisicos y virtuales
+
+✅ Aceleran aún más la implementación de la aplicación.
+
+✅ Reducen el esfuerzo para implementar aplicaciones.
+
+✅ Optimizan el desarrollo y las pruebas.
+
+✅ Menores costos asociados con la implementación de aplicaciones.
+
+✅ Incrementan la consolidación de servidores.
+
+> #### 📑
+> pdf: DockerFile
+
+## Dockerfile
+
+Es un archivo de texto simple con un conjunto de comandos o instrucciones. 
+
+Estos comandos / instrucciones se ejecutan sucesivamente para realizar acciones en la imagen base para crear una nueva imagen de la ventana acoplable.
+
+![img](./img/c13h.png)
+
+
+
+### Instrucciones básicas de Dockerfile
+
+`DE`:  Define la imagen base para usar e iniciar el proceso de construcción.
+
+`CORRER`:  Toma el comando y sus argumentos para ejecutarlo desde la imagen.
+
+`CMD`: Función similar a un comando run, pero se ejecuta solo después de que se crea una instancia del contenedor.
+
+`PUNTO DE ENTRADA`: Se dirige a su aplicación predeterminada en la imagen cuando se crea el contenedor.
+
+`AÑADIR`: Copia los archivos de origen a destino (dentro del contenedor).
+
+`ENV`: Establece variables de entorno.
+
+### Etiquetas de imagen
+
+Los tags o etiquetas sirven para identificar las versiones de las imágenes, a la hora de listar las imágenes se listan con su tag o etiqueta asociado. 
+
+Pueden agrupar sus imágenes usando nombres y etiquetas (si no proporcionan ninguna etiqueta, se asume el valor predeterminado de la última).
+
+> #### 📑
+> pdf: Ejercicio Docker
+
+docker container run -d --name spaghettidocker -p80:80 davidpigna/spaghettidocker
+
+Parametros
+
+`-d` ejecuta en segundo plano
+`-p` publish
+
+# C14 - El ecosistema de Docker y mejores practicas <a id='c14'></a>
+
+Algunas de estas buenas prácticas son simples recomendaciones que te van a venir bien a la hora de actualizar o mantener esas imágenes. Te invitamos a conocerlas.
+
+## Creacion de una imagen <a id='c14a'></a>
+
+> #### 📑
+> pdf: Docker hub > Regsitro > Creacion de repositorio
+
+El proceso de crear una imagen requiere un Dockerfile.
+Podemos pensar un Dockerfile como un manual de instrucciones que le dice a Docker qué ensamblar. En resumen, es un archivo de configuración que sigue ensamblando instrucciones.
+
+**¿Cómo funciona?**
+
+Docker lee las instrucciones de un Dockerfile y crea imágenes automáticamente. La imagen de Docker es un sistema de archivos en capas y consta de varias capas de solo lectura. Cada capa de una imagen de Docker representa las instrucciones de un Dockerfile. 
+
+A continuación, sigamos los pasos para crear una imagen usando un Dockerfile que especifica la configuración de nuestra aplicación
+
+```
+# sudo vim Dockerfile
+```
+
+```
+FROM ubuntu:16.04
+ENV DEBIAN_FRONTEND noninteractive
+MAINTAINER someuser@somedomain.com
+RUN apt-get update
+RUN apt-get install mysql-server -y
+CMD echo "My first image created."
+```
+
+Echemos un vistazo a algunas de las palabras clave importantes que se utilizan en Dockerfile. Podemos utilizar `#` para agregar un comentario en un Dockerfile.
+
+**FROM** (de): define la imagen base que se utilizará.
+
+**MANTEINER** (mantenedores): persona que va a mantener esa imagen.
+
+**RUN** (correr): se utiliza para ejecutar la instrucción dada para la imagen. En nuestro caso, primero actualiza el sistema y luego instala MySQL.
+
+**CMD**: se utiliza para ejecutar un comando una vez que se ha lanzado el contenedor.
+
+**COPY** (copiar): se utiliza para copiar un archivo de nuestro sistema operativo host al contenedor de la ventana acoplable.
+
+**EXPOSE** (exponer): se utiliza para especificar el número de puerto en el que el contenedor ejecutará su proceso.
+
+Una vez que nuestro Dockerfile se ha creado correctamente, debemos ejecutar docker build para “armar” nuestra imagen localmente, para luego enviarla a Docker Hub. Este comando debemos ejecutarlo dentro de la carpeta donde se encuentra el Dockerfile.
+
+```
+docker build ./ -t asadali08527/first-repo
+```
+
+Podemos verificar que la imagen está creada con la siguiente línea de código:
+
+```
+docker image ls
+```
+Una vez que nuestra imagen se ha creado correctamente y se está ejecutando, podemos enviarla a Docker Hub mediante el comando push.
+
+```
+docker push asadali08527/first-repo
+```
+
+Podemos verificar las etiquetas de la imagen y el estado en Docker Hub.
+
+### Las imágenes certificadas por Docker
+
+Estas son las imágenes oficiales impulsadas por proveedores o contribuyentes. 
+Una imagen solo puede ser certificada por Docker Hub si su contenido cumple con las reglas, estándares y leyes proporcionadas por Docker Hub.
+
+En resumen, esa imagen debe pasar ciertas pruebas de referencia. 
+
+Docker Hub proporciona `inspectDockerImage`, herramienta a través de la cual un proveedor puede autocertificar las imágenes y los complementos (por lo general, el proveedor o contribuyente publica sus complementos para registrar volúmenes y redes).
+
+### Imágenes populares en Docker Hub
+
+Hay muchas imágenes seleccionadas y optimizadas disponibles en Docker Hub. 
+La popularidad de estas imágenes depende de varios factores, presencia en el mercado, calificaciones, puntajes de satisfacción, entre otros. 
+Para obtener una lista detallada de los repositorios más populares, podés visitar el sitio web de Docker Hub. 
+El uso de una imagen también depende del sistema operativo y su arquitectura. 
+
+Si conocemos para qué sistema operativo y arquitectura se utilizarán las imágenes, debemos considerar los siguientes factores clave antes de extraer una imagen:
+
+✅ Buscar una versión específica utilizando etiquetas (principalmente la última).
+
+✅ Optar por el que tenga máxima cantidad descargas y estrellas.
+
+✅ Buscar la fecha de su última actualización.
+
+✅ Si es posible, verificar su tipo, ya sea del editor verificado u oficial (Docker Certified)
+
+## Las redes de Docker <a id='c14b'></a>
+
+Nos vamos a enfocar en el driver llamado `bridge`, ya que con el nuevo enfoque de Docker orientado a habilitar a los desarrolladores es el que mayoritariamente le darán uso en sus computadoras. 
+
+Todos los otros  drivers  están  orientados  a  ambientes  productivos,  pero  ese ámbito hoy está dominado por Kubernetes, que tienen otro modelo de Networking completamente diferente.
+
+Las redes de tipo “bridge” son locales y exclusivas del host en donde fueron creadas.
+
+- Son el tipo de red por defecto en Docker.
+- Simula la creación de switches o hubs, de nivel 2 (en el  modelo  OSI).  Podemos  utilizar  herramientas como  ‘brctl’  en  Linux  para  ver  el  funcionamiento interno.
+- Luego  de  la  instalación  de  Docker  se  crea  por defecto una red de tipo bridge llamada `“bridge”`, las buenas  prácticas  indican  que  esta  no  debe  ser utilizada y en su lugar se deben crear nuevas redes para usos específicos.
+
+### Bridge Driver en acción
+
+![img](./img/c14a.png)
+
+### Resolución de nombres
+
+Las IPs son efímeras y más aún en el mundo de los containers —estos también deberían serlo—. De modo que necesitamos una forma que le permita a un container hablar con otro sin conocer necesariamente la IP que le fue asignada.
+
+Para  todas  las  redes  que  creemos  —las  redes  creadas  por  defecto  no  nos proveen esta ventaja—, y para todos los containers a los que se le asigne un nombre  de  manera  deliberada  —usando 
+
+```
+--name  en  docker  create
+```
+— conectados  a  estas,  Docker  nos  provee  con  un  servicio  de  resolución  de nombres dentro del ámbito de la red misma utilizando el nombre del container para identificarlo por medio del servicio DNS.
+
+`docker network`
+
+`- create`: nos permite crear una red.
+
+`--internal`: agrando esta opción la red creada será del tipo ‘privada’.
+
+`- connect`: nos permite conectar un container existente a una red.
+
+`docker run`
+
+`--network <networkName>`: nombre de la red a la cual conectaremos el container.
+
+`--name`:  nombre  del  container,  necesario  para  que  funcione  la  resolución  de nombres.
+
+`-p  <hostPort>:<containerPort>`:  nos  permite  publicar  ciertos  puertos  de  un container en el host para poder acceder al servicio dentro del container.
+
+`-P`:  nos  permite  publicar  todos  los  puertos  definidos  en  la  especificación  del container (Dockerfile) en puertos aleatorios del host.
+
+## Mejores practicas en Docker <a id='c14c'></a>
+
+[Link](https://view.genial.ly/614cd9344691c70d429b489c)
+
+![img](./img/c14d.png)
+
+### Usar imágenes oficiales
+
+En Docker Hub vamos a encontrar 2 tipos de imágenes. Las oficiales, publicadas por organizaciones (por ejemplo, Ubuntu) o las publicadas por usuarios individuales. ¿Cómo diferenciarlas? Las imágenes oficiales están etiquetadas como tal en el sitio de Docker Hub. Si buscamos Ubuntu, vamos a ver que las imágenes publicadas por Canonical están etiquetadas como Docker Official Image.
+
+Sin embargo, la manera más práctica para entender si una imagen es oficial o no, es su nombre. Las imágenes no oficiales incluyen el nombre del usuario que las publicó, mientras que las oficiales, no. Veamos la diferencia a la hora de ejecutar “docker pull”. Para una imagen oficial sería: 
+```
+docker pull ubuntu:latest
+```
+Mientras que para una imagen que no lo es, el comando se vería así: 
+```
+docker pull usuario/nginx:latest.
+```
+
+En el caso de la imagen no oficial, seguramente contenga un servidor Nginx, pero no sabemos (por lo menos sin realizar un análisis más detallado) qué otras modificaciones podría haber incluido el usuario que publicó la imagen. 
+
+### Utilizar el comando COPY en lugar de ADD
+
+Ambos permiten agregar o copiar un archivo de una fuente externa a una imagen de Docker. ADD fue el primero en ser creado para la especificación de los Dockerfiles. La gran diferencia reside en que **ADD soporta copiar desde distintos orígenes**. Por ejemplo, puede agregar un archivo hosteado en la web, puede agregar un archivo que está en un filesystem de la máquina que está compilando el Dockerfile y también puede desempaquetar un archivo .tar (tarball, un formato de empaquetado nativo de Unix/Linux). El problema es que ADD —al hacer un montón de cosas— puede generar confusión, incluso algunos inconvenientes técnicos (¿qué pasa si quiero copiar un archivo .tar a la imagen en lugar de descomprimirlo?) y hasta generar problemas de performance.
+
+**COPY**, por el contrario, fue introducido más tarde para cumplir la función específica de **copiar un archivo desde un filesystem local a la imagen**. Incluso COPY, al tener un propósito más específico, facilita la lectura del Dockerfile.
+
+En términos generales, se recomienda:
+
+- Usar COPY para copiar archivos locales a la imagen en tiempo de compilación.
+- Usar RUN para ejecutar curl y encadenar con otros comandos para bajar un archivo de una fuente web y copiarlo, instalarlo o descomprimirlo.
+- Usar ADD cuando se tiene un archivo .tar y se lo quiere desempaquetar dentro de la imagen que se está construyendo.  
+
+### Usar multi-stage builds
+
+Esta es una práctica un tanto compleja, pero vale la pena saber que existe. Nos permite generar imágenes más pequeñas incluyendo explícitamente solo aquellos componentes necesarios para ejecutar una aplicación.
+
+Hasta ahora, debés haber visto Dockerfiles que incluyen un solo FROM. En los multi-stage builds, los Dockerfiles tienen dos o más ocurrencias de FROM. Esto produce varias imágenes etéreas durante el proceso de “build” y nos permite copiar elementos entre ellas, hasta **generar una imagen definitiva con solo aquello estrictamente necesario para ejecutar la aplicación**.
+
+En esta práctica, por lo general, se usa una primera imagen de base (especificada en el primer FROM), en la que copiamos el código fuente de nuestra aplicación y contamos con las herramientas necesarias para compilarla. Luego, indicamos un segundo FROM dentro del mismo Dockerfile, haciendo referencia a una imagen de base que tiene solo lo necesario para ejecutar la aplicación, pero no así las herramientas de compilación. Y copiamos el artefacto generado producto de la compilación en el primer container, al segundo. 
+
+### No generar dependencias externas
+
+Los contenedores que construyamos tienen que ser trasladables. No importa en dónde corran, deben poder contar con todo lo necesario para ejecutar las aplicaciones que viven en ellos.
+
+Es natural que los desarrolladores se sientan tentados a montar directorios del equipo en el que desarrollan dentro de un container para así acelerar el ciclo de desarrollo. En lugar de tener que compilar la imagen cada vez que desean probar su aplicación y copiar los artefactos necesarios dentro de ella, es más sencillo mapear un directorio local y dejar allí los componentes actualizados.
+
+Esta práctica puede llevar a que, a la hora de correr las aplicaciones en producción, haya dependencias no resueltas.
+De modo que, contrario a lo que se especifica aquí: <https://docs.docker.com/develop/dev-best-practices/#differences-in-development-and-production-environments>, recomendamos que no utilices volúmenes de tipo bind en los ambientes de desarrollo.
+
+### Concatenar comandos
+
+Muchas veces nos vamos a encontrar con líneas como esta en Dockerfiles:
+```
+RUN apt-get update && apt-get upgrade -y
+```
+En lugar de algo como:
+```
+RUN apt-get update
+RUN apt-get upgrade -y 
+```
+¿Por qué? Cada línea en un Dockerfile produce una nueva capa en nuestra imagen. De modo que ejecutar estos dos comandos por separado, produciría dos capas. En este caso, ambos comandos sirven al mismo propósito: actualizar los paquetes instalados en el sistema operativo. Por eso, tiene sentido concatenarlos, ya que están estrechamente relacionados, y ejecutar uno sin ejecutar el otro no tendría sentido. De esta manera, optimizamos el uso de recursos y tiempo de compilación.
+
+Podés encontrar más información al respecto de esta práctica en: <https://docs.docker.com/develop/dev-best-practices/#how-to-keep-your-images-small>
+
+
+**Conclusión**
+
+> ### 💡
+> Podemos probar con distintos entornos y lenguajes, la idea es conseguir optimizar al máximo nuestro entorno de desarrollo y enfocarnos en el principal objetivo que es escribir código de calidad. 
+
+
+> #### 📑
+> pdf: Ejercitacion mesas
+
+> ### 💡
+> **Documentación de Docker**:
+> – [docker network create](https://docs.docker.com/engine/reference/commandline/network_create/#specify-advanced-options)
+> – [Networking Overview](https://docs.docker.com/network/)
+> – [Networking with standalone containers](https://docs.docker.com/network/network-tutorial-standalone/)
+>**Blogs**:
+>– [How Docker Container Networking Works - Mimic It Using Linux](https://dev.to/polarbit/how-docker-container-networking-works-mimic-it-using-linux-network-namespaces-9mj)
+>[Network Namespaces](https://dev.to/polarbit/how-docker-container-networking-works-mimic-it-using-linux-network-namespaces-9mj)
+>**Libro**:
+>– [Poulton, N. (2017). Docker Deep Dive.](https://www.amazon.com/-/es/Nigel-Poulton/dp/1521822808)
+
+# C15 - Repaso
+
+> #### 📑
+> pdf: Armemos un ambiente con Docker
+

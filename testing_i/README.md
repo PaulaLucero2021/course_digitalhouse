@@ -1,36 +1,4 @@
----
-title: "Testing I"
-author: "Liliana Ospina"
-output: PDF_document
-lang: es-ES
-toc: TRUE
----
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-t {
-font-size: 50px;
-color: #006d77;
-font-family: 'Roboto Mono', monospace;
-letter-spacing: 5px;
-}
-h1 {
-color: #f2cc8f
-}
-h2 {
-color: #e07a5f;
-}
-h3 {
-color: #cd9777
-}
-h4 {
-color: #e5989b
-}
-r {
-color: #03045e;
-background-color: #90e0ef;
-}
-</style>
+<link rel="stylesheet" type="text/css" media="all" href="./styles.css" />
 
 <t>Testing I</t>
 
@@ -41,7 +9,7 @@ background-color: #90e0ef;
 1. Fundamentos de testing y gestión de defectos.
 - [C1 - Primeros pasos](#c1)
     - [Bienvenida](#c1a)
-    - [Introduccion al testing](#c1b)
+    - [Introducción al testing](#c1b)
     - [Cronologia](#c1z)
     - [Principios del testing](#c1y)
     - [El rol del Tester](#c1c)
@@ -57,11 +25,12 @@ background-color: #90e0ef;
         - [¿Qué condiciones debemos tener en cuenta?](#c2b4)
         - [¿Cuáles son los problemas más comunes con los informes de defectos?](#c2b5)
         - [Partes de un informe de defectos](#c2b6)
-    - [Actividad](#c3c)
+    - [**Template defectos**](#c2t)
 - [C3 - Repaso](#c3)
+    - [Actividad](#c3c)
 2. Diseño e implementación de la prueba
-- [C4 - Diseno de la prueba](#c4)
-    - [Diseno de la prueba](#c4a)
+- [C4 - Diseño de la prueba](#c4)
+    - [Diseño de la prueba](#c4a)
         - [Características de un buen caso de prueba](#c4a1)
         - [¿Qué debe contener un caso de prueba?](#c4a2)
         - [Testing positivo y testing negativo](#c4a3)
@@ -70,6 +39,7 @@ background-color: #90e0ef;
         - [Casos de uso y casos de prueba](#c4a6)
         - [Actividad en clase](#c4sm1)
     - [Notas clase 4](#c4s)
+    - [Template caso de prueba](#c4t)
 - [C5 - Niveles y tipos prueba](#c5)
     - [Ciclo de vida de las pruebas de Software](#c5a1)
     - [Tareas principales](#c5a1a)
@@ -104,6 +74,43 @@ background-color: #90e0ef;
                 - [Tabla de decision](#c7a1a3)
                 - [Transición de estados](#c7a1a4)
     - [Notas clase 7](#c7s)
+- [C8 - Implementacion y ejecucion de la prueba](#c8)
+    - [Implementacion de la prueba](#c8a)
+        - [Ejecucion de la prueba / creacion de suites](#c8a1)
+        - [Pruebas de humo y pruebas de regresión](#c8a2)
+    - [Notas clase 8](#c8s)
+- [C9 - Repaso](#c9)
+3. Análisis y Planificación de la prueba
+- [C10 - Análisis y Planificación de la prueba](#c10)
+- [Pruebas estáticas](#c10a)
+    - [Ventajas](#c10a1)
+    - [Defectos](#c10a2)
+    - [Proceso de revision: Formales / Informales](#c10a3)
+    - [Componentes / Roles / Tipos / Técnicas / Actividades](#c10a4)
+    - [Requisitos](#c10a5)
+- [Pruebas dinámicas](#c10b)
+4. Planificación de la prueba
+- [C11 - Organización de la prueba](#c11)
+    - [Ambiente](#c11a)
+    - [Niveles de ambientes](#c11b)
+    - [Quiz](#c11c)
+5. Unit Testing
+- [C13 - Introducción al Debugging](#c13)
+    - [Estrategias de debugging](#c13a)
+    - [Debug en Chrome y Visual](#c13b)
+- [C14 - Prueba de componente / Unit test](#c14)
+    - [Ventajas](#c14a)
+    - [Frameworks](#c14b)
+    - [Actividad: Calculadora: suma](#c14c)
+    <!-- HACER -->
+- [C15 - Repaso](#c15)
+- [C16 - Tipo de tecnicas y metodologias de pruebas de componente](#c16)
+    - [Prueba y cobertura](#c16a)
+    - [Test Driven Development (TDD) ](#c16b)
+    - [TDD Vs BDD](#c16c)
+    - [Quiz](#c16d)
+    <!-- HACER -->
+- [C17 - Primer Test Unitario](#c17)
 
 # C1 - Primeros pasos <a id='c1'></a>
 
@@ -443,6 +450,16 @@ Falso
 
 <!-- fin quizz -->
 
+## **Template defectos** <a id='c2t'></a>
+
+
+![img](./img/c2m.png)
+
+> ## 💡 
+> Hecho por Gaby, ver pdf: [template defectos](template-defectos.pdf)
+>
+> Ver [link](https://docs.google.com/spreadsheets/d/1UnMjjygP7jERQ9BdQnYJG5GYvOTO3j1CsIxvTpouzSY/edit#gid=1696566732)
+
 # C3 - Repaso <a id='c3'></a>
 
 > Ver actividad 3
@@ -632,6 +649,18 @@ flowchart LR
 ![Plantilla](./img/c4s1.png)
 
 <!-- fin notas clase 4 vivo -->
+
+## **Template caso de prueba** <a id='c4t'></a>
+
+![img](./img/c4t.png)
+
+> ## 💡 
+> Hecho por Gaby
+> Ver pdf: [CasoDePrueba_template.pdf](CasosDePrueba_template.pdf)
+>
+> Ver [link](https://docs.google.com/spreadsheets/d/1BdumMXYXVu7ft7alaKrAc34vKEX-8rvZwXs7aQn1GWc/edit#gid=601733182)
+>
+> ✅ Ver [template](https://docs.google.com/spreadsheets/d/1r4Rk8S5U1DXQJCn7xgdlsP3yxMCJtcgfDn3oLkQ_sTM/edit#gid=0) para hacer
 
 # C5 - Niveles y tipos prueba <a id='c5'></a>
 
@@ -1653,13 +1682,27 @@ Los datos que estan en una particion de equivalencia tienen el mismo resultado f
 
 vamos a usar estas tecnicas cuando haya **ingreso de datos**; estos datos hay que organizarlos, y esta organizacion va a estar soportada si los datos son numericos o secuenciales por un **analisis de valores limites**.
 Viene se clase de equivalencias entonces tiene la idea de agrupar valores.
-Se harian 3 casos por cada punta. s
+Se harian 3 casos por cada punta.
+Es hija de la técnica de partición equivalente. Se aplica solamente cuando la partición está ordenada, los datos son de tipo numérico y secuenciales.
 
 > ## 💡 Ejemplo: 
 > Formularios, desplegables, texto libre, ingresar campos.
 >
 > 1. Limites de horarios
 > 2. cantidad de caracteres.
+> 
+> ## Ejemplo practico
+> 
+> Identificar valores límites mínimo y máximo. Se pueden utilizar 2 o 3 valores límites.
+> Ejemplo: si debemos ingresar una edad y según los requerimientos:
+>* De 18 a 65 años: ""Bienvenido a Tinder"".
+> Hago un caso de prueba para 17 años que tendrá como resultado esperado: ""Es muy chiquito, fuera de Tinder"".
+> Hago un caso de prueba para 18 años que tendrá como resultado esperado: ""Bienvenido a Tinder"".
+> Hago un caso de prueba para 65 años que tendrá como resultado esperado: ""Bienvenido a Tinder"".
+> Hago un caso de prueba para 66 años que tendrá como resultado esperado: ""Se le fue el tren, fuera de Tinder"".
+>Casos de prueba de 17 y 66 son dos casos diferentes porque el flujo es distinto (distinto mensaje a mostrar).
+> Casos de prueba de 19 y 64 años: opcionales.
+
 
 ### ✅ Tablas de decision
 
@@ -1729,47 +1772,20 @@ Es lo que hace a ese momento de implementacion que estamos llevando a cabo
  
 > Ver pdf: Ejercitación.pdf
 
+> ## 💡 
+>"Los siguientes casos de prueba se escriben posteriormente a aplicar las ""recetas"" de las técnicas de prueba de caja negra.
+>1. TÉCNICA DE PARTICIÓN DE EQUIVALENCIA.
+>Separo dos grupos/bolsas: 
+>* Partición de equivalencia válida: contiene valores que son aceptados por el componente o sistema. Se puede dividir en subparticiones.
+>* Partición de equivalencia NO válida: contiene valores que son rechazados por el componente o sistema. Se puede dividir en subparticiones.
+>Escribo un caso de prueba para cada subpartición. Cada subpartición me lleva a un flujo DIFERENTE."				
 
+## Template Particion de equivalencias
 
-# C10 - Análisis y Planificación de la prueba <a id='c10'></a>
-
-## Pruebas estáticas y dinámicas <a id='c10a'></a>
-
-Las pruebas son una combinación de múltiples actividades del ciclo de vida del software relacionadas con la planificación, el diseño y la evaluación del producto de software, con el objetivo de encontrar los defectos y determinar si el software cumple o no con los requisitos especificados.
-
-Es por ello que en este módulo continuaremos desarrollando otros tipos de pruebas: las pruebas estáticas y las pruebas dinámicas. Estas se complementan entre sí y nos permiten entregar un software con la mejor calidad posible.
-
-> Ver pdf: Pruebas estáticas y dinámicas.pdf
-
-Las pruebas estáticas y dinámicas tienen el objetivo de proporcionar una evaluación de calidad de los productos de trabajo e identificar defectos en forma temprana.
+![img](./img/c9t.png)
 
 
 
-## Pruebas estáticas <a id='c10a1'></a>
-
-> TODO LO QUE ES PAPALEEO, NO TIENE NADA QUE VER CON EL SISTEMA, DIAGRAMAS, ARQUITECTURA, CALENDARIO, PROYECTO, REQUISITOS, HISTORIAS DE USUARIO, NORMATIVAS.
-
-**Conceptos básicos de la prueba estática**
-
-La prueba estática se basa en la evaluación manual de los productos de trabajo  (es  decir,revisiones)  o  en  la  evaluación  basada  en  herramientas del  código  u  otros  productos  de  trabajo  (es  decir,análisis  estático).  Este tipo  de  pruebas  no  requieren  la  ejecución  del  software  que  se  está probando.
-
-Se utilizan este tipo de pruebas para examinar cualquier producto de trabajo, como por ejemplo:
-- Especificaciones, requisitos de negocio, funcionales y de seguridad.
-- Épicas, historias de usuarios y criterios de aceptación.
-- Especificaciones de arquitectura y diseño.
-- Código.
-- Productos de prueba: planes, casos, procedimientos y guiones de prueba.
-- Manuales de usuario.
-- Contratos, planes de proyecto, calendarios y presupuestos.
-
-### Ventajas de las pruebas estáticas tempranas <a id='c10a2'></a>
-
-Cuando se aplica al principio del ciclo de vida del desarrollo del software, la prueba estática permite la detección temprana de defectos. Esto genera una reducción de costos y tiempo de desarrollo y prueba.Por el contrario, si el defecto se encuentra luego de las pruebas dinámicas, solucionarlo va a requerir el cambio de código, realizar una prueba de confirmación y luego incluir el mismo en pruebas de regresión, además de los cambios de toda la documentación asociada.
-
-### Defectos encontrados con pruebas estáticas <a id='c10a3'></a>
-
-Algunos de los defectos encontrados con pruebas estáticas que son más fáciles y económicos de detectar y corregir son:
-- Defectos en los requisitos (inconsistencias, ambigüedades, etc.).●Defectos de diseño (estructura de base de datos ineficiente, alto acoplamiento, etc.).●Defectos de codificación (variables con valores no definidos, código inalcanzable o duplicado, etc.).●Desviaciones con respecto a estándares (falta de uso de estándares de codificación).
 
 ## Kahoot
 - Cual de estos no es principio de testing:
@@ -1804,4 +1820,1012 @@ caja negra
 > En el documento de requerimientos deberíamos buscar el requisito que mencione: "el campo de password (contraseña) y confirm password (confirmar contraseña) deben ser iguales y tener una extensión entre 6 y 12 caracteres alfanuméricos" **PROCESO DE REVISIÓN FORMAL**
 
 
+# C10 - Análisis y Planificación de la prueba <a id='c10'></a>
 
+> #### 📑
+> pdf: Pruebas estáticas y dinámicas
+
+Las pruebas son una combinación de múltiples actividades del ciclo de vida del software relacionadas con la planificación, el diseño y la evaluación del producto de software, con el objetivo de encontrar los defectos y determinar si el software cumple o no con los requisitos especificados.
+
+Es por ello que en este módulo continuaremos desarrollando otros tipos de pruebas: las pruebas estáticas y las pruebas dinámicas. Estas se complementan entre sí y nos permiten entregar un software con la mejor calidad posible.
+
+> Ver pdf: Pruebas estáticas y dinámicas.pdf
+
+Las pruebas estáticas y dinámicas tienen el objetivo de proporcionar una evaluación de calidad de los productos de trabajo e identificar defectos en forma temprana.
+
+## Pruebas estáticas <a id='c10a'></a>
+
+> TODO LO QUE ES PAPALEEO, NO TIENE NADA QUE VER CON EL SISTEMA, DIAGRAMAS, ARQUITECTURA, CALENDARIO, PROYECTO, REQUISITOS, HISTORIAS DE USUARIO, NORMATIVAS.
+
+### Conceptos básicos
+
+La prueba estática se basa en la evaluación manual de los productos de trabajo  (es  decir,revisiones)  o  en  la  evaluación  basada  en  herramientas del  código  u  otros  productos  de  trabajo  (es  decir,análisis  estático).  Este tipo  de  pruebas  no  requieren  la  ejecución  del  software  que  se  está probando.
+
+Se utilizan este tipo de pruebas para examinar cualquier producto de trabajo, como por ejemplo:
+- Especificaciones, requisitos de negocio, funcionales y de seguridad.
+- Épicas, historias de usuarios y criterios de aceptación.
+- Especificaciones de arquitectura y diseño.
+- Código.
+- Productos de prueba: planes, casos, procedimientos y guiones de prueba.
+- Manuales de usuario.
+- Contratos, planes de proyecto, calendarios y presupuestos.
+
+> ### 💡
+>  Una forma de detectar errores es mediante un proceso de revisión.
+
+
+### Ventajas de las pruebas estáticas tempranas <a id='c10a1'></a>
+
+Cuando se aplica al principio del ciclo de vida del desarrollo del software, la prueba estática permite la detección temprana de defectos. Esto genera una reducción de costos y tiempo de desarrollo y prueba.Por el contrario, si el defecto se encuentra luego de las pruebas dinámicas, solucionarlo va a requerir el cambio de código, realizar una prueba de confirmación y luego incluir el mismo en pruebas de regresión, además de los cambios de toda la documentación asociada.
+
+### Defectos encontrados con pruebas estáticas <a id='c10a2'></a>
+
+Algunos de los defectos encontrados con pruebas estáticas que son más fáciles y económicos de detectar y corregir son:
+- Defectos en los requisitos (inconsistencias, ambigüedades, etc.).
+- Defectos de diseño (estructura de base de datos ineficiente, alto acoplamiento, etc.).
+- Defectos de codificación (variables con valores no definidos, código inalcanzable o duplicado, etc.).
+- Desviaciones con respecto a estándares (falta de uso de estándares de codificación).
+- Especificaciones de interfaz incorrectas (unidades de medida diferente, etc.).
+- Vulnerabilidades de seguridad (susceptibilidad a desbordamiento de la memoria intermedia).
+- Diferencias o inexactitudes en la trazabilidad o cobertura de la base de prueba (falta de pruebas para un criterio de aceptación).
+- Defectos de mantenibilidad (mala reutilización de componentes, modularización inadecuada, etc.).
+
+### Proceso de revisión <a id='c10a3'></a>
+
+Dentro de las pruebas estáticas, una forma de detectar errores es mediante un proceso de revisión.
+
+✅ Consisten en examinar cuidadosamente un producto de trabajo con el principal objetivo de encontrar y remover errores. 
+
+✅ Pueden ser realizadas por una o más personas.
+
+Las revisiones pueden ser:
+
+#### Revisiones Informales: 
+
+✅ No siguen un proceso definido y 
+
+✅ No son documentadas formalmente.
+
+El grado de formalidad del proceso de revisión está relacionado con **factores**, como:
+
+- El modelo del ciclo de vida del desarrollo del software, 
+- la madurez del proceso de desarrollo, 
+- la complejidad del producto del trabajo que se debe revisar, 
+- cualquier requisito legal y/o la necesidad de un rastro de auditoría.
+
+#### Revisiones formales: 
+
+✅ Tienen roles definidos, 
+
+✅ Siguen un proceso establecido y 
+
+✅ Deben ser documentadas.
+
+##### Componentes / Roles / Tipos / Tecnicas / Actividades de las revisiones formales <a id='c10a4'></a>
+
+[Link: Proceso de revision](https://view.genial.ly/614a81d7b722240db9594d88)
+
+![img](./img/c10a.png)
+
+### Requisitos <a id='c10a5'></a>
+
+Una de las revisiones que se realizan en las pruebas estáticas es examinar los requisitos del software. Pero ¿sabemos qué son los requisitos? ¿Qué tipos de requisitos existen?
+
+Un requisito define las funciones, capacidades o atributos intrínsecos de un sistema de software, es decir, describe cómo debe comportarse un sistema. Para decir que un sistema tiene calidad deben cumplirse los requisitos funcionales y no funcionales.
+
+#### Requisitos funcionales
+
+Definen lo que un sistema permite hacer desde el punto de vista del usuario. Estos requisitos deben estar especificados de manera explícita. Por ejemplo: “El campo de monto acepta únicamente valores numéricos con dos decimales” (pruebas funcionales y de sistema).
+
+#### Requisitos no funcionales
+
+Definen condiciones de funcionamiento del sistema en el ambiente operacional. Ejemplos:
+
+**Requisito de usabilidad:**
+
+La usabilidad se define como el esfuerzo que necesita hacer un usuario para aprender, usar, ingresar datos e interpretar los resultados obtenidos de un software de aplicación (pruebas de usabilidad).
+
+**Requisito de eficiencia:** 
+
+Relacionado con el desempeño en cuanto al tiempo de respuesta, número de operaciones por segundo, entre otras mediciones; así como consumo de recursos de memoria, procesador y espacio en disco o red (pruebas de rendimiento, pruebas de carga, estrés y escalabilidad, pruebas de gestión de la memoria, compatibilidad e interoperabilidad).
+
+**Requisito de disponibilidad:** 
+
+Disposición del sistema para prestar un servicio correctamente (pruebas de disponibilidad).
+
+**Requisito de confiabilidad:** 
+
+Continuidad del servicio prestado por el sistema (pruebas de seguridad).
+
+**Requisito de integridad:** 
+
+Ausencia de alteraciones inadecuadas al sistema (pruebas de seguridad, pruebas de integridad).
+
+**Requisito de mantenibilidad:** 
+
+Posibilidad de realizar modificaciones o reparaciones a un proceso sin afectar la continuidad del servicio (pruebas de mantenimiento y de regresión).
+
+
+## Pruebas dinámicas
+
+### Conceptos basicos
+
+✅ Requieren la ejecución del software, componente o sistema.
+
+✅ Se complementan con las pruebas estáticas debido a que encuentra diferentes tipos de defectos. 
+
+✅ Para la generación de casos de prueba se utilizan diferentes técnicas de caja negra, caja blanca o basadas en la experiencia de usuario.
+
+✅ Durante las pruebas dinámicas se ejecuta el software utilizando un conjunto de valores de entrada y su resultado se analiza y 
+compara con el resultado esperado.
+
+### 💡
+
+Las fallas más comunes encontradas con este tipo de pruebas son:
+
+- Fallas de funcionalidad.
+- Fallas de interacción entre módulos.
+- Fallas de rendimiento y seguridad.
+
+## Pruebas estaticas vs Pruebas dinamicas
+
+Prueba estática | Prueba dinámica
+------- | -------
+Se basa en la evaluación manual mediante revisiones y análisis estático | Requieren la ejecución del software, componente o sistema
+Detecta los defectos en productos de trabajo. | Detecta los defectos y fallas cuando se ejecuta el software.
+Se centra en mejorar la consistencia y la calidad de los productos de trabajo.| Se centra en los comportamientos visibles desde el exterior. 
+El costo de solucionar un defecto es menor | El costo de solucionar un defecto es mayor.
+
+
+> #### 📑
+> pdf: Practica-Pruebas Estáticas y Dinámicas
+> pdf: Practica sincronica
+
+# C11 - Organización de la prueba <a id='c11'></a>
+
+> #### 📑
+> pdf: Entornos de Prueba - Tipos de Prueba
+
+No podemos hacer los cambios directamente sobre el ambiente en el que el cliente está utilizando el software, porque podríamos romperlo y dejarlo inoperativo. 
+
+Es por eso que deben existir diferentes ambientes de trabajo, donde se pueda desarrollar y probar los cambios antes de que llegue al ambiente del cliente.
+
+✅ Entendemos como ambiente de trabajo al entorno con todos los recursos necesarios para que se pueda ejecutar un sistema.
+
+## Ambiente <a id='c11a'></a>
+
+La ejecución de las pruebas se realizan en diferentes espacios de trabajo de acuerdo a la etapa del ciclo de desarrollo en el que se encuentre el sistema en construcción o mantenimiento. 
+
+Estos entornos son conocidos como ambientes. 
+
+✅ Hacen referencia a un servidor con ciertos recursos asignados, software y librerías instalados, su propia base de datos y una configuración determinada.
+
+✅ Esto nos permitiría desarrollar aplicaciones de forma segura y con entornos diferenciados para realizar la programación, realizar pruebas, compartir resultados con los clientes y permitirles realizar pruebas y prácticas; y finalmente publicar una aplicación robusta y estable.
+
+### Niveles de ambientes <a id='c11b'></a>
+
+Es conveniente distinguir los siguientes entornos:
+
+![img](./img/c11.png)
+
+#### a) Ambiente de desarrollo o DEV :
+
+✅ El programador desarrolla el código de la aplicación, realiza pruebas iniciales y comprueba si la aplicación se ejecuta correctamente con ese código. 
+
+✅ Este ambiente puede ser local o en la nube, de acuerdo a la necesidad del proyecto.
+
+**Pruebas  unitarias  o  de  componente:** 
+
+- También se conocen como pruebas de módulo. 
+- Se centra en los componentes que se  pueden  probar  por  separado.  
+- Tiene  como  objetivo encontrar  defectos  en  el  componente  y  verificar  que  los comportamientos  funcionales  y  no  funcionales  del componente son los diseñados  y especificados.
+
+**Pruebas de Integración:** 
+
+- Se centra en las interacciones entre componentes  o  sistemas.  
+- Los  objetivos  de  la  prueba  de integración  incluyen  encontrar  defectos  en  las  propias interfaces o dentro de los componentes o sistemas y verificar que los comportamientos funcionales y no funcionales de las interfaces sean los diseñados y especificados.
+
+#### b) Ambiente de pruebas o QA : 
+
+✅ Suele estar ubicado en un servidor en la nube o en una granja de servidores locales (laboratorio). 
+
+✅ Permite minimizar incidencias en etapas posteriores, ya que <r>el tester ejecutaría las primeras pruebas de funcionalidad en este ambiente</r>.
+
+**Pruebas funcionales:**  
+
+- Incluye  pruebas  que  evalúan  las funciones  que  el  sistema  debe  realizar.  
+- Los  requisitos funcionales  pueden  estar  descritos  en  productos  de  trabajo tales como especificaciones de  requisitos de negocio, épicas, historias  de  usuario,  casos  de  uso  y  especificaciones funcionales. 
+- También pueden  estar sin documentar.
+
+**Pruebas de casos de uso:**  
+
+- Proporcionan  pruebas transaccionales, basadas en escenarios, que deberían emular el uso del sistema.
+
+**Pruebas  de  exactitud:**  
+
+- Comprenden  el  cumplimiento  por parte  de  la  aplicación  de  los  requisitos  especificados  o implícitos y
+- También puede abarcar la exactitud de cálculo
+
+**Pruebas  de  adecuación:**    
+
+- Implican  evaluar  y  validar  la eficiencia de un conjunto de funciones para la consecución de las  tareas  especificadas  previstas.  
+- Estas  pruebas  pueden basarse en casos de uso.
+
+**Pruebas  de  sistema:**  
+
+- Se centra en el comportamiento y las capacidades  de  todo  un  sistema  o  producto, a menudo teniendo  en  cuenta  las  tareas  extremo  a  extremo  que  el sistema puede realizar y los  comportamientos no funcionales que exhibe mientras realiza esas tareas
+
+**Pruebas  de  regresión:**  
+
+- Implican  la realización  de  pruebas para  detectar  efectos  secundarios  no  deseados,  luego  de cambios hechos en una parte del código que puedan afectar accidentalmente  el  comportamiento  de  otras  partes  del código.
+
+**Pruebas  de  confirmación:**  
+
+- Consiste en volver a ejecutar los pasos  para  reproducir  el  fallo  o  los  fallos  causados  por  un defecto en la nueva versión de software, una vez corregido el defecto,  para  así  confirmar  que  el  defecto  original  se  ha solucionado satisfactoriamente o detectar efectos secundarios no deseados
+
+**Pruebas de cordura:** 
+
+- Es una prueba de regresión acotada que se  centra  en  una  o  unas  pocas  áreas  de  funcionalidad.  
+- Se utiliza para determinar si una pequeña sección de la aplicación sigue funcionando después de un cambio menor.
+
+**Pruebas  de  humo:**  
+
+- Se lleva a  cabo  un smoke test para asegurar si  las  funciones  más  importantes  de  un  programa están trabajando correctamente, pero sin molestarse con los detalles más finos
+
+#### c) Ambiente de UAT: 
+
+✅ El entorno de UAT (o de pruebas de aceptación de usuario) permite a los usuarios del cliente poder verificar que los cambios realizados son los que realmente se solicitaron, evaluando a su vez accesibilidad y usabilidad.
+
+**Pruebas  de  aceptación:** 
+- Se  centra  normalmente  en  el comportamiento  y  las  capacidades  de  todo  un  sistema  o producto. 
+- Además, pueden producir información para evaluar el grado de preparación del sistema para su despliegue y uso por parte del cliente (usuario final).
+
+**Pruebas  exploratorias:**  
+- Se  diseñan,  ejecutan,  registran  y evalúan  de  forma  dinámica  pruebas  informales  (no predefinidas) durante la ejecución de la prueba. 
+- Los resultados de la prueba se utilizan con el objetivo de aprender más sobre el componente o sistema y crear pruebas para las áreas que pueden necesitar ser probadas con mayor intensidad.
+
+**Pruebas  de  usabilidad:**  
+- Evalúan  la  facilidad  con  la  que  los usuarios pueden utilizar o aprender a utilizar el sistema para lograr un objetivo específico en un contexto dado.
+
+**Pruebas  de  accesibilidad:** 
+
+- Incluyen y evalúan la accesibilidad que  presenta  un  software  para  aquellos  con  necesidades particulares o restricciones para su uso. 
+- Esto incluye a aquellos usuarios con discapacidades.
+
+#### d) Ambiente de preproducción o STAGE :
+
+✅ Este entorno debería poseer una configuración técnica idéntica a la que nos encontraremos en el entorno de producción. 
+
+✅ El propósito principal de este entorno es emular al entorno de producción con el fin de probar las actualizaciones y asegurar que estas no corromperán la aplicación en los servidores en producción cuando sean desplegadas. 
+
+✅ De esta forma se minimizan las caídas del sistema y corte de los servicios en producción.
+
+**Pruebas  de  mantenimiento:** 
+
+- Se centra en probar los cambios en el sistema,  así  como  en  probar  las  piezas  no  modificadas  que  podrían haberse visto afectadas por los cambios. - - El mantenimiento puede incluir lanzamientos planificados y no planificados.
+
+**Pruebas  de  seguridad:** 
+
+-  Las  pruebas  de  seguridad  se  podrían  definir como el conjunto de actividades que se llevan a cabo para encontrar fallas y vulnerabilidades en el sistema, buscando disminuir el impacto de ataques y pérdida de información importante.
+
+**Pruebas  de  rendimiento:** 
+
+- Se implementan y se ejecutan para evaluar las  características  relacionadas  con  el  rendimiento  del  destino  de  la prueba, como los perfiles de tiempo, el flujo de ejecución, los tiempos de respuesta  y  la  fiabilidad  y  los  límites  operativos.  
+- También  se  pueden realizar en STG
+
+**Pruebas  de  carga,  estrés  y  escalabilidad:** 
+
+- Una  prueba  de  carga garantiza  que  un  sistema  pueda  controlar  un  volumen  de  tráfico esperado. 
+- Una prueba de estrés  es en la que se somete al sistema a condiciones  de  uso  extremas  para  garantizar  su  robustez  y confiabilidad. 
+- Las pruebas de escalabilidad garantizan la escalabilidad de un sistema, es decir, que pueda soportar el incremento de demanda en  la  operación.  
+- También  se  pueden  realizar  en  QA  encontrando  el correspondiente escalar con respecto a un ambiente de PROD.
+
+**Pruebas de infraestructura:** 
+
+- Incluyen todos los sistemas informáticos internos, los dispositivos externos asociados, las redes de Internet, la nube y las pruebas de virtualización.
+
+**Pruebas de gestión de la memoria:** 
+
+- Evalúan el estado y la integridad de la memoria del sistema para identificar problemas potenciales.
+
+**Pruebas  de  compatibilidad:** 
+
+- Incluyen  las  pruebas  para  comprobar que el sistema es compatible con todos los navegadores de Internet y todos los sistemas operativos del mercado. 
+
+**Pruebas  de  interoperabilidad:** 
+
+- Se  refieren  a  aquellas  donde  se realiza  la  evaluación  de  la  correcta  integración  entre  distintos aplicativos,  sistemas,  servicios  o  procesos  que  conforman  una plataforma o solución tecnológica.
+
+**Pruebas  de  migración  de  datos:** 
+
+- Incluyen las pruebas realizadas al transferir  datos  entre  tipos  de  dispositivos  de  almacenamiento, formatos o sistemas de cómputo.
+
+#### e) Ambiente de producción o PROD :
+
+✅ Este es el entorno donde finalmente se ejecuta la aplicación, donde acceden los usuarios finales y donde se trabaja con los datos reales de negocio. 
+
+✅ Es un servidor que posee las mismas características y configuración que tendrá el servidor de preproducción. Aunque, en este caso, puede estar configurado por más de un servidor, para efectos de balanceo de carga en aplicaciones que requieren una infraestructura con capacidad de manejar un tráfico de usuarios pesado y miles de conexiones concurrentes.
+
+> ### 💡
+> En general, los probadores no tienen acceso a este ambiente.
+> En el caso de tener acceso y realizar pruebas:
+> - No se deben realizar acciones que generen datos.
+> - Se corre el riesgo de ingresar datos basura.
+> - Se interfiere en los datos de seguimiento
+
+### 📝 Quiz! <a id='c11c'></a>
+
+[Ejercitacion: Ambientes](https://view.genial.ly/614c59bb6cd3ef0daf36b5a3)
+
+![img](./img/c11a.png)
+
+> #### 📑
+> pdf: Ejercitacion mesas
+
+# C13 - Introducción al Debugging <a id='c13'></a>
+
+> #### 🎬
+> Video: Debugging
+
+> #### 📑
+> pdf: Debugging
+
+
+Llamamos debuggear o depurar al proceso de encontrar, analizar y remover las causas de fallos en el software. 
+
+Se realiza la ejecución paso a paso de cada instrucción del programa para analizar las variables y sus valores.
+
+✅ Este implica buscar los errores cometidos en el código fuente para poder corregirlos.
+
+Los entornos de desarrollo integrados (IDEs), proporcionan la manera de capturar errores especificos que son tipicos de lenguajes, sin requerir compilacion, 
+
+✅ Cuentan con variedad de compiladores con depuracion
+
+✅ Ayudas dinamicas para la depuracion
+
+✅ Generadores automaticos de casos de pruebas
+
+✅ Herramientas de correlacion de referencias cruzadas
+
+> ### 💡 Breakpoint
+> Un breakpoint es un punto de interrupción en nuestro código para detener la ejecución del programa en líneas específicas y analizar la situación del mismo, revisando por ejemplo el estado de las variables o de la pila de llamadas en ese momento.
+
+## Debug
+
+Se puede realizar el debug de una aplicación utilizando:
+
+✅ Las herramientas del desarrollador desde la consola del navegador, ej: Chrome 
+Dev Tools, Firefox Dev Tools
+
+✅ La opción Debug dentro del framework o IDE utilizado para el desarrollo, ej: 
+Visual Code, Visual Studio
+
+
+## Estrategias de debugging <a id='c13a'></a>
+
+Comparten el mismo enfoque, ya que se complementan con las herramientas de depuracion que proporciona un soporte semiautomatizado al desarrollador
+
+### Por fuerza bruta 
+
+- La mas comun
+- La menos eficiente
+- se invocan seniales con tiempo de ejecucion y se carga el programa con ejecuciones de salida; se dejan pistas a la causa del error; significa ir dejando pequenos mensajes por ej: `console.log()` con mensajes de lo que esperariamos en la salida
+
+### Backtracking
+
+- De uso comun en pequenios programas 
+- Empieza en el sitio donde se descubre un sintoma
+- Se recorre el codigo manualmente hacia atras hasta llegar a la causa
+
+### Eliminacion de causas
+
+- Los datos relacionados con el error se organizan para aislar la causa posible
+- Se elabora una hipotesis de una causa
+- Se usan los datos ya mencionados para probar dicha hipotesis
+
+## Debug en Chrome <a id='c13bbbb'></a>
+
+1. Ir a la pestaña “Sources”, que cuenta con 3 partes:
+    1. Navegador de archivos
+    2. Editor de código
+    3. El depurador de Javascript
+2. Marcar el breakpoint en la línea de código correspondiente, haciendo clic en el número de la misma
+3. Comenzando con alguna función se inicializa el modo debug, por ejemplo un click en un botón, luego se puede presionar F11 para recorrer linea por linea y F8 para recorrer de un breakpoint a otro
+
+### Controles
+
+![img](./img/c13a.png)
+
+## Debud en Visual
+
+1. Colocar un breakpoint en la línea de código requerida
+2. Iniciar el Debug, haciendo clic en F5 o ingresando en Ejecutar(Run) -> Start Debugging
+
+## Debugging vs Testing
+
+![img](./img/c13b.png)
+
+> #### 📑
+> pdf: Ejercicio de Debugging
+>
+> pdf: Ejercitacion mesas
+
+# C14 - Introduccion a la Prueba de componente o prueba unitaria (unit test) <a id='c14'></a>
+
+> #### 📑
+> pdf: Intro a Unit Testing
+
+El objetivo principal es aislar cada unidad del sistema para identificar, analizar y corregir los defectos
+
+✅ Es la prueba de los componentes individuales de software. 
+
+✅ Son pequeños test creados específicamente para cubrir todos los requisitos del código y verificar sus resultados. 
+
+✅ Para generar estos test se utilizan técnicas de caja blanca.
+
+✅ Son generalmente pruebas automatizadas escritas y ejecutadas por desarrolladores de software para garantizar que una sección de una aplicación —conocida como la "unidad"— cumpla con su diseño y se comporte según lo previsto.
+
+## Partes creacion de unit test
+
+El proceso general para la creación de estos unit test consta de tres partes:
+
+1. **Acuerdo o criterio de aceptación:** donde se definen los requisitos que debe cumplir el código principal.
+
+2. **Escritura del test:** el proceso de creación, donde se acumulan los resultados a analizar.
+
+3. **Confirmación:** se considera el momento en que comprobamos si los resultados agrupados son correctos o incorrectos. Dependiendo del resultado, se valida y continúa, o se repara, de forma que el error desaparezca (debug).
+
+La prueba de componente, a menudo, se realiza de forma aislada del resto del sistema, dependiendo del  modelo de ciclo de vida de desarrollo de software y del sistema,  lo  que  puede  requerir  objetos  simulados, virtualización  de  servicios, arneses, stubs y controladores. 
+
+Este tipo de pruebas puede cubrir:
+
+1. **La  funcionalidad:** por ejemplo, la exactitud de los cálculos.
+2. **Las características no funcionales:** por ejemplo, la  búsqueda de fugas de memoria
+3. **Las propiedades estructurales:** por ejemplo, pruebas de decisión.
+
+## Proceso
+
+1. Se crea el código del software.
+2. Se definen los resultados esperados.
+3. Se ejecuta el test.
+    - Si el test pasa, se confirma el resultado esperado.
+    - Si el test falla, se modifica el código para solucionar el defecto encontrado
+
+> ### 💡
+> Lo ideal es automatizar los test para poder simplificar el proceso de prueba
+
+![img](./img/c14a.png)
+
+## Ventajas <a id='c14a'></a>
+
+Estas son algunas de las ventajas de realizar pruebas de componente o unit test dentro de un proyecto:
+
+✅ Reduce el costo de las pruebas, ya que los defectos se capturan en una fase temprana.
+
+✅ Mejora el diseño y código del software debido a que permite una mejor refactorización del mismo.
+
+✅ Reduce los defectos en las funciones recientemente desarrolladas o reduce los errores al cambiar la funcionalidad existente.
+
+✅ En modelos de desarrollo incrementales e iterativos donde los cambios de código son continuos, la prueba de regresión de componente automatizada juega un papel clave en la construcción de la confianza en que los cambios no han dañado a los componentes existentes.
+
+> ### 💡
+> Las pruebas unitarias inapropiadas harán que los defectos se propaguen hacia pruebas de nivel superior y esto conducirá a un alto costo de reparación de  defectos durante las pruebas del sistema, las  pruebas de integración e incluso las pruebas de aceptación de usuario. Si se realizan las pruebas unitarias adecuadas en el desarrollo inicial, al final se ahorra esfuerzo, tiempo y  dinero.
+
+### Unidad
+
+Una unidad puede ser casi cualquier parte del código que queremos que sea: una línea de código, un método o una clase. 
+
+En general, cuanto más pequeño, mejor. 
+
+✅ Las pruebas más pequeñas brindan una vista mucho más granular de cómo se está desempeñando el código. 
+
+✅ También existe el aspecto práctico de que cuando se prueban unidades muy pequeñas, se pueden ejecutar rápidamente.
+
+## Frameworks <a id='c14b'></a>
+
+Es una herramienta que proporciona un entorno para la prueba de unidades o componentes en el que un componente se puede probar de forma aislada o con adecuados stubs y drivers. 
+También proporciona otro soporte para el desarrollador, como la capacidad de depuración.
+
+> ### 💡
+> Por ejemplo, para realizar la prueba de componente de código realizado en JavaScript se puede crear un framework basado en las siguientes herramientas:
+>`Mocha` <https://mochajs.org/api/index.html>
+>`Chai` <https://www.chaijs.com/guide/>
+
+Las pruebas unitarias pueden ser de dos tipos:
+
+### Manuales
+
+Se puede emplear un documento instructivo paso a paso
+
+### Automatizadas
+
+Se necesita de un framework automatizado para escribir los scripts de prueba.
+
+**Para automatiazr los unit test se necesita:**
+
+#### Test Runner
+
+Es una herramienta que ejecuta los test y muestra los resultados en forma de reporte.
+
+**Por ejemplo:** Mocha <https://mochajs.org/>
+
+#### Assertion Library
+
+Es una herramienta que se utiliza para validar la lógica de prueba, las condiciones y resultados esperados.
+
+**Por ejemplo:** Chai(https://www.chaijs.com/guide/)
+
+> ### 💡
+> JEST es un framework que incluye tanto el test runner como la assertion library
+
+### Frameworks mas utilizados
+
+#### Junit: 
+
+Herramienta de prueba de uso gratuito que se utiliza para el lenguaje de programación Java. Proporciona afirmaciones para identificar el método de prueba. Esta herramienta prueba los datos primero y luego los inserta en el fragmento de código.
+
+#### NUnit: 
+
+Es un marco de trabajo de pruebas unitarias ampliamente utilizado para  todos  los  lenguajes  .net.  Es  una  herramienta  de  código abierto  y admite pruebas basadas en datos que pueden ejecutarse en paralelo.
+
+#### JMockit: 
+
+Es una herramienta de prueba unitaria de código abierto. Es una herramienta de cobertura de código con métricas de sentencia y decisión. Permite hacer mocks de API con sintaxis de grabación y verificación. Esta herramienta  ofrece  cobertura  de  sentencia,  cobertura  de decisión  y cobertura de datos.
+
+#### EMMA : 
+
+Es un conjunto de herramientas de código abierto para analizar y reportar código escrito en lenguaje Java. Emma admite tipos de cobertura como método, sentencia, bloque básico. Está basado en Java, por lo que no tiene dependencias de bibliotecas externas y puede acceder al código fuente.
+
+#### PHPUnit:  
+
+Es  una  herramienta  de  prueba  unitaria  para programadores PHP. Toma pequeñas porciones de código que se denominan unidades y prueba cada una de ellas por separado. La herramienta también permite a los desarrolladores usar métodos de  confirmación  predefinidos  para  afirmar  que  un  sistema  se comporta de cierta manera.
+
+#### Jest:
+
+Framework para JavaScript <https://jestjs.io/>
+
+> #### 🎬
+> Video: Creando el primer Unit Test
+
+> ### [📌Actividad: Calculadora: suma](./Actividades/p1-calculadora.md) <a id='c14c'></a>
+
+# C15 - Repaso
+
+> #### 📑
+> pdf: Ejercitación mesas
+
+# C16 - Tipo de tecnicas y metodologias de pruebas de componente <a id='c16'></a>
+
+## Técnicas de prueba de caja blanca
+
+✅ También conocidas como pruebas estructurales, se basan en la estructura interna del objeto de prueba, es decir, que está fuertemente ligado al código fuente.
+
+✅ Estas técnicas se pueden utilizar en todos los niveles de prueba.
+
+✅ Cuando se crean casos de prueba con este tipo de técnicas es aconsejable utilizar también las técnicas de caja negra como partición de equivalencia y análisis de valores límites. De este modo se conseguirán datos de prueba que maximicen la cobertura de prueba.
+
+**Las siguientes técnicas se utilizan con mayor frecuencia en el nivel de prueba de componentes.**
+
+### Prueba y cobertura de sentencia <a id='c16a'></a>
+
+✅ Nos referimos al porcentaje de sentencias ejecutables que han sido practicadas por un juego de pruebas. 
+
+✅ Se escriben casos de prueba suficientes para que cada sentencia en el programa se ejecute (al menos) una vez.
+
+✅ Ejercita las sentencias ejecutables en el código.
+
+✅ Expone código que nunca se ejecuta o que se encuentra bajo condiciones imposibles.
+
+Cuando se logra una cobertura del 100% de sentencia, se asegura de que todas las sentencias ejecutables del código se han probado al menos una vez, <r>pero no asegura de que se haya probado toda la lógica de decisión</r>. 
+
+> ### 💡
+> Por lo tanto, la prueba de sentencia puede proporcionar menos cobertura que la prueba de decisión.
+
+La cobertura se mide como:
+
+![img](./img/c16.png)
+
+### Prueba y cobertura de decisión
+
+✅ Es aquella prueba en la que se escriben test cases suficientes para que cada decisión en el programa se ejecute una vez con resultado verdadero y otra con el falso.
+
+✅ Ejercita las decisiones en el código y prueba el código que se ejecuta basado en los resultados de la decisión.
+
+✅ Los casos de prueba siguen los flujos de control que se producen desde un punto de decisión.
+
+✅ En el caso de un `if` se necesitan dos casos de prueba como mínimo, uno para el valor `true` y otro para el `false` de la decisión.
+
+✅ En el caso de un `CASE` se necesitan casos de prueba para todos los resultados posibles, incluido el por defecto.
+
+✅ Ayuda a encontrar defectos en el código que no fueron practicados por otras pruebas ya que se deben recorrer todos los caminos de una decisión.
+
+✅ Cuando se alcanza el 100% de cobertura de decisión, se ejecutan todos los resultados de decisión. Esto incluye probar el resultado verdadero y también el resultado falso, incluso cuando no hay una sentencia falsa explícita.
+
+✅ Lograr una cobertura del 100% de decisión garantiza una cobertura del 100% de sentencia, pero no al revés.
+
+La cobertura se mide como:
+
+![img](./img/c16a.png)
+
+
+
+## Test Driven Development (TDD) <a id='c16b'></a>
+
+Desarrollo guiado por pruebas
+
+Es una forma de desarrollar software donde se desarrollan los casos de prueba, generalmente automatizados, antes de que se desarrolle el software para ejecutar esos casos de prueba.
+
+✅ El desarrollo guiado por pruebas es altamente iterativo y
+
+✅ Se basa en ciclos de desarrollo de casos de prueba automatizados, luego se construyen e integran pequeños fragmentos de código, a continuación, se ejecuta la prueba de componente, se corrige cualquier cuestión y se refactoriza el código. 
+
+✅ Este proceso continúa hasta que el componente ha sido completamente construido y ha pasado toda la prueba de componente.
+
+
+
+Existe una alta probabilidad de que los requisitos del proyecto cambien durante el ciclo del sprint de desarrollo. Para lidiar con esto y construir productos alineados con los requisitos cambiantes del cliente:
+
+- Los equipos necesitan retroalimentación constante para evitar distribuir software inutilizable. Aquí, es el momento en que TDD (test driven development o desarrollo guiado por pruebas) cobra importancia, dado que <r>está diseñado para ofrecer tal retroalimentación desde el momento inicial del proyecto</r>.
+
+TDD es una práctica de desarrollo de software que consiste en:
+
+✅ Escribir —en primer lugar— las pruebas unitarias, 
+
+✅ Luego el código fuente que pase la prueba satisfactoriamente y, por último, 
+
+✅ Refactorizar el código escrito. 
+
+De esta manera, su lógica sigue el camino inverso al desarrollo tradicional, en el que habitualmente se codifica y, luego, se verifica el software.
+
+Este enfoque que TDD propone de “prueba primero”, colabora en mitigar los cuellos de botella críticos que obstruyen la calidad y la entrega del software. 
+
+**Con base en la retroalimentación, corrección de errores y adición de nuevas funciones, el sistema evoluciona para garantizar que todo funcione según lo esperado.** 
+
+>### 👍
+> TDD mejora la colaboración entre los miembros del equipo tanto del desarrollo como de los equipos de control de calidad, así como con el cliente. Además, como las pruebas se crean de antemano, los equipos no necesitan insumir tiempo adicional recreando extensos scripts y suites de prueba.
+
+El método convencional de testing plantea tomar funciones y componentes, analizar sus casos de uso y escribir los tests cubriendo las distintas alternativas encontradas. Contrariamente, TDD propone que lo primero que se debe hacer es escribir los tests y luego codificar el software. 
+
+Veamos a continuación el siguiente esquema ilustrativo:
+
+![img](./img/c16b.png)
+
+> ### 💡
+> TDD propone que lo primero que se debe hacer es escribir los tests y luego codificar el software.
+
+
+## Beneficios TDD
+
+TDD propone pensar y comprender primero el problema en su totalidad, antes de plantear la solución.
+
+✅ Se gana visibilidad al redactar primero los criterios sobre la totalidad del problema a solucionar. Luego procedemos a escribir el código.
+
+✅ Facilita la tarea de resolver un problema a la vez (como plantean los marcos ágiles).
+
+✅ Permite iterar una vez que tenemos un código base funcional.
+
+✅ Libera la “presión” de escribir un código prolijo y performante al primer intento, dado que se prioriza el funcionamiento adecuado y, luego, nos enfocamos en las mejoras que puedan aplicarse.
+
+✅ Ayuda a trabajar en la precisión del código necesario (ni más, ni menos que lo que se requiere).
+
+Finalmente, cabe aclarar que TDD es una metodología muy útil que no es adoptada por todas las empresas en sus proyectos de desarrollo de software. Como consecuencia, las tareas ejecutadas en un proyecto de desarrollo requerirán mayor tiempo y presupuesto para el empleador.
+
+## TDD Vs BDD <a id='c17c'></a>
+
+
+[link](https://view.genial.ly/60dc9504d75ecc0d01ae4e09)
+
+![img](./img/c16c.png)
+
+|                |TDD: Desarrollo guiado por pruebas|BDD: Desarrollo guiado por el comportamiento|
+|----------------|---|---|
+|**Definicion** | Es un proceso de desarrollo de software donde se desarrolla el código guiado por casos de prueba automatizados | Es un proceso de desarrollo de software que permite al desarrollador concentrarse en probar el código basándose en el comportamiento esperado del software.|
+|**Nivel de prueba**| Las pruebas escritas son principalmente de nivel unitario y se centran en el código, aunque también pueden escribirse pruebas a nivel de integración o de sistema | Las pruebas escritas son principalmente de nivel de sistema e integración, aunque también se pueden utilizar para escribir pruebas unitarias.|
+|**Utilidad** | Ayuda a los desarrolladores a concentrarse en resultados esperados claramente definidos. | Ayuda al desarrollador o probador a colaborar con otras partes interesadas para definir pruebas precisas centradas en las necesidades del negocio.|
+|**Redundancia / Retrabajo** | Existe menor redundancia debido a que las pruebas se automatizan y se utilizan en la integración continua.| Existe menor retrabajo debido a que las pruebas suelen ser más fáciles de entender para los demás miembros del equipo y los implicados.|
+|**Calidad**|Mayor calidad en el código desarrollado | Mayor calidad en software debido a que todo el equipo puede entender y colaborar en las pruebas.|
+|**Productividad**|Mayor productividad debido a que hay un menor tiempo de debugging. Menor comunicación debido a que para entender las pruebas se necesita conocer un lenguaje técnico.| Mayor productividad debido a que los casos de prueba se pueden compartir con todas las partes interesadas y los frameworks utilizados generan métricas en forma automática. Mejora la confianza entre los miembros del equipo. Mayor retroalimentación con el cliente.|
+
+
+### Proceso en TDD
+
+El proceso consiste en:
+1. Se añade una prueba que capture el concepto del programador sobre el funcionamiento deseado de un pequeño fragmento de código.
+2. Se ejecuta la prueba, que debería fallar, ya que el código no existe.
+3. Se escribe el código y se ejecuta la prueba en un bucle cerrado hasta que la prueba pase.
+4. Se refactoriza el código después de que la prueba haya sido exitosa, y se vuelve a ejecutar la prueba para asegurarse de que sigue pasando contra el código refactorizado.
+5. Se repite este proceso para el siguiente pequeño fragmento de código, ejecutando las pruebas anteriores así como las pruebas añadidas. | 
+
+### Proceso en BDD
+
+El proceso consiste en:
+1. Se busca un lenguaje común, llamado lenguaje natural, para unir las especificaciones técnicas y los requisitos del cliente / negocio (historias de usuario), generalmente se utiliza Gherkin.
+2. Se definen los criterios de aceptación de cada user story. Pueden utilizarse marcos de desarrollo guiados por el comportamiento (frameworks comoCucumber, Jbehave, Specflow) para definir criterios de aceptación basados en el formato dado - cuando - entonces (Given - When - Then).-Dado un contexto inicial,-cuando se produce un evento,-entonces, se aseguran algunos resultados. 
+3. Se escribe el código del software de acuerdo a los criterios de aceptación estructurados.
+4. Se genera el código para los casos de prueba, es decir, se implementa el comportamiento para cada línea en lenguaje natural.
+5. Se ejecutan los casos de prueba y se refactoriza.|
+
+>### 📝 Quiz! <a id='c16d'></a>
+>
+>**TDD es un proceso de desarrollo de software que permite al desarrollador concentrarse en probar el código basándose en el comportamiento esperado del software.**
+> Falso
+> 
+>**En el caso de tener acceso a la estructura interna de una aplicación y su código, las técnicas de pruebas que podrían aplicarse serían:**
+> Caja Blanca
+> 
+>**Cuando se utiliza la metodología TDD, se desarrolla primero el código de la aplicación y luego los casos de prueba.**
+> Falso
+> 
+>**La prueba de componentes tiene como ventaja:**
+> Reducir costos de las pruebas al detectar defectos de forma temprana., Mejorar la calidad del software en cuanto a diseño y código., Reduce los defectos en las funciones recientemente desarrolladas.
+
+> #### 📑
+> pdf: Ejercitación mesa.
+
+# C17 - Primer Test Unitario <a id='c17'></a>
+
+> #### 📑
+> pdf: Unit Testing - Primer Test
+
+> #### 📑ver
+> pdf: Unit Test - Test coverage.pdf
+
+
+## Cobertura de pruebas con Jest
+
+✅ El test coverage es un valor utilizado como indicador para obtener visibilidad sobre la “robustez” en un proyecto, pero no es garantía de infalibilidad. 
+
+✅ Garantizar un 100% de cobertura de código puede implicar dedicarle tiempo a testear partes del código repetitivas o no vitales y, posiblemente,descuidar otras que necesiten más atención.
+
+✅  Los equipos de desarrollo suelen enfocar sus esfuerzos en las partes centrales de un proyecto y garantizar que ahí haya un porcentaje de cobertura mayor o total.
+
+✅ Si un proyecto ya comenzó sin tests y se decide agregarlos durante el transcurso de este, se suelen poner objetivos de cobertura de código e incrementarlos entre cada sprint.
+
+✅ Otra alternativa es no bajar de cierto porcentaje.
+
+En Jest, el reporte de cobertura de prueba viene integrado con el framework. 
+Simplemente debemos escribir el comando
+
+```
+npm run test:coverage
+```
+
+El paso a paso para obtener el reporte de cobertura y cómo podemos
+mejorar la cobertura de:
+
+● Sentencia (Statements)
+● Decisión (Branches)
+● Funciones (Functions)
+● Líneas (Lines)
+
+1. Configuración de Jest para poder ejecutar el reporte de cobertura
+
+en el `package.json` en el nodo `scripts, despues de `"test": "jest"
+
+```
+"test:coverage": "jest --coverage"
+```
+
+2. Ejecutar el reporte de cobertura
+Esto debemos hacerlo desde la terminal del proyecto con el comando 
+
+```
+npm run test:coverage
+```
+
+se detallan los archivos y una tabla de porcentajes de cobertura que responden a cada parte del código.
+
+Este reporte generado por Jest tiene un beneficio extra: 
+
+>### 👍
+> Automáticamente nos genera un archivo HTML que amplía aún más estos resultados, mostrándonos inclusive qué líneas son las que no se encuentran testeadas. 
+>
+> Este reporte se agrega al proyecto en la carpeta __coverage__ donde se encuentra el archivo index.html que nos permite acceder al reporte desde un navegador web.
+
+3. Revisar el reporte de cobertura
+En el mismo html figuran todos los archivos de código que poseen pruebas relacionadas. Para ver el detalle de la cobertura se puede ingresar haciendo clic en el nombre del archivo.
+En el detalle se puede ver exactamente qué líneas de código tienen cobertura y analizar si es necesario agregar más casos de prueba unitarios para alcanzar una mayor cobertura
+
+4. Agregar más casos de prueba
+En caso de que sea necesario alcanzar una mayor cobertura, se pueden agregar más casos de prueba y luego ejecutar nuevamente el comando  desde la terminal para regenerar el reporte.
+
+```
+npm run test:coverage 
+```
+
+Finalmente se puede volver a analizar el reporte en detalle desde el navegador web y decidir si es necesario mejorar la cobertura.
+
+> #### 📑
+> pdf: Matchers
+
+## Matchers en Jest
+
+Jest usa los matchers para probar los diferentes valores que puede tener el código. 
+
+Vamos a partir de un ejemplo de una porción de código desarrollada que permite realizar las operaciones matemáticas básicas y aplicarle diferentes matchers:
+
+```js
+export const sumar = (a, b) => a + b;
+export const restar = (a, b) => a - b;
+export const multiplicar = (a, b) => a * b;
+export const dividir = (a, b) => a / b;
+export const isNull = null;
+export const isFalse = false;
+export const isTrue = true;
+export const isUndefined = undefined;
+```
+
+### Matcher `.toBe()`
+
+Usado para comparar valores primitivos (enteros, flotantes, etc.).
+
+```js
+describe('Operaciones matemáticas', () => {
+   test('Realizamos la suma', () => {
+       expect(sumar(1,1)).toBe(2);
+   });
+   test('Realizamos la resta', () => {
+       expect(restar(1,1)).toBe(0);
+   });
+});
+```
+
+### Matcher `.toEqual()`
+
+Usado para comparar objetos y todas sus propiedades:
+
+```js
+describe('Common matchers', () => {
+   const datos = {
+       nombre: 'Persona 1',
+        edad: 10
+   }
+   const datos2 = {
+       nombre: 'Persona 1',
+         edad: 10
+   }
+  test('Comprobamos que los objetos son iguales', () => {
+       expect(datos).toEqual(datos2);  }); 
+});
+```
+
+### Matcher `.toBeLessThan()`
+
+El valor es menor que:
+
+```js
+test('Resultado menor que...', () => {
+       expect(restar(5,3)).toBeLessThan(3);
+});
+```
+
+### Matcher `.toBeLessThanOrEqual()`
+
+El valor es menor o igual que:
+
+```js
+test('Resultado menor o igual que...', () => {
+    expect(restar(5,3)).toBeLessThanOrEqual(2);
+});
+```
+### Matcher `.toBeGreaterThan()`
+
+El valor es mayor que:
+
+```js
+test('Resultado mayor que...', () => {
+  expect(sumar(5,5)).toBeGreaterThan(9);
+});
+```
+
+### Matcher `.toBeGreaterThanOrEqual()`
+
+El valor es mayor o igual que:
+
+```js
+test('Resultado mayor o igual que...', () => {    
+    expect(multiplicar(2,5)).toBeGreaterThanOrEqual(10);
+});
+```
+### Matcher `.toBeTruthy()`
+
+El valor es verdadero
+
+```js
+test('Resultado True', () => {
+    expect(isTrue).toBeTruthy();
+});
+```
+
+### Matcher `.toBeFalsy()`
+
+El valor es falso
+
+```js
+test('Resultado False', () => {
+    expect(isFalse).toBeFalsy();
+});
+```
+
+### Matcher `.toBeUndefined()`
+
+El valor es undefined
+
+```js
+test('Resultado Undefined...', () => {
+    expect(isUndefined).toBeUndefined();
+});
+```
+
+### Matcher `.toBeNull()`
+
+El valor es null
+
+```js
+test('Resultado Null...', () => {
+    expect(isNull).toBeNull();
+});
+```
+
+**Matchers para trabajar con `arrays` y `strings`**
+
+```js
+const provincias = ['Álava','Girona','Huelva','Jaén','La Rioja','Madrid','Navarra'];
+const dias = ['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'];
+const expReg = {
+   responseOK: 'Response OK',
+   responseFAIL: 'Response FAIL',
+   email: 'test@test.com',
+   telefono: '919784852'
+}
+export const arrProvincias = () => provincias;
+export const arrDias = () => dias;
+export const objExpReg = () => expReg;
+```
+
+### Matcher `.toBeContain()`
+
+Contiene el elemento dentro del array
+
+```js
+test('Madrid existe en el array', () => {
+     expect(arrProvincias()).toContain('Madrid');
+});
+```
+
+### Matcher `.toHaveLength (array)`
+
+El array tiene la longitud:
+
+```js
+test('El array días tiene 7 elementos', () => {
+    expect(arrDias()).toHaveLength(7);
+   });
+```
+
+### Matcher `.toHaveLength (string)`
+
+También podemos usar este matcher para ver la longitud de un string:
+
+```js
+const exp = objExpReg();
+test('Comprobamos longitud del string', () => {
+    expect(exp.responseFAIL).toHaveLength(13);
+});
+```
+
+### Matcher `.toMatch()`
+
+Comprueba que un texto coincida con una expresión regular
+
+```js
+const exp = objExpReg();
+    test('Comprobamos formato del email', () => {    
+    expect(exp.email).toMatch(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/);
+})
+```
+> ### 💡
+> Mas info: <https://jestjs.io/docs/expect>
+
+> #### 📑
+> pdf: Ejercicio de Prueba de componente
