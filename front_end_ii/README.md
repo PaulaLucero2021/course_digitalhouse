@@ -2561,6 +2561,9 @@ formulario.addEventListener("submit", function (event) {
 
 ## Normalizando datos: metodos de strings <a id='c11c'></a>
 
+Cuando hablamos de **validar un dato** lo que hacemos es establecer una serie de reglas que debe cumplir el mismo para ser correcto. En cambio, el proceso de **normalizar** es organizar los datos de manera tal que respeten el formato deseado para ser enviados o posiblemente almacenados en una base de datos. 
+
+
 > Ver pdf: Metodos de strings
 
 La normalización de datos no es otra cosa que una serie de procesos, reglas o mecanismos que se utilizan para dar un formato común a los datos recolectados en una aplicación, independientemente de quién sea la persona que lo haya ingresado o la manera en lo que lo haya hecho.
@@ -3163,6 +3166,17 @@ Borra todo el contenido que hayamos almacenado en storage
 sessionStorage.clear();
 ```
 
+### 📜 Ejemplo!
+
+![img](./img/c14c.png)
+
+> ### 💡
+> Si trabajamos con arrays y/u objetos literales tenemos que pasarlos a string para poder ser almacenados en session o local storage.
+>```js
+>sessionStorage.setItem("nombreUsuario",JSON.stringify())
+>```
+
+
 > ### 💡
 > Si queremos guardar los datos en localStorage y sessionStorage y estamos trabajando con arrays u objetos debemos usar los metodos de JSON.stringify para poder guardar la informacion
 
@@ -3233,6 +3247,49 @@ En HTTP/2, los mensajes están estructurados en un nuevo formato, lo que contrib
 
 > #### 🎬
 > Video: Request y Response
+
+## Formacion de una peticion y respuesta
+
+![img](./img/c16i.png)
+
+### Request
+
+Tienen:
+
+✅ Linea de inicio
+
+![img](./img/c16j.png)
+
+> ### 💡
+> Debe elegirse solo un verbo o nombre
+
+![img](./img/c16k.png)
+
+✅ Cabeceras
+
+Son opcionales, aportan informacion adicional, no diferencia mayus de minus
+
+![img](./img/c16l.png)
+
+✅ Un cuerpo
+
+No todas las peticiones llevan uno, las peticiones que reclaman datos, normalmente no necesitan ningún cuerpo
+
+![img](./img/c16m.png)
+
+### Response
+
+✅ Linea de inicio
+
+![img](./img/c16n.png)
+
+
+✅ Cabeceras y ✅ Un cuerpo
+
+Son opcionales
+
+![img](./img/c16n.png)
+
 
 ## Protocolo http <a id='c16b'></a>
 
@@ -3381,7 +3438,187 @@ Algunos de los códigos más usados son:
 > get, patch, update, put , delete
 >
 
-## AJAX
+
+## Concepto de asincronismo
+
+Gracias al asincronismo generamos un código más funcional, rápido y eficiente, sin necesidad de recargar la página para actualizar la información. JavaScript es un lenguaje de programación asíncrono porque es capaz de ejecutar un hilo de tareas o peticiones en las cuales, si la respuesta demora, el hilo de ejecución de JavaScript continuará con las demás tareas que hay en el código. 
+
+### Concurrencia y paralelismo
+
+Existen 2 tipos de asincronismo:
+
+- Concurrencia: cuando las tareas pueden comenzar, ejecutarse y completarse en períodos de tiempo superpuestos, en donde al menos dos hilos están progresando
+
+- Paralelismo: cuando dos o más tareas se ejecutan exactamente al mismo tiempo.
+
+La diferencia entre la concurrencia y el paralelismo está en que, en el primer caso, no implica que las tareas terminen de ejecutarse al mismo tiempo literalmente como sí ocurre en el segundo caso. Además, decimos que JavaScript es un lenguaje no-bloqueante porque las tareas no se quedan bloqueadas esperando a que finalicen evitando proseguir con el resto de tareas.
+
+Además, decimos que Javascript es un lenguaje no-bloqueante porque las tareas no se quedan bloqueadas esperando a que finalicen evitando proseguir con el resto de tareas. 
+
+## Sincronismo/asincronismo
+
+[Link: tareas sinconas vs asincronas](https://view.genial.ly/60ddcde1acd3a70d5261b118)
+
+![img](./img/c16b.png)
+
+<!-- ```json
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpbGlhbmEub3NwaW5hLnVAZ21haWwuY29tIiwiaWQiOjcxNiwiaWF0IjoxNjM0OTE2NzI2fQ.c9xSlhc-lXmrnQtgPsBNCCnyIvm5F86LHgopIcsDw9A"
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpbGlhbmEub3NwaW5hLnVAZ21haWwuY29tIiwiaWQiOjcxNiwiaWF0IjoxNjM0OTE2NzI2fQ.c9xSlhc-lXmrnQtgPsBNCCnyIvm5F86LHgopIcsDw9A
+
+``` -->
+
+# C17 - APIs I
+
+Es una interfaz que permite la comunicación entre 2 aplicaciones. Si tuviéramos que simplificar un poco esta definición y llevarlo a algo más simple, imaginemos que es un sitio que en vez de responder algo visual, como HTML con CSS, nos responde información. ¿Y de qué nos serviría esto? Bueno, los usuarios probablemente no van a ingresar a este tipo de sitios, pero sí una aplicación que necesite abastecerse de información particular. Por ejemplo, una aplicación que necesite un listado completo de todos los países del mundo podría consumir una API que le otorgue esa información.
+
+> #### 🎬
+> Video: Introducción a APIs
+
+
+### Endpoint <a id='c17a'></a>
+
+Es un punto de conexión donde necesitamos apuntar para obtener la informacion que queremos; <r>es la url para acceder a informacion en la api</r>
+
+A esas URL las llamamos `endpoints`, es decir, el servidor expone a los clientes un conjunto de endpoints para que este pueda acceder. A esa interfaz uniforme, o sea, al conjunto de endpoints, le llamamos API.
+
+Un endpoint está ligado al recurso que solicitamos, dicho recurso debe tener solamente un identificador lógico, y este proveer acceso a toda la información relacionada. 
+
+> ### 💡
+> Un endpoint es un recurso que usa el servidor y accedemos a él a través de la URL. 
+
+### 📜 Ejemplo!
+
+El servidor nos expone la URL /productos/listar. Dicho endpoint estará ligado al recurso que nos devuelva el listado de los productos solicitados.
+
+![img](./img/c17d.png)
+
+## Rest <a id='c17b'></a>
+
+> #### 🎬
+> Video: Rest
+
+> #### 📑
+> pdf: Rest
+
+REST son las siglas de Representational State Transfer
+
+Un sistema REST es un tipo de arquitectura de servicios que proporciona estándares o protocolo que le permita a todos los sistemas que se comunican con él entender en qué forma lo tienen que hacer y bajo qué estructura deberán enviar sus peticiones para que sean atendidas.
+
+REST es una arquitectura del tipo cliente-servidor porque debe permitir que tanto la aplicación del cliente como la aplicación del servidor se desarrollen o escalen sin interferir una con la otra. Es decir, <r>permite integrar con cualquier otra plataforma y tecnología tanto el cliente como el servidor</r>
+
+### Características de la arquitectura REST
+
+**Separar la aplicación web en 2**
+1. La interfaz de usuario en una aplicación, **Ej:** Interfaz web pedidos a domicilio
+2. Tener todo lo que la aplicación provee como servicio que la interfaz consume, **Ej:** lógica de negocio, la que registra los pagos
+
+- Ubicación de los recursos
+una sola ubicación para lo recursos. **Ej:** `/canciones`
+
+**Stateless o "Sin estado"**
+
+El servidor no almacena las peticiones que haga el cliente; cada solicitud es nueva e independiente.
+
+REST propone que todas las interacciones entre el cliente y el servidor deben ser tratadas como nuevas y de forma absolutamente independiente sin guardar estado. Por lo tanto, si quisiéramos —por ejemplo— que el servidor distinga entre usuarios logueados o invitados, debemos mandar toda la información de autenticación necesaria en cada petición que le hagamos a dicho servidor.
+
+> ### 💡
+> Esto permite desarrollar aplicaciones más confiables, performantes y escalables.
+
+**Cacheable**
+
+Si se consulta habitualmente y no ha sufrido modificaciones, el cliente podria recordar esa respuesta, para no realizar ese pedido constante y eliminándole esa carga al servidor. Para que esto suceda el servidor debe responder con un encabezado `max-age`, cuyo valor es la cantidad de segundos que tiene ese recurso, una vez expirado el cliente debe volver a pedir el recurso
+
+En REST, el cacheo de datos es una herramienta muy importante, que se implementa del lado del cliente, para mejorar la performance y reducir la demanda al servidor.
+
+> ### 💡
+> Poniendo cachés en el cliente, nos ahorramos realizar peticiones al servidor
+
+### Principios de una arquitectura REST
+
+✅ Debe ser una arquitectura cliente-servidor.
+
+✅ Tiene que ser sin estado, es decir, no hay necesidad de que los servicios guarden las sesiones de los usuarios (cada petición al servidor tiene que ser independiente de las demás).
+
+✅ Debe soportar un sistema de cachés.
+
+✅ Debe proveer una interfaz uniforme, para que la información se transfiera de forma estandarizada.
+
+✅ Tiene que ser un sistema por capas invisible para el cliente
+
+### 📜 Ejemplo!
+
+Desarrollamos una API que ofrece informacion de música queremos que sea una API REST
+
+✅ Todos los datos a loa que querramos acceder estarán agrupados con nombres que serán sustantivos, cada uno de ellos los llamaremso recursos. Puede ser un documento, una imagen, una coleccion y en cualquier formato.
+
+![img](./img/c17a.png)
+
+## Recursos uniformes 
+
+Desde el lado del servidor, una arquitectura REST expone a los clientes a una interfaz uniforme.
+
+● Todos los recursos del servidor tienen un nombre en forma de URL o hipervínculo.
+
+● Toda la información se intercambia a través del protocolo HTTP.
+
+En REST se aconseja un identificador de recursos para cada dato, una representacion del recurso consiste de datos y metadatos que describen al mismo y los enlaces que se pueden utilizar para consultar recursos relacionados 
+Estos recursos son accesibles al cliente a traves de url, los clientes y servidores intercambian esas representaciones de recursos.
+
+> ### 💡
+> el recurso del servidor se refleja en una URL. 
+
+## Formatos de envío de datos
+
+Cuando el servidor envía una solicitud, este transfiere una representación del estado del recurso requerido a quien lo haya solicitado. 
+Dicha información se entrega por medio de HTTP en uno de estos formatos: JSON (JavaScript Object Notation), RAW, XLT o texto sin formato, URL-encoded.
+JSON es el más popular.
+
+Los recursos se comparten en distintos formatos: 
+
+### JSON
+
+Debe agregarse a los `headers` un encabezado que indique el tipo de contenido 
+
+![img](./img/c17b.png)
+
+Cuando queramos enviar datos en formato JSON debemos agregar un encabezado en los headers que diga:
+
+```js
+"Content-Type": "application/json"
+```
+```json
+{
+   "id":1,
+   "title": "..."
+}
+```
+### RAW
+
+Se utiliza para mandar datos con texto sin ningún formato en particular. Pero no es usualmente utilizada
+
+### TEXT
+
+Se utiliza para enviar datos que no sean en formato JSON, como archivos HTML y CSS.
+
+### URL-encoded
+
+Indica que se nos van a enviar datos codificados en forma de URL. Por lo tanto, nos envía algo muy similar a un query string.
+Un dato enviado mediante este método se vería de la siguiente manera:
+
+```
+email%3Dcosme%40fulanito.fox%26password%3Dverysecret
+```
+
+### Metodo `HEAD`
+
+Esun metodo HTTP que en API REST se utiliza con el fin exclusivo de conocer la ultima fecha de modificacion del recurso, en vez de pedirlo por GET lo pedimos por `HEAD` 
+
+> ### 💡
+> Para ver las metodos: <https://restfulapi.net/>
+
+## AJAX <a id='c17c'></a>
 
 AJAX (Asynchronous JavaScript and XML) es un conjunto de tecnologías que se utilizan para crear aplicaciones web asíncronas. 
 
@@ -3420,24 +3657,277 @@ Para conocer métodos y propiedades del objeto:
 
 <https://www.w3schools.com/xml/ajax_xmlhttprequest_create.asp> 
 
-## Concepto de asincronismo
+## AJAX Fetch <a id='c7d'></a>
 
-Gracias al asincronismo generamos un código más funcional, rápido y eficiente, sin necesidad de recargar la página para actualizar la información. JavaScript es un lenguaje de programación asíncrono porque es capaz de ejecutar un hilo de tareas o peticiones en las cuales, si la respuesta demora, el hilo de ejecución de JavaScript continuará con las demás tareas que hay en el código. 
+Las solicitudes asincrónicas son un pilar fundamental del desarrollo con JavaScript, sobre todo cuando nos encontramos del lado del front end. Con ellas podremos hacer peticiones a distintas APIs y consumir los datos que estas nos proveen de forma dinámica y sin poner en riesgo la carga del resto de nuestra funcionalidad.
 
-### Concurrencia y paralelismo
+En la actualidad, JavaScript nos provee las funcionalidades de Fetch las cuales son de gran utilidad, ya que nos permiten, de una manera sencilla y rápida, establecer una comunicación con un servidor a través de los distintos endpoints que nos provea su API.
 
-Existen 2 tipos de asincronismo:
+> #### 🎬
+> Video: AJAX Fetch - Get
 
-- Concurrencia: cuando las tareas pueden comenzar, ejecutarse y completarse en períodos de tiempo superpuestos, en donde al menos dos hilos están progresando
+> #### 📑
+> pdf: AJAX Fetch - Get
 
-- Paralelismo: cuando dos o más tareas se ejecutan exactamente al mismo tiempo.
+Fetch es una función nativa que nos permite hacer pedidos a una API desde nuestro front-end.
 
-La diferencia entre la concurrencia y el paralelismo está en que, en el primer caso, no implica que las tareas terminen de ejecutarse al mismo tiempo literalmente como sí ocurre en el segundo caso. Además, decimos que JavaScript es un lenguaje no-bloqueante porque las tareas no se quedan bloqueadas esperando a que finalicen evitando proseguir con el resto de tareas.
+### Metodo `fetch()`
 
-Además, decimos que Javascript es un lenguaje no-bloqueante porque las tareas no se quedan bloqueadas esperando a que finalicen evitando proseguir con el resto de tareas. 
+Es una funcion que nos permite comunicarnos con APIs, podemos generar pedidos mediante el metodo `GET` o enviar pedidos mediante el metodo `POST`
+Recibe como primer parámetro la URL del endpoint al cual estamos haciendo el llamado asincrónico. 
+<r>Al no saber cuándo se completa la petición, el servidor devuelve una promesa.</r>
 
-## Sincronismo/asincronismo
+## AJAX Fetch - GET
 
-[Link: tareas sinconas vs asincronas](https://view.genial.ly/60ddcde1acd3a70d5261b118)
+Al usar el metodo por `GET` recibe un solo parametro, esta sera la url que queremos consultar y luego 2 callbacks, el primero que decodifica el json de respuesta y el segundo con el que usaremos la informacion final
 
-![img](./img/c16b.png)
+```js
+fetch("https://restcountries.eu/rest/v2/")
+```
+![img](./img/c17g.png)
+
+### Metodo `.then()`
+
+El método then() retorna una Promesa. Recibe dos argumentos: funciones callback  para los casos de éxito y fallo de Promise.
+Soluciona el primer pedido asincrono.
+
+### Metodo `.catch()`
+
+Permite manipular los errores como querramos.
+
+**Resolvemos la promesa**
+
+El primer `then` será el encargado de recibir un `callback` y retornará la respuesta 
+de ese llamado asincrónico en formato `JSON`.
+
+```js
+fetch("https://restcountries.eu/rest/v2/")
+.then(function(response){
+   return response.json();
+})
+```
+**Obtenemos los datos**
+
+Una vez que la respuesta de nuestro pedido está en formato `JSON`, a través de otra promesa, podemos hacer con nuestra respuesta lo que queramos
+
+```js
+fetch("https://restcountries.eu/rest/v2/")
+.then(function(response){
+   return response.json();
+})
+.then(function(data){
+   console.log(data)
+})
+```
+**Atrapamos los errores**
+
+En el caso de haber algún error, el `catch()` se encargará de atraparlo y luego lo imprimirá por consola.
+
+```js
+fetch("https://restcountries.eu/rest/v2/")
+.then(function(response){
+   return response.json();
+})
+.then(function(data){
+   console.log(data)
+})
+.catch(function(error){
+   console.error(error)
+})
+```
+
+![img](./img/c17e.png)
+
+
+> ### 💡
+> Para saber más podemos acceder a la documentación oficial de Fetch haciendo clic en el siguiente link
+> <https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch>
+
+## Try, Catch y Finally <a id='c17e'></a>
+
+> #### 📑
+> pdf: TRY - CATCH
+
+**Manejo de errores**
+
+Los errores que se producen en un programa pueden ocurrir debido a nuestros descuidos, una entrada inesperada del usuario, una respuesta errónea del servidor, entre otras razones. 
+Por lo general, un script es interrumpido y se detiene cuando esto sucede. Pero podemos evitarlo con try...catch que nos permite “atrapar” errores para que el script pueda funcionar igualmente.
+
+- La declaración `try` permite probar un bloque de código en busca de errores.
+- La declaración `catch` permite manejar el error.
+- La declaración `throw` permite crear errores personalizados.
+- La declaración `finally` permite ejecutar código, después de intentar y capturar, independientemente del resultado.
+
+![img](./img/c17f.png)
+
+**Sintaxis**
+
+```js
+try {
+    //Block of code to try
+}
+catch(err) {
+    //Block of code to handle errors
+}
+finally {
+    //Block of code to be executed regardless of the try / catch result
+}
+```
+
+### 📜 Ejemplo!
+
+
+```js
+function myFunction() {
+    let message, x;
+    message = document.getElementById("intro");
+    message.innerHTML = "";
+    x = document.getElementById("demo").value;
+    //Ejecutamos un try con condicionales arrojando(throw) un mensaje:
+    try { 
+        if(x == "") throw "Contenido vacio";
+        if(isNaN(x)) throw "No es un numero";
+        x = Number(x);
+        if(x > 10) throw "Numero demasiado alto";
+        if(x < 5) throw "Numero demasiado bajo";
+    }
+    //Ejecutamos un catch para manejar el error mostrandolo en el navegador
+    catch(err) { 
+        message.innerHTML = "Error: " + err + ".";
+    }
+    //Ejecutamos la accion que termina con la funcion para devolver el valor requerido
+    finally { 
+        document.getElementById("demo").value = "";
+    }
+}
+```
+
+Tengamos en cuenta que un error puede provenir de valores diferentes:
+
+Nombre de error | Descripción
+------- | -------
+RangeError | Se ha producido un número "fuera de rango".
+ReferenceError | Ha ocurrido una referencia ilegal.
+Error de sintaxis | Ha ocurrido un error de sintaxis.
+Error de teclado | Ha ocurrido un error de tipo.
+URIError | Se ha producido un error en encodeURI().
+
+# C18 - APIs II <a id='c18'></a>
+
+## AJAX Fetch - POST <a id='c18a'></a>
+
+> #### 🎬
+> Video: Ajax fetch - POST
+
+Al enviar peticiones por `POST`, fetch tiene un segundo parametro opcional.
+
+Como enviamos datos por POST debemos configurar un objeto literal con los datos necesarios para que la API entienda nuestra peticion, lo que debemos definir en este objeto literal es:
+
+1. Definir el metodo `method` que utilizaremos, en este caso: `POST`
+2. El segundo, es el mas importante, el `body` y este tendra el contenido del envio y siempre debera estar en formato `JSON` para esto solemos usar `.stringify(data)`, en este caso data era un objeto literal. 
+3. El ultimo atributo es el `headers` o cabeceras, donde por ej podemos definir el tipo de contenido que enviaremos para que pueda ser interpretado por el servidor que reciba la respuesta 
+
+![img](./img/c18a.png)
+
+En el codigo podemos orderar el envio de la informacion asi:
+
+
+1. Armar la informacion que vamos a enviar que sera un objeto literal, donde el esquema de los datos va a depender de la API
+![img](./img/c17h.png)
+
+2. Despues se arman las settings donde especificamos el metodo, body y headers 
+![img](./img/c17i.png)
+
+3. Por ultimo llamamos a fetch, solo que como segundo parametro, despues de la url, le mandamos las settings que hicimos en el 2do paso.
+![img](./img/c17j.png)
+
+## Postman <a id='c18b'></a>
+
+> #### 🎬
+> Video: Postman
+
+[Navegacion interactiva en POSTMAN](https://view.genial.ly/6035581287d9bb0d28955205)
+
+### 📜 Ejemplo con `GET`
+
+![img](./img/c18b.png)
+
+### 📜 Ejemplo con `POST`
+
+![img](./img/c18c.png)
+
+# C19 - To-Do app: docs <a id='c19'></a>
+
+> #### 📑
+> pdf: Presentando la API de TODOs
+>
+> Autenticacion
+> CRUD de tareas
+
+# C20 - To-Do App: Workflow
+
+> #### 📑
+> pdf: Arquitectura to-do App
+
+Pensemos cada uno de estos recursos que encontramos en el directorio
+raíz:
+
+● `assets` → acá nos vamos a encontrar con los recursos gráficos que vamos a estar implementando en nuestra interfaz.
+
+● `scripts` → este directorio almacena toda la lógica de nuestro proyecto, es donde residen todos los scripts correspondientes al comportamiento de las páginas con las que están asociados.
+
+● `styles` → sin mucho para aclarar, todos los estilos de nuestra interfaz separados según su aplicación en todo o partes específicas de proyecto.
+
+● `index.html` → aquí definimos nuestro “entry point”, nuestro punto de partida.
+Como sabemos los servidores de manera estándar interpretan al index como la página principal de nuestro sitio. En este caso definimos a lo que sería el “login” como nuestra página principal, la que queremos que se renderize cuando un
+usuario accede por primera vez.
+
+● `mis-tareas.html` → esta es nuestra página dedicada a la vista privada de cada usuario que tiene un perfil y comienza a generar tareas en la aplicación.
+
+● `signup.html` → como su nombre en inglés lo indica esta es nuestra página de
+registro para aquellos usuarios que quieren crear un perfil por primera vez y
+así acceder a nuestro servicio.
+
+A grandes rasgos, esa es la estructura definida para este proyecto, para este caso puntual. Es importante entender esto, ya que no siempre se va a repetir esta arquitectura en todo proyecto de frontend, pero sí podemos decir que intentamos seguir las buenas prácticas como buenos desarrolladores que queremos ser.
+
+## Buenas practicas
+
+> #### 📑
+> pdf: Buenas practicas
+
+# C21 - Auth 
+
+
+
+Una aplicación web moderna, necesita contar con diferentes tipos de información. En algunos casos, dicha información es pública y puede ser compartida con cualquier persona que acceda a nuestra aplicación. Pero, en otros casos, dicha información se encuentra reservada exclusivamente para una persona o un grupo de personas determinado.
+
+Pensemos, por ejemplo, en la página web de un banco cualquiera. Si accedemos a su página principal, seguramente podremos visualizar cierta información institucional de dicha entidad, así como un listado de los servicios que la misma presta a sus clientes. Esta información, generalmente, es pública y puede ser visualizada por cualquier persona que ingrese al sitio web, independientemente de que dicha persona sea cliente del banco o no.
+
+Ahora bien, ¿qué pasaría si yo quiero visualizar el saldo de la caja de ahorros que tengo abierta en ese banco?; ¿puedo acceder a esa información directamente desde la página principal del banco, o es necesario realizar algún paso adicional?.
+
+Como es de imaginarse, la respuesta a esta pregunta es no. En efecto, para poder consultar el saldo de tu caja de ahorro, en general hace falta que se cumplan un par de requisitos: a) que seas cliente del banco, desde luego; b) que cuentes con un nombre de usuario y contraseña (o token de seguridad), que te permita acceder al Home Banking de la entidad; y c) que cuentes con un paquete que incluya una caja de ahorros.
+
+A esta altura, puede que te preguntes de qué manera este ejemplo se relaciona con el desarrollo de aplicaciones web. Para responder dicha pregunta, debemos introducir los conceptos de Autenticación y Autorización.
+
+La autenticación, como su nombre lo indica, implica verificar la identidad de la persona que accede a una aplicación determinada mediante el uso de sus credenciales. En otras palabras, la autenticación se enfoca en determinar que la persona es quien dice ser. Volviendo al ejemplo anterior, cuando ingresamos el nombre de usuario y contraseña para acceder al Home Banking, estamos autenticándonos. Si los datos ingresados son correctos, podremos acceder; caso contrario, la página nos impedirá el acceso, puesto que no puede verificar que realmente seamos la persona que decimos ser.
+
+Ahora bien, supongamos que nos hemos autenticado correctamente dentro del Home Banking. Una vez allí, deseamos acceder al extracto de nuestra caja de ahorros. Como vimos anteriormente, para poder realizar dicha acción es necesario (además de autenticarnos con nuestras credenciales), contar con un paquete que incluya una caja de ahorros.
+
+Entonces, si contamos con dicho paquete, seguramente encontraremos un botón o link que nos permitirá acceder al extracto. Caso contrario, no podremos acceder a ese recurso ya que no estamos autorizados para ello.
+
+Como podemos ver en el ejemplo anterior, en este caso ya no estamos hablando de verificar si la persona es quien dice ser (ya que nos hemos logueado satisfactoriamente), sino que lo que aquí se esta validando es si la misma se encuentra habilitada para acceder a determinado recurso. Este concepto, se refiere a lo que conocemos como Autorización.
+
+La autorización, entonces, se ocupa de determinar que tipo de acciones puede realizar la persona dentro de la aplicación, validando el acceso a los distintos tipos de recursos disponibles en dicha aplicación.
+
+Si bien ambos conceptos (autenticación y autorización) se enfocan en diferentes momentos y situaciones, generalmente se complementan para generar un sistema de roles y permisos con el objetivo de brindar un adecuado sistema de seguridad para nuestra aplicación. Comprender y aplicar ambos conceptos en forma conjunta, nos permitirá crear aplicaciones web robustas y de calidad.
+
+## JWT - JSON Web Tokens
+
+> #### 📑
+> pdf: jwt
+
+Anteriormente, vimos los conceptos de autenticación y autorización, y de qué manera los mismos se complementan para brindarnos un nivel de seguridad adecuado para nuestra aplicación web.
+
+En esta oportunidad, nos centraremos en una de las herramientas más utilizadas al momento de manejar procesos de autorización de usuarios: JSON Web Tokens (JWT).
+
+
