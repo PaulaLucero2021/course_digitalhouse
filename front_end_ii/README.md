@@ -114,6 +114,16 @@
     - [Metodos http](#c16d)
     - [Códigos de estado HTTP](#c16e)
     - [Quiz](#c16f)
+- [C17 - APIs I](#c17)
+    - [Endpoint](#c17a)
+    - [Rest](#c17b)
+    - [AJAX](#c17c)
+    - [AJAX Fetch - GET](#c17d)
+    - [Try, Catch y Finally](#c17e)
+- [C18 - APIs II](#c18)
+    - [AJAX Fetch - POST](#c18a)
+    - [Postman](#c18b)
+- [C19 - To-Do app: docs](#c19)
 
 6. implementación practica, animaciones y librerías
 
@@ -1507,6 +1517,37 @@ Podemos usar el `.contains` para hacer operaciones lógicas haciendo uso de los 
 
 <!-- fin resumen -->
 
+> ### 💡
+> Puedo averiguar si un selector tiene alguna clase con `SELECTOR.classList.lenght`
+>
+
+### 📜 Ejemplo en clase!
+
+```js
+let items = document.querySelectorAll('li');
+
+items[0].innerHTML = 'El <strong>52%</strong> del tráfico de todo Internet es creado por Bots (entre inofensivos y maliciosos).';
+
+if(confirm("Desea pintar un parrafo de amarillo?")){
+    items[1].style.backgroundColor = "yellow";
+    items[1].style.fontWeight = "bold";
+}
+
+items.forEach( item =>{
+    //chequeamos si el nodo tiene la clase "porcentajes"
+    if(item.classList.contains('porcentajes')){
+        console.log(item.classList.toggle('parrafo'))
+    }
+
+    //chequeamos si el nodo no tiene ninguna clase
+    if(item.classList.length == 0){
+        item.classList.add('alternativos')
+    }
+});
+```
+
+> ### [📌Actividad: Cambiar tema](./Actividades/C5-cambiar-tema.md)
+
 # C6 - Trabajando con nodos <a id='c6'></a>
 
 ## Nodos en HTML <a id='c6a'></a>
@@ -1616,6 +1657,29 @@ document.body.appendChild(botonVerMas);
 
 ![Quiz](./img/c6a5a.png)
 
+### 📜 Ejemplo en clase!
+
+```js
+const nombre = prompt("Ingrese su nombre");
+const apellido = prompt("Ingrese su apellido");
+
+const nodoSpan = document.querySelector('#nombre');
+
+nodoSpan.innerHTML = `<strong>${nombre}</strong>`;
+
+//creamos el nodo que vamos a insertar en el html
+const parrafoNuevo = document.createElement('p');
+//armamos un nodo de texto basado la variable apellido
+const texto = document.createTextNode(`Su apellido es ${apellido}`);
+//al parrafo le agregamos el nodo de texto
+parrafoNuevo.appendChild(texto);
+
+const contenedor = document.querySelector('.contenedor');
+
+//insertamos el nodo ya completo en el HTML
+contenedor.appendChild(parrafoNuevo);
+```
+
 ## Elementos y atributos dinamicos <a id='c6b'></a>
 
 Empecemos por pensar únicamente en HTML, un atributo es un modificador de un elemento. Es una palabra especial que nos permite controlar un determinado comportamiento en nuestra etiqueta.
@@ -1684,7 +1748,7 @@ Los atributos usualmente están formados en pares de clave:valor. Debemos tener 
 Este método nos sirve para consultar si el elemento posee o no un determinado atributo. Funciona de la siguiente manera:
 
 -   **Recibe** un atributo.
--   **Retorna** true si el atributo existe, de lo contrario `false`
+-   **Retorna** `true` si el atributo existe, de lo contrario `false`
 
 ```js
 //Seleccionamos un elemento del HTML
@@ -1746,6 +1810,35 @@ elemento.setAttribute("src", "imagen_portada.jpg");
 
 <!-- HACER practica -->
 
+### 📜 Ejemplo en clase!
+
+```js
+let imagenes = [];
+
+const nodosImg = document.querySelectorAll('.imagen')
+
+solicitarInfo();
+renderizarInfo();
+
+function solicitarInfo() {
+    //solicitamos urls para rellenar nuestro array
+    for(let i=0; i<nodosImg.length; i++){
+        const imagen = prompt("Ingrese la url de una imagen");
+        imagenes.push(imagen);
+    }
+}
+
+function renderizarInfo() {
+    //rellenar los atributos SRC de las imagenes
+    for(let i=0; i<imagenes.length; i++){
+        nodosImg[i].setAttribute('src', imagenes[i]);
+        nodosImg[i].setAttribute('title', imagenes[i]);
+    }
+}
+```
+
+> ### [📌Actividad: Practica atributos](./Actividades/C6-practica-atributos.md)
+
 # C7 - Catch-up + Intro a eventos <a id='c7'></a>
 
 En este módulo nos enfocaremos en captar distintos sucesos interesantes que se producen por parte del navegador o el usuario. Justamente, producto de algún evento que se dispara en el sitio, podremos realizar alguna reacción al respecto.
@@ -1793,9 +1886,9 @@ Linkear el script abajo de `<link rel="stylesheet" href="style.css">
 
 y queremos que el archivo `index.js` se ejecute despues que se cargue toda la pagina crearemos el siguiente evento
 
-## Eventos con on
+## Eventos `on`
 
-### Evento onload
+### Evento `onload`
 
 Este evento permite que todo el script se ejecute cuando se haya cargado por completo el objeto document dentro del objeto window
 
@@ -1834,6 +1927,30 @@ btn.onclick = function () {
 Para obtener más información, podemos visitar la documentación oficial haciendo clic en el siguiente link:
 
 <https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events>
+
+### 📜 Ejemplo en clase!
+
+```html
+<div class="theme">
+    <button onclick="cambiarTema()">Cambiar tema 🌛</button>
+</div>
+```
+Cuando le da click al boton ejecuta la funcion `cambairTema()`
+```js
+function cambiarTema() {
+    document.body.classList.toggle('dark);
+}
+```
+```css
+.dark {
+    background-color: rgg(219,219,219);
+}
+```
+
+> ### [📌Actividad: Cambio tema dinamico](./Actividades/C7-cambio-tema-dinamico.md)
+
+> ### [📌Actividad: Renderizado dinamico de tarjetas](./Actividades/.md)
+
 
 ### Método `preventDefault()` <a id='c8a3'></a>
 
@@ -2290,9 +2407,14 @@ Viendo todas estas funcionalidades y comportamientos que nos dan las palabras re
 > Lo ideal al momento de declarar una variable es utilizar siempre la palabra reservada `const`, salvo que en algún momento necesitemos reasignar su valor. En esos casos, podemos implementar la palabra reservada let.
 > Prácticamente no deberíamos utilizar la palabra `var` en nuestro código, sin embargo, si en algún momento nos vemos en la necesidad de utilizar dicha palabra reservada para que nuestro código funcione, entonces, quizás debamos pensar en refactorizar nuestro código para evitar tener que recurrir al uso de var.
 
+> ### [📌Actividad: Contador](./Actividades/C8-contador.md)
+
+> ### [📌Actividad: Noticias Renderizadas](./Actividades/C8-noticias-renderizadas.md)
+
 # C9 - Enlazando conceptos <a id='c9'></a>
 
-<!-- desarrollar -->
+> ### [📌Actividad: Cronometro](./Actividades/C9-cronometro.md)
+
 
 ## Notas clase 9 <a id='c9s'></a>
 
@@ -2327,7 +2449,21 @@ setInterval(() => {
 }, 2000);
 ```
 
-<!-- continuar viendo clase cronometro -->
+### 📜 Ejemplo!
+
+Esto pone el background de color rojo al mismo tiempo.
+
+```js
+setTimeout(function(){
+    document.body.style.background="red";
+}, 3000);
+
+setTimeout(function(){
+    valor.style.background="red";
+}, 6000);
+
+console.log("Hello");
+```
 
 # C10 - Primer entregable <a id='c10'></a>
 
@@ -2656,6 +2792,97 @@ Permite cambiar o reemplazar caracteres por otros
 > **Si un usuario ingresa su nombre en mayúsculas, ¿qué podríamos hacer al respecto?**
 > Método toLowerCase
 
+## Notas clase 11
+
+Formas de acceder/captar a un formulario:
+
+```js
+// 1.
+const formulario = document.querySelector('form');
+// 2.
+const form = document.forms[0];
+```
+
+Formas de captar el `name` de un input
+
+```js
+//1.
+document.querySelectorAll('[name=hobbies]');
+//2.
+document.getElementsByName('nacionalidad');
+//3.
+document.querySelectorAll('#listado-hobbies input');
+```
+
+La propiedad `checked` la usamos para verificar si un box del form esta checkeado y si hacemos `console.log` nos devuelve un booleano.
+
+
+> ### [📌Actividad: Formulario](./Actividades/C11-formulario.md)
+
+> ### 💡
+> **Normalizacion**: Reglas y procesos que permiten unificar el formato de los datos en forma independiente a como el usuario los haya ingresado
+> Ej: un correo ingresado con MAYUS, lo pasamos a MINUS.
+
+**Normalizacion formulario**
+
+```js
+//1. Captamos el formulario
+const formulario = document.querySelector('form');
+
+// 4. Obtenemos la información de los nodos con el ID
+const nombre = document.querySelector('#nombre');
+const contrasenia = document.querySelector('#pass');
+const telefono =  document.querySelector('#tel');
+const hobbies =  document.querySelectorAll('#listado-hobbies input');
+const nacionalidades = document.getElementsByName('nacionalidad');
+
+//2. Prevenimos el envio del formulario por defecto y cuando de submit vamos a controlar todo lo que pasa
+formulario.addEventListener('submit', function (event) {
+    // 3. frenar el envío por defecto, para poder revisar todo antes.
+    event.preventDefault();
+    // 5. Captamos la información
+    console.log(nombre.value);
+    console.log(contrasenia.value);
+    console.log(telefono.value);
+
+    // 6. Vemos los nodos seleccionados con la propiedad `checked` y pusheamos a la lista
+    let lista = [];
+    hobbies.forEach( hobbie => {
+        if(hobbie.checked){
+            console.log(hobbie.id);
+            lista.push(hobbie.id);
+        }
+    });
+    // 7. Usamos checked para verificar cual fue la opcion del radio elegida y guardamos el dato en pais. 
+    let pais;
+    nacionalidades.forEach( radio =>{
+        if(radio.checked){
+            console.log(radio.id);
+            pais = radio.id;
+        }
+    });
+    //9. Mandamos los datos para verlos normalizados.
+    console.log(normalizar(nombre.value, contrasenia.value, telefono.value, lista, pais));
+    
+});
+
+//8. Creara un objeto con los datos normalizados.
+function normalizar(nom, pass, tel, listadoHobbies, nacionalidad) {
+    const datos = {
+        //10. Pone en mayúscula la primera letra, con slice recorta el resto y lo pone en minúscula
+        name: nom[0].toUpperCase() + nom.slice(1).toLowerCase(),
+        password: pass,
+        phone: tel,
+        hobbies: listadoHobbies,
+        nationality: nacionalidad
+    }
+    return datos;
+}
+```
+
+# C12 - 
+
+> ### [📌Actividad: Formulario II: Normalización](./Actividades/C12-formulario-2.md)
 
 # C13 - Formularios II <a id='c13'></a>
 
@@ -2997,6 +3224,8 @@ query.get('search_query'); //Rosalia
 > #### 📑
 > zip: ejercicio-formulario-timeout-main
 
+> ### [📌Actividad: Formulario - validaciones](./Actividades/C13-formulario-3.md)
+
 
 # C14 - Json y Storage <a id='c14'></a>
 
@@ -3007,7 +3236,6 @@ Su implementación deviene de la notación de objetos de JavaScript.
 ✅ Está compuesto por clave valor
 
 ✅ Las propiedades van siempre entre comillas dobles. Esto último es un requisito esencial para su correcto funcionamiento.
-
 
 ```json
 {
@@ -3176,6 +3404,9 @@ sessionStorage.clear();
 >sessionStorage.setItem("nombreUsuario",JSON.stringify())
 >```
 
+> ### 💡
+> Para pasar de JSON a objeto javascript usamos `JSON.parse()`
+
 
 > ### 💡
 > Si queremos guardar los datos en localStorage y sessionStorage y estamos trabajando con arrays u objetos debemos usar los metodos de JSON.stringify para poder guardar la informacion
@@ -3198,6 +3429,9 @@ sessionStorage.clear();
 >
 >**¿Cuál de las siguientes es una de las características de sessionStorage?**
 > Los datos se borran al cerrar la ventana del navegador.
+>
+> En storage se puede guardar un objeto valido o un `null`
+>
 
 <!-- 
 
@@ -3215,11 +3449,44 @@ sessionStorage.clear();
 > #### 📑
 > zip: ejercicio-login-storage-main 
 
+> ### [📌Actividad: Buscador](./Actividades/C14-buscador.md)
+
+![img](./img/c14d.png)
+
+![img](./img/c14e.png)
+
+
 # C15 -  Proyecto integrador <a id='c15'></a>
+
+> ### [📌Actividad: Guardar comentarios](./Actividades/C15-guardar-comentarios.md)
 
 > ### [📌Actividad: Proyecto integrador To Do App](./Actividades/c15-proyecto-integrador-to-do-app.md)
 
+> ### [📌Actividad: To Do I](./Actividades/C15-todo-do-I.md)
+
 # C16 - Introducción a Asincronismo <a id='c16'></a>
+
+## Concepto de asincronismo
+
+Gracias al asincronismo generamos un código más funcional, rápido y eficiente, sin necesidad de recargar la página para actualizar la información. JavaScript es un lenguaje de programación asíncrono porque es capaz de ejecutar un hilo de tareas o peticiones en las cuales, si la respuesta demora, el hilo de ejecución de JavaScript continuará con las demás tareas que hay en el código. 
+
+### Concurrencia y paralelismo
+
+Existen 2 tipos de asincronismo:
+
+- Concurrencia: cuando las tareas pueden comenzar, ejecutarse y completarse en períodos de tiempo superpuestos, en donde al menos dos hilos están progresando.
+
+- Paralelismo: cuando dos o más tareas se ejecutan exactamente al mismo tiempo.
+
+La diferencia entre la concurrencia y el paralelismo está en que, en el primer caso, no implica que las tareas terminen de ejecutarse al mismo tiempo literalmente como sí ocurre en el segundo caso. Además, decimos que JavaScript es un lenguaje no-bloqueante porque las tareas no se quedan bloqueadas esperando a que finalicen evitando proseguir con el resto de tareas.
+
+Además, decimos que Javascript es un lenguaje no-bloqueante porque las tareas no se quedan bloqueadas esperando a que finalicen evitando proseguir con el resto de tareas. 
+
+## Sincronismo/asincronismo
+
+[Link: tareas sinconas vs asincronas](https://view.genial.ly/60ddcde1acd3a70d5261b118)
+
+![img](./img/c16b.png)
 
 ## Introducción a HTTP <a id='c16a'></a>
 
@@ -3439,49 +3706,28 @@ Algunos de los códigos más usados son:
 >
 
 
-## Concepto de asincronismo
 
-Gracias al asincronismo generamos un código más funcional, rápido y eficiente, sin necesidad de recargar la página para actualizar la información. JavaScript es un lenguaje de programación asíncrono porque es capaz de ejecutar un hilo de tareas o peticiones en las cuales, si la respuesta demora, el hilo de ejecución de JavaScript continuará con las demás tareas que hay en el código. 
-
-### Concurrencia y paralelismo
-
-Existen 2 tipos de asincronismo:
-
-- Concurrencia: cuando las tareas pueden comenzar, ejecutarse y completarse en períodos de tiempo superpuestos, en donde al menos dos hilos están progresando
-
-- Paralelismo: cuando dos o más tareas se ejecutan exactamente al mismo tiempo.
-
-La diferencia entre la concurrencia y el paralelismo está en que, en el primer caso, no implica que las tareas terminen de ejecutarse al mismo tiempo literalmente como sí ocurre en el segundo caso. Además, decimos que JavaScript es un lenguaje no-bloqueante porque las tareas no se quedan bloqueadas esperando a que finalicen evitando proseguir con el resto de tareas.
-
-Además, decimos que Javascript es un lenguaje no-bloqueante porque las tareas no se quedan bloqueadas esperando a que finalicen evitando proseguir con el resto de tareas. 
-
-## Sincronismo/asincronismo
-
-[Link: tareas sinconas vs asincronas](https://view.genial.ly/60ddcde1acd3a70d5261b118)
-
-![img](./img/c16b.png)
-
-<!-- ```json
-"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpbGlhbmEub3NwaW5hLnVAZ21haWwuY29tIiwiaWQiOjcxNiwiaWF0IjoxNjM0OTE2NzI2fQ.c9xSlhc-lXmrnQtgPsBNCCnyIvm5F86LHgopIcsDw9A"
-
-```
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpbGlhbmEub3NwaW5hLnVAZ21haWwuY29tIiwiaWQiOjcxNiwiaWF0IjoxNjM0OTE2NzI2fQ.c9xSlhc-lXmrnQtgPsBNCCnyIvm5F86LHgopIcsDw9A
-
-``` -->
+> ### [📌Actividad: Simulacion asincronia](./Actividades/.md)
 
 # C17 - APIs I
 
-Es una interfaz que permite la comunicación entre 2 aplicaciones. Si tuviéramos que simplificar un poco esta definición y llevarlo a algo más simple, imaginemos que es un sitio que en vez de responder algo visual, como HTML con CSS, nos responde información. ¿Y de qué nos serviría esto? Bueno, los usuarios probablemente no van a ingresar a este tipo de sitios, pero sí una aplicación que necesite abastecerse de información particular. Por ejemplo, una aplicación que necesite un listado completo de todos los países del mundo podría consumir una API que le otorgue esa información.
+Es una interfaz que permite la comunicación entre 2 aplicaciones. 
+
+Si tuviéramos que simplificar un poco esta definición y llevarlo a algo más simple, imaginemos que es un sitio que en vez de responder algo visual, como HTML con CSS, nos responde información. ¿Y de qué nos serviría esto? Bueno, los usuarios probablemente no van a ingresar a este tipo de sitios, pero sí una aplicación que necesite abastecerse de información particular. 
+
+Por ejemplo, una aplicación que necesite un listado completo de todos los países del mundo podría consumir una API que le otorgue esa información.
 
 > #### 🎬
 > Video: Introducción a APIs
 
+> ### 💡
+> La url de las APIs se llaman endpoint
 
 ### Endpoint <a id='c17a'></a>
 
 Es un punto de conexión donde necesitamos apuntar para obtener la informacion que queremos; <r>es la url para acceder a informacion en la api</r>
 
-A esas URL las llamamos `endpoints`, es decir, el servidor expone a los clientes un conjunto de endpoints para que este pueda acceder. A esa interfaz uniforme, o sea, al conjunto de endpoints, le llamamos API.
+<r>A esas URL las llamamos `endpoints`</r>, es decir, el servidor expone a los clientes un conjunto de endpoints para que este pueda acceder. A esa interfaz uniforme, o sea, al conjunto de endpoints, le llamamos API.
 
 Un endpoint está ligado al recurso que solicitamos, dicho recurso debe tener solamente un identificador lógico, y este proveer acceso a toda la información relacionada. 
 
@@ -3507,6 +3753,9 @@ REST son las siglas de Representational State Transfer
 Un sistema REST es un tipo de arquitectura de servicios que proporciona estándares o protocolo que le permita a todos los sistemas que se comunican con él entender en qué forma lo tienen que hacer y bajo qué estructura deberán enviar sus peticiones para que sean atendidas.
 
 REST es una arquitectura del tipo cliente-servidor porque debe permitir que tanto la aplicación del cliente como la aplicación del servidor se desarrollen o escalen sin interferir una con la otra. Es decir, <r>permite integrar con cualquier otra plataforma y tecnología tanto el cliente como el servidor</r>
+
+> ### 💡
+> Rest define como se tiene que estructurar una api segun esa arquitectura
 
 ### Características de la arquitectura REST
 
@@ -3657,11 +3906,13 @@ Para conocer métodos y propiedades del objeto:
 
 <https://www.w3schools.com/xml/ajax_xmlhttprequest_create.asp> 
 
-## AJAX Fetch <a id='c7d'></a>
+## AJAX Fetch <a id='c17d'></a>
 
 Las solicitudes asincrónicas son un pilar fundamental del desarrollo con JavaScript, sobre todo cuando nos encontramos del lado del front end. Con ellas podremos hacer peticiones a distintas APIs y consumir los datos que estas nos proveen de forma dinámica y sin poner en riesgo la carga del resto de nuestra funcionalidad.
 
 En la actualidad, JavaScript nos provee las funcionalidades de Fetch las cuales son de gran utilidad, ya que nos permiten, de una manera sencilla y rápida, establecer una comunicación con un servidor a través de los distintos endpoints que nos provea su API.
+
+![img](./img/c17k.png)
 
 > #### 🎬
 > Video: AJAX Fetch - Get
@@ -3743,6 +3994,17 @@ fetch("https://restcountries.eu/rest/v2/")
 > Para saber más podemos acceder a la documentación oficial de Fetch haciendo clic en el siguiente link
 > <https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch>
 
+## Notas clase
+
+Si lo pongo en una linea el `return` esta implicito
+
+```js
+.then( res => {console.log(res));
+```
+
+> ### [📌Actividad: Dog API](./Actividades/C17-dog-api.md)
+
+
 ## Try, Catch y Finally <a id='c17e'></a>
 
 > #### 📑
@@ -3816,6 +4078,9 @@ URIError | Se ha producido un error en encodeURI().
 
 ## AJAX Fetch - POST <a id='c18a'></a>
 
+![img](./img/c18d.png)
+
+
 > #### 🎬
 > Video: Ajax fetch - POST
 
@@ -3843,6 +4108,22 @@ En el codigo podemos orderar el envio de la informacion asi:
 
 ## Postman <a id='c18b'></a>
 
+Permite testear una API.
+
+1. creamos coleccion
+2. Addrequest = Pedir un recurso
+3. Poner url en barra, seleccionar GET como metodo de peticion
+4. presionar send
+
+![img](./img/c18e.png)
+
+![img](./img/c18f.png)
+
+![img](./img/c18g.png)
+
+![img](./img/c18h.png)
+
+
 > #### 🎬
 > Video: Postman
 
@@ -3856,6 +4137,21 @@ En el codigo podemos orderar el envio de la informacion asi:
 
 ![img](./img/c18c.png)
 
+> ### [📌Actividad: API practica](./Actividades/C18-api-practica.md)
+
+## [Solved] Actividad mesa:
+
+![img](./img/c18i.png)
+
+### 📜 Ejemplo DELETE postman: APP To Do
+
+![img](./img/c21a.png)
+
+### 📜 Ejemplo PUT en APP To Do
+
+![img](./img/c22a.png)
+
+
 # C19 - To-Do app: docs <a id='c19'></a>
 
 > #### 📑
@@ -3863,6 +4159,8 @@ En el codigo podemos orderar el envio de la informacion asi:
 >
 > Autenticacion
 > CRUD de tareas
+
+> ### [📌Actividad: Proyecto integrador To Do App](./Actividades/c15-proyecto-integrador-to-do-app.md)
 
 # C20 - To-Do App: Workflow
 
@@ -3897,8 +4195,6 @@ A grandes rasgos, esa es la estructura definida para este proyecto, para este ca
 
 # C21 - Auth 
 
-
-
 Una aplicación web moderna, necesita contar con diferentes tipos de información. En algunos casos, dicha información es pública y puede ser compartida con cualquier persona que acceda a nuestra aplicación. Pero, en otros casos, dicha información se encuentra reservada exclusivamente para una persona o un grupo de personas determinado.
 
 Pensemos, por ejemplo, en la página web de un banco cualquiera. Si accedemos a su página principal, seguramente podremos visualizar cierta información institucional de dicha entidad, así como un listado de los servicios que la misma presta a sus clientes. Esta información, generalmente, es pública y puede ser visualizada por cualquier persona que ingrese al sitio web, independientemente de que dicha persona sea cliente del banco o no.
@@ -3930,4 +4226,50 @@ Anteriormente, vimos los conceptos de autenticación y autorización, y de qué 
 
 En esta oportunidad, nos centraremos en una de las herramientas más utilizadas al momento de manejar procesos de autorización de usuarios: JSON Web Tokens (JWT).
 
+**¿Qué es un JWT?**
 
+Bueno, en pocas palabras, es un estándar abierto de codificación, utilizado para transmitir información de manera segura entre dos partes. La manera en la que dicha información se transmite es a través de un objeto JSON (seguro recuerdas que vimos como el formato JSON se utilizaba para compartir información entre cliente y servidor), y su particularidad es que lainformación transmitida puede ser verificada ya que el JWT se encuentre firmado digitalmente.
+Ahora bien, ¿cómo se compone un JWT?. Básicamente, la estructura más simple de un JWTconsta de tres partes: Header, Payload y Signature
+
+Ejemplo:
+
+xxxxx.yyyyy.zzzzz
+
+Veamos rápidamente cada una de dichas partes:
+
+## Header
+
+Esta parte, contiene la información respecto del tipo de token (JWT), y el algoritmo de encriptación utilizado. Su estructura es la siguiente:
+
+```
+{
+"alg": "HS256",
+"typ": "JWT"
+}
+```
+
+## Payload 
+
+Es la parte más relevante desde el punto de vista de la autorización, ya que
+aquí se encontrará la información del usuario pudiendo incluir, por ejemplo, el rol que dicho usuario tiene dentro de la aplicación:
+
+```
+{
+"sub": "1234567890",
+"name": "John Doe",
+"admin": true
+}
+```
+
+## Firma: 
+
+Es la parte que garantiza la autenticidad de la información incluida en el JWT,
+permitiendo su verificación.
+Hasta aquí, vimos cómo se compone un JWT. Ahora, es momento de preguntarnos de qué manera podemos utilizar el mismo dentro del proceso de autorización que vimos
+anteriormente.
+En líneas generales, cuando una persona inicia sesión en una aplicación determinada, el servidor verifica las credenciales ingresadas (nombre de usuario y contraseña). Si los mismos son correctos, el servidor autentica al usuario dentro de la aplicación, y envía un JWT como respuesta a la petición.
+Dicho JWT, es entonces almacenado del lado del cliente, y enviado al servidor en cada nueva petición que se realice para acceder a un determinado servicio dentro de la aplicación. Ya que, como vimos más arriba, el token contiene la información del usuario (por ejemplo, su rol), el servidor puede acceder a dicha información al recibir la petición, y validar con ello si el usuario se encuentra autorizado a realizarla. Si esto es así, el servidor procesará el pedido y enviará la respuesta correspondiente. Caso contrario, se devolverá un error indicado que la persona no se encuentra autorizada.
+En resumen, JWT es una herramienta de gran utilidad para la comunicación entre cliente y servidor, ya que nos permite compartir información del usuario de manera segura y eficaz, y acceder a dicha información para validar los roles y permisos de cada persona que accede a nuestra aplicación.
+
+> ### 💡
+> Si quieres profundizar sobre este tema, te dejamos el link a la documentación oficial de JWT: <https://jwt.io/#debugger-io>
